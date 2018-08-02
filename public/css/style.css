@@ -1,0 +1,9 @@
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+.nav-tabs .nav-link {
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+}

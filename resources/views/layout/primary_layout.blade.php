@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
     <title>دليل الزائرين</title>
 
@@ -12,15 +13,24 @@
 
     <!-- StyleSheet -->
     <link href="{{asset("css/app.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{asset("css/style.css")}}" rel="stylesheet" type="text/css">
 
     <!-- Script -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="{{asset("js/jquery-3.3.1.slim.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
 </head>
 <body>
-@yield("content")
-@yield("extra-content")
-@yield("script")
+    <div class="container-fluid">
+        <nav class="navbar fixed-top justify-content-center navbar-dark bg-dark">
+            <div class="navbar-brand">دليل الزائرين</div>
+        </nav>
+    </div>
+
+    <div class="container" style="margin-top: 75px;">
+        @yield("content")
+    </div>
+
+    @yield("extra-content")
+    @yield("script")
 </body>
 </html>
