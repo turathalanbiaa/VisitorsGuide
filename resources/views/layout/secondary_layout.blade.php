@@ -31,10 +31,8 @@
 
     <div class="container-fluid">
         <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill p-0">
-            <a class="nav-item nav-link" href="#">Active</a>
-            <a class="nav-item nav-link active" href="#">Link</a>
-            <a class="nav-item nav-link" href="#">Link</a>
-            <a class="nav-item nav-link" href="#">Disabled</a>
+            <a class="nav-item nav-link" href="/main">الرئيسية</a>
+            @yield("nav-items-bottom")
         </div>
     </div>
 

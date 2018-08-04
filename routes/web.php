@@ -15,6 +15,6 @@
 @include("Fadhil.php");
 @include("Ahmed.php");
 
-Route::get('/', function () {
+Route::get('/main', function () {
     return view('main');
 });

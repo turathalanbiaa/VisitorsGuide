@@ -6,6 +6,4 @@
  * Time: 9:45 AM
  */
 
-Route::get('/road-guide', function () {
-    return view('roadGuide.road_guide');
-});
+Route::get('/road-guide', "PointController@main");

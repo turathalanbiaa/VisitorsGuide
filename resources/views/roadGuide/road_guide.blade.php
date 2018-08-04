@@ -8,28 +8,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
-                <h1>this is primary layout</h1>
+                @foreach($points as $point)
+                    {{$point->name}}
+                @endforeach
             </div>
         </div>
     </div>
