@@ -7,3 +7,4 @@
  */
 
 Route::get('/road-guide', "PointController@main");
+Route::post('/road-guide/street-view', "PointController@streetView");
