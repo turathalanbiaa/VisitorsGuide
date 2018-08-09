@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Enums\PointCategory;
 use App\Models\Point;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class PointController extends Controller
 {
-    public function main() {
+    public function index() {
         $allPoints = Point::OrderBy("t_number")
             ->get();
         $mawakepPoints = Point::where("category", PointCategory::MAWAKEP)
@@ -34,9 +33,10 @@ class PointController extends Controller
         $source = Input::get("source");
         $destination = Input::get("destination");
 
-        $direction = $destination>$source ? "positive":"negative";
+        $direction = $destination>$source ? "forwards":"backwards";
         $numberOfColumn = abs($destination - $source);
-        $distance =  $numberOfColumn * 50;
+        $distance = ($numberOfColumn * 50);
+        $distance = $distance < 1000 ? $distance . " م": $distance / 1000 . " كم";
 
         $hemamatPoints = Point::where("t_number", ">=", $source)
             ->where("t_number", "<=", $destination)

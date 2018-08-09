@@ -6,5 +6,5 @@
  * Time: 9:45 AM
  */
 
-Route::get('/road-guide', "PointController@main");
+Route::get('/road-guide', "PointController@index")->middleware("setLocaleLanguage");
 Route::post('/road-guide/street-view', "PointController@streetView");

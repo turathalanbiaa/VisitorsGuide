@@ -15,6 +15,5 @@
 @include("Fadhil.php");
 @include("Ahmed.php");
 
-Route::get('/main', function () {
-    return view('main');
-});
+Route::get("/", "MainController@index")->middleware("setLocaleLanguage");
+Route::post("/select-language", "MainController@selectLanguage");

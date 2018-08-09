@@ -1,7 +1,7 @@
 @extends("layout.secondary_layout")
 
 @section("top-title")
-    <span id="title">دليل الطريق - جميع المناطق</span>
+    <span id="title">{{trans("words.road_guide_title_all_points")}}</span>
 @endsection
 
 @section("content")
@@ -35,7 +35,7 @@
         $("#street-view").addClass("d-none");
 
         $("#show-all-points").click(function () {
-            $("#title").html("دليل الطريق - جميع المناطق");
+            $("#title").html("{{trans('words.road_guide_title_all_points')}}");
             $("#all-points").removeClass("d-none").addClass("d-block");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
@@ -44,7 +44,7 @@
         });
 
         $("#show-mawakep-points").click(function () {
-            $("#title").html("دليل الطريق - المواكب");
+            $("#title").html("{{trans('words.road_guide_title_mawakep_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-none").addClass("d-block");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
@@ -53,7 +53,7 @@
         });
 
         $("#show-hemamat-points").click(function () {
-            $("#title").html("دليل الطريق - الحمامات");
+            $("#title").html("{{trans('words.road_guide_title_hemamat_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-none").addClass("d-block");
@@ -62,7 +62,7 @@
         });
 
         $("#show-public-points").click(function () {
-            $("#title").html("دليل الطريق - المناطق العامة والمشهورة");
+            $("#title").html("{{trans('words.road_guide_title_public_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
@@ -71,7 +71,7 @@
         });
 
         $("#show-street-view").click(function () {
-            $("#title").html("دليل الطريق - حساب المسافة");
+            $("#title").html("{{trans('words.road_guide_title_street_view')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
@@ -80,14 +80,25 @@
         });
     </script>
     <script>
-        $("#error-message").removeClass("d-block").addClass("d-none");
         $("button[data-action='street-view']").click(function () {
+            var formErrorMessage = $("#form-error-message");
+            var streetViewResult = $("#street-view-result");
+            var emptyMessage = $("#empty");
+            var unacceptableMessage = $("#unacceptable");
             var source = $("input[type='number']#source").val();
             var destination = $("input[type='number']#destination").val();
 
-            if (source == "" || destination == "")
-                $("#error-message").removeClass("d-none").addClass("d-block");
-            else
+            emptyMessage.addClass("d-none");
+            unacceptableMessage.addClass("d-none");
+            streetViewResult.removeClass("d-block").addClass("d-none");
+
+            if (source === "" || destination ==="") {
+                formErrorMessage.removeClass("d-none").addClass("d-block");
+                emptyMessage.removeClass("d-none");
+            } else if (source < 0 || destination < 0) {
+                formErrorMessage.removeClass("d-none").addClass("d-block");
+                unacceptableMessage.removeClass("d-none");
+            } else {
                 $.ajax({
                     type:'post',
                     url: '/road-guide/street-view',
@@ -95,15 +106,22 @@
                     data: {source:source, destination:destination},
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     success: function (result) {
-                        $("#error-message").removeClass("d-block").addClass("d-none");
+                        $("#distance").html(result["distance"]);
+                        $("#number-of-column").html(result["numberOfColumn"]);
+                        if (result["direction"] === "forwards")
+                            $("#direction").html("{{trans("words.road_guide_street_view_direction_forwards")}}");
+                        else
+                            $("#direction").html("{{trans("words.road_guide_street_view_direction_backwards")}}");
                     },
                     error: function () {
                         alert("يرجى التحقق من الأتصال بالأنترنيت")
                     },
                     complete: function () {
-
+                        formErrorMessage.removeClass("d-block").addClass("d-none");
+                        streetViewResult.removeClass("d-none").addClass("d-block");
                     }
                 });
+            }
         });
     </script>
 @endsection

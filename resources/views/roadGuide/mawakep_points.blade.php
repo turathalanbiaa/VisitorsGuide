@@ -11,7 +11,7 @@
                         <h4 class="timeline-title">{{$point->name}}</h4>
                         <p>
                             <small class="text-muted">
-                                <span>رقم العمود المقابل</span>
+                                <span>{{trans("words.road_guide_card_corresponding_column_number")}}</span>
                                 <i class="fa fa-caret-left"></i>
                                 <span>{{$point->t_number}}</span>
                             </small>
@@ -32,7 +32,7 @@
                         <h4 class="timeline-title">{{$point->name}}</h4>
                         <p>
                             <small class="text-muted">
-                                <span>رقم العمود المقابل</span>
+                                <span>{{trans("words.road_guide_card_corresponding_column_number")}}</span>
                                 <i class="fa fa-caret-left"></i>
                                 <span>{{$point->t_number}}</span>
                             </small>
