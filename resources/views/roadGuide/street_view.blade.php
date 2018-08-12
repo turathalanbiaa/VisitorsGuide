@@ -36,6 +36,11 @@
                 <span id="distance"></span>
             </li>
             <li class="list-group-item">
+                <span>{{trans("words.road_guide_street_view_estimated_time")}}</span>
+                <span> : </span>
+                <span id="time"></span>
+            </li>
+            <li class="list-group-item">
                 <span>{{trans("words.road_guide_street_view_number_of_column")}}</span>
                 <span> : </span>
                 <span id="number-of-column"></span>
@@ -43,6 +48,11 @@
                 <span>{{trans("words.road_guide_street_view_direction")}}</span>
                 <span> : </span>
                 <span id="direction"></span>
+            </li>
+            <li class="list-group-item">
+                <span>{{trans("words.road_guide_street_view_public_points")}}</span>
+                <span> : </span>
+                <span id="list-public-points"></span>
             </li>
         </ul>
     </div>

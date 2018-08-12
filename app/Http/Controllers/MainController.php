@@ -12,7 +12,8 @@ class MainController extends Controller
     }
 
     public function selectLanguage() {
-        Cookie::queue('language', Input::get("language"), 1000000);
+        $language = Input::get("language");
+        Cookie::queue('language', $language, 1000000);
 
         return redirect("/");
     }

@@ -13,19 +13,20 @@
     <link href="{{asset("css/time-line.css")}}" rel="stylesheet" type="text/css">
     <link href="{{asset("css/style.css")}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.slim.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
 </head>
 <body>
-    <div class="container-fluid" style="padding: 0 0;">
+    <div class="container-fluid p-0">
         <nav class="navbar navbar-dark bg-danger">
             <div class="navbar-brand mr-0">
                 @yield("top-title")
             </div>
 
             <div data-toggle="modal" data-target="#select-language-model">
-                <i class="fa fa-globe" style="color: white;"></i>
+                <i class="fa fa-globe text-white"></i>
             </div>
         </nav>
     </div>
@@ -33,8 +34,8 @@
     @yield("content")
 
     <div class="container-fluid">
-        <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill p-0">
-            <a class="nav-item nav-link" href="/main"><i class="fa fa-home" style="color: white;"></i></a>
+        <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill rounded-0 p-0">
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             @yield("nav-items-bottom")
         </div>
     </div>

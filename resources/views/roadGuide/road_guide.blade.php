@@ -19,11 +19,11 @@
 @endsection
 
 @section("nav-items-bottom")
-    <a class="nav-item nav-link" id="show-all-points"><i class="fa fa-shoe-prints" style="color: white;"></i></a>
-    <a class="nav-item nav-link" id="show-mawakep-points"><i class="fa fa-hotel" style="color:white;"></i></a>
-    <a class="nav-item nav-link" id="show-hemamat-points"><i class="fa fa-bath" style="color:white;"></i></a>
-    <a class="nav-item nav-link" id="show-public-points"><i class="fa fa-map-marked-alt" style="color:white;"></i></a>
-    <a class="nav-item nav-link" id="show-street-view"><i class="fa fa-street-view" style="color:white;"></i></a>
+    <a class="nav-item nav-link rounded-0" id="show-all-points"><i class="fa fa-shoe-prints text-white"></i></a>
+    <a class="nav-item nav-link rounded-0" id="show-mawakep-points"><i class="fa fa-hotel text-white"></i></a>
+    <a class="nav-item nav-link rounded-0" id="show-hemamat-points"><i class="fa fa-bath text-white"></i></a>
+    <a class="nav-item nav-link rounded-0" id="show-public-points"><i class="fa fa-map-marked-alt text-white"></i></a>
+    <a class="nav-item nav-link rounded-0" id="show-street-view"><i class="fa fa-street-view text-white"></i></a>
 @endsection
 
 @section("script")
@@ -107,11 +107,44 @@
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     success: function (result) {
                         $("#distance").html(result["distance"]);
+                        $("#time").html(result["time"]);
                         $("#number-of-column").html(result["numberOfColumn"]);
                         if (result["direction"] === "forwards")
                             $("#direction").html("{{trans("words.road_guide_street_view_direction_forwards")}}");
                         else
                             $("#direction").html("{{trans("words.road_guide_street_view_direction_backwards")}}");
+
+                        if (jQuery.isEmptyObject(result["publicPoints"])) {
+                            $("#list-public-points").html("{{trans("words.road_guide_street_view_not_found_public_points")}}");
+                        } else {
+                            var cards = "";
+                            $.map( result["publicPoints"], function(point, index) {
+                                var card =  '<div class="card bg-transparent border-0">' +
+                                                '<div class="card-header border-0 mb-1 shadow-special" id="heading-' + index + '" role="tab">' +
+                                                    '<div class="collapsed" href="#collapse-' + index + '" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">' +
+                                                        '<p class="text-white mb-0">' +
+                                                            '<span>' + point["name"] + '</span>' +
+                                                            '<i class="fa fa-angle-down rotate-icon mt-2 float-left"></i>' +
+                                                        '</p>' +
+                                                    '</div>' +
+                                                '</div>' +
+
+                                                '<div class="collapse"  id="collapse-' + index + '" role="tabpanel" aria-labelledby="heading-' + index + '" data-parent="#accordion">' +
+                                                    '<div class="card-body mb-1 bg-light-special text-white">' +
+                                                        '<p class="text-justify">' + point["description"] + '</p>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' ;
+
+                                cards = cards + card;
+                            });
+
+                            var accordionDiv = '<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">' + cards + '</div>';
+                            var colDiv = '<div class="col-12 col-sm-8 py-5">' + accordionDiv + '</div>';
+                            var rowDiv = '<div class="row gradient-background d-flex justify-content-center mt-2">' + colDiv + '</div>';
+
+                            $("#list-public-points").html(rowDiv);
+                        }
                     },
                     error: function () {
                         alert("يرجى التحقق من الأتصال بالأنترنيت")

@@ -17,7 +17,6 @@ class SetLocaleLanguage
      */
     public function handle($request, Closure $next)
     {
-
         if (Cookie::has("language"))
             App::setLocale(Cookie::get("language"));
 
