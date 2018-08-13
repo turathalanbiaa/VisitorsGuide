@@ -138,7 +138,6 @@
 
                                 cards = cards + card;
                             });
-
                             var accordionDiv = '<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">' + cards + '</div>';
                             var colDiv = '<div class="col-12 col-sm-8 py-5">' + accordionDiv + '</div>';
                             var rowDiv = '<div class="row gradient-background d-flex justify-content-center mt-2">' + colDiv + '</div>';
@@ -147,7 +146,7 @@
                         }
                     },
                     error: function () {
-                        alert("يرجى التحقق من الأتصال بالأنترنيت")
+                        alert("يرجى التحقق من الأتصال بالأنترنيت");
                     },
                     complete: function () {
                         formErrorMessage.removeClass("d-block").addClass("d-none");
