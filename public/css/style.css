@@ -3,9 +3,20 @@ body {
     text-align: right;
 }
 
-.nav-tabs .nav-link {
-    border-top-left-radius: 0!important;
-    border-top-right-radius: 0!important;
+.gradient-background {
+    background: -webkit-linear-gradient(45deg, rgba(234, 21, 129, 0.6), rgba(10, 23, 187, 0.6) 100%);
+    background:        -webkit-gradient(linear, 45deg, from(rgba(234, 21, 129, 0.6)), to(rgba(10, 23, 187, 0.6)));
+    background:         linear-gradient(to 45deg, rgba(234, 21, 129, 0.6), rgba(10, 23, 187, 0.6) 100%);
+}
+
+.shadow-special {
+    --webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    --moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.bg-light-special {
+    background-color: rgba(158,158,158,.3);
 }
 
 /* Adeua and Zuarat */
@@ -53,3 +64,5 @@ body {
 
 
 /* End Adeua and Zuarat */
+
+

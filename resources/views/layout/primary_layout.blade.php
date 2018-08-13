@@ -16,7 +16,7 @@
     <link href="{{asset("css/style.css")}}" rel="stylesheet" type="text/css">
 
     <!-- Script -->
-    <script src="{{asset("js/jquery-3.3.1.slim.min.js")}}"></script>
+    <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
 </head>
 <body>
