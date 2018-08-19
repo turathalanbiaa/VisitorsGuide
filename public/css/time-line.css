@@ -9,10 +9,12 @@
     bottom: 0;
     position: absolute;
     content: " ";
-    width: 3px;
-    background-color: #eeeeee;
+    width: 14px;
+    background-color: transparent;
     left: 50%;
-    margin-left: -4px;
+    margin-left: -10px;
+    border-right: 2px red dashed;
+    border-left: 2px green dashed;
 }
 
 .timeline > li {

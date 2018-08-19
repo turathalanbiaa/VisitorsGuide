@@ -22,7 +22,7 @@ return [
     "road_guide_title_public_points" => "دليل الطريق - المناطق العامة والمشهورة",
     "road_guide_title_street_view" => "دليل الطريق - حساب المسافة",
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
-    "road_guide_street_view_title" => "شكرا ايها الزائر الكريم لأستخدامك خدماتنا",
+    "road_guide_street_view_title" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "road_guide_street_view_description" => "يمكنك الآن معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على الطريق بين النقطتين المطلوبتين.",
     "road_guide_street_view_empty_error_message" => "يرجى ملئ جميع الحقول.",
     "road_guide_street_view_unacceptable_error_message" => "القيمة السالبة غير مقبولة.",
@@ -34,7 +34,25 @@ return [
     "road_guide_street_view_number_of_column" => "عدد الأعمدة",
     "road_guide_street_view_direction" => "الأتجاه",
     "road_guide_street_view_direction_forwards" => "الى الأمام",
-    "road_guide_street_view_direction_backwards" => "الى الوراء",
+    "road_guide_street_view_direction_backwards" => "الى الخلف",
     "road_guide_street_view_public_points" => "المناطق العامة والمشهورة",
     "road_guide_street_view_not_found_public_points" => "لاتوجد مناطق",
+
+
+    //Visitor Feqh
+    "visitor_feqh_title_questions" => "فقه الزائر - جميع الاسئلة",
+    "visitor_feqh_title_send_question" => "فقه الزائر - ارسال سؤال",
+    "visitor_feqh_title_ads_masael" => "فقه الزائر - الاجوبة الميسرة",
+    "visitor_feqh_questions_ads_title" => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
+    "visitor_feqh_questions_ads_sub_title" => "لرؤية المزيد من تفاصيل",
+    "visitor_feqh_questions_ads_learn_more" => "اضغط هنا",
+    "visitor_feqh_questions_card_question" => "السؤال : ",
+    "visitor_feqh_questions_card_answer" => "الجواب : ",
+    "visitor_feqh_questions_pagination_prev" => "السابق",
+    "visitor_feqh_questions_pagination_next" => "التالي",
+    "visitor_feqh_ads_masael_title" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
+    "visitor_feqh_ads_masael_description" => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
+    "visitor_feqh_ads_masael_web" => "الموقع الرسمي للأجوبة الميسرة",
+    "visitor_feqh_ads_masael_available_app_on" => "يتوفر التطبيق الآن على",
+
 ];
