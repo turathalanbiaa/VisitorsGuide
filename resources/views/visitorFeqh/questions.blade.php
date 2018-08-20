@@ -1,10 +1,10 @@
 <div class="row" id="questions">
     <div class="col-12">
-        <div class="alert alert-info text-center">
+        <div class="alert alert-info text-center shadow">
             <h6>{{trans("words.visitor_feqh_questions_ads_title")}}</h6>
             <p class="py-2 m-0">
                 <span> {{trans("words.visitor_feqh_questions_ads_sub_title")}} </span>
-                <a href="" id="learn-more">{{trans("words.visitor_feqh_questions_ads_learn_more")}}</a>
+                <span class="btn-link" id="learn-more" style="cursor: pointer;">{{trans("words.visitor_feqh_questions_ads_learn_more")}}</span>
             </p>
         </div>
     </div>
