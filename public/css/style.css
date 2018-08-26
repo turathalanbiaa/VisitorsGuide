@@ -3,20 +3,67 @@ body {
     text-align: right;
 }
 
-.gradient-background {
-    background: -webkit-linear-gradient(45deg, rgba(234, 21, 129, 0.6), rgba(10, 23, 187, 0.6) 100%);
+.bg-aqua-gradient {
+    background: -webkit-linear-gradient(40deg, rgb(32, 150, 255), rgb(5, 255, 163));
+    background:    -moz-linear-gradient(40deg, rgb(32, 150, 255), rgb(5, 255, 163));
+    background:      -o-linear-gradient(40deg, rgb(32, 150, 255), rgb(5, 255, 163));
+    background:         linear-gradient(40deg, rgb(32, 150, 255), rgb(5, 255, 163));
 }
 
-.shadow-special {
-    --webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-       --moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-             box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+.bg-orange-gradient {
+    background: -webkit-linear-gradient(40deg, rgb(255, 216, 111), rgb(252, 98, 98));
+    background:    -moz-linear-gradient(40deg, rgb(255, 216, 111), rgb(252, 98, 98));
+    background:      -o-linear-gradient(40deg, rgb(255, 216, 111), rgb(252, 98, 98));
+    background:         linear-gradient(40deg, rgb(255, 216, 111), rgb(252, 98, 98));
 }
 
-.shadow-card-heading {
-    --webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-       --moz-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-             box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+.bg-purple-gradient {
+    background: -webkit-linear-gradient(40deg, rgb(255, 110, 196), rgb(120, 115, 245));
+    background:    -moz-linear-gradient(40deg, rgb(255, 110, 196), rgb(120, 115, 245));
+    background:      -o-linear-gradient(40deg, rgb(255, 110, 196), rgb(120, 115, 245));
+    background:         linear-gradient(40deg, rgb(255, 110, 196), rgb(120, 115, 245));
+}
+
+.bg-blue-gradient {
+    background: -webkit-linear-gradient(40deg, rgb(69, 202, 252), rgb(48, 63, 159));
+    background:    -moz-linear-gradient(40deg, rgb(69, 202, 252), rgb(48, 63, 159));
+    background:      -o-linear-gradient(40deg, rgb(69, 202, 252), rgb(48, 63, 159));
+    background:         linear-gradient(40deg, rgb(69, 202, 252), rgb(48, 63, 159));
+}
+
+.bg-teal-gradient {
+    background: -webkit-linear-gradient(40deg, rgba(111, 66, 193, 0.80), rgba(40, 215, 219, 0.89));
+    background:    -moz-linear-gradient(40deg, rgba(111, 66, 193, 0.80), rgba(40, 215, 219, 0.89));
+    background:      -o-linear-gradient(40deg, rgba(111, 66, 193, 0.80), rgba(40, 215, 219, 0.89));
+    background:         linear-gradient(40deg, rgba(111, 66, 193, 0.80), rgba(40, 215, 219, 0.89));
+}
+
+.bg-olive-gradient {
+    background: -webkit-linear-gradient(40deg, rgba(234, 170, 25, 0.83), rgba(99, 187, 10, 0.65));
+    background:    -moz-linear-gradient(40deg, rgba(234, 170, 25, 0.83), rgba(99, 187, 10, 0.65));
+    background:      -o-linear-gradient(40deg, rgba(234, 170, 25, 0.83), rgba(99, 187, 10, 0.65));
+    background:         linear-gradient(40deg, rgba(234, 170, 25, 0.83), rgba(99, 187, 10, 0.65));
+}
+
+.btn.bg-aqua-gradient,
+.btn.bg-orange-gradient,
+.btn.bg-purple-gradient,
+.btn.bg-blue-gradient,
+.btn.bg-teal-gradient,
+.btn.bg-olive-gradient {
+    border: 0;
+    color: #ffffff;
+}
+
+.shadow-special,
+.btn-shadow {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.btn-shadow:active,
+.btn-shadow:hover,
+.btn-shadow:focus {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
 }
 
 .shadow-card-body,
@@ -24,6 +71,16 @@ body {
     --webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
        --moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
              box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.shadow-card-heading {
+    --webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    --moz-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+.gradient-background {
+    background: -webkit-linear-gradient(45deg, rgba(234, 21, 129, 0.6), rgba(10, 23, 187, 0.6) 100%);
 }
 
 .bg-light-special {

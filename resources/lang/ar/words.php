@@ -7,6 +7,28 @@
  */
 
 return [
+    //Main Page
+    "main_road_guide_title"=>"دليل الطريق",
+    "main_road_guide_detail"=>"يمكنك الآن معرفة المواكب والحمامات والنقاط العامة والمشهورة على طول الطريق، كما يمكنك معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على طول الطريق بين النقطتين المطلوبتين.",
+    "main_visitor_feqh_title"=>"فقه الزائر",
+    "main_visitor_feqh_detail"=>"هو جزء من تطبيق الأجوبة الميسرة يعرض لك بعض الأسلة والأجوبة المتعلقه بما يخص الزائر على طول الطريق، وكما يُمَكنُك من ارسال سؤال وتحميل التطبيق على (Android, IOS) او زيارة الموقع الرسمي للتطبيق.",
+    "main_adeua_and_zuarat_title"=>"الأدعية والزيارات",
+    "main_adeua_and_zuarat_detail"=>"",
+    "main_visitor_reception_title"=>"استضافة الزائرين",
+    "main_visitor_reception_detail"=>"",
+    "main_majales_guide_title"=>"دليل المجالس الحسينية",
+    "main_majales_guide_detail"=>"",
+    "main_centers_lost_title"=>"مراكز المفقودات والتائهين",
+    "main_centers_lost_detail"=>"",
+    "main_btn_enter"=>"دخول",
+
+
+
+
+
+
+
+    //Select Language
     'select_language' => 'اختر اللغة',
     'arabic' => 'العربية',
     'persian' => 'الفارسية',
