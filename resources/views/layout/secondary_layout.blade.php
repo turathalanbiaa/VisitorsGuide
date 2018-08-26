@@ -17,6 +17,8 @@
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
+
+    @include("layout.body_direction")
 </head>
 <body>
     <div class="container-fluid p-0">
@@ -40,47 +42,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="select-language-model" tabindex="-1" role="dialog" aria-labelledby="select-language-model" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">{{trans("words.select_language")}}</h5>
-                </div>
-                <div class="modal-body">
-                    <form class="form-row" method="post" action="/select-language">
-                        @csrf
-                        <div class="col-12 py-2">
-                            <div class="form-check pl-0" style="padding-right: 20px;">
-                                <input class="form-check-input ml-0" style="margin-right: -20px;" type="radio" name="language" id="ar" value="ar" checked>
-                                <label class="form-check-label" for="ar">{{trans("words.arabic")}}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-12 py-2">
-                            <div class="form-check pl-0" style="padding-right: 20px;">
-                                <input class="form-check-input ml-0" style="margin-right: -20px;" type="radio" name="language" id="fa" value="fa">
-                                <label class="form-check-label" for="fa">{{trans("words.persian")}}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-12 py-2">
-                            <div class="form-check pl-0" style="padding-right: 20px;">
-                                <input class="form-check-input ml-0" style="margin-right: -20px;" type="radio" name="language" id="en" value="en">
-                                <label class="form-check-label" for="en">{{trans("words.english")}}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-12 py-2">
-                            <hr>
-                            <button type="submit" class="btn btn-block btn-success">{{trans("words.save")}}</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    @yield("extra-content")
+    {{--Select Language Model--}}
+    @include("layout.select_language")
 
     @yield("script")
 </body>

@@ -14,7 +14,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-aqua-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                <i class="fa fa-angle-double-left"></i>
+                                @include("layout.double_angle_icon")
                             </a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-orange-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                <i class="fa fa-angle-double-left"></i>
+                                @include("layout.double_angle_icon")
                             </a>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-purple-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                <i class="fa fa-angle-double-left"></i>
+                                @include("layout.double_angle_icon")
                             </a>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-blue-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                <i class="fa fa-angle-double-left"></i>
+                                @include("layout.double_angle_icon")
                             </a>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-teal-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                <i class="fa fa-angle-double-left"></i>
+                                @include("layout.double_angle_icon")
                             </a>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-olive-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                <i class="fa fa-angle-double-left"></i>
+                                @include("layout.double_angle_icon")
                             </a>
                         </div>
                     </div>
