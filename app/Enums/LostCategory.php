@@ -11,6 +11,13 @@ namespace App\Enums;
 
 class LostCategory
 {
-    const missing = 1;
-    const stray = 2;
+    public static function getCategory($category) {
+        switch ($category) {
+            case "1": return "انسان"; break;
+            case "2": return "مبلغ من المال"; break;
+            case "3": return "قطعه ذهبيه"; break;
+            case "4": return "حقيبة"; break;
+        }
+        return "";
+    }
 }

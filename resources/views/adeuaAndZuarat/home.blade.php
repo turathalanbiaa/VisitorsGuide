@@ -112,10 +112,10 @@
         </div>
     </div>
     <script>
-            var getHeight = document.getElementById('gallery-images').clientHeight;
+            var getHeight = document.getElementById('gallery-img').clientHeight;
             console.log(getHeight);
             getHeight = getHeight + 'px';
-            $('.gallery-images').css('height',getHeight)
+            $('.gallery-img').css('height',getHeight)
 
     </script>
 @endsection
