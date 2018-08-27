@@ -9,3 +9,5 @@
 Route::get('/road-guide', "PointController@index")->middleware("setLocaleLanguage");
 Route::post('/road-guide/street-view', "PointController@streetView")->middleware("setLocaleLanguage");
 
+
+Route::get('/visitor-feqh', "VisitorFeqhController@index")->middleware("setLocaleLanguage");

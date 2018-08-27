@@ -6,31 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
 
-    <title>دليل الزائرين</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <title>{{trans("words.app_name")}}</title>
 
     <!-- StyleSheet -->
     <link href="{{asset("css/app.css")}}" rel="stylesheet" type="text/css">
     <link href="{{asset("css/style.css")}}" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
+
+    @include("layout.body_direction")
 </head>
 <body>
     <div class="container-fluid">
-        <nav class="navbar fixed-top justify-content-center navbar-dark bg-dark">
-            <div class="navbar-brand">دليل الزائرين</div>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <div class="navbar-brand mr-0">
+                {{trans("words.app_name")}}
+            </div>
+
+            <div data-toggle="modal" data-target="#select-language-model">
+                <i class="fa fa-globe text-white"></i>
+            </div>
         </nav>
     </div>
 
-    <div class="container" style="margin-top: 75px;">
-        @yield("content")
-    </div>
+    @yield("content")
 
-    @yield("extra-content")
+    {{--Select Language Model--}}
+    @include("layout.select_language")
+
     @yield("script")
 </body>
 </html>

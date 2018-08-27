@@ -19,7 +19,7 @@
 @endsection
 
 @section("nav-items-bottom")
-    <a class="nav-item nav-link rounded-0" id="show-all-points"><i class="fa fa-shoe-prints text-white"></i></a>
+    <a class="nav-item nav-link rounded-0" id="show-all-points"><i class="fa fa-shoe-prints fa-rotate-270 text-white"></i></a>
     <a class="nav-item nav-link rounded-0" id="show-mawakep-points"><i class="fa fa-hotel text-white"></i></a>
     <a class="nav-item nav-link rounded-0" id="show-hemamat-points"><i class="fa fa-bath text-white"></i></a>
     <a class="nav-item nav-link rounded-0" id="show-public-points"><i class="fa fa-map-marked-alt text-white"></i></a>

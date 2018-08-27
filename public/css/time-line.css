@@ -9,10 +9,15 @@
     bottom: 0;
     position: absolute;
     content: " ";
-    width: 3px;
-    background-color: #eeeeee;
+    width: 8px;
+    background-color: transparent;
     left: 50%;
     margin-left: -4px;
+    border-right: 2px red dashed;
+    border-left: 2px green dashed;
+    outline: 5px solid gray;
+    outline-offset: 8px;
+    z-index: -1;
 }
 
 .timeline > li {
@@ -48,7 +53,7 @@
     padding: 20px;
     position: relative;
     -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
 }
 
 .timeline > li > .timeline-panel:before {
@@ -77,21 +82,19 @@
 
 .timeline > li > .timeline-badge {
     color: #fff;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     font-size: 1.4em;
     text-align: center;
     position: absolute;
     top: 16px;
     left: 50%;
     margin-left: -25px;
-    background-color: #999999;
     z-index: 100;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
 }
 
 .timeline > li.timeline-inverted > .timeline-panel {
@@ -148,24 +151,18 @@
 
 @media (max-width: 767px) {
     ul.timeline:before {
-        /*left: 40px;*/
         left: 20px;
     }
 
     ul.timeline > li > .timeline-panel {
-        /*width: calc(100% - 90px);*/
-        /*width: -moz-calc(100% - 90px);*/
-        /*width: -webkit-calc(100% - 90px);*/
         width: calc(100% - 65px);
         width: -moz-calc(100% - 65px);
         width: -webkit-calc(100% - 65px);
     }
 
     ul.timeline > li > .timeline-badge {
-        /*left: 20px;*/
         left: -5px;
         margin-left: 0;
-        top: 16px;
     }
 
     ul.timeline > li > .timeline-panel {
