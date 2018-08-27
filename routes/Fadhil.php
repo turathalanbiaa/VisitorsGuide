@@ -1,7 +1,2 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Emad
- * Date: 7/31/2018
- * Time: 9:46 AM
- */
+Route::get("/lost","LostController@index")->middleware("setLocaleLanguage");

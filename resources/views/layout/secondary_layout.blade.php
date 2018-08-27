@@ -43,7 +43,7 @@
 
     <div class="container-fluid">
         <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill rounded-0 p-0">
-            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"> </i></a>
             @yield("nav-items-bottom")
         </div>
     </div>
