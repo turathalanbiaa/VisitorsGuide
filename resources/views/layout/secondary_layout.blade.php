@@ -22,13 +22,19 @@
 </head>
 <body>
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-dark bg-danger">
-            <div class="navbar-brand mr-0">
-                @yield("top-title")
-            </div>
+        <nav class="navbar navbar-dark @yield("navbar-color")">
+            <a href="#" class="navbar-brand">
+                @yield("navbar-brand")
+            </a>
 
-            <div data-toggle="modal" data-target="#select-language-model">
-                <i class="fa fa-globe text-white"></i>
+            <div class="d-flex flex-row">
+                <a class="btn btn-sm btn-shadow bg-primary mx-2" data-toggle="modal" data-target="#select-language-model">
+                    <i class="fa fa-globe text-white"></i>
+                </a>
+
+                <a class="btn btn-sm btn-shadow bg-success mx-2">
+                    <i class="fa fa-filter text-white"></i>
+                </a>
             </div>
         </nav>
     </div>
