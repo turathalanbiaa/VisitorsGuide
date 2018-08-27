@@ -1,6 +1,10 @@
 @extends("layout.secondary_layout")
 
-@section("top-title")
+@section("navbar-color")
+    {{"bg-teal-gradient"}}
+@endsection
+
+@section("navbar-brand")
     <span id="title">{{trans("words.road_guide_title_all_points")}}</span>
 @endsection
 

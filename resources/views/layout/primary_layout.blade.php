@@ -22,9 +22,9 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar fixed-top navbar-dark bg-dark">
-            <div class="navbar-brand mr-0">
+            <a href="#" class="navbar-brand mr-0">
                 {{trans("words.app_name")}}
-            </div>
+            </a>
 
             <div data-toggle="modal" data-target="#select-language-model">
                 <i class="fa fa-globe text-white"></i>
