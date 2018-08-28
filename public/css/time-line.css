@@ -1,6 +1,6 @@
 .timeline {
     list-style: none;
-    padding: 20px 0 20px 0;
+    padding: 0;
     position: relative;
 }
 
@@ -13,8 +13,8 @@
     background-color: transparent;
     left: 50%;
     margin-left: -4px;
-    border-right: 2px red dashed;
-    border-left: 2px green dashed;
+    border-right: 2px #dc3545 dashed;
+    border-left: 2px #28a745 dashed;
     outline: 5px solid gray;
     outline-offset: 8px;
     z-index: -1;
@@ -35,51 +35,6 @@
     clear: both;
 }
 
-.timeline > li:before,
-.timeline > li:after {
-    content: " ";
-    display: table;
-}
-
-.timeline > li:after {
-    clear: both;
-}
-
-.timeline > li > .timeline-panel {
-    width: 44%;
-    float: left;
-    border: 1px solid #d4d4d4;
-    border-radius: 2px;
-    padding: 20px;
-    position: relative;
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-}
-
-.timeline > li > .timeline-panel:before {
-    position: absolute;
-    top: 26px;
-    right: -15px;
-    display: inline-block;
-    border-top: 15px solid transparent;
-    border-left: 15px solid #ccc;
-    border-right: 0 solid #ccc;
-    border-bottom: 15px solid transparent;
-    content: " ";
-}
-
-.timeline > li > .timeline-panel:after {
-    position: absolute;
-    top: 27px;
-    right: -14px;
-    display: inline-block;
-    border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
-    border-bottom: 14px solid transparent;
-    content: " ";
-}
-
 .timeline > li > .timeline-badge {
     color: #fff;
     width: 50px;
@@ -97,22 +52,50 @@
             border-radius: 50%;
 }
 
+.timeline > li > .timeline-panel {
+    width: 44%;
+    float: left;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
 .timeline > li.timeline-inverted > .timeline-panel {
     float: right;
 }
 
-.timeline > li.timeline-inverted > .timeline-panel:before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
+.timeline > li > .timeline-panel:before,
+.timeline > li > .timeline-panel:after {
+    position: absolute;
+    display: inline-block;
+    content: " ";
+    border-style: solid;
 }
 
+.timeline > li > .timeline-panel:before {
+    top: 26px;
+    right: -15px;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent #cccccc transparent #cccccc;
+}
+.timeline > li > .timeline-panel:after {
+    top: 27px;
+    right: -14px;
+    border-width: 14px 0 14px 14px;
+    border-color: transparent #ffffff transparent #ffffff;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+    left: -15px;
+    right: auto;
+    border-width: 15px 15px 15px 0;
+}
 .timeline > li.timeline-inverted > .timeline-panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
     left: -14px;
     right: auto;
+    border-width: 14px 14px 14px 0;
 }
 
 .timeline-badge.primary {
@@ -133,20 +116,6 @@
 
 .timeline-badge.info {
     background-color: #5bc0de !important;
-}
-
-.timeline-title {
-    margin-top: 0;
-    color: inherit;
-}
-
-.timeline-body > p,
-.timeline-body > ul {
-    margin-bottom: 0;
-}
-
-.timeline-body > p + p {
-    margin-top: 5px;
 }
 
 @media (max-width: 767px) {

@@ -1,7 +1,7 @@
 @extends("layout.secondary_layout")
 
 @section("navbar-color")
-    {{"bg-teal-gradient"}}
+    {{"bg-aqua-gradient"}}
 @endsection
 
 @section("navbar-brand")
@@ -9,25 +9,46 @@
 @endsection
 
 @section("content")
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                @include("roadGuide.all_points")
-                @include("roadGuide.mawakep_points")
-                @include("roadGuide.hemamat_points")
-                @include("roadGuide.public_points")
-                @include("roadGuide.street_view")
-            </div>
-        </div>
+    <div class="container pt-4 pb-5">
+        @include("roadGuide.all_points")
+        @include("roadGuide.mawakep_points")
+        @include("roadGuide.hemamat_points")
+        @include("roadGuide.public_points")
+        @include("roadGuide.street_view")
     </div>
 @endsection
 
-@section("nav-items-bottom")
-    <a class="nav-item nav-link rounded-0" id="show-all-points"><i class="fa fa-shoe-prints fa-rotate-270 text-white"></i></a>
-    <a class="nav-item nav-link rounded-0" id="show-mawakep-points"><i class="fa fa-hotel text-white"></i></a>
-    <a class="nav-item nav-link rounded-0" id="show-hemamat-points"><i class="fa fa-bath text-white"></i></a>
-    <a class="nav-item nav-link rounded-0" id="show-public-points"><i class="fa fa-map-marked-alt text-white"></i></a>
-    <a class="nav-item nav-link rounded-0" id="show-street-view"><i class="fa fa-street-view text-white"></i></a>
+@section("menu-modal-content")
+    <div class="modal-content border-0 rounded-0 shadow-special">
+        <h4 class="modal-header bg-success text-white rounded-0 m-0">
+            <span>{{trans("words.menu_road_guid")}}</span>
+        </h4>
+
+        <div class="modal-body">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" id="show-all-points">
+                    <i class="fa fa-shoe-prints fa-rotate-270"></i>
+                    <span>{{trans("words.road_guide_menu_show_all_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-mawakep-points">
+                    <i class="fa fa-hotel"></i>
+                    <span>{{trans("words.road_guide_menu_show_mawakep_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-hemamat-points">
+                    <i class="fa fa-bath"></i>
+                    <span>{{trans("words.road_guide_menu_show_hemamat_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-public-points">
+                    <i class="fa fa-map-marked-alt"></i>
+                    <span>{{trans("words.road_guide_menu_show_public_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-street-view">
+                    <i class="fa fa-street-view"></i>
+                    <span>{{trans("words.road_guide_menu_street_view")}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section("script")
@@ -45,6 +66,9 @@
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#show-mawakep-points").click(function () {
@@ -54,6 +78,9 @@
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#show-hemamat-points").click(function () {
@@ -63,6 +90,9 @@
             $("#hemamat-points").removeClass("d-none").addClass("d-block");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#show-public-points").click(function () {
@@ -72,6 +102,9 @@
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-none").addClass("d-block");
             $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#show-street-view").click(function () {
@@ -81,6 +114,9 @@
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-none").addClass("d-block");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
     </script>
     <script>
@@ -143,10 +179,10 @@
                                 cards = cards + card;
                             });
                             var accordionDiv = '<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">' + cards + '</div>';
-                            var colDiv = '<div class="col-12 col-sm-8 py-5">' + accordionDiv + '</div>';
-                            var rowDiv = '<div class="row gradient-background d-flex justify-content-center mt-2">' + colDiv + '</div>';
+                            var colDiv = '<div class="col-12 col-sm-8 py-3">' + accordionDiv + '</div>';
+                            var div = '<div class="d-flex justify-content-center gradient-background  mt-2">' + colDiv + '</div>';
 
-                            $("#list-public-points").html(rowDiv);
+                            $("#list-public-points").html(div);
                         }
                     },
                     error: function () {

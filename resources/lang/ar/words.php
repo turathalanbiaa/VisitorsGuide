@@ -11,12 +11,24 @@ return [
     "app_name" => "دليل الزائرين",
 
 
+
     //Select Language
     "select_language" => "اختر اللغة",
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
     "english"         => "الانكليزية",
     "btn_save"        => "حفظ",
+
+
+
+    //Menu
+    "menu_road_guid"         => "دليل الطريق",
+    "menu_visitor_feqh"      => "فقه الزائر",
+    "menu_adeua_and_zuarat"  => "الأدعية والزيارات",
+    "menu_visitor_reception" => "استضافة الزائرين",
+    "menu_majales_guide"     => "دليل المجالس الحسينية",
+    "menu_centers_lost"      => "مراكز المفقودات والتائهين",
+
 
 
     //Main Page
@@ -36,15 +48,13 @@ return [
 
 
 
-
-
-
-
-
-
-
-
     //Road Guide
+    "road_guide_menu_show_all_points"     => "عرض جميع المناطق",
+    "road_guide_menu_show_mawakep_points" => "عرض المواكب فقط",
+    "road_guide_menu_show_hemamat_points" => "عرض الحمامات فقط",
+    "road_guide_menu_show_public_points"  => "عرض المناطق العامة والمشهورة",
+    "road_guide_menu_street_view"         => "حساب المسافة بين نقطتين",
+
     "road_guide_title_all_points"                       => "دليل الطريق - جميع المناطق",
     "road_guide_title_mawakep_points"                   => "دليل الطريق - المواكب",
     "road_guide_title_hemamat_points"                   => "دليل الطريق - الحمامات",
@@ -71,9 +81,11 @@ return [
 
 
 
-
-
     //Visitor Feqh
+    "visitor_feqh_menu_show_all_questions"     => "عرض جميع الاسئلة",
+    "visitor_feqh_menu_send_question" => "ارسال سؤال الى موقع الاجوبة الميسرة",
+    "visitor_feqh_menu_download_app_masael" => "تحميل تطبيق الاجوبة الميسرة",
+
     "visitor_feqh_title_questions"               => "فقه الزائر - جميع الاسئلة",
     "visitor_feqh_title_send_question"           => "فقه الزائر - ارسال سؤال",
     "visitor_feqh_title_ads_masael"              => "فقه الزائر - الاجوبة الميسرة",

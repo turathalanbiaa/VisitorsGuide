@@ -10,14 +10,12 @@ return [
     //App
     "app_name" => "Visitor Guide",
 
-
     //Select Language
     "select_language" => "Select Language",
     "arabic"          => "Arabic",
     "persian"         => "Persian",
     "english"         => "English",
     "btn_save"        => "Save",
-
 
     //Main Page
     "main_road_guide_title"         => "Road Guide",

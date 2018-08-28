@@ -20,23 +20,26 @@
     @include("layout.body_direction")
 </head>
 <body>
+    {{--Navbar Fixed Top--}}
     <div class="container-fluid">
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <a href="#" class="navbar-brand mr-0">
                 {{trans("words.app_name")}}
             </a>
 
-            <div data-toggle="modal" data-target="#select-language-model">
-                <i class="fa fa-globe text-white"></i>
-            </div>
+            <a class="btn btn-sm shadow-lg bg-primary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                <i class="fa fa-globe text-white align-middle"></i>
+            </a>
         </nav>
     </div>
 
+    {{--Content--}}
     @yield("content")
 
     {{--Select Language Model--}}
     @include("layout.select_language")
 
+    {{--Script--}}
     @yield("script")
 </body>
 </html>

@@ -1,6 +1,6 @@
 <div class="row" id="send-question">
     <div class="col-12">
-        <div class="jumbotron bg-white text-center shadow">
+        <div class="jumbotron bg-white text-center shadow mb-3">
             <h4 class="mb-4">{{trans("words.visitor_feqh_send_question_title")}}</h4>
             <p>{{trans("words.visitor_feqh_send_question_description_one")}}</p>
 

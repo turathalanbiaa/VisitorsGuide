@@ -1,6 +1,10 @@
 @extends("layout.secondary_layout")
 
-@section("top-title")
+@section("navbar-color")
+    {{"bg-orange-gradient"}}
+@endsection
+
+@section("navbar-brand")
     <span id="title">{{trans("words.visitor_feqh_title_questions")}}</span>
 @endsection
 
@@ -12,10 +16,29 @@
     </div>
 @endsection
 
-@section("nav-items-bottom")
-    <a class="nav-item nav-link rounded-0" id="show-questions"><i class="fa fa-credit-card text-white"></i></a>
-    <a class="nav-item nav-link rounded-0" id="show-send-question"><i class="fa fa-paper-plane text-white"></i></a>
-    <a class="nav-item nav-link rounded-0" id="show-ads-maseal"><i class="fa fa-download text-white"></i></a>
+@section("menu-modal-content")
+    <div class="modal-content border-0 rounded-0 shadow-special">
+        <h4 class="modal-header bg-success text-white rounded-0 m-0">
+            <span>{{trans("words.menu_visitor_feqh")}}</span>
+        </h4>
+
+        <div class="modal-body">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" id="show-questions">
+                    <i class="fa fa-credit-card"></i>
+                    <span>{{trans("words.visitor_feqh_menu_show_all_questions")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-send-question">
+                    <i class="fa fa-paper-plane"></i>
+                    <span>{{trans("words.visitor_feqh_menu_send_question")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-ads-maseal">
+                    <i class="fa fa-download"></i>
+                    <span>{{trans("words.visitor_feqh_menu_download_app_masael")}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section("script")
@@ -29,6 +52,9 @@
             $("#questions").removeClass("d-none").addClass("d-block");
             $("#send-question").removeClass("d-block").addClass("d-none");
             $("#ads-maseal").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#show-send-question").click(function () {
@@ -36,6 +62,9 @@
             $("#questions").removeClass("d-block").addClass("d-none");
             $("#send-question").removeClass("d-none").addClass("d-block");
             $("#ads-maseal").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#show-ads-maseal").click(function () {
@@ -43,6 +72,9 @@
             $("#questions").removeClass("d-block").addClass("d-none");
             $("#send-question").removeClass("d-block").addClass("d-none");
             $("#ads-maseal").removeClass("d-none").addClass("d-block");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
 
         $("#learn-more").click(function () {
