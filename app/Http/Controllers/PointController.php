@@ -21,12 +21,16 @@ class PointController extends Controller
         $publicPoints = Point::where("category", PointCategory::PUBLIC)
             ->orderBy("t_number")
             ->get();
+        $centerPoints = Point::where("category", PointCategory::CENTER)
+            ->orderBy("t_number")
+            ->get();
 
         return view('roadGuide.road_guide')->with([
             "allPoints" => $allPoints,
             "mawakepPoints" => $mawakepPoints,
             "hemamatPoints" => $hemamatPoints,
-            "publicPoints" => $publicPoints
+            "publicPoints" => $publicPoints,
+            "centerPoints" => $centerPoints
         ]);
     }
 

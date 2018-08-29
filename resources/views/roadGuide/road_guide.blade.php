@@ -14,6 +14,7 @@
         @include("roadGuide.mawakep_points")
         @include("roadGuide.hemamat_points")
         @include("roadGuide.public_points")
+        @include("roadGuide.centers_points")
         @include("roadGuide.street_view")
     </div>
 @endsection
@@ -31,16 +32,20 @@
                     <span>{{trans("words.road_guide_menu_show_all_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-mawakep-points">
-                    <i class="fa fa-hotel"></i>
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::MAWAKEP)}}"></i>
                     <span>{{trans("words.road_guide_menu_show_mawakep_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-hemamat-points">
-                    <i class="fa fa-bath"></i>
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::HEMAMAT)}}"></i>
                     <span>{{trans("words.road_guide_menu_show_hemamat_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-public-points">
-                    <i class="fa fa-map-marked-alt"></i>
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::PUBLIC)}}"></i>
                     <span>{{trans("words.road_guide_menu_show_public_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-centers-points">
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::CENTER)}}"></i>
+                    <span>{{trans("words.road_guide_menu_show_centers_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-street-view">
                     <i class="fa fa-street-view"></i>
@@ -57,6 +62,7 @@
         $("#mawakep-points").addClass("d-none");
         $("#hemamat-points").addClass("d-none");
         $("#public-points").addClass("d-none");
+        $("#centers-points").addClass("d-none");
         $("#street-view").addClass("d-none");
 
         $("#show-all-points").click(function () {
@@ -65,6 +71,7 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -77,6 +84,7 @@
             $("#mawakep-points").removeClass("d-none").addClass("d-block");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -89,6 +97,7 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-none").addClass("d-block");
             $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -101,6 +110,20 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-none").addClass("d-block");
+            $("#centers-points").removeClass("d-block").addClass("d-none");
+            $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
+        });
+
+        $("#show-centers-points").click(function () {
+            $("#title").html("{{trans('words.road_guide_title_centers_points')}}");
+            $("#all-points").removeClass("d-block").addClass("d-none");
+            $("#mawakep-points").removeClass("d-block").addClass("d-none");
+            $("#hemamat-points").removeClass("d-block").addClass("d-none");
+            $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#centers-points").removeClass("d-none").addClass("d-block");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -113,6 +136,7 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-none").addClass("d-block");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");

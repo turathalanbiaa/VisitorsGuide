@@ -4,7 +4,7 @@
             @php $i=1; @endphp
             @foreach($mawakepPoints as $point)
                 <li @if($i%2==1) class="timeline-inverted" @endif>
-                    <div class="timeline-badge {{\App\Enums\PointCategory::getCategoryColor($point->category)}}">
+                    <div class="timeline-badge shadow {{\App\Enums\PointCategory::getCategoryColor($point->category)}}">
                         <i class="fa {{\App\Enums\PointCategory::getCategoryIcon($point->category)}}"></i>
                     </div>
                     <div class="timeline-panel">
