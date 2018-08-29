@@ -10,7 +10,7 @@
             @break
     @endswitch
 </style>
-<div class="modal fade" id="select-language-model" tabindex="-1" role="dialog" aria-labelledby="select-language-model" aria-hidden="true">
+<div class="modal fade" id="select-language-modal" tabindex="-1" role="dialog" aria-labelledby="select-language-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -42,7 +42,7 @@
 
                     <div class="col-12 py-2">
                         <hr>
-                        <button type="submit" class="btn btn-block btn-success">{{trans("words.btn_save")}}</button>
+                        <button type="submit" class="btn btn-block btn-primary">{{trans("words.btn_save")}}</button>
                     </div>
                 </form>
             </div>

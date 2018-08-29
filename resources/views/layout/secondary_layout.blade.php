@@ -21,36 +21,47 @@
     @include("layout.body_direction")
 </head>
 <body>
+    {{--Navbar Top--}}
     <div class="container-fluid p-0">
         <nav class="navbar navbar-dark @yield("navbar-color")">
-            <a href="#" class="navbar-brand">
+            <a href="#" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
             </a>
 
-            <div class="d-flex flex-row">
-                <a class="btn btn-sm btn-shadow bg-primary mx-2" data-toggle="modal" data-target="#select-language-model">
-                    <i class="fa fa-globe text-white"></i>
+            <div class="d-flex flex-row justify-content-end w-25">
+                <a class="btn btn-sm btn-shadow bg-success mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+                    <i class="fa fa-bars text-white align-middle"></i>
                 </a>
 
-                <a class="btn btn-sm btn-shadow bg-success mx-2">
-                    <i class="fa fa-filter text-white"></i>
+                <a class="btn btn-sm btn-shadow bg-primary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                    <i class="fa fa-globe text-white align-middle"></i>
                 </a>
             </div>
         </nav>
     </div>
 
+    {{--Content--}}
     @yield("content")
 
+    {{--Navbar Fixed Bottom--}}
     <div class="container-fluid">
         <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill rounded-0 p-0">
-            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"> </i></a>
-            @yield("nav-items-bottom")
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
         </div>
     </div>
 
-    {{--Select Language Model--}}
+    {{--Select Language Modal--}}
     @include("layout.select_language")
 
+    {{--Menu Modal--}}
+    @include("layout.menu")
+
+    {{--Script--}}
     @yield("script")
 </body>
 </html>

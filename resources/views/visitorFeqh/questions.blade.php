@@ -1,6 +1,6 @@
 <div class="row" id="questions">
     <div class="col-12">
-        <div class="alert alert-info text-center shadow">
+        <div class="alert alert-warning text-center shadow">
             <h6>{{trans("words.visitor_feqh_questions_ads_title")}}</h6>
             <p class="py-2 m-0">
                 <span> {{trans("words.visitor_feqh_questions_ads_sub_title")}} </span>
@@ -14,8 +14,8 @@
         <div class="col-12">
             @if($question->date !== $date)
                 <div class="w-100 d-flex justify-content-center" style="margin-bottom: -35px">
-                    <div class="w-auto bg-success shadow">
-                        <p class="px-3 py-2 text-white m-0">
+                    <div class="w-auto shadow" style="background-color: #fd7e14!important;">
+                        <p class="px-3 py-2 font-weight-bold text-white m-0">
                             <i class="fa fa-calendar-alt"></i>
                             <span>{{$question->date}}</span>
                         </p>
@@ -24,15 +24,15 @@
                 </div>
             @endif
             <div class="jumbotron text-white shadow my-3 bg-secondary">
-                <p class="m-0 pb-3 font-weight-normal text-justify">
+                <h6 class="m-0 text-justify font-height-normal pb-3">
                     <strong>{{trans("words.visitor_feqh_questions_card_question")}}</strong>
                     <span>{{$question->title}}</span>
-                </p>
+                </h6>
 
-                <p class="m-0 font-weight-normal text-justify">
+                <h6 class="m-0 text-justify font-height-normal">
                     <strong>{{trans("words.visitor_feqh_questions_card_answer")}}</strong>
                     <span>{{$question->answer}}</span>
-                </p>
+                </h6>
             </div>
         </div>
     @endforeach
