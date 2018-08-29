@@ -14,4 +14,9 @@ class LostController extends Controller
         }
         return view('lostGuide.index',compact('losts'));
     }
+
+    public function findLost(){
+
+        return view('lostGuide.find_lost');
+    }
 }
