@@ -58,6 +58,23 @@ class PointController extends Controller
         ];
     }
 
+    public function shortCalculate() {
+        $source = Input::get("source");
+        $destination = Input::get("destination");
+
+        $direction = $destination>$source ? "forwards":"backwards";
+        $numberOfColumn = abs($destination - $source);
+
+        $distance = self::getDistance($numberOfColumn);
+        $time = self::getTime($numberOfColumn);
+
+        return [
+            "distance" => $distance,
+            "direction" => $direction,
+            "time" => $time
+        ];
+    }
+
     public static function getDistance($numberOfColumn)
     {
         $language = App::getLocale();

@@ -56,6 +56,33 @@
     </div>
 @endsection
 
+@section("extra-content")
+    {{--Calculate Distance and Time Modal--}}
+    <div class="modal fade" id="calculate-distance-modal" tabindex="-1" role="dialog" aria-labelledby="calculate-distance-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-special" role="document">
+            <div class="modal-content bg-aqua-gradient shadow-special">
+                <div class="modal-body">
+                    <div class="text-center text-white border border-light p-5">
+                        <p class="h4 mb-4">{{trans("words.road_guide_calculate_distance_title")}}</p>
+                        <p class="h6 mb-4">{{trans("words.road_guide_calculate_distance_description")}}</p>
+                        <div class="alert w-100 p-2 mb-2 alert-danger d-none" role="alert" id="alert-error-message">
+                            <ul class="p-0 m-0" style="list-style: none;">
+                                <li id="item-empty">{{trans("words.road_guide_calculate_distance_empty_error_message")}}</li>
+                                <li id="item-unacceptable">{{trans("words.road_guide_calculate_distance_unacceptable_error_message")}}</li>
+                            </ul>
+                        </div>
+                        <input type="number" name="source" class="form-control mb-4" placeholder="{{trans("words.road_guide_calculate_distance_column_number")}}">
+                        <input type="hidden" name="destination">
+                        <button class="btn btn-outline-success text-white btn-block" data-action="calculate_distance">
+                            <span>{{trans("words.road_guide_calculate_distance_btn_calculate")}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
 @section("script")
     <script>
         $("#all-points").addClass("d-block");
@@ -219,5 +246,90 @@
                 });
             }
         });
+    </script>
+    <script>
+        $("div[data-action='show-calculate-distance-modal']").click(function () {
+            $(this).addClass('shake').delay(500).queue(function(){
+                    $(this).removeClass("shake").dequeue();
+                });
+            $("div").attr("data-calculate","false");
+            $(this).parent().find("div.alert").attr("data-calculate","true");
+            var t_number = $(this).data("t_number");
+            $("input[type='hidden'][name='destination']").val(t_number);
+            $("#calculate-distance-modal").modal("show");
+        });
+        $("button[data-action='calculate_distance']").click(function () {
+            var alertErrorMessage = $("#alert-error-message");
+            var emptyMessage = $("#item-empty");
+            var unacceptableMessage = $("#item-unacceptable");
+            var source = $("input[type='number'][name='source']").val();
+            var destination = $("input[type='hidden'][name='destination']").val();
+            emptyMessage.addClass("d-none");
+            unacceptableMessage.addClass("d-none");
+            if (source === "" || destination ==="") {
+                alertErrorMessage.removeClass("d-none").addClass("d-block");
+                emptyMessage.removeClass("d-none");
+            } else if (source < 0 || destination < 0) {
+                alertErrorMessage.removeClass("d-none").addClass("d-block");
+                unacceptableMessage.removeClass("d-none");
+            } else {
+                alertErrorMessage.removeClass("d-block").addClass("d-none");
+                var result = calculateDistance(source, destination);
+                var alertActive = $("div[data-calculate='true']");
+                alertActive.removeClass("d-none");
+                alertActive.find(".data-estimated-distance").html(result["distance"]);
+                alertActive.find(".data-estimated-time").html(result["time"]);
+                alertActive.find(".data-number-of-column").html(result["numberOfColumn"]);
+                if (result["direction"] === "forwards")
+                    alertActive.find(".data-direction").html("{{trans("words.road_guide_calculate_distance_direction_forwards")}}");
+                else
+                    alertActive.find(".data-direction").html("{{trans("words.road_guide_calculate_distance_direction_backwards")}}");
+                $("#calculate-distance-modal").modal("hide");
+            }
+        });
+    </script>
+    <script>
+        function calculateDistance(source, destination) {
+            var direction = destination>source ? "forwards":"backwards";
+            var numberOfColumn = Math.abs(destination - source);
+            var distance = getDistance(numberOfColumn);
+            var time = getTime(numberOfColumn);
+            return {
+                "distance":distance,
+                "numberOfColumn":numberOfColumn,
+                "direction":direction,
+                "time":time
+            };
+        }
+        function getDistance(numberOfColumn) {
+            var language = "{{app()->getLocale()}}", meter, kiloMeter;
+            switch (language) {
+                case "ar": {meter = " م"; kiloMeter = " كم";} break;
+                case "en": {meter = " M"; kiloMeter = " Km";} break;
+                case "fa": {meter = " M"; kiloMeter = " Km";} break;
+                default:   {meter = " م"; kiloMeter = " كم";}
+            }
+            var distance = numberOfColumn * 50;
+            distance = (distance<1000)? (distance+meter):((distance / 1000)+kiloMeter);
+            return distance;
+        }
+        function getTime(numberOfColumn) {
+            var language = "{{app()->getLocale()}}", minute, hour;
+            switch (language) {
+                case "ar": {minute = " دقيقة";  hour = " ساعة";} break;
+                case "en": {minute = " Minute"; hour = " Hour";} break;
+                case "fa": {minute = " دقيقه";  hour = " ساعت";} break;
+                default:   {minute = " دقيقة";  hour = " ساعة";}
+            }
+            var time = Math.round((numberOfColumn*50)/83.3334);
+            if (time < 60)
+                time = time+minute ;
+            else {
+                var numberOfHour = parseInt(time/60,10)+hour;
+                var numberOfMinute = (time%60)+minute;
+                time = numberOfHour+" ،"+numberOfMinute;
+            }
+            return time;
+        }
     </script>
 @endsection

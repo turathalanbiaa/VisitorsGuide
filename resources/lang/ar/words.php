@@ -66,12 +66,13 @@ return [
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
 
     "road_guide_street_view_title"                      => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
+
     "road_guide_street_view_description"                => "يمكنك الآن معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على الطريق بين النقطتين المطلوبتين.",
     "road_guide_street_view_empty_error_message"        => "يرجى ملئ جميع الحقول.",
     "road_guide_street_view_unacceptable_error_message" => "القيمة السالبة غير مقبولة.",
     "road_guide_street_view_from_column_number"         => "من رقم العمود",
     "road_guide_street_view_to_column_number"           => "الى رقم العمود",
-    "road_guide_street_view_calculate_distance"         => "حساب المسافه",
+    "road_guide_street_view_btn_calculate"              => "حساب",
     "road_guide_street_view_estimated_distance"         => "المسافة التقديرية",
     "road_guide_street_view_estimated_time"             => "الزمن التقديري",
     "road_guide_street_view_number_of_column"           => "عدد الأعمدة",
@@ -81,6 +82,18 @@ return [
     "road_guide_street_view_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_street_view_not_found_public_points"    => "لاتوجد مناطق",
 
+    "road_guide_calculate_distance_title"                      => "حساب المسافة والزمن",
+    "road_guide_calculate_distance_description"                => "اذا كنت ترغب بمعرفة المسافة والوقت اللازم والأتجاه للوصول الى النقطه المعنية، ادخل رقم العمود الحالي او القريب منك.",
+    "road_guide_calculate_distance_empty_error_message"        => "يرجى ملئ جميع الحقول.",
+    "road_guide_calculate_distance_unacceptable_error_message" => "القيمة السالبة غير مقبولة.",
+    "road_guide_calculate_distance_column_number"              => "رقم العمود",
+    "road_guide_calculate_distance_btn_calculate"              => "حساب",
+    "road_guide_calculate_distance_estimated_distance"         => "المسافة التقديرية",
+    "road_guide_calculate_distance_estimated_time"             => "الزمن التقديري",
+    "road_guide_calculate_distance_number_of_column"           => "عدد الأعمدة",
+    "road_guide_calculate_distance_direction"                  => "الأتجاه",
+    "road_guide_calculate_distance_direction_forwards"         => "الى الأمام",
+    "road_guide_calculate_distance_direction_backwards"        => "الى الخلف",
 
 
     //Visitor Feqh

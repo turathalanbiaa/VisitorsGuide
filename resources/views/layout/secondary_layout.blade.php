@@ -61,6 +61,9 @@
     {{--Menu Modal--}}
     @include("layout.menu")
 
+    {{--Extra Content--}}
+    @yield("extra-content")
+
     {{--Script--}}
     @yield("script")
 </body>

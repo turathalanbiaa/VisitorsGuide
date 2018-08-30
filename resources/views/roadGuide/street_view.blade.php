@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="form-group col-12 col-sm-12 mb-sm-0 mb-0 justify-content-center text-center">
-                    <button class="btn btn-info" data-action="street-view">{{trans("words.road_guide_street_view_calculate_distance")}}</button>
+                    <button class="btn btn-info" data-action="street-view">{{trans("words.road_guide_street_view_btn_calculate")}}</button>
                 </div>
             </div>
 

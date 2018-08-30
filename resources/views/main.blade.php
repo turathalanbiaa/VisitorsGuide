@@ -78,11 +78,11 @@
             <div class="col-12 col-sm-6 my-sm-5 mt-5">
                 <div class="card border-0 shadow-card bg-transparent h-100">
                     <div class="text-white text-center p-4 mx-3 shadow-card-heading rounded bg-teal-gradient" style="margin-top: -16px;">
-                        <h4 class="m-0 py-3">{{trans("words.main_centers_lost_title")}}</h4>
+                        <h4 class="m-0 py-3">{{trans("words.main_centers_title")}}</h4>
                     </div>
 
                     <div class="card-body rounded mx-0">
-                        <p class="text-justify">{{trans("words.main_centers_lost_detail")}}</p>
+                        <p class="text-justify">{{trans("words.main_centers_detail")}}</p>
                         <div class="d-flex flex-row-reverse">
                             <a href="{{url("/lost")}}" class="btn bg-teal-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
