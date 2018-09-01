@@ -9,18 +9,12 @@
 return [
     //App
     "app_name" => "دليل الزائرين",
-
-
-
     //Select Language
     "select_language" => "اختر اللغة",
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
     "english"         => "الانكليزية",
     "btn_save"        => "حفظ",
-
-
-
     //Menu
     "menu_road_guid"         => "دليل الطريق",
     "menu_visitor_feqh"      => "فقه الزائر",
@@ -28,9 +22,6 @@ return [
     "menu_visitor_reception" => "استضافة الزائرين",
     "menu_majales_guide"     => "دليل المجالس الحسينية",
     "menu_centers"           => "مراكز التائهين والمفقودات",
-
-
-
     //Main Page
     "main_road_guide_title"         => "دليل الطريق",
     "main_road_guide_detail"        => "يمكنك الآن معرفة المواكب والحمامات والنقاط العامة والمشهورة على طول الطريق، كما يمكنك معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على طول الطريق بين النقطتين المطلوبتين.",
@@ -45,9 +36,6 @@ return [
     "main_centers_title"            => "مراكز التائهين والمفقودات",
     "main_centers_detail"           => "",
     "main_btn_enter"                => "دخول",
-
-
-
     //Road Guide
     "road_guide_menu_show_all_points"     => "عرض جميع المناطق",
     "road_guide_menu_show_mawakep_points" => "عرض المواكب فقط",
@@ -65,28 +53,17 @@ return [
 
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
 
-    "road_guide_street_view_title"                      => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
+    "road_guide_street_view_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
+    "road_guide_street_view_description"    => "يمكنك الآن معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على الطريق بين النقطتين المطلوبتين.",
 
-    "road_guide_street_view_description"                => "يمكنك الآن معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على الطريق بين النقطتين المطلوبتين.",
-    "road_guide_street_view_empty_error_message"        => "يرجى ملئ جميع الحقول.",
-    "road_guide_street_view_unacceptable_error_message" => "القيمة السالبة غير مقبولة.",
-    "road_guide_street_view_from_column_number"         => "من رقم العمود",
-    "road_guide_street_view_to_column_number"           => "الى رقم العمود",
-    "road_guide_street_view_btn_calculate"              => "حساب",
-    "road_guide_street_view_estimated_distance"         => "المسافة التقديرية",
-    "road_guide_street_view_estimated_time"             => "الزمن التقديري",
-    "road_guide_street_view_number_of_column"           => "عدد الأعمدة",
-    "road_guide_street_view_direction"                  => "الأتجاه",
-    "road_guide_street_view_direction_forwards"         => "الى الأمام",
-    "road_guide_street_view_direction_backwards"        => "الى الخلف",
-    "road_guide_street_view_public_points"              => "المناطق العامة والمشهورة",
-    "road_guide_street_view_not_found_public_points"    => "لاتوجد مناطق",
+    "road_guide_calculate_distance_modal_title"       => "حساب المسافة والزمن",
+    "road_guide_calculate_distance_modal_description" => "اذا كنت ترغب بمعرفة المسافة والوقت اللازم والأتجاه للوصول الى النقطه المعنية، ادخل رقم العمود الحالي او القريب منك.",
 
-    "road_guide_calculate_distance_title"                      => "حساب المسافة والزمن",
-    "road_guide_calculate_distance_description"                => "اذا كنت ترغب بمعرفة المسافة والوقت اللازم والأتجاه للوصول الى النقطه المعنية، ادخل رقم العمود الحالي او القريب منك.",
     "road_guide_calculate_distance_empty_error_message"        => "يرجى ملئ جميع الحقول.",
     "road_guide_calculate_distance_unacceptable_error_message" => "القيمة السالبة غير مقبولة.",
     "road_guide_calculate_distance_column_number"              => "رقم العمود",
+    "road_guide_calculate_distance_from_column_number"         => "من رقم العمود",
+    "road_guide_calculate_distance_to_column_number"           => "الى رقم العمود",
     "road_guide_calculate_distance_btn_calculate"              => "حساب",
     "road_guide_calculate_distance_estimated_distance"         => "المسافة التقديرية",
     "road_guide_calculate_distance_estimated_time"             => "الزمن التقديري",
@@ -94,6 +71,11 @@ return [
     "road_guide_calculate_distance_direction"                  => "الأتجاه",
     "road_guide_calculate_distance_direction_forwards"         => "الى الأمام",
     "road_guide_calculate_distance_direction_backwards"        => "الى الخلف",
+    "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
+    "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
+    "road_guide_calculate_distance_error_connection_message" => "يرجى التحقق من اتصال الإنترنت",
+
+
 
 
     //Visitor Feqh

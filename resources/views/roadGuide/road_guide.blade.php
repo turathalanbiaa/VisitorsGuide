@@ -63,8 +63,8 @@
             <div class="modal-content bg-aqua-gradient shadow-special">
                 <div class="modal-body">
                     <div class="text-center text-white border border-light p-5">
-                        <p class="h4 mb-4">{{trans("words.road_guide_calculate_distance_title")}}</p>
-                        <p class="h6 mb-4">{{trans("words.road_guide_calculate_distance_description")}}</p>
+                        <p class="h4 mb-4">{{trans("words.road_guide_calculate_distance_modal_title")}}</p>
+                        <p class="h6 mb-4">{{trans("words.road_guide_calculate_distance_modal_description")}}</p>
                         <div class="alert w-100 p-2 mb-2 alert-danger d-none" role="alert" id="alert-error-message">
                             <ul class="p-0 m-0" style="list-style: none;">
                                 <li id="item-empty">{{trans("words.road_guide_calculate_distance_empty_error_message")}}</li>
@@ -73,7 +73,7 @@
                         </div>
                         <input type="number" name="source" class="form-control mb-4" placeholder="{{trans("words.road_guide_calculate_distance_column_number")}}">
                         <input type="hidden" name="destination">
-                        <button class="btn btn-outline-success text-white btn-block" data-action="calculate_distance">
+                        <button class="btn btn-outline-success text-white btn-block" data-action="calculate-distance-modal">
                             <span>{{trans("words.road_guide_calculate_distance_btn_calculate")}}</span>
                         </button>
                     </div>
@@ -84,6 +84,7 @@
 @endsection
 
 @section("script")
+     {{--change Show Points--}}
     <script>
         $("#all-points").addClass("d-block");
         $("#mawakep-points").addClass("d-none");
@@ -170,19 +171,18 @@
             }, 500);
         });
     </script>
+    {{--Calculate Distance--}}
     <script>
-        $("button[data-action='street-view']").click(function () {
+        $("button[data-action='calculate-distance']").click(function () {
             var formErrorMessage = $("#form-error-message");
-            var streetViewResult = $("#street-view-result");
             var emptyMessage = $("#empty");
             var unacceptableMessage = $("#unacceptable");
             var source = $("input[type='number']#source").val();
             var destination = $("input[type='number']#destination").val();
-
             emptyMessage.addClass("d-none");
             unacceptableMessage.addClass("d-none");
-            streetViewResult.removeClass("d-block").addClass("d-none");
-
+            var cardResult = $("#calculate-distance-result");
+            cardResult.removeClass("d-block").addClass("d-none");
             if (source === "" || destination ==="") {
                 formErrorMessage.removeClass("d-none").addClass("d-block");
                 emptyMessage.removeClass("d-none");
@@ -190,23 +190,26 @@
                 formErrorMessage.removeClass("d-none").addClass("d-block");
                 unacceptableMessage.removeClass("d-none");
             } else {
+                formErrorMessage.removeClass("d-block").addClass("d-none");
+                var result = calculateDistance(source, destination);
+                cardResult.addClass("d-block").removeClass("d-none");
+                cardResult.find(".data-estimated-distance").html(result["distance"]);
+                cardResult.find(".data-estimated-time").html(result["time"]);
+                cardResult.find(".data-number-of-column").html(result["numberOfColumn"]);
+                if (result["direction"] === "forwards")
+                    cardResult.find(".data-direction").html("{{trans("words.road_guide_calculate_distance_direction_forwards")}}");
+                else
+                    cardResult.find(".data-direction").html("{{trans("words.road_guide_calculate_distance_direction_backwards")}}");
+
                 $.ajax({
                     type:'post',
-                    url: '/road-guide/street-view',
+                    url: '/road-guide/get-public-points',
                     dataType: 'json',
                     data: {source:source, destination:destination},
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     success: function (result) {
-                        $("#distance").html(result["distance"]);
-                        $("#time").html(result["time"]);
-                        $("#number-of-column").html(result["numberOfColumn"]);
-                        if (result["direction"] === "forwards")
-                            $("#direction").html("{{trans("words.road_guide_street_view_direction_forwards")}}");
-                        else
-                            $("#direction").html("{{trans("words.road_guide_street_view_direction_backwards")}}");
-
                         if (jQuery.isEmptyObject(result["publicPoints"])) {
-                            $("#list-public-points").html("{{trans("words.road_guide_street_view_not_found_public_points")}}");
+                            $("#list-public-points").html("{{trans("words.road_guide_calculate_distance_public_points_empty")}}");
                         } else {
                             var cards = "";
                             $.map( result["publicPoints"], function(point, index) {
@@ -237,16 +240,17 @@
                         }
                     },
                     error: function () {
-                        alert("يرجى التحقق من الأتصال بالأنترنيت");
+                        var alertDiv = '<div class="alert alert-danger mt-2 mb-0">' +
+                                            '<strong>' + '{{trans("words.road_guide_calculate_distance_error_connection_message")}}' + '</strong>' +
+                                        '</div>';
+                        $("#list-public-points").html(alertDiv);
                     },
-                    complete: function () {
-                        formErrorMessage.removeClass("d-block").addClass("d-none");
-                        streetViewResult.removeClass("d-none").addClass("d-block");
-                    }
+                    complete: function () {}
                 });
             }
         });
     </script>
+    {{--Calculate Distance Modal--}}
     <script>
         $("div[data-action='show-calculate-distance-modal']").click(function () {
             $(this).addClass('shake').delay(500).queue(function(){
@@ -258,7 +262,7 @@
             $("input[type='hidden'][name='destination']").val(t_number);
             $("#calculate-distance-modal").modal("show");
         });
-        $("button[data-action='calculate_distance']").click(function () {
+        $("button[data-action='calculate-distance-modal']").click(function () {
             var alertErrorMessage = $("#alert-error-message");
             var emptyMessage = $("#item-empty");
             var unacceptableMessage = $("#item-unacceptable");
@@ -288,9 +292,10 @@
             }
         });
     </script>
+    {{--Function Calculate Distance--}}
     <script>
         function calculateDistance(source, destination) {
-            var direction = destination>source ? "forwards":"backwards";
+            var direction = (destination > source) ? "forwards": "backwards";
             var numberOfColumn = Math.abs(destination - source);
             var distance = getDistance(numberOfColumn);
             var time = getTime(numberOfColumn);
