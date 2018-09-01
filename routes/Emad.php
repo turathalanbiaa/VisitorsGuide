@@ -10,4 +10,4 @@ Route::get('/road-guide', "PointController@index")->middleware("setLocaleLanguag
 Route::post('/road-guide/get-public-points', "PointController@getPublicPoints")->middleware("setLocaleLanguage");
 
 
-Route::get('/visitor-feqh', "VisitorFeqhController@index")->middleware("setLocaleLanguage");
+Route::get('/visitor-feqh', "QuestionController@index")->middleware("setLocaleLanguage");

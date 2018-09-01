@@ -33,6 +33,10 @@
                     <strong>{{trans("words.visitor_feqh_questions_card_answer")}}</strong>
                     <span>{{$question->answer}}</span>
                 </h6>
+
+                <h6>
+                    {{\App\Enums\QuestionCategory::getCategoryName("ar", $question->category)}}
+                </h6>
             </div>
         </div>
     @endforeach

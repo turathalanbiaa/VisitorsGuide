@@ -29,11 +29,11 @@
             </a>
 
             <div class="d-flex flex-row justify-content-end w-25">
-                <a class="btn btn-sm btn-shadow bg-success mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+                <a class="btn btn-sm btn-shadow bg-dark mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
                     <i class="fa fa-bars text-white align-middle"></i>
                 </a>
 
-                <a class="btn btn-sm btn-shadow bg-primary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                <a class="btn btn-sm btn-shadow bg-dark mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
                     <i class="fa fa-globe text-white align-middle"></i>
                 </a>
             </div>

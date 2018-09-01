@@ -21,7 +21,7 @@
 
 @section("menu-modal-content")
     <div class="modal-content border-0 rounded-0 shadow-special">
-        <h4 class="modal-header bg-success text-white rounded-0 m-0">
+        <h4 class="modal-header bg-aqua-gradient text-white rounded-0 m-0">
             <span>{{trans("words.menu_road_guid")}}</span>
         </h4>
 
@@ -84,7 +84,7 @@
 @endsection
 
 @section("script")
-     {{--change Show Points--}}
+     {{--Change View Content--}}
     <script>
         $("#all-points").addClass("d-block");
         $("#mawakep-points").addClass("d-none");
@@ -213,7 +213,7 @@
                         } else {
                             var cards = "";
                             $.map( result["publicPoints"], function(point, index) {
-                                var card =  '<div class="card bg-transparent border-0">' +
+                                var card =  '<div class="card bg-dark border-0">' +
                                                 '<div class="card-header border-0 mb-1 shadow-special" id="heading-' + index + '" role="tab">' +
                                                     '<div class="collapsed" href="#collapse-' + index + '" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">' +
                                                         '<p class="text-white mb-0">' +
@@ -224,7 +224,7 @@
                                                 '</div>' +
 
                                                 '<div class="collapse"  id="collapse-' + index + '" role="tabpanel" aria-labelledby="heading-' + index + '" data-parent="#accordion">' +
-                                                    '<div class="card-body mb-1 bg-light-special text-white">' +
+                                                    '<div class="card-body mb-1 text-white">' +
                                                         '<p class="text-justify">' + point["description"] + '</p>' +
                                                     '</div>' +
                                                 '</div>' +
@@ -233,9 +233,8 @@
                                 cards = cards + card;
                             });
                             var accordionDiv = '<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">' + cards + '</div>';
-                            var colDiv = '<div class="col-12 col-sm-8 py-3">' + accordionDiv + '</div>';
-                            var div = '<div class="d-flex justify-content-center gradient-background  mt-2">' + colDiv + '</div>';
-
+                            var colDiv = '<div class="col-12 col-sm-8 px-0 py-sm-3 py-2">' + accordionDiv + '</div>';
+                            var div = '<div class="d-flex justify-content-center bg-transparent mt-1">' + colDiv + '</div>';
                             $("#list-public-points").html(div);
                         }
                     },
