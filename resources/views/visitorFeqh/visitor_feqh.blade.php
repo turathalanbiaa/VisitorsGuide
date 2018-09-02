@@ -36,6 +36,26 @@
                     <i class="fa fa-download"></i>
                     <span>{{trans("words.visitor_feqh_menu_download_app_masael")}}</span>
                 </a>
+
+                <div class="list-group-item" data-toggle="collapse" data-target="#category-list" aria-expanded="false" aria-controls="category-list">
+                    <i class="fa fa-filter"></i>
+                    <span></span>
+
+                    <div class="collapse" id="category-list">
+                        <div class="list-group list-group-flush mx-3">
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

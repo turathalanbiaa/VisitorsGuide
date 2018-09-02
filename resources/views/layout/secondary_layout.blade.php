@@ -16,6 +16,7 @@
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
+    <script src="{{asset("js/popper.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
 
     @include("layout.body_direction")
@@ -29,11 +30,11 @@
             </a>
 
             <div class="d-flex flex-row justify-content-end w-25">
-                <a class="btn btn-sm btn-shadow bg-dark mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
                     <i class="fa fa-bars text-white align-middle"></i>
                 </a>
 
-                <a class="btn btn-sm btn-shadow bg-dark mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
                     <i class="fa fa-globe text-white align-middle"></i>
                 </a>
             </div>
@@ -45,7 +46,7 @@
 
     {{--Navbar Fixed Bottom--}}
     <div class="container-fluid">
-        <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill rounded-0 p-0">
+        <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 p-0">
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
