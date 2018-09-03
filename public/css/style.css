@@ -21,7 +21,7 @@ body {
 
 /* Adeua and Zuarat */
 
-.prayerAndVisits .prayer-today
+.prayerAndVisits .prayer-today , .videos-gallery
 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
@@ -56,13 +56,23 @@ body {
     display: block;
 }
 @media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 90%;
+    .modal-image {
+        max-width: 90% !important;
         margin: 1.75rem auto;
     }
 }
-
-
+.text-truncate
+{
+    white-space: pre-line;
+    padding-bottom: 5px;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.rounded
+{
+    border-radius: 25px !important;
+}
 /* End Adeua and Zuarat */
 
 
