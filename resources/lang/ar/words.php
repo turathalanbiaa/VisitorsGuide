@@ -74,35 +74,33 @@ return [
     "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
     "road_guide_calculate_distance_error_connection_message" => "يرجى التحقق من اتصال الإنترنت",
-
-
-
-
     //Visitor Feqh
-    "visitor_feqh_menu_show_all_questions"     => "عرض جميع الاسئلة",
-    "visitor_feqh_menu_send_question" => "ارسال سؤال الى موقع الاجوبة الميسرة",
+    "visitor_feqh_menu_show_all_questions"  => "عرض جميع الاسئلة",
+    "visitor_feqh_menu_send_question"       => "ارسال سؤال الى موقع الاجوبة الميسرة",
     "visitor_feqh_menu_download_app_masael" => "تحميل تطبيق الاجوبة الميسرة",
+    "visitor_feqh_menu_filter"              => "عرض حسب الصنف",
 
-    "visitor_feqh_title_questions"               => "فقه الزائر - جميع الاسئلة",
-    "visitor_feqh_title_send_question"           => "فقه الزائر - ارسال سؤال",
-    "visitor_feqh_title_ads_masael"              => "فقه الزائر - الاجوبة الميسرة",
+    "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
+    "visitor_feqh_title_send_question" => "فقه الزائر - ارسال سؤال",
+    "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
 
-    "visitor_feqh_questions_ads_title"           => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
-    "visitor_feqh_questions_ads_sub_title"       => "لرؤية المزيد من تفاصيل",
-    "visitor_feqh_questions_ads_learn_more"      => "اضغط هنا",
-    "visitor_feqh_questions_card_question"       => "السؤال : ",
-    "visitor_feqh_questions_card_answer"         => "الجواب : ",
-    "visitor_feqh_questions_pagination_prev"     => "السابق",
-    "visitor_feqh_questions_pagination_next"     => "التالي",
+    "visitor_feqh_ads_app_masael_text"  => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
+    "visitor_feqh_ads_app_masael_detail" => "لرؤية المزيد من تفاصيل",
+    "visitor_feqh_ads_app_masael_btn"    => "اضغط هنا",
 
-    "visitor_feqh_send_question_title"           => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
-    "visitor_feqh_send_question_description_one" => "يمكنك ارسال سؤال الى موقع الأجوبة الميسرة سواء كان سؤالك في الفقه اوالعقائد، وسوف تتم الأجابة على سؤالك خلال فترة وجيزة دون الحاجة الى انشاء حساب.",
-    "visitor_feqh_send_question_description_two" => "اذا كنت ترغب بأرسال سؤال ",
-    "visitor_feqh_send_question_click_here"      => "اضغط هنا",
+    "visitor_feqh_questions_card_question"   => "السؤال : ",
+    "visitor_feqh_questions_card_answer"     => "الجواب : ",
+    "visitor_feqh_questions_pagination_prev" => "السابق",
+    "visitor_feqh_questions_pagination_next" => "التالي",
 
-    "visitor_feqh_ads_masael_title"              => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
-    "visitor_feqh_ads_masael_description"        => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
+    "visitor_feqh_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
 
-    "visitor_feqh_masael_web"                    => "الموقع الرسمي للأجوبة الميسرة",
-    "visitor_feqh_masael_available_app_on"       => "يتوفر التطبيق الآن على",
+    "visitor_feqh_send_question_description" => "يمكنك ارسال سؤال الى موقع الأجوبة الميسرة سواء كان سؤالك في الفقه اوالعقائد، وسوف تتم الأجابة على سؤالك خلال فترة وجيزة دون الحاجة الى انشاء حساب.",
+    "visitor_feqh_send_question_detail" => "اذا كنت ترغب بأرسال سؤال ",
+    "visitor_feqh_send_question_btn"      => "اضغط هنا",
+
+    "visitor_feqh_app_masael_description"        => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
+
+    "visitor_feqh_masael_website"          => "الموقع الرسمي للأجوبة الميسرة",
+    "visitor_feqh_masael_available_app_on" => "يتوفر التطبيق الآن على",
 ];

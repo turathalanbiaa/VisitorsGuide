@@ -1,5 +1,5 @@
 <p class="font-weight-bold mb-0 mt-5">
-    {{trans("words.visitor_feqh_masael_web")}}
+    {{trans("words.visitor_feqh_masael_website")}}
 </p>
 <a class="font-weight-bold" href="http://masael.turathalanbiaa.com" target="_blank">
     <span>masael.turathalanbiaa.com</span>
