@@ -24,7 +24,7 @@
 
         <div class="modal-body">
             <div class="list-group">
-                <a class="list-group-item list-group-item-action" id="show-questions">
+                <a class="list-group-item list-group-item-action" @if(isset($_GET["category"])) href="/visitor-feqh" @else id="show-questions" @endif>
                     <i class="fa fa-credit-card"></i>
                     <span>{{trans("words.visitor_feqh_menu_show_all_questions")}}</span>
                 </a>
@@ -43,16 +43,36 @@
 
                     <div class="collapse" id="category-list">
                         <div class="list-group list-group-flush mx-3">
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
-                            <a class="list-group-item list-group-item-action">Cras justo odio</a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_ZUAREA}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_ZUAREA)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_ZUAREA_INTENTION}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_ZUAREA_INTENTION)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_WUDOO}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_WUDOO)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_PRAYER}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_PRAYER)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_PROSTRATION}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_PROSTRATION)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_TRAVELERS_PRAYER}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_TRAVELERS_PRAYER)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_COMMUNITY_PRAYER}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_COMMUNITY_PRAYER)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_THE_SHOT}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_THE_SHOT)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::QA_WALK_TO_THE_HOLY_SHRINES}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::QA_WALK_TO_THE_HOLY_SHRINES)}}
+                            </a>
+                            <a class="list-group-item list-group-item-action" href="/visitor-feqh?category={{\App\Enums\QuestionCategory::SPORADIC_PROVISIONS}}">
+                                {{\App\Enums\QuestionCategory::getFliterName(app()->getLocale(), \App\Enums\QuestionCategory::SPORADIC_PROVISIONS)}}
+                            </a>
                         </div>
                     </div>
                 </div>

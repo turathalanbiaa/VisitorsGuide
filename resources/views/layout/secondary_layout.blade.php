@@ -25,7 +25,7 @@
     {{--Navbar Top--}}
     <div class="container-fluid p-0">
         <nav class="navbar navbar-dark @yield("navbar-color")">
-            <a href="#" class="navbar-brand m-0 w-75 text-truncate">
+            <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
             </a>
 

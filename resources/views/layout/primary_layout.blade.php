@@ -23,7 +23,7 @@
     {{--Navbar Fixed Top--}}
     <div class="container-fluid">
         <nav class="navbar fixed-top navbar-dark bg-dark">
-            <a href="#" class="navbar-brand mr-0">
+            <a href="javascript:void(0);" class="navbar-brand mr-0">
                 {{trans("words.app_name")}}
             </a>
 
