@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class QuestionController extends Controller
 {
@@ -19,6 +20,12 @@ class QuestionController extends Controller
 
         return view("visitorFeqh.visitor_feqh")->with([
             "questions" => $questions
+        ]);
+    }
+
+    public function showImage($name) {
+        return view("visitorFeqh.show-image")->with([
+            "name" => $name
         ]);
     }
 }

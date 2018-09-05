@@ -31,6 +31,15 @@
                     <strong>{{trans("words.visitor_feqh_questions_card_answer")}}</strong>
                     <span>{{$question->answer}}</span>
                 </h6>
+
+                @if($question->image)
+                    <p class="font-weight-light pt-2 m-0">
+                        <a href="/visitor-feqh/img/{{$question->image}}" target="_blank">
+                            <i class="fa fa-external-link-alt align-middle"></i>
+                            <span>عرض النص الأصلي</span>
+                        </a>
+                    </p>
+                @endif
             </div>
         </div>
     @endforeach
