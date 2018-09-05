@@ -55,7 +55,7 @@ class QuestionCategory
             "5"  => "سوال در مورد سجود",
             "6"  => "سوال در مورد نماز مسافر",
             "7"  => "سوال در مورد نماز جماعت",
-            "8"  => "سوالات در مورد شوت",
+            "8"  => "سوال در مورد شوت",
             "9"  => "سوال در مورد پیاده روی برای دیدن زیارتگاه های مقدس",
             "10" => "مقررات متفرقه"
         ),
@@ -63,5 +63,48 @@ class QuestionCategory
 
     public static function getCategoryName($language, $category) {
         return self::QuestionCategory[$language][$category];
+    }
+
+    const FILTER = array(
+        "ar" => array(
+            "1"  => "مسائل حول الزيارة",
+            "2"  => "مسائل حول نية الزيارة",
+            "3"  => "مسائل حول الوضوء",
+            "4"  => "مسائل حول الصلاة",
+            "5"  => "مسائل حول السجود",
+            "6"  => "مسائل حول صلاة المسافر",
+            "7"  => "مسائل حول صلاة الجماعة",
+            "8"  => "مسائل حول اللقطة",
+            "9"  => "مسائل حول المشي لزيارة المراقد المقدسة",
+            "10" => "أحكام متفرقة"
+        ),
+        "en" => array(
+            "1"  => "Questions About Zuarea",
+            "2"  => "Questions About Zuarea Intention",
+            "3"  => "Questions About Wudoo",
+            "4"  => "Questions About Prayer",
+            "5"  => "Questions About Prostration",
+            "6"  => "Questions About Traveler's Prayer",
+            "7"  => "Questions About Community Prayer",
+            "8"  => "Questions About The Shot",
+            "9"  => "Questions About Walk To The Holy Shrines",
+            "10" => "Sporadic Provisions",
+        ),
+        "fa" => array(
+            "1"  => "سوالات در مورد بازدید",
+            "2"  => "سوالات در مورد قصد بازدید",
+            "3"  => "سوالات در مورد وودو",
+            "4"  => "سوالات در مورد نماز",
+            "5"  => "سوالات در مورد سجود",
+            "6"  => "سوالات در مورد نماز مسافر",
+            "7"  => "سوالات در مورد نماز جماعت",
+            "8"  => "سوالات در مورد شوت",
+            "9"  => "سوالات در مورد پیاده روی برای دیدن زیارتگاه های مقدس",
+            "10" => "مقررات متفرقه"
+        ),
+    );
+
+    public static function getFliterName($language, $category) {
+        return self::FILTER[$language][$category];
     }
 }

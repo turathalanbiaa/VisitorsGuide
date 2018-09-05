@@ -72,7 +72,7 @@
         watch: {
             search() {
                 this.page = null;
-                this.category =1;
+                this.category =null;
                 this.changeFilter();
             }
         },

@@ -11,3 +11,4 @@ Route::post('/road-guide/get-public-points', "PointController@getPublicPoints")-
 
 
 Route::get('/visitor-feqh', "QuestionController@index")->middleware("setLocaleLanguage");
+Route::get('/visitor-feqh/img/{name}', "QuestionController@showImage")->middleware("setLocaleLanguage");

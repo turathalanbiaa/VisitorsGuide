@@ -25,16 +25,16 @@
     {{--Navbar Top--}}
     <div class="container-fluid p-0">
         <nav class="navbar navbar-dark @yield("navbar-color")">
-            <a href="#" class="navbar-brand m-0 w-75 text-truncate">
+            <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
             </a>
 
-            <div class="d-flex flex-row justify-content-end w-25">
-                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+            <div class="d-flex flex-row w-25" style="justify-content: space-evenly;">
+                <a class="btn btn-sm btn-shadow bg-secondary" data-toggle="modal" data-target="#menu-modal">
                     <i class="fa fa-bars text-white align-middle"></i>
                 </a>
 
-                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                <a class="btn btn-sm btn-shadow bg-secondary" data-toggle="modal" data-target="#select-language-modal">
                     <i class="fa fa-globe text-white align-middle"></i>
                 </a>
             </div>
