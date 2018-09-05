@@ -42,7 +42,9 @@
     </div>
 
     {{--Content--}}
-    @yield("content")
+    <div class="mt-5">
+        @yield("content")
+    </div>
 
     {{--Navbar Fixed Bottom--}}
     <div class="container">
