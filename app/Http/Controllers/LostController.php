@@ -12,7 +12,7 @@ class LostController extends Controller
         }else{
             $losts = Lost::paginate(3);
         }
-        return view('lostGuide.index',compact('losts'));
+        return view('lostGuide.index');
     }
 
     public function findLost(){
