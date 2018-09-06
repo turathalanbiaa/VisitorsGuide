@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Input;
-use Carbon\Carbon;
 class MainController extends Controller
 {
     public function index() {
@@ -13,8 +12,8 @@ class MainController extends Controller
 
     public function selectLanguage() {
         $language = Input::get("language");
-        Cookie::queue('language', $language, 1000000);
+        Cookie::queue('language', $language, 1000000000);
 
-        return redirect("/");
+        return redirect()->back();
     }
 }

@@ -16,74 +16,65 @@
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
+<<<<<<< HEAD
     <script src="{{asset("js/app.js")}}"></script>
     <script src="{{asset("js/material.min.js")}}"></script>
     <script src="{{asset("js/material-kit.js")}}"></script>
+=======
+    <script src="{{asset("js/popper.min.js")}}"></script>
+
+
+    @include("layout.body_direction")
+>>>>>>> 73dd634df6badb338efcea15b5740a33a466ebbb
 </head>
 <body>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-dark bg-danger">
-            <div class="navbar-brand mr-0">
-                @yield("top-title")
-            </div>
+    {{--Navbar Fixed Top--}}
+    <div class="container">
+        <nav class="navbar fixed-top navbar-dark @yield("navbar-color")">
+            <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
+                @yield("navbar-brand")
+            </a>
 
-            <div data-toggle="modal" data-target="#select-language-model">
-                <i class="fa fa-globe text-white"></i>
+            <div class="d-flex flex-row justify-content-end w-25">
+                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+                    <i class="fa fa-bars text-white align-middle"></i>
+                </a>
+
+                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                    <i class="fa fa-globe text-white align-middle"></i>
+                </a>
             </div>
         </nav>
     </div>
 
-    @yield("content")
+    {{--Content--}}
+    <div class="mt-5">
+        @yield("content")
+    </div>
 
-    <div class="container-fluid">
-        <div class="navbar fixed-bottom navbar-dark bg-danger nav nav-tabs nav-fill rounded-0 p-0">
+    {{--Navbar Fixed Bottom--}}
+    <div class="container">
+        <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 px-0">
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
-            @yield("nav-items-bottom")
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
         </div>
     </div>
 
-    <div class="modal fade" id="select-language-model" tabindex="-1" role="dialog" aria-labelledby="select-language-model" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">{{trans("words.select_language")}}</h5>
-                </div>
-                <div class="modal-body">
-                    <form class="form-row" method="post" action="/select-language">
-                        @csrf
-                        <div class="col-12 py-2">
-                            <div class="form-check pl-0" style="padding-right: 20px;">
-                                <input class="form-check-input ml-0" style="margin-right: -20px;" type="radio" name="language" id="ar" value="ar" checked>
-                                <label class="form-check-label" for="ar">{{trans("words.arabic")}}</label>
-                            </div>
-                        </div>
+    {{--Select Language Modal--}}
+    @include("layout.select_language")
 
-                        <div class="col-12 py-2">
-                            <div class="form-check pl-0" style="padding-right: 20px;">
-                                <input class="form-check-input ml-0" style="margin-right: -20px;" type="radio" name="language" id="fa" value="fa">
-                                <label class="form-check-label" for="fa">{{trans("words.persian")}}</label>
-                            </div>
-                        </div>
+    {{--Menu Modal--}}
+    @include("layout.menu")
 
-                        <div class="col-12 py-2">
-                            <div class="form-check pl-0" style="padding-right: 20px;">
-                                <input class="form-check-input ml-0" style="margin-right: -20px;" type="radio" name="language" id="en" value="en">
-                                <label class="form-check-label" for="en">{{trans("words.english")}}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-12 py-2">
-                            <hr>
-                            <button type="submit" class="btn btn-block btn-success">{{trans("words.save")}}</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {{--Extra Content--}}
     @yield("extra-content")
 
+    {{--Script--}}
     @yield("script")
+    <script src="{{asset("js/app.js")}}"></script>
 </body>
 </html>
