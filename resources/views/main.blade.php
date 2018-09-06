@@ -66,7 +66,7 @@
                     <div class="card-body rounded mx-0">
                         <p class="text-justify">{{trans("words.main_visitor_reception_detail")}}</p>
                         <div class="d-flex flex-row-reverse">
-                            <a href="/" class="btn bg-blue-gradient btn-shadow">
+                            <a href="/show_adds" class="btn bg-blue-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
                                 @include("layout.double_angle_icon")
                             </a>

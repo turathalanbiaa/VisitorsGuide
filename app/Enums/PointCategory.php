@@ -15,6 +15,7 @@ class PointCategory
     const HEMAMAT = 2;
     const PUBLIC = 3;
     const CENTER = 4;
+    const CENTER_REFERENDUM = 5;
 
     public static function getCategoryColor($category) {
         switch ($category) {

@@ -21,21 +21,20 @@
 
     @include("layout.body_direction")
 </head>
-<body >
-<div id="app">
-    {{--Navbar Top--}}
-  <div class="container-fluid p-0" >
-        <nav class="navbar navbar-dark @yield("navbar-color")">
+<body>
+    {{--Navbar Fixed Top--}}
+    <div class="container">
+        <nav class="navbar fixed-top navbar-dark @yield("navbar-color")">
             <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
             </a>
 
-            <div class="d-flex flex-row w-25" style="justify-content: space-evenly;">
-                <a class="btn btn-sm btn-shadow bg-secondary" data-toggle="modal" data-target="#menu-modal">
+            <div class="d-flex flex-row justify-content-end w-25">
+                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
                     <i class="fa fa-bars text-white align-middle"></i>
                 </a>
 
-                <a class="btn btn-sm btn-shadow bg-secondary" data-toggle="modal" data-target="#select-language-modal">
+                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
                     <i class="fa fa-globe text-white align-middle"></i>
                 </a>
             </div>
@@ -44,11 +43,14 @@
 
     {{--Content--}}
     <div class="pt-3">
-    @yield("content")</div>
+    @yield("content")
 </div>
+    <div class="mt-5">
+        @yield("content")
+    </div>
     {{--Navbar Fixed Bottom--}}
-    <div class="container-fluid">
-        <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 p-0">
+    <div class="container">
+        <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 px-0">
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
