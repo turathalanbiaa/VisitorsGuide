@@ -57,8 +57,21 @@ class MajalesController extends Controller
 
     public function main ()
     {
-        //WeekDays::nameOfDays(Carbon::parse('2018-9-7')->localeDayOfWeek)
-      return view('majales/main');
+
+        $date = Carbon::now();
+        $getMajales = Majales::where('majles_end','>=',$date->format('y-m-d'))->orderBy('majles_start')->get();
+
+        return view('majales/main');
+    }
+
+    public function getEventsByCity ($city)
+    {
+        $getEventsByCity = Majales::where('city',$city)->paginate(10);
+        if ($getEventsByCity->count() === 0)
+        {
+            redirect('/majales/city')->with('notFond', 'لم يتم العثور علي بيانات لعرضها');
+        }
+        return view('/majales/events_city', ['events'=>$getEventsByCity]);
     }
 
 }

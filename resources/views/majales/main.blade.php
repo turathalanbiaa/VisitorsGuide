@@ -1,8 +1,11 @@
 @extends('layout.secondary_layout')
 
-@section('top-title')
-    <h1>دليل الزيارات والادعية</h1>
+@section("navbar-color")
+    {{"bg-orange-gradient"}}
+@endsection
 
+@section("navbar-brand")
+    <span id="title">{{trans("words.visitor_feqh_title_questions")}}</span>
 @endsection
 
 @section('content')
@@ -39,13 +42,12 @@
 
                                 *الدعوة عامة للجميع رجالا ونساءا*
                             </p>
-                            {{--<span style="color: #1b1e21">{{Carbon\Carbon::parse('2018-09-01 01:02:00')->format('i A')}}</span>--}}
-                            <p style="color: #1b1e21; background-color: #ff9e0f; display: inline-block">
+                            <p class="mb-0" style="color: #ff9e0f">
                                 <span>وقت المناسبة :</span>
                                 <span> {{Carbon\Carbon::parse('2018-09-01 01:02:00')->format('h:i')}} </span>
                                 <span>{{\App\Enums\TimeArabic::getTimeInArabic(Carbon\Carbon::parse('2018-09-01 01:02:00')->format('A'))}}</span>
                             </p>
-                            <p class="mb-1" style="color: #1b1e21; background-color: #ff9e0f">
+                            <p class="mb-1" style="color: #ff9e0f;">
                                 <span>النجف</span> - <span>قرية الغيدير</span> - <span> بلوك ٦٤ - دار رقم ٨ قرب - اسواق القاسم</span>
 
                             </p>
@@ -104,7 +106,94 @@
 
 @endsection
 
+@section("menu-modal-content")
+    <div class="modal-content border-0 rounded-0 shadow-special">
+        <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
+            <span>{{trans("words.menu_visitor_feqh")}}</span>
+        </h4>
 
+        <div class="modal-body">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" id="show-questions">
+                    <i class="fas fa-hourglass-start"></i>
+                    <span>عرض المناسبات التي لم تبدء الى الان</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-send-question">
+                    <i class="fas fa-hourglass-end"></i>
+                    <span>عرض المناسبات الفائتة</span>
+                </a>
+                <a href="events" class="list-group-item list-group-item-action" id="show-ads-maseal">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>عرض المناسبات التي بدأت </span>
+                </a>
+
+                <div class="list-group-item" data-toggle="collapse" data-target="#category-list" aria-expanded="false" aria-controls="category-list">
+                    <i class="fas fa-building"></i>
+                    <span>عرض المناسبات حسب المحافظة</span>
+
+                    <div class="collapse" id="category-list">
+                        <div class="list-group list-group-flush mx-3">
+                            <a href="majales/city/{{\App\Enums\Cities::NAJ}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::NAJ}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::KAR}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::KAR}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::BAGH}}" class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::BAGH}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::BAB}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::BAB}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::QAD}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::QAD}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::WAS}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::WAS}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::MUTH}}" class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::MUTH}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::MAY}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::MAY}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::THI}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::THI}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::BAS}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::BAS}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::ANB}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::ANB}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::DIY}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::DIY}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::SAL}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::SAL}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::KIR}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::KIR}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::NIN}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::NIN}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::ARB}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::ARB}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::SUL}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::SUL}}
+                            </a>
+                            <a href="majales/city/{{\App\Enums\Cities::DHU}}"  class="list-group-item list-group-item-action">
+                                {{\App\Enums\Cities::DHU}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 
 @section('script')
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false">
