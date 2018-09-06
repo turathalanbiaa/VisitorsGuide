@@ -12,16 +12,16 @@ class LostController extends Controller
     {
         if ($request->search == '' && $request->category == '') {
             $Losts = Lost::with('center')->paginate(10);
-        } elseif ($request->category == '') {
+        }
+        elseif ($request->category == '') {
             $Losts = Lost::search($request->search)->paginate(10);
             foreach ($Losts as $Lost)
                 $Losts->concat($Lost->center);
-        } else {
-            $Losts = Lost::search($request->search)->where('category', $request->category)->paginate(10);
-
-            foreach ($Losts as $Lost)
-                $Losts->concat($Lost->center);
+        }
+        else {
+            $Losts = Lost::with('center')->where('category', $request->category)->paginate(10);
         }
         return response($Losts, 200);
+
     }
 }

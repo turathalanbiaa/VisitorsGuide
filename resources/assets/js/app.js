@@ -17,6 +17,8 @@ Vue.use(require('vue-moment'));
 
 Vue.component('Losts', require('./components/Losts.vue'));
 Vue.component('InfiniteLoading', require('vue-infinite-loading'));
+
+
 const app = new Vue({
     el: '#app'
 });

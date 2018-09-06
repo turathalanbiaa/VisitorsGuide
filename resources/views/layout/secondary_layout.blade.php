@@ -17,13 +17,14 @@
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
     <script src="{{asset("js/popper.min.js")}}"></script>
-
+    <script src="{{asset("js/app.js")}}"></script>
 
     @include("layout.body_direction")
 </head>
-<body>
+<body >
+<div id="app">
     {{--Navbar Top--}}
-    <div class="container-fluid p-0">
+  <div class="container-fluid p-0" >
         <nav class="navbar navbar-dark @yield("navbar-color")">
             <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
@@ -42,8 +43,9 @@
     </div>
 
     {{--Content--}}
-    @yield("content")
-
+    <div class="pt-3">
+    @yield("content")</div>
+</div>
     {{--Navbar Fixed Bottom--}}
     <div class="container-fluid">
         <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 p-0">
@@ -67,6 +69,5 @@
 
     {{--Script--}}
     @yield("script")
-    <script src="{{asset("js/app.js")}}"></script>
 </body>
 </html>
