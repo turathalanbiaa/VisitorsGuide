@@ -14,7 +14,6 @@ return [
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
     "english"         => "الانكليزية",
-    "btn_save"        => "حفظ",
     //Menu
     "menu_road_guid"         => "دليل الطريق",
     "menu_visitor_feqh"      => "فقه الزائر",
