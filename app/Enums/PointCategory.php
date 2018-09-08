@@ -14,8 +14,8 @@ class PointCategory
     const MAWAKEP = 1;
     const HEMAMAT = 2;
     const PUBLIC = 3;
-    const CENTER = 4;
-    const CENTER_REFERENDUM = 5;
+    const LOST_CENTER = 4;
+    const REFERENDUM_CENTER = 5;
 
     public static function getCategoryColor($category) {
         switch ($category) {
@@ -23,6 +23,7 @@ class PointCategory
             case "2": return "teal"; break;
             case "3": return "pink"; break;
             case "4": return "orange"; break;
+            case "5": return "yellow"; break;
         }
         return "";
     }
@@ -33,6 +34,7 @@ class PointCategory
             case "2": return "fa-bath"; break;
             case "3": return "fa-map-marked-alt"; break;
             case "4": return "fa-bullhorn"; break;
+            case "5": return "fa-archive"; break;
         }
         return "";
     }

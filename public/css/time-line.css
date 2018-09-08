@@ -1,6 +1,7 @@
 .timeline {
     list-style: none;
-    padding: 0;
+    padding: 0!important;
+    margin: 0!important;
     position: relative;
 }
 
@@ -23,6 +24,10 @@
 .timeline > li {
     margin-bottom: 20px;
     position: relative;
+}
+
+.timeline > li:last-child {
+    margin-bottom: 0 !important;
 }
 
 .timeline > li:before,
@@ -113,7 +118,9 @@
 .timeline-badge.pink {
     background-color: #f92799!important;
 }
-
+.timeline-badge.yellow{
+    background-color: #ffc107!important;
+}
 
 
 @media (max-width: 767px) {
