@@ -88,17 +88,19 @@
 
             <div class="col-12 col-sm-6">
                 <div class="card text-center shadow p-3 mb-5 bg-white rounded">
+
                     <div class="card-header bg-white ">
 
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2"> عبد الله عبد الصمد</span></h6>
+                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> محمد غني محمد</span></h6>
                         <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
 
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
+                        <h5 class="card-title">بيت استضافة رقم4</h5>
                         <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
+                        <p class="card-text">عدد الافراد : 25</p>
+                        <p class="card-text">الاشخاض : رجال</p>
+                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">عرض البيت على الخارطة<i class="fa fa-home text-white"></i></a>
                         <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
                         </a>
 
@@ -110,15 +112,16 @@
                 <div class="card text-center shadow p-3 mb-5 bg-white rounded">
                     <div class="card-header bg-white ">
 
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
+                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> الحاج علي حسين</span></h6>
                         <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
 
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
+                        <h5 class="card-title">بيت سكن 4</h5>
+                        <p class="card-text">العوان : خان النص - حي الصحة</p>
+                        <p class="card-text">عدد الافراد : 12</p>
+                        <p class="card-text">الاشخاض : نساء</p>
+                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">عرض البيت على الخارطة</a>
                         <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
                         </a>
 
@@ -130,75 +133,16 @@
                 <div class="card text-center shadow p-3 mb-5 bg-white rounded">
                     <div class="card-header bg-white ">
 
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
+                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> وسام جواد</span></h6>
                         <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
 
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
+                        <h5 class="card-title">بيت لاستضافة الزائرين</h5>
+                        <p class="card-text"> العوان : نجف -  الحولي</p>
                         <p class="card-text">عدد الافراد : 20</p>
                         <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
+                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">عرض البيت على الخارطة</a>
                         <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
                         </a>
 
