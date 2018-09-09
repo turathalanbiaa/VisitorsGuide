@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 
 class MajalesController extends Controller
 {
-
-
     public function addMajles ()
     {
 
@@ -97,5 +95,4 @@ class MajalesController extends Controller
 
         return view('/majales/events_city', ['events'=>$getEventsEnded]);
     }
-
 }
