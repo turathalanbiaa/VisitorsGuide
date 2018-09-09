@@ -1,17 +1,12 @@
 @extends('layout.secondary_layout')
+
 @section('top-title')
     <h1>دليل الزيارات والادعية</h1>
 @endsection
-@section("navbar-color")
-    {{"bg-aqua-gradient"}}
-@endsection
-
-@section("navbar-brand")
-    <span id="title">الادعية والزيارات - جميع الزيارات</span>
-@endsection
 
 @section('content')
-    <div class="container prayerAndVisits">
+
+    <div class="container prayerAndVisits pb-5 pt-2">
         <div clsass="row pt-3">
             <form action="/adeua-and-zuarat/search-by-adeua" method="get">
                 <div class="form-group aa-input-container">
@@ -25,55 +20,13 @@
                 </div>
             </form>
         </div>
-        <div class="row justify-content-center pt-2 pb-5">
-            <div class="col-md-8 prayer-today">
-                <div class="row">
-                    <div class="col-md-12 w-100 p-0">
-                        <img class="w-100" src="{{asset('thumb.jpeg')}}">
-                    </div>
-                    <div class="col-md-12">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner">
-                                @foreach($daysAdeua as $daydeua)
-                                    <div class="carousel-item">
-                                        <div class="prayer-today-content">
-                                            <div class="header mt-3">
-                                                <h2 class="text-center">{{$daydeua->title}}</h2>
-                                            </div>
-                                            <div class="content">
-                                                <p>{{$daydeua->content}}</p>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary rounded mb-3" type="button" data-toggle="collapse"
-                                                data-target="#collapse-{{$daydeua->id}}"
-                                                aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
-                                        </button>
-                                        <div class="collapse p-3" id="collapse-{{$daydeua->id}}">
-                                            <audio controls class="w-100">
-                                                <source src="" type="audio/ogg">
-                                                <source src="" type="audio/mpeg">
-                                            </audio>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+        @if($publicAdeua->count() == 0)
+            <div class="row justify-content-center">
                 <div>
-                    <a class="" style="float: left" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" style="background-color: #0c5460" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="" style="float: right" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" style="background-color: #0c5460" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <h2>لاتوجد بيانات لعرضها</h2>
                 </div>
             </div>
-        </div>
-
+        @endif
         <div class="row">
             @foreach($publicAdeua as $publicDeua)
                 <div class="col-md-4 pb-4">
@@ -85,7 +38,7 @@
                             <h3 id="tit-{{$publicDeua->id}}">{{$publicDeua->title}}</h3>
                             <p id="cont-{{$publicDeua->id}}" class="text-truncate">{{$publicDeua->content}}</p>
                             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                                data-target="#collapse-{{$publicDeua->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
+                                    data-target="#collapse-{{$publicDeua->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
                             </button>
                             <button class="btn btn-secondary btn-sm rounded read-more" value="{{$publicDeua->id}}" data-toggle="modal"
                                     data-target=".exampleModalLong">قراءة للزيارة
@@ -111,7 +64,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modal-title" ></h5>
+                    <h5 id="modal-title"></h5>
                 </div>
 
                 <div class="modal-body">
@@ -124,8 +77,9 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
+
+
+
     <script>
         $('.read-more').click(function () {
             var id = $(this).attr('value');
@@ -140,4 +94,5 @@
             $('.carousel-item:first').addClass('active');
         })
     </script>
+
 @endsection

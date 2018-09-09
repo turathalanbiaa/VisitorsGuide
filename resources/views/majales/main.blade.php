@@ -9,99 +9,81 @@
 @endsection
 
 @section('content')
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-6 shadow" style="background-color: white; color: white">
+    <div class="container pt-5 pb-5">
+        @if($events->count() == 0)
+            <div class="mt-lg-5 text-center">
+                <h1>لاتوحد بيانات لعرضها</h1>
+            </div>
+        @endif
+        @foreach($events as $event)
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 shadow" style="background-color: white; color: white">
                     <div class="row">
                         <div class="col-md-12 p-0" style="background-color: #424242; text-align: center; height: fit-content">
                             <span style="font-size: 60px; color:#ff9e0f">
-                                {{Carbon\Carbon::parse('2018-09-01 01:02:00')->daysInMonth}}
+                                {{Carbon\Carbon::parse($event->majles_start)->format('d')}}
                             </span>
                             <p class="m-0" style="background-color: #ff9e0f;">
-                                {{\App\Enums\WeekDays::nameOfDays(Carbon\Carbon::parse('2018-09-01 01:02:00')->localeDayOfWeek)}}
+                                {{\App\Enums\WeekDays::nameOfDays(Carbon\Carbon::parse($event->majles_start)->localeDayOfWeek)}}
                             </p>
                         </div>
                         <div class="col-md-12">
-                            <p class="mt-3" style="color: black">أنتم مدعوون الى
-
-                                المجلس الحسيني الاسبوعي
-
-                                غدا، يوم الخميس، الموافق 21-11-2013
-
-                                في تمام الساعة الثامنة مساءا
-
-                                ابتداءا بدعاء كميل وزيارة الامام الحسين (ع)
-
-                                يليها مجلس حسيني للخطيب الحسيني
-
-                                سماحة الشيخ حيدر الخفاجي
-
-                                تليها لطميات ومرثيات حسينية
-
-                                في مؤسسة الامام الحسين (ع) الخيرية
-
-                                *الدعوة عامة للجميع رجالا ونساءا*
-                            </p>
+                            <p class="mt-3" style="color: black">{{$event->description}}</p>
                             <p class="mb-0" style="color: #ff9e0f">
                                 <span>وقت المناسبة :</span>
-                                <span> {{Carbon\Carbon::parse('2018-09-01 01:02:00')->format('h:i')}} </span>
-                                <span>{{\App\Enums\TimeArabic::getTimeInArabic(Carbon\Carbon::parse('2018-09-01 01:02:00')->format('A'))}}</span>
+                                <span> {{Carbon\Carbon::parse($event->time_start)->format('h:i')}} </span>
+                                <span>{{\App\Enums\TimeArabic::getTimeInArabic(Carbon\Carbon::parse($event->majles_start)->format('A'))}}</span>
                             </p>
                             <p class="mb-1" style="color: #ff9e0f;">
-                                <span>النجف</span> - <span>قرية الغيدير</span> - <span> بلوك ٦٤ - دار رقم ٨ قرب - اسواق القاسم</span>
+                                <span>{{$event->city}}</span> - <span>{{$event->district}}</span> - <span>{{$event->closes_point}}</span>
 
                             </p>
                             <i class="fas fa-map" style="color: #658aff"></i>
-                            <a  href="#" id="location" longitude="44.313654199999995" latitude="31.993136900000003" data-toggle="modal" data-target=".bd-example-modal-lg">اضغط هنا لتحديد العنوان على الخريطة</a>
+                            <a  href="#" class="location" longitude="{{$event->longitude}}" latitude="{{$event->latitude}}"
+                                data-toggle="modal" data-target=".bd-example-modal-lg">
+                                اضغط هنا لتحديد العنوان على الخريطة
+                            </a>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-12 p-0">
                             <div style="display: inline; font-size: 12px">
-                                <div class="p-1" style="background-color: #4dd0e1; width: fit-content; display: inline; margin: 0">
-                                    <span>تبدء المناسبة</span>
+                                <div class="p-1" style="background-color: #4dd0e1; width: fit-content; display: inline">
+                                    <span>تبدء المنسابة</span>
                                 </div>
-                                <div class="p-1" style="background-color: #573e39; width: fit-content; display: inline; margin: 0">
-                                    <span>22</span>
-                                </div>
-                                <div class="p-1" style="background-color: #d26a37; width: fit-content; display: inline">
-                                    <span>8</span>
-                                </div>
-                                <div class="p-1" style="background-color: #e2b100; width: fit-content; display: inline">
-                                    <span>2018</span>
+                                <div class="p-1" style="width: fit-content; background-color: #ff9e0f; display: inline">
+                                    <span>{{Carbon\Carbon::parse($event->majles_start)->format('y-m-d')}}</span>
                                 </div>
                             </div>
                             <div style="display: inline; font-size: 12px">
-                                <div class="p-1" style="background-color: #4dd0e1; width: fit-content; display: inline">
-                                    <span>تبدء المناسبة</span>
+                                <div class="p-1" style="background-color: #999999; width: fit-content; display: inline">
+                                    <span>تنتهي المناسبة</span>
                                 </div>
-                                <div class="p-1" style="background-color: #573e39; width: fit-content; display: inline">
-                                    <span>22</span>
-                                </div>
-                                <div class="p-1" style="background-color: #d26a37; width: fit-content; display: inline">
-                                    <span>8</span>
-                                </div>
-                                <div class="p-1" style="background-color: #e2b100; width: fit-content; display: inline">
-                                    <span>2018</span>
+                                <div class="p-1" style="background-color: #ff9e10; width: fit-content; display: inline">
+                                    <span>{{$event->majles_end}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        @endforeach
+        <div>
+            {{$events->links()}}
         </div>
+    </div>
 
-        <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div id="map-canvas" style="height: 600px"></div>
+    <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div id="map-canvas" style="height: 600px"></div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
                 </div>
             </div>
         </div>
+    </div>
 
 
 @endsection
@@ -114,15 +96,15 @@
 
         <div class="modal-body">
             <div class="list-group">
-                <a class="list-group-item list-group-item-action" id="show-questions">
+                <a href="/majales/events-upcoming" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-hourglass-start"></i>
                     <span>عرض المناسبات التي لم تبدء الى الان</span>
                 </a>
-                <a class="list-group-item list-group-item-action" id="show-send-question">
+                <a href="/majales/events-ended" class="list-group-item list-group-item-action" id="show-send-question">
                     <i class="fas fa-hourglass-end"></i>
                     <span>عرض المناسبات الفائتة</span>
                 </a>
-                <a href="events" class="list-group-item list-group-item-action" id="show-ads-maseal">
+                <a href="/majales/events-started" href="events" class="list-group-item list-group-item-action" id="show-ads-maseal">
                     <i class="fas fa-hourglass-half"></i>
                     <span>عرض المناسبات التي بدأت </span>
                 </a>
@@ -133,58 +115,58 @@
 
                     <div class="collapse" id="category-list">
                         <div class="list-group list-group-flush mx-3">
-                            <a href="majales/city/{{\App\Enums\Cities::NAJ}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::NAJ}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::NAJ}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::KAR}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::KAR}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::KAR}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::BAGH}}" class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::BAGH}}" class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::BAGH}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::BAB}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::BAB}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::BAB}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::QAD}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::QAD}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::QAD}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::WAS}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::WAS}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::WAS}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::MUTH}}" class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::MUTH}}" class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::MUTH}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::MAY}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::MAY}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::MAY}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::THI}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::THI}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::THI}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::BAS}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::BAS}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::BAS}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::ANB}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::ANB}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::ANB}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::DIY}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::DIY}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::DIY}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::SAL}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::SAL}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::SAL}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::KIR}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::KIR}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::KIR}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::NIN}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::NIN}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::NIN}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::ARB}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::ARB}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::ARB}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::SUL}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::SUL}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::SUL}}
                             </a>
-                            <a href="majales/city/{{\App\Enums\Cities::DHU}}"  class="list-group-item list-group-item-action">
+                            <a href="/majales/events-city/{{\App\Enums\Cities::DHU}}"  class="list-group-item list-group-item-action">
                                 {{\App\Enums\Cities::DHU}}
                             </a>
                         </div>
@@ -216,7 +198,7 @@
             });
         }
 
-        $('#location').on('click', function () {
+        $('.location').on('click', function () {
             $('#modal').modal({
                 backdrop: 'static',
                 keyboard: false

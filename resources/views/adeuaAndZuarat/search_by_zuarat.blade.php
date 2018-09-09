@@ -2,7 +2,6 @@
 
 @section('top-title')
     <h1>دليل الزيارات والادعية</h1>
-
 @endsection
 
 @section('content')
@@ -30,29 +29,29 @@
         @endif
         <div class="row justify-content-center">
             @foreach($zuarat as $zuara)
-            <div class="col-md-6 pb-4">
-                <div class="rounded p-0 shadow-special" style=" overflow: hidden">
-                    <div class="w-100">
-                        <img class="w-100" src="{{asset('naj.jpg')}}">
-                    </div>
-                    <div class="mt-3 p-3 zuarat">
-                        <h3 id="tit-2334">{{$zuara->title}}</h3>
-                        <p id="cont-2334" class="text-truncate">{{$zuara->content}}</p>
-                        <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                                data-target="#collapse-{{$zuara->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
-                        </button>
-                        <button class="btn btn-secondary btn-sm rounded read-more" value="2334" data-toggle="modal"
-                                data-target=".exampleModalLong">قراءة للزيارة
-                        </button>
-                    </div>
-                    <div class="collapse p-3" id="collapse-{{$zuara->id}}">
-                        <audio controls class="w-100">
-                            <source src="horse.ogg" type="audio/ogg">
-                            <source src="horse.mp3" type="audio/mpeg">
-                        </audio>
+                <div class="col-md-6 pb-4">
+                    <div class="rounded p-0 shadow-special" style=" overflow: hidden">
+                        <div class="w-100">
+                            <img class="w-100" src="{{asset('naj.jpg')}}">
+                        </div>
+                        <div class="mt-3 p-3 zuarat">
+                            <h3 id="tit-2334">{{$zuara->title}}</h3>
+                            <p id="cont-2334" class="text-truncate">{{$zuara->content}}</p>
+                            <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
+                                    data-target="#collapse-{{$zuara->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
+                            </button>
+                            <button class="btn btn-secondary btn-sm rounded read-more" value="2334" data-toggle="modal"
+                                    data-target=".exampleModalLong">قراءة للزيارة
+                            </button>
+                        </div>
+                        <div class="collapse p-3" id="collapse-{{$zuara->id}}">
+                            <audio controls class="w-100">
+                                <source src="horse.ogg" type="audio/ogg">
+                                <source src="horse.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
         <div class="pb-5 pt-2">
@@ -63,7 +62,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 id="modal-title"</h5>
+                        <h5 id="modal-title"></h5>
                     </div>
                     <div class="modal-body">
                         <p id="modal-content"></p>

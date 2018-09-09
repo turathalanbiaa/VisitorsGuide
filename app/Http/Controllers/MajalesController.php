@@ -58,20 +58,44 @@ class MajalesController extends Controller
     public function main ()
     {
 
-        $date = Carbon::now();
-        $getMajales = Majales::where('majles_end','>=',$date->format('y-m-d'))->orderBy('majles_start')->get();
+        $getMajales = Majales::whereDate('majles_end','>=',Carbon::now()->format('y-m-d'))
+            ->orderBy('majles_start')->paginate(4);
 
-        return view('majales/main');
+        return view('majales/main', ['events'=>$getMajales]);
     }
 
     public function getEventsByCity ($city)
     {
-        $getEventsByCity = Majales::where('city',$city)->paginate(10);
-        if ($getEventsByCity->count() === 0)
-        {
-            redirect('/majales/city')->with('notFond', 'لم يتم العثور علي بيانات لعرضها');
-        }
+        $getEventsByCity = Majales::where('city',$city)->orderBy('majles_start')
+            ->orderBy('majles_start')->paginate(10);
+
         return view('/majales/events_city', ['events'=>$getEventsByCity]);
+    }
+
+    public function getEventsUpcoming ()
+
+    {
+        $getEventsUpcoming = Majales::whereDate('majles_start', '>', Carbon::now()->format('y-m-d'))
+            ->orderBy('majles_start')->paginate(10);
+
+        return view('/majales/events_city', ['events'=>$getEventsUpcoming]);
+    }
+
+    public function getEventsStarted ()
+    {
+        $getEventsStarted = Majales::whereDate('majles_start', '<=', Carbon::now()->format('y-m-d'))
+            ->whereDate('majles_end', '>=', Carbon::now()->format('y-m-d'))->orderBy('majles_start')
+            ->paginate(10);
+
+        return view('/majales/events_city', ['events'=>$getEventsStarted]);
+    }
+
+    public function getEventsEnded ()
+    {
+        $getEventsEnded = Majales::whereDate('majles_end', '<', Carbon::now()->format('y-m-d'))->orderBy('majles_start')
+            ->paginate(10);
+
+        return view('/majales/events_city', ['events'=>$getEventsEnded]);
     }
 
 }

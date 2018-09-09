@@ -16,16 +16,13 @@
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
-<<<<<<< HEAD
     <script src="{{asset("js/app.js")}}"></script>
     <script src="{{asset("js/material.min.js")}}"></script>
     <script src="{{asset("js/material-kit.js")}}"></script>
-=======
     <script src="{{asset("js/popper.min.js")}}"></script>
 
 
     @include("layout.body_direction")
->>>>>>> 73dd634df6badb338efcea15b5740a33a466ebbb
 </head>
 <body>
     {{--Navbar Fixed Top--}}

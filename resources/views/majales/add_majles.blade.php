@@ -17,7 +17,7 @@
                 </ul>
             </div>
         @endif
-        <form class="pt-5" method="post" action="/majales/save_majles">
+        <form class="pt-5" method="post" action="/majales/save-majles">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">ال،صف</label>

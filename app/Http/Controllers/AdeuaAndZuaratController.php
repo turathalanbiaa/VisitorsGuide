@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Enums\AdeuaZuaratCategory;
 use App\Models\AdeuaAndZuarat;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class AdeuaAndZuaratController extends Controller
 {
@@ -41,7 +43,8 @@ class AdeuaAndZuaratController extends Controller
 
     public function images ()
     {
-        return view('adeuaAndZuarat/images');
+        $images = Post::whereNull('video_link')->paginate(10);
+        return view('adeuaAndZuarat/images', ['images'=>$images]);
     }
 
     public function videos ()
@@ -49,8 +52,17 @@ class AdeuaAndZuaratController extends Controller
         return view('adeuaAndZuarat/videos');
     }
 
-    public function test ()
+    public function searchByZuarat ()
     {
-        return view('adeuaAndZuarat/test');
+        $searchByZuarat = AdeuaAndZuarat::where('title', 'like', '%'.Input::get('search').'%')
+            ->where('category', AdeuaZuaratCategory::ZUARAT)->paginate(10);
+        return view('adeuaAndZuarat/search_by_zuarat', ['zuarat' => $searchByZuarat]);
+    }
+
+    public function searchByAdeua ()
+    {
+        $searchByAdeua = AdeuaAndZuarat::where('title', 'like', '%'.Input::get('search').'%')
+            ->where('category', AdeuaZuaratCategory::PUBLIC_ADEUA)->paginate(10);
+        return view('adeuaAndZuarat/search_by_adeua', ['publicAdeua'=>$searchByAdeua]);
     }
 }
