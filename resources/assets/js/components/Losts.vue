@@ -1,16 +1,15 @@
 <template>
     <div>
         <div class="container-fluid p-0">
-
             <nav class="navbar navbar-dark fixed-top bg-teal-gradient">
-                <a class="navbar-brand m-0 w-75 text-truncate">
+                <a class="navbar-brand m-0 w-75 text-truncate text-white">
                     <span>دليل التائهين والمفقودات</span>
                 </a>
-                <div class="d-flex flex-row justify-content-end w-25">
-                    <a v-on:click="showModal = true" class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2">
-                        <i class="fa fa-bars text-white align-middle"></i>
+                <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
+                    <a v-on:click="showModal = true" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
+                        <i class="fa fa-bars text-white align-middle" style="width: 14px;"></i>
                     </a>
-                    <a href="/" class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2">
+                    <a href="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
                         <i class="fa fa-home text-white align-middle"></i>
                     </a>
                 </div>
@@ -28,40 +27,24 @@
 
                                 </div>
                                 <div class="modal-body">
-                                    <div class="form-check">
-                                        <input v-on:click="category=1" class="form-check-input" type="radio"
-                                               name="exampleRadios" id="rad1" value="option1">
-                                        <label class="form-check-label px-4" for="rad1">
-                                            أشخاص
-                                        </label>
+                                    <div class="list-group">
+                                        <a v-on:click="changeFilter(1)"
+                                           class="list-group-item  list-group-item-action">
+                                            <span>أشخاص</span>
+                                        </a>
+                                        <a v-on:click="changeFilter(2)"
+                                           class="list-group-item  list-group-item-action">
+                                            <span>مبلغ من المال</span>
+                                        </a>
+                                        <a v-on:click="changeFilter(3)"
+                                           class="list-group-item  list-group-item-action">
+                                            <span>قطعه ذهبيه</span>
+                                        </a>
+                                        <a v-on:click="changeFilter(4)"
+                                           class="list-group-item  list-group-item-action">
+                                            <span>حقائب</span>
+                                        </a>
                                     </div>
-                                    <div class="form-check">
-                                        <input v-on:click="category=2" class="form-check-input" type="radio"
-                                               name="exampleRadios" id="rad2" value="option1">
-                                        <label class="form-check-label px-4" for="rad2">
-                                            مبلغ من المال
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input v-on:click="category=3" class="form-check-input" type="radio"
-                                               name="exampleRadios" id="rad3" value="option1">
-                                        <label class="form-check-label px-4" for="rad3">
-                                            قطعه ذهبيه
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input v-on:click="category=4" class="form-check-input" type="radio"
-                                               name="exampleRadios" id="rad4" value="option1">
-                                        <label class="form-check-label px-4" for="rad4">
-                                            حقائب
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <!--<button type="button" class="btn btn-secondary" @click="showModal = false">Close</button>-->
-                                    <button v-on:click="[page=1,changeFilter(),showModal=false]" type="button"
-                                            class="btn btn-primary btn-block">حفظ
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -71,9 +54,9 @@
             </transition>
         </div>
 
-        <div class="container pt-5 pb-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
+        <div class="container pt-2">
+            <div class="row">
+                <div class="col">
                     <div class="form-group aa-input-container">
                         <input v-model.lazy="search" class="form-control form-control-lg" type="text"
                                autocomplete="off">
@@ -123,11 +106,25 @@
                              لايوجد بيانات ...
                      </span>
                     </infinite-loading>
+
+<!--
+
+                    <a href="/" class="float">
+                        <i class="fa fa-plus my-float"></i>
+                    </a>
+-->
+
+                    <router-link to="/find" class="float">
+                        <i class="fa fa-bullhorn my-float"></i>
+                    </router-link>
+
                 </div>
             </div>
 
         </div>
     </div>
+
+
 </template>
 
 <script>
@@ -144,13 +141,13 @@
         },
         mounted() {
             console.log('mounted');
-            console.log(this.category);
         },
         watch: {
             search() {
                 this.page = 1;
                 this.category = null;
-                this.changeFilter();
+                this.list = [];
+                this.reloading();
             }
         },
 
@@ -160,7 +157,7 @@
                     .then(({data}) => {
                         this.list = this.list.concat(data.data);
                         $state.loaded();
-                        if (this.page === data.last_page) {
+                        if (this.page === data.meta.last_page) {
                             $state.complete();
                         }
                         this.page = this.page + 1;
@@ -168,15 +165,15 @@
                     .catch(error => {
                     });
             },
-            changeFilter() {
-                console.log(this.category);
+            changeFilter(arg) {
+                this.page = 1;
                 this.list = [];
-                this.$nextTick(() => {
-                    this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset');
-                });
+                this.category=arg;
+                this.reloading();
+                this.showModal = false;
             },
-            getCategory(cat) {
-                switch (cat) {
+            getCategory(arg) {
+                switch (arg) {
                     case 1:
                         return "أشخاص";
                         break;
@@ -191,11 +188,22 @@
                         break;
                 }
             },
+            reloading() {
+                this.$nextTick(() => {
+                    this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset');
+                });
+            },
         }
     };
 </script>
 
 <style scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
     .modal-mask {
         position: fixed;
         z-index: 9998;
@@ -211,5 +219,33 @@
     .modal-wrapper {
         display: table-cell;
         vertical-align: middle;
+    }
+
+    .float {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        bottom: 50px;
+        background-color: #0C9;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+    }
+    .my-float {
+        margin-top: 19px;
+    }
+  .modal-enter {
+        opacity: 0;
+    }
+
+    .modal-leave-active {
+        opacity: 0;
+    }
+
+    .modal-enter .modal-container,
+    .modal-leave-active .modal-container {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
 </style>

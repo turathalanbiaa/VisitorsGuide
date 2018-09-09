@@ -10,7 +10,8 @@
 
 @section("content")
     <div id="app">
-        <Losts></Losts>
+        <router-view name="lostIndex"></router-view>
+        <router-view></router-view>
     </div>
 @endsection
 

@@ -23,8 +23,8 @@
 </head>
 <body >
 {{--Content--}}
-<div id="app" class="pt-3">
-        @yield("content")
+<div style="margin: 54px 0 56px 0;">
+@yield("content")
 </div>
 {{--Navbar Fixed Bottom--}}
 <div class="container-fluid">
