@@ -97,11 +97,13 @@
 
         <div class="row mb-5">
             <div class="col-md-3 p-0">
-                <div style="position: relative">
-                    <img class="h-100 w-100 p-0" src="{{asset('1.jpg')}}">
-                </div>
-                <div class="w-100 h-100 col justify-content-center" style="opacity: 0.8; position: absolute; top: 0; background-color: #1b1e21; text-align: center">
-                    <i class="fas fa-play" style="font-size: 66px; color: #1c7430"></i>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('1.jpg')}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
                 </div>
             </div>
         </div>

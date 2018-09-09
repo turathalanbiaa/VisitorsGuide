@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
 
-    <title>دليل الزائرين</title>
+    <title>{{trans("words.app_name")}}</title>
 
     <!-- StyleSheet -->
     <link href="{{asset("css/app.css")}}" rel="stylesheet" type="text/css">
@@ -16,7 +16,6 @@
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
-    {{--<script src="{{asset("js/popper.min.js")}}"></script>--}}
     <script src="{{asset("js/app.js")}}"></script>
 
     @include("layout.body_direction")

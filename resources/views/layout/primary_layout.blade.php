@@ -10,6 +10,7 @@
 
     <!-- StyleSheet -->
     <link href="{{asset("css/app.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{asset("css/material-kit.css")}}" rel="stylesheet" type="text/css">
     <link href="{{asset("css/style.css")}}" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 

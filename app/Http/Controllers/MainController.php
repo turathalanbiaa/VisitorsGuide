@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Input;
-
 class MainController extends Controller
 {
     public function index() {

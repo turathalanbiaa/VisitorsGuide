@@ -87,7 +87,7 @@
 
 /* Adeua and Zuarat */
 
-.prayerAndVisits .prayer-today
+.prayerAndVisits .prayer-today , .videos-gallery
 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
@@ -105,7 +105,7 @@
     -ms-transition: all 2s ease;
     transition: all 2s ease;
 }
-.gallery-images:hover .image
+.image:hover
 {
     width: 150% !important;
     height: 150% !important;
@@ -122,13 +122,11 @@
     display: block;
 }
 @media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 90%;
+    .modal-image {
+        max-width: 90% !important;
         margin: 1.75rem auto;
     }
 }
-
-
 /* End Adeua and Zuarat */
 
 /*-------------------------------------------------

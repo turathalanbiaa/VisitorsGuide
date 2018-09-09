@@ -12,5 +12,5 @@ namespace App\Enums;
 class PostCategory
 {
     const MAJALES = 1;
-    const VISITOR = 2;
+    const ADEUA_ZUARAT = 2;
 }
