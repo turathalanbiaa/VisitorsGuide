@@ -21,17 +21,17 @@
 </head>
 <body>
     {{--Navbar Fixed Top--}}
-    <div class="container-fluid">
-        <nav class="navbar fixed-top navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container px-0">
             <a href="javascript:void(0);" class="navbar-brand mr-0">
                 {{trans("words.app_name")}}
             </a>
 
-            <a class="btn btn-sm shadow-lg bg-primary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
-                <i class="fa fa-globe text-white align-middle"></i>
+            <a class="btn btn-sm btn-primary shadow" data-toggle="modal" data-target="#select-language-modal">
+                <i class="fa fa-globe text-white align-middle" style="width: 14px;"></i>
             </a>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     {{--Content--}}
     @yield("content")

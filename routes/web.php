@@ -16,4 +16,4 @@
 @include("Ahmed.php");
 
 Route::get("/", "MainController@index")->middleware("setLocaleLanguage");
-Route::post("/select-language", "MainController@selectLanguage");
+Route::get("/select-language", "MainController@selectLanguage");

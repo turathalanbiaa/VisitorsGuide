@@ -14,7 +14,6 @@ return [
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
     "english"         => "الانكليزية",
-    "btn_save"        => "حفظ",
     //Menu
     "menu_road_guid"         => "دليل الطريق",
     "menu_visitor_feqh"      => "فقه الزائر",
@@ -37,19 +36,22 @@ return [
     "main_centers_detail"           => "",
     "main_btn_enter"                => "دخول",
     //Road Guide
-    "road_guide_menu_show_all_points"     => "عرض جميع المناطق",
-    "road_guide_menu_show_mawakep_points" => "عرض المواكب فقط",
-    "road_guide_menu_show_hemamat_points" => "عرض الحمامات فقط",
-    "road_guide_menu_show_public_points"  => "عرض المناطق العامة والمشهورة",
-    "road_guide_menu_show_centers_points" => "عرض مراكز التائهين والمفقودات",
-    "road_guide_menu_street_view"         => "حساب المسافة بين نقطتين",
+    "road_guide_menu_show_all_points"                => "عرض جميع المناطق",
+    "road_guide_menu_show_mawakep_points"            => "عرض المواكب فقط",
+    "road_guide_menu_show_hemamat_points"            => "عرض الحمامات فقط",
+    "road_guide_menu_show_public_points"             => "عرض المناطق العامة والمشهورة",
+    "road_guide_menu_show_lost_centers_points"       => "عرض مراكز التائهين والمفقودات",
+    "road_guide_menu_show_referendum_centers_points" => "عرض مراكز الاستفتاءات",
+    "road_guide_menu_street_view"                    => "حساب المسافة بين نقطتين",
 
-    "road_guide_title_all_points"     => "دليل الطريق - جميع المناطق",
-    "road_guide_title_mawakep_points" => "دليل الطريق - المواكب",
-    "road_guide_title_hemamat_points" => "دليل الطريق - الحمامات",
-    "road_guide_title_public_points"  => "دليل الطريق - المناطق العامة والمشهورة",
-    "road_guide_title_centers_points" => "دليل الطريق - مراكز التائهين والمفقودات",
-    "road_guide_title_street_view"    => "دليل الطريق - حساب المسافة",
+    "road_guide_title_all_points"                => "دليل الطريق - جميع المناطق",
+    "road_guide_title_mawakep_points"            => "دليل الطريق - المواكب",
+    "road_guide_title_hemamat_points"            => "دليل الطريق - الحمامات",
+    "road_guide_title_public_points"             => "دليل الطريق - المناطق العامة والمشهورة",
+    "road_guide_title_lost_centers_points"       => "دليل الطريق - مراكز التائهين والمفقودات",
+    "road_guide_title_referendum_centers_points" => "دليل الطريق - مراكز الاستفتاءات",
+    "road_guide_title_centers_points"            => "دليل الطريق - مراكز التائهين والمفقودات",
+    "road_guide_title_street_view"               => "دليل الطريق - حساب المسافة",
 
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
 
@@ -75,13 +77,12 @@ return [
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
     "road_guide_calculate_distance_error_connection_message" => "يرجى التحقق من اتصال الإنترنت",
     //Visitor Feqh
-    "visitor_feqh_menu_show_all_questions"  => "عرض جميع الاسئلة",
-    "visitor_feqh_menu_send_question"       => "ارسال سؤال الى موقع الاجوبة الميسرة",
-    "visitor_feqh_menu_download_app_masael" => "تحميل تطبيق الاجوبة الميسرة",
-    "visitor_feqh_menu_filter"              => "عرض حسب الصنف",
+    "visitor_feqh_menu_show_all_questions" => "عرض جميع الاسئلة",
+    "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
+    "visitor_feqh_menu_app_masael"         => "تحميل تطبيق الاجوبة الميسرة",
+    "visitor_feqh_menu_filter"             => "عرض حسب الصنف",
 
     "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
-    "visitor_feqh_title_send_question" => "فقه الزائر - ارسال سؤال",
     "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
 
     "visitor_feqh_ads_app_masael_text"  => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
@@ -93,14 +94,8 @@ return [
     "visitor_feqh_questions_pagination_prev" => "السابق",
     "visitor_feqh_questions_pagination_next" => "التالي",
 
-    "visitor_feqh_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
-
-    "visitor_feqh_send_question_description" => "يمكنك ارسال سؤال الى موقع الأجوبة الميسرة سواء كان سؤالك في الفقه اوالعقائد، وسوف تتم الأجابة على سؤالك خلال فترة وجيزة دون الحاجة الى انشاء حساب.",
-    "visitor_feqh_send_question_detail" => "اذا كنت ترغب بأرسال سؤال ",
-    "visitor_feqh_send_question_btn"      => "اضغط هنا",
-
+    "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "visitor_feqh_app_masael_description"        => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
-
     "visitor_feqh_masael_website"          => "الموقع الرسمي للأجوبة الميسرة",
     "visitor_feqh_masael_available_app_on" => "يتوفر التطبيق الآن على",
 ];

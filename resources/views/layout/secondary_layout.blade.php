@@ -16,41 +16,39 @@
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
-    <script src="{{asset("js/popper.min.js")}}"></script>
+    {{--<script src="{{asset("js/popper.min.js")}}"></script>--}}
     <script src="{{asset("js/app.js")}}"></script>
 
     @include("layout.body_direction")
 </head>
 <body>
     {{--Navbar Fixed Top--}}
-    <div class="container">
-        <nav class="navbar fixed-top navbar-dark @yield("navbar-color")">
+    <nav class="navbar fixed-top navbar-dark @yield("navbar-color")">
+        <div class="container px-0">
             <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
             </a>
 
-            <div class="d-flex flex-row justify-content-end w-25">
-                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
-                    <i class="fa fa-bars text-white align-middle"></i>
+            <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
+                <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+                    <i class="fa fa-bars text-white align-middle" style="width: 14px;"></i>
                 </a>
 
-                <a class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
-                    <i class="fa fa-globe text-white align-middle"></i>
+                <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" href="/">
+                    <i class="fa fa-home text-white align-middle" style="width: 14px;"></i>
                 </a>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     {{--Content--}}
-    <div class="pt-3">
-    @yield("content")
-</div>
-    <div class="mt-5">
+    <div style="margin: 54px 0 56px 0;">
         @yield("content")
     </div>
+
     {{--Navbar Fixed Bottom--}}
-    <div class="container">
-        <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 px-0">
+    <nav class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 border-0 px-0">
+        <div class="container px-0">
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
@@ -58,10 +56,7 @@
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
         </div>
-    </div>
-
-    {{--Select Language Modal--}}
-    @include("layout.select_language")
+    </nav>
 
     {{--Menu Modal--}}
     @include("layout.menu")
