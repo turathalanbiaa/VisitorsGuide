@@ -1,12 +1,13 @@
-@extends("layout.secondary_layout")
+@extends("layout.vue-layout")
 
 @section("navbar-color")
     {{"bg-teal-gradient"}}
 @endsection
 
 @section("navbar-brand")
-    <span id="title">دليل التائهين والمفقودات</span>
+    <span >دليل التائهين والمفقودات</span>
 @endsection
+
 @section("content")
     <div id="app">
         <Losts></Losts>

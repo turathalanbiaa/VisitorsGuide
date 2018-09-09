@@ -9,9 +9,8 @@
 @endsection
 
 @section("content")
-    <div class="container pt-4 pb-5">
+    <div class="container pt-4 pb-2">
         @include("visitorFeqh.questions")
-        @include("visitorFeqh.send_question_to_masael_website")
         @include("visitorFeqh.app_masael")
     </div>
 @endsection
@@ -28,15 +27,14 @@
                     <i class="fa fa-credit-card"></i>
                     <span>{{trans("words.visitor_feqh_menu_show_all_questions")}}</span>
                 </a>
-                <a class="list-group-item list-group-item-action" id="show-send-question">
+                <a class="list-group-item list-group-item-action" id="send-question" href="http://masael.turathalanbiaa.com/ar/send-question" target="_blank">
                     <i class="fa fa-paper-plane"></i>
                     <span>{{trans("words.visitor_feqh_menu_send_question")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-app-maseal">
                     <i class="fa fa-download"></i>
-                    <span>{{trans("words.visitor_feqh_menu_download_app_masael")}}</span>
+                    <span>{{trans("words.visitor_feqh_menu_app_masael")}}</span>
                 </a>
-
                 <div class="list-group-item" data-toggle="collapse" data-target="#category-list" aria-expanded="false" aria-controls="category-list">
                     <i class="fa fa-filter"></i>
                     <span>{{trans("words.visitor_feqh_menu_filter")}}</span>
@@ -85,44 +83,32 @@
     {{--Change View Content--}}
     <script>
         $("#questions").addClass("d-block");
-        $("#send-question").addClass("d-none");
         $("#app-maseal").addClass("d-none");
-
         $("#show-questions").click(function () {
             $("#title").html("{{trans('words.visitor_feqh_title_questions')}}");
             $("#questions").removeClass("d-none").addClass("d-block");
-            $("#send-question").removeClass("d-block").addClass("d-none");
             $("#app-maseal").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
             }, 500);
         });
-
-        $("#show-send-question").click(function () {
-            $("#title").html("{{trans('words.visitor_feqh_title_send_question')}}");
-            $("#questions").removeClass("d-block").addClass("d-none");
-            $("#send-question").removeClass("d-none").addClass("d-block");
-            $("#app-maseal").removeClass("d-block").addClass("d-none");
-            setTimeout(function () {
-                $("#menu-modal").modal("hide");
-            }, 500);
-        });
-
         $("#show-app-maseal").click(function () {
             $("#title").html("{{trans('words.visitor_feqh_title_app_masael')}}");
             $("#questions").removeClass("d-block").addClass("d-none");
-            $("#send-question").removeClass("d-block").addClass("d-none");
             $("#app-maseal").removeClass("d-none").addClass("d-block");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
             }, 500);
         });
-
         $("#learn-more").click(function () {
             $("#title").html("{{trans('words.visitor_feqh_title_app_masael')}}");
             $("#questions").removeClass("d-block").addClass("d-none");
-            $("#send-question").removeClass("d-block").addClass("d-none");
             $("#app-maseal").removeClass("d-none").addClass("d-block");
+        });
+        $("#send-question").click(function () {
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
         });
     </script>
 @endsection

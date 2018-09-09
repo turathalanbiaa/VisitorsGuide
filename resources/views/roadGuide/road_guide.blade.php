@@ -9,12 +9,13 @@
 @endsection
 
 @section("content")
-    <div class="container pt-4 pb-5">
+    <div class="container py-4">
         @include("roadGuide.all_points")
         @include("roadGuide.mawakep_points")
         @include("roadGuide.hemamat_points")
         @include("roadGuide.public_points")
-        @include("roadGuide.centers_points")
+        @include("roadGuide.lost_centers_points")
+        @include("roadGuide.referendum_centers_points")
         @include("roadGuide.street_view")
     </div>
 @endsection
@@ -43,9 +44,13 @@
                     <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::PUBLIC)}}"></i>
                     <span>{{trans("words.road_guide_menu_show_public_points")}}</span>
                 </a>
-                <a class="list-group-item list-group-item-action" id="show-centers-points">
-                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::CENTER)}}"></i>
-                    <span>{{trans("words.road_guide_menu_show_centers_points")}}</span>
+                <a class="list-group-item list-group-item-action" id="show-lost-centers-points">
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::LOST_CENTER)}}"></i>
+                    <span>{{trans("words.road_guide_menu_show_lost_centers_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-referendum-centers-points">
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::REFERENDUM_CENTER)}}"></i>
+                    <span>{{trans("words.road_guide_menu_show_referendum_centers_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-street-view">
                     <i class="fa fa-street-view"></i>
@@ -90,7 +95,8 @@
         $("#mawakep-points").addClass("d-none");
         $("#hemamat-points").addClass("d-none");
         $("#public-points").addClass("d-none");
-        $("#centers-points").addClass("d-none");
+        $("#lost-centers-points").addClass("d-none");
+        $("#referendum-centers-points").addClass("d-none");
         $("#street-view").addClass("d-none");
 
         $("#show-all-points").click(function () {
@@ -99,7 +105,8 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
-            $("#centers-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -112,7 +119,8 @@
             $("#mawakep-points").removeClass("d-none").addClass("d-block");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
-            $("#centers-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -125,7 +133,8 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-none").addClass("d-block");
             $("#public-points").removeClass("d-block").addClass("d-none");
-            $("#centers-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -138,20 +147,36 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-none").addClass("d-block");
-            $("#centers-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
             }, 500);
         });
 
-        $("#show-centers-points").click(function () {
+        $("#show-lost-centers-points").click(function () {
             $("#title").html("{{trans('words.road_guide_title_centers_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
-            $("#centers-points").removeClass("d-none").addClass("d-block");
+            $("#lost-centers-points").removeClass("d-none").addClass("d-block");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
+        });
+
+        $("#show-referendum-centers-points").click(function () {
+            $("#title").html("{{trans('words.road_guide_title_centers_points')}}");
+            $("#all-points").removeClass("d-block").addClass("d-none");
+            $("#mawakep-points").removeClass("d-block").addClass("d-none");
+            $("#hemamat-points").removeClass("d-block").addClass("d-none");
+            $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-none").addClass("d-block");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -164,7 +189,8 @@
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
-            $("#centers-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-none").addClass("d-block");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");

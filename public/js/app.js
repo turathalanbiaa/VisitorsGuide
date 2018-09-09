@@ -13905,6 +13905,7 @@ Vue.use(__webpack_require__(39));
 
 Vue.component('Losts', __webpack_require__(40));
 Vue.component('InfiniteLoading', __webpack_require__(49));
+
 var app = new Vue({
   el: '#app'
 });
@@ -51975,7 +51976,7 @@ exports = module.exports = __webpack_require__(43)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.modal-mask[data-v-6ec126a8] {\n    position: fixed;\n    z-index: 9998;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, .5);\n    display: table;\n    -webkit-transition: opacity .3s ease;\n    transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-6ec126a8] {\n    display: table-cell;\n    vertical-align: middle;\n}\n", ""]);
 
 // exports
 
@@ -52495,6 +52496,81 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -52503,16 +52579,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             category: null,
             list: [],
             page: 1,
-            imgPreUrl: 'storage/img/lost/'
+            imgPreUrl: 'storage/img/lost/',
+            showModal: false
         };
     },
     mounted: function mounted() {
-        //this.getData();
+        console.log('mounted');
+        console.log(this.category);
     },
 
     watch: {
         search: function search() {
-            this.page = null;
+            this.page = 1;
             this.category = null;
             this.changeFilter();
         }
@@ -52526,7 +52604,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var data = _ref.data;
 
                 _this.list = _this.list.concat(data.data);
-                _this.page = data.current_page;
                 $state.loaded();
                 if (_this.page === data.last_page) {
                     $state.complete();
@@ -52537,6 +52614,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         changeFilter: function changeFilter() {
             var _this2 = this;
 
+            console.log(this.category);
             this.list = [];
             this.$nextTick(function () {
                 _this2.$refs.infiniteLoading.$emit('$InfiniteLoading:reset');
@@ -52569,171 +52647,396 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container pt-5 pb-5" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
+  return _c("div", [
+    _c("div", { staticClass: "container-fluid p-0" }, [
       _c(
-        "div",
-        { staticClass: "col-md-6" },
+        "nav",
+        { staticClass: "navbar navbar-dark fixed-top bg-teal-gradient" },
         [
-          _c("div", { staticClass: "form-group aa-input-container" }, [
-            _c("input", {
-              directives: [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "d-flex flex-row justify-content-end w-25" },
+            [
+              _c(
+                "a",
                 {
-                  name: "model",
-                  rawName: "v-model.lazy",
-                  value: _vm.search,
-                  expression: "search",
-                  modifiers: { lazy: true }
+                  staticClass:
+                    "btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2",
+                  on: {
+                    click: function($event) {
+                      _vm.showModal = true
+                    }
+                  }
+                },
+                [_c("i", { staticClass: "fa fa-bars text-white align-middle" })]
+              ),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _vm.showModal
+      ? _c(
+          "div",
+          [
+            _c("transition", { attrs: { name: "modal" } }, [
+              _c("div", { staticClass: "modal-mask" }, [
+                _c("div", { staticClass: "modal-wrapper" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "modal-dialog",
+                      attrs: { role: "document" }
+                    },
+                    [
+                      _c("div", { staticClass: "modal-content" }, [
+                        _c("div", { staticClass: "modal-header" }, [
+                          _c("h5", { staticClass: "modal-title" }, [
+                            _vm._v("أختر الصنف")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-body" }, [
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "exampleRadios",
+                                id: "rad1",
+                                value: "option1"
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.category = 1
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label px-4",
+                                attrs: { for: "rad1" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        أشخاص\n                                    "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "exampleRadios",
+                                id: "rad2",
+                                value: "option1"
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.category = 2
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label px-4",
+                                attrs: { for: "rad2" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        مبلغ من المال\n                                    "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "exampleRadios",
+                                id: "rad3",
+                                value: "option1"
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.category = 3
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label px-4",
+                                attrs: { for: "rad3" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        قطعه ذهبيه\n                                    "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-check" }, [
+                            _c("input", {
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                name: "exampleRadios",
+                                id: "rad4",
+                                value: "option1"
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.category = 4
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label px-4",
+                                attrs: { for: "rad4" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        حقائب\n                                    "
+                                )
+                              ]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-footer" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary btn-block",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  ;[
+                                    (_vm.page = 1),
+                                    _vm.changeFilter(),
+                                    (_vm.showModal = false)
+                                  ]
+                                }
+                              }
+                            },
+                            [_vm._v("حفظ\n                                ")]
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "container pt-5 pb-5" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-6" },
+          [
+            _c("div", { staticClass: "form-group aa-input-container" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.lazy",
+                    value: _vm.search,
+                    expression: "search",
+                    modifiers: { lazy: true }
+                  }
+                ],
+                staticClass: "form-control form-control-lg",
+                attrs: { type: "text", autocomplete: "off" },
+                domProps: { value: _vm.search },
+                on: {
+                  change: function($event) {
+                    _vm.search = $event.target.value
+                  }
                 }
-              ],
-              staticClass: "form-control form-control-lg",
-              attrs: {
-                type: "text",
-                placeholder: "أدخل كلمة للبحث عنها",
-                autocomplete: "off"
-              },
-              domProps: { value: _vm.search },
-              on: {
-                change: function($event) {
-                  _vm.search = $event.target.value
-                }
-              }
+              }),
+              _vm._v(" "),
+              _c(
+                "svg",
+                {
+                  staticClass: "aa-input-icon",
+                  attrs: { viewBox: "654 -372 1664 1664" }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.list, function(item) {
+              return _c(
+                "div",
+                { key: item.id, staticClass: "card mb-4 shadow-sm" },
+                [
+                  _c("img", {
+                    staticClass: "card-img-top fill",
+                    attrs: {
+                      width: "400",
+                      src: item.file_name
+                        ? _vm.imgPreUrl + item.file_name
+                        : _vm.imgPreUrl + "empty-photo.jpg",
+                      height: "350",
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("div", { staticClass: "card-text" }, [
+                      _c(
+                        "ul",
+                        { staticClass: "list-group list-group-flush p-0" },
+                        [
+                          _c("li", { staticClass: "list-group-item" }, [
+                            _c("span", [_vm._v("الصنف: ")]),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(_vm.getCategory(item.category)) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "list-group-item" }, [
+                            _c("span", [_vm._v("الوصف: ")]),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(item.description) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "list-group-item" }, [
+                            _c("span", [_vm._v("التاريخ: ")]),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(
+                                  _vm._f("moment")(
+                                    item.datetime,
+                                    "DD-MM-YYYY h:mm a"
+                                  )
+                                ) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "list-group-item" }, [
+                            _c("span", [_vm._v("المكان: ")]),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(item.center.name) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "list-group-item" }, [
+                            _c("span", [_vm._v("رقم العمود: ")]),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(item.center.t_number) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", { staticClass: "list-group-item" }, [
+                            _c("span", [_vm._v("التليفون: ")]),
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(item.center.phone) +
+                                "\n                                "
+                            )
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]
+              )
             }),
             _vm._v(" "),
             _c(
-              "svg",
+              "infinite-loading",
               {
-                staticClass: "aa-input-icon",
-                attrs: { viewBox: "654 -372 1664 1664" }
+                ref: "infiniteLoading",
+                staticClass: "mb-5",
+                attrs: { spinner: "waveDots" },
+                on: {
+                  distance: function($event) {
+                    1
+                  },
+                  infinite: _vm.infiniteHandler
+                }
               },
               [
-                _c("path", {
-                  attrs: {
-                    d:
-                      "M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.list, function(item) {
-            return _c(
-              "div",
-              { key: item.id, staticClass: "card mb-4 shadow-sm" },
-              [
-                _c("img", {
-                  staticClass: "card-img-top fill",
-                  attrs: {
-                    width: "400",
-                    src: item.file_name
-                      ? _vm.imgPreUrl + item.file_name
-                      : _vm.imgPreUrl + "empty-photo.jpg",
-                    height: "350",
-                    alt: "Card image cap"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "card-text" }, [
-                    _c(
-                      "ul",
-                      { staticClass: "list-group list-group-flush p-0" },
-                      [
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("الصنف: ")]),
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(_vm.getCategory(item.category)) +
-                              "\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("الوصف: ")]),
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(item.description) +
-                              "\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("التاريخ: ")]),
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(
-                                _vm._f("moment")(
-                                  item.datetime,
-                                  "DD-MM-YYYY h:mm a"
-                                )
-                              ) +
-                              "\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("المكان: ")]),
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(item.center.name) +
-                              "\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("رقم العمود: ")]),
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(item.center.t_number) +
-                              "\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("التليفون: ")]),
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(item.center.phone) +
-                              "\n                            "
-                          )
-                        ])
-                      ]
-                    )
-                  ])
+                _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
+                  _vm._v(
+                    "\n                         لايوجد بيانات ...\n                 "
+                  )
                 ])
               ]
             )
-          }),
-          _vm._v(" "),
-          _c(
-            "infinite-loading",
-            {
-              ref: "infiniteLoading",
-              staticClass: "mb-5",
-              attrs: { spinner: "waveDots" },
-              on: {
-                distance: function($event) {
-                  1
-                },
-                infinite: _vm.infiniteHandler
-              }
-            },
-            [
-              _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
-                _vm._v(
-                  "\n                         لايوجد بيانات اخرى\n                 "
-                )
-              ])
-            ]
-          )
-        ],
-        2
-      )
+          ],
+          2
+        )
+      ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand m-0 w-75 text-truncate" }, [
+      _c("span", [_vm._v("دليل التائهين والمفقودات")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2",
+        attrs: { href: "/" }
+      },
+      [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

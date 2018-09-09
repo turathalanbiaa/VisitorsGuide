@@ -21,7 +21,10 @@ class PointController extends Controller
         $publicPoints = Point::where("category", PointCategory::PUBLIC)
             ->orderBy("t_number")
             ->get();
-        $centerPoints = Point::where("category", PointCategory::CENTER)
+        $lostCenterPoints = Point::where("category", PointCategory::LOST_CENTER)
+            ->orderBy("t_number")
+            ->get();
+        $referendumCenterPoints = Point::where("category", PointCategory::REFERENDUM_CENTER)
             ->orderBy("t_number")
             ->get();
 
@@ -30,7 +33,8 @@ class PointController extends Controller
             "mawakepPoints" => $mawakepPoints,
             "hemamatPoints" => $hemamatPoints,
             "publicPoints" => $publicPoints,
-            "centerPoints" => $centerPoints
+            "lostCenterPoints" => $lostCenterPoints,
+            "referendumCenterPoints" => $referendumCenterPoints
         ]);
     }
 

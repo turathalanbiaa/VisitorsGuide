@@ -1,8 +1,8 @@
-<div class="row" id="all-points">
+<div class="row" id="referendum-centers-points">
     <div class="col-12">
         <ul class="timeline">
             @php $i=1; @endphp
-            @foreach($allPoints as $point)
+            @foreach($referendumCenterPoints as $point)
                 <li @if($i%2==1) class="timeline-inverted" @endif>
                     <div class="timeline-badge shadow {{\App\Enums\PointCategory::getCategoryColor($point->category)}}"
                          data-action="show-calculate-distance-modal" data-t_number="{{$point->t_number}}">
@@ -20,22 +20,25 @@
                             </p>
                         </div>
                         <div class="timeline-body">
-                            <div class="alert alert-primary shadow d-none" data-calculate="false">
+                            <div class="alert alert-primary d-none" data-calculate="false">
                                 <p>
                                     <span>{{trans("words.road_guide_calculate_distance_estimated_distance")}}</span>
                                     <span> : </span>
                                     <span class="data-estimated-distance"></span>
                                 </p>
+
                                 <p>
                                     <span>{{trans("words.road_guide_calculate_distance_estimated_time")}}</span>
                                     <span> : </span>
                                     <span class="data-estimated-time"></span>
                                 </p>
+
                                 <p>
                                     <span>{{trans("words.road_guide_calculate_distance_number_of_column")}}</span>
                                     <span> : </span>
                                     <span class="data-number-of-column"></span>
                                 </p>
+
                                 <p class="mb-0">
                                     <span>{{trans("words.road_guide_calculate_distance_direction")}}</span>
                                     <span> : </span>
