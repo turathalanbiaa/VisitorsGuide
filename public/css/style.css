@@ -127,18 +127,14 @@
         margin: 1.75rem auto;
     }
 }
-.text-truncate
-{
-    white-space: pre-line;
-    padding-bottom: 5px;
-    -webkit-line-clamp: 4;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-}
-.rounded
-{
-    border-radius: 25px !important;
-}
+/*.text-truncate*/
+/*{*/
+    /*white-space: pre-line;*/
+    /*padding-bottom: 5px;*/
+    /*-webkit-line-clamp: 4;*/
+    /*display: -webkit-box;*/
+    /*-webkit-box-orient: vertical;*/
+/*}*/
 /* End Adeua and Zuarat */
 
 /*-------------------------------------------------
