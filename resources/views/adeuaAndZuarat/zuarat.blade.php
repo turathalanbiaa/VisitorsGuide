@@ -1,8 +1,11 @@
 @extends('layout.secondary_layout')
 
-@section('top-title')
-    <h1>دليل الزيارات والادعية</h1>
+@section('navbar-color')
+    {{"bg-aqua-gradient"}}
+@endsection
 
+@section('navbar-brand')
+    <span>دليل الزيارات والادعية</span>
 @endsection
 
 @section('content')
@@ -23,7 +26,7 @@
         </div>
         @if($zuarat->count() == 0)
             <div class="row justify-content-center">
-                <div>
+                <div>git
                     <h2>لاتوجد بيانات لعرضها</h2>
                 </div>
             </div>
