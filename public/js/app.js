@@ -14000,8 +14000,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Losts_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Losts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Losts_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FindCenter_vue__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FindCenter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_FindCenter_vue__);
 __webpack_require__(14);
 window.Vue = __webpack_require__(37);
 window.Vue.use(__webpack_require__(40));
@@ -14016,9 +14016,9 @@ var routes = [{
     path: '/',
     components: { lostIndex: __WEBPACK_IMPORTED_MODULE_1__components_Losts_vue___default.a }
 }, {
-    path: '/blog',
-    name: 'exampleComponent',
-    component: __WEBPACK_IMPORTED_MODULE_2__components_ExampleComponent_vue___default.a
+    path: '/find',
+    name: 'findCenter',
+    component: __WEBPACK_IMPORTED_MODULE_2__components_FindCenter_vue___default.a
 }];
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     routes: routes
@@ -54639,313 +54639,9 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(11)
-/* script */
-var __vue_script__ = __webpack_require__(43)
-/* template */
-var __vue_template__ = __webpack_require__(44)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7168fb6a", Component.options)
-  } else {
-    hotAPI.reload("data-v-7168fb6a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid p-0" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-12" },
-        [
-          _c("router-link", { attrs: { to: "/" } }, [_vm._v("Go back")]),
-          _vm._v(" "),
-          _vm._m(0)
-        ],
-        1
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "jumbotron bg-white text-center shadow mb-3" },
-      [
-        _c("h4", { staticClass: "mb-4" }, [_vm._v("f")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("f")]),
-        _vm._v(" "),
-        _c("hr", { staticClass: "my-4" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-inline" }, [
-          _c(
-            "div",
-            {
-              staticClass: "form-group col-12 col-sm-12 mb-sm-3 mb-3 d-none",
-              attrs: { id: "form-error-message" }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "alert w-100 m-0 alert-danger",
-                  attrs: { role: "alert" }
-                },
-                [
-                  _c(
-                    "ul",
-                    {
-                      staticClass: "p-0 m-0",
-                      staticStyle: { "list-style": "none" }
-                    },
-                    [
-                      _c("li", { attrs: { id: "empty" } }, [_vm._v("a")]),
-                      _vm._v(" "),
-                      _c("li", { attrs: { id: "unacceptable" } }, [_vm._v("a")])
-                    ]
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group col-12 col-sm-6 mb-sm-3 mb-3" },
-            [
-              _c("input", {
-                staticClass: "form-control w-100",
-                attrs: { type: "number", id: "source" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group col-12 col-sm-6 mb-sm-3 mb-3" },
-            [
-              _c("input", {
-                staticClass: "form-control w-100",
-                attrs: { type: "number", id: "destination" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "form-group col-12 col-sm-12 mb-sm-0 mb-0 justify-content-center text-center"
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-info",
-                  attrs: { "data-action": "calculate-distance" }
-                },
-                [
-                  _vm._v(
-                    "\n                                                        g\n                                                "
-                  )
-                ]
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "card mt-4 d-none",
-            attrs: { id: "calculate-distance-result" }
-          },
-          [
-            _c("ul", { staticClass: "list-group pr-0" }, [
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("d")]),
-                _vm._v(" "),
-                _c("span", [_vm._v(" : ")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "data-estimated-distance" })
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("gg")]),
-                _vm._v(" "),
-                _c("span", [_vm._v(" : ")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "data-estimated-time" })
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("a")]),
-                _vm._v(" "),
-                _c("span", [_vm._v(" : ")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "data-number-of-column" })
-              ]),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("b")]),
-                _vm._v(" "),
-                _c("span", [_vm._v(" : ")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "data-direction" })
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("c")]),
-                _vm._v(" "),
-                _c("span", [_vm._v(" : ")]),
-                _vm._v(" "),
-                _c("span", { attrs: { id: "list-public-points" } })
-              ])
-            ])
-          ]
-        )
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
-  }
-}
-
-/***/ }),
+/* 42 */,
+/* 43 */,
+/* 44 */,
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -55031,7 +54727,7 @@ exports = module.exports = __webpack_require__(48)(false);
 
 
 // module
-exports.push([module.i, "\n.modal-mask[data-v-6ec126a8] {\n    position: fixed;\n    z-index: 9998;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, .5);\n    display: table;\n    -webkit-transition: opacity .3s ease;\n    transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-6ec126a8] {\n    display: table-cell;\n    vertical-align: middle;\n}\n.float[data-v-6ec126a8] {\n    position: fixed;\n    width: 50px;\n    height: 50px;\n    bottom: 50px;\n    background-color: #0C9;\n    color: #FFF;\n    border-radius: 50px;\n    text-align: center;\n    -webkit-box-shadow: 2px 2px 3px #999;\n            box-shadow: 2px 2px 3px #999;\n}\n.my-float[data-v-6ec126a8] {\n    margin-top: 19px;\n}\n", ""]);
+exports.push([module.i, "\n.fade-enter-active[data-v-6ec126a8], .fade-leave-active[data-v-6ec126a8] {\n      -webkit-transition: opacity .5s;\n      transition: opacity .5s;\n}\n.fade-enter[data-v-6ec126a8], .fade-leave-to[data-v-6ec126a8] /* .fade-leave-active below version 2.1.8 */ {\n      opacity: 0;\n}\n.modal-mask[data-v-6ec126a8] {\n      position: fixed;\n      z-index: 9998;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      background-color: rgba(0, 0, 0, .5);\n      display: table;\n      -webkit-transition: opacity .3s ease;\n      transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-6ec126a8] {\n      display: table-cell;\n      vertical-align: middle;\n}\n.float[data-v-6ec126a8] {\n      position: fixed;\n      width: 50px;\n      height: 50px;\n      bottom: 50px;\n      background-color: #0C9;\n      color: #FFF;\n      border-radius: 50px;\n      text-align: center;\n      -webkit-box-shadow: 2px 2px 3px #999;\n              box-shadow: 2px 2px 3px #999;\n}\n.my-float[data-v-6ec126a8] {\n      margin-top: 19px;\n}\n.modal-enter[data-v-6ec126a8] {\n      opacity: 0;\n}\n.modal-leave-active[data-v-6ec126a8] {\n      opacity: 0;\n}\n.modal-enter .modal-container[data-v-6ec126a8],\n  .modal-leave-active .modal-container[data-v-6ec126a8] {\n      -webkit-transform: scale(1.1);\n      transform: scale(1.1);\n}\n", ""]);
 
 // exports
 
@@ -55605,20 +55301,27 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "d-flex flex-row justify-content-end w-25" },
+            {
+              staticClass: "d-flex flex-row justify-content-end w-25",
+              staticStyle: { margin: "0 -4px" }
+            },
             [
               _c(
                 "a",
                 {
-                  staticClass:
-                    "btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2",
+                  staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
                   on: {
                     click: function($event) {
                       _vm.showModal = true
                     }
                   }
                 },
-                [_c("i", { staticClass: "fa fa-bars text-white align-middle" })]
+                [
+                  _c("i", {
+                    staticClass: "fa fa-bars text-white align-middle",
+                    staticStyle: { width: "14px" }
+                  })
+                ]
               ),
               _vm._v(" "),
               _vm._m(1)
@@ -55719,8 +55422,8 @@ var render = function() {
         )
       : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "container pt-5 pb-5" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
+    _c("div", { staticClass: "container pt-2" }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
           { staticClass: "col" },
@@ -55876,8 +55579,8 @@ var render = function() {
             _vm._v(" "),
             _c(
               "router-link",
-              { staticClass: "float", attrs: { to: "/blog" } },
-              [_c("i", { staticClass: "fa fa-plus my-float" })]
+              { staticClass: "float", attrs: { to: "/find" } },
+              [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
             )
           ],
           2
@@ -55904,7 +55607,7 @@ var staticRenderFns = [
     return _c(
       "a",
       {
-        staticClass: "btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2",
+        staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
         attrs: { href: "/" }
       },
       [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
@@ -55936,6 +55639,245 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(59)
+}
+var normalizeComponent = __webpack_require__(11)
+/* script */
+var __vue_script__ = __webpack_require__(61)
+/* template */
+var __vue_template__ = __webpack_require__(62)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3deeb436"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/FindCenter.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3deeb436", Component.options)
+  } else {
+    hotAPI.reload("data-v-3deeb436", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(60);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(49)("62c087e2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3deeb436\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FindCenter.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3deeb436\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FindCenter.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(48)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.float[data-v-3deeb436] {\n    position: fixed;\n    width: 50px;\n    height: 50px;\n    bottom: 50px;\n    background-color: #0C9;\n    color: #FFF;\n    border-radius: 50px;\n    text-align: center;\n    -webkit-box-shadow: 2px 2px 3px #999;\n            box-shadow: 2px 2px 3px #999;\n}\n.my-float[data-v-3deeb436] {\n    margin-top: 19px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "FindCenter"
+});
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container pt-2" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col" },
+          [
+            _c("router-link", { staticClass: "float", attrs: { to: "/" } }, [
+              _c("i", { staticClass: "fa fa-arrow-right my-float" })
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid p-0" }, [
+      _c(
+        "nav",
+        { staticClass: "navbar navbar-dark fixed-top bg-teal-gradient" },
+        [
+          _c(
+            "a",
+            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
+            [_c("span", [_vm._v("دليل التائهين والمفقودات")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "d-flex flex-row justify-content-end w-25",
+              staticStyle: { margin: "0 -4px" }
+            },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
+                  attrs: { href: "/" }
+                },
+                [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
+              )
+            ]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "alert alert-success", attrs: { role: "alert" } },
+      [
+        _c("h4", { staticClass: "alert-heading" }, [
+          _vm._v("شكراً ايها الزائر الكريم لامانتك")
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم."
+          )
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("a", { staticClass: "mb-0", attrs: { href: "/road-guide" } }, [
+          _vm._v(
+            "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين."
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3deeb436", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

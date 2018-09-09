@@ -5,11 +5,11 @@
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
                     <span>دليل التائهين والمفقودات</span>
                 </a>
-                <div class="d-flex flex-row justify-content-end w-25">
-                    <a v-on:click="showModal = true" class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2">
-                        <i class="fa fa-bars text-white align-middle"></i>
+                <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
+                    <a v-on:click="showModal = true" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
+                        <i class="fa fa-bars text-white align-middle" style="width: 14px;"></i>
                     </a>
-                    <a href="/" class="btn btn-sm btn-shadow bg-secondary mx-1 mx-sm-2">
+                    <a href="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
                         <i class="fa fa-home text-white align-middle"></i>
                     </a>
                 </div>
@@ -54,8 +54,8 @@
             </transition>
         </div>
 
-        <div class="container pt-5 pb-5">
-            <div class="row justify-content-center">
+        <div class="container pt-2">
+            <div class="row">
                 <div class="col">
                     <div class="form-group aa-input-container">
                         <input v-model.lazy="search" class="form-control form-control-lg" type="text"
@@ -114,8 +114,8 @@
                     </a>
 -->
 
-                    <router-link to="/blog" class="float">
-                        <i class="fa fa-plus my-float"></i>
+                    <router-link to="/find" class="float">
+                        <i class="fa fa-bullhorn my-float"></i>
                     </router-link>
 
                 </div>
@@ -198,6 +198,12 @@
 </script>
 
 <style scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
     .modal-mask {
         position: fixed;
         z-index: 9998;
@@ -226,8 +232,20 @@
         text-align: center;
         box-shadow: 2px 2px 3px #999;
     }
-
     .my-float {
         margin-top: 19px;
+    }
+  .modal-enter {
+        opacity: 0;
+    }
+
+    .modal-leave-active {
+        opacity: 0;
+    }
+
+    .modal-enter .modal-container,
+    .modal-leave-active .modal-container {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
 </style>

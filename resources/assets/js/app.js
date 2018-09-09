@@ -6,7 +6,7 @@ import VueRouter from 'vue-router';
 window.Vue.use(VueRouter);
 Vue.component('InfiniteLoading', require('vue-infinite-loading'));
 import LostIndex from './components/Losts.vue';
-import ExampleComponent from './components/ExampleComponent.vue';
+import FindCenter from './components/FindCenter.vue';
 
 const routes = [
     {
@@ -14,9 +14,9 @@ const routes = [
         components: {lostIndex:LostIndex}
     },
     {
-        path: '/blog',
-        name: 'exampleComponent',
-        component: ExampleComponent
+        path: '/find',
+        name: 'findCenter',
+        component: FindCenter,
     },
 ];
 const router = new VueRouter({
