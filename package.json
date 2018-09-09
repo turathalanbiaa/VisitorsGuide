@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "vue-infinite-loading": "^2.3.3",
-        "vue-moment": "^4.0.0"
+        "vue-moment": "^4.0.0",
+        "vue-router": "^3.0.1"
     }
 }

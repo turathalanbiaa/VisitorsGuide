@@ -28,11 +28,6 @@ class Lost extends Model
             'name' => $this->center['name'],
             't_number' => $this->center['t_number'],
         ];
-       /* $array = $this->toArray();
-
-        $array['name'] = $this->center['name'];
-        $array['t_number'] = $this->center['t_number'];
-        return $array;*/
     }
     public function searchableAs()
     {
