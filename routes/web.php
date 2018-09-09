@@ -15,5 +15,7 @@
 @include("Fadhil.php");
 @include("Ahmed.php");
 
+@include("ControlPanel.php");
+
 Route::get("/", "MainController@index")->middleware("setLocaleLanguage");
 Route::get("/select-language", "MainController@selectLanguage");

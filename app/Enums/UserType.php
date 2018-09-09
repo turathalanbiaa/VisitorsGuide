@@ -12,5 +12,5 @@ namespace App\Enums;
 class UserType
 {
     const MAJALES = 1;
-    const VISITOR = 2;
+    const VISITOR_RECEPTION = 2;
 }
