@@ -58,7 +58,7 @@
             progressBar.attr("aria-valuenow","75");
             progressBar.css("width", "75%");
             progressBar.html("75%");
-
+            console.log(divCol);
             $.ajax({
                 type:'post',
                 url: '/control-panel/majles/accept',
