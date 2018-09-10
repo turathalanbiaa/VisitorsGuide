@@ -4,7 +4,7 @@
         <nav class="navbar navbar-dark fixed-top bg-teal-gradient">
             <div class="container p-0">
             <a class="navbar-brand m-0 w-75 text-truncate text-white">
-                <span>دليل التائهين والمفقودات</span>
+                <span>{{trans("words.app_name")}}</span>
             </a>
             <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
                 <a href="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
@@ -19,7 +19,7 @@
             <div class="col-md-12">
 
                 <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">شكراً ايها الزائر الكريم لامانتك</h4>
+                    <h4 class="alert-heading">{{trans("words.find_center_thanks")}}</h4>
                     <p>يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم.</p>
                     <hr>
                     <a href="/road-guide" class="mb-0">للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين.</a>

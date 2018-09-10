@@ -55775,7 +55775,21 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c(
+      "nav",
+      { staticClass: "navbar navbar-dark fixed-top bg-teal-gradient" },
+      [
+        _c("div", { staticClass: "container p-0" }, [
+          _c(
+            "a",
+            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
+            [_c("span", [_vm._v(_vm._s(_vm.trans("words.app_name")))])]
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ]
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "container pt-2" }, [
       _c("div", { staticClass: "row" }, [
@@ -55783,7 +55797,33 @@ var render = function() {
           "div",
           { staticClass: "col-md-12" },
           [
-            _vm._m(1),
+            _c(
+              "div",
+              { staticClass: "alert alert-success", attrs: { role: "alert" } },
+              [
+                _c("h4", { staticClass: "alert-heading" }, [
+                  _vm._v(_vm._s(_vm.trans("words.find_center_thanks")))
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "mb-0", attrs: { href: "/road-guide" } },
+                  [
+                    _vm._v(
+                      "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين."
+                    )
+                  ]
+                )
+              ]
+            ),
             _vm._v(" "),
             _c("router-link", { staticClass: "float", attrs: { to: "/" } }, [
               _c("i", { staticClass: "fa fa-arrow-right my-float" })
@@ -55801,62 +55841,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
-      { staticClass: "navbar navbar-dark fixed-top bg-teal-gradient" },
-      [
-        _c("div", { staticClass: "container p-0" }, [
-          _c(
-            "a",
-            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-            [_c("span", [_vm._v("دليل التائهين والمفقودات")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "d-flex flex-row justify-content-end w-25",
-              staticStyle: { margin: "0 -4px" }
-            },
-            [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
-                  attrs: { href: "/" }
-                },
-                [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
-              )
-            ]
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
       "div",
-      { staticClass: "alert alert-success", attrs: { role: "alert" } },
+      {
+        staticClass: "d-flex flex-row justify-content-end w-25",
+        staticStyle: { margin: "0 -4px" }
+      },
       [
-        _c("h4", { staticClass: "alert-heading" }, [
-          _vm._v("شكراً ايها الزائر الكريم لامانتك")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم."
-          )
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("a", { staticClass: "mb-0", attrs: { href: "/road-guide" } }, [
-          _vm._v(
-            "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين."
-          )
-        ])
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
+            attrs: { href: "/" }
+          },
+          [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
+        )
       ]
     )
   }
