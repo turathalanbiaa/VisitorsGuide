@@ -9,7 +9,7 @@
 namespace App\Enums;
 
 
-class MajlesStutas
+class MajlesStatus
 {
     const NO_ACTIVE = 0;
     const ACTIVE = 1;
