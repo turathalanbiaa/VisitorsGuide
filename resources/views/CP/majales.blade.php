@@ -41,5 +41,9 @@
 @endsection
 
 @section("script")
-
+    <script>
+        $("button[data-action='active']").click(function () {
+            
+        });
+    </script>
 @endsection
