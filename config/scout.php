@@ -90,5 +90,13 @@ return [
 
     'tntsearch' => [
         'storage'  => storage_path(),
+        'fuzziness' => env('TNTSEARCH_FUZZINESS', true),
+       /* 'fuzzy' => [
+            'prefix_length' => 3,
+            'max_expansions' => 50,
+            'distance' => 10
+        ],*/
+      'asYouType' => false,
+      'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
     ],
 ];

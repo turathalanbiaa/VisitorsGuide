@@ -44,7 +44,7 @@ return [
     "road_guide_menu_show_referendum_centers_points" => "عرض مراكز الاستفتاءات",
     "road_guide_menu_street_view"                    => "حساب المسافة بين نقطتين",
 
-    "road_guide_title_all_points"                => "دليل الطريق - جميع المناطق",
+    "road_guide_title_all_posint"                => "دليل الطريق - جميع المناطق",
     "road_guide_title_mawakep_points"            => "دليل الطريق - المواكب",
     "road_guide_title_hemamat_points"            => "دليل الطريق - الحمامات",
     "road_guide_title_public_points"             => "دليل الطريق - المناطق العامة والمشهورة",
