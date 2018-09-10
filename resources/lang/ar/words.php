@@ -75,7 +75,7 @@ return [
     "road_guide_calculate_distance_direction_backwards"        => "الى الخلف",
     "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
-    "road_guide_calculate_distance_error_connection_message" => "يرجى التحقق من اتصال الإنترنت",
+    "road_guide_calculate_distance_error_connection_message"   => "يرجى التحقق من اتصال الإنترنت",
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "عرض جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",

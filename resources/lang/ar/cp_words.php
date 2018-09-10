@@ -9,7 +9,14 @@
 return [
     "app_name" => "دليل الزائرين",
     "message_not_found" => "لايوجد هناك اي محتوى جديد",
-    "btn_active" => "تفعيل",
+    "btn_accept" => "قبول",
     "btn_reject" => "رفض",
     "btn_delete" => "حذف",
+
+    //majales
+    "majles_not_found"     => "المجلس غير موجود، اعد المحاولة لاحقاً.",
+    "majles_error_connection"     => "يرجى التحقق من اتصال الإنترنت.",
+
+    "accept_majles_success_true"  => "تم القبول بنجاح.",
+    "accept_majles_success_false" => "لم يتم القبول، اعد المحاولة لاحقاً.",
 ];

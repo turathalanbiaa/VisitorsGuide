@@ -20,20 +20,20 @@ class ControlPanelController extends Controller
         ]);
     }
 
-    public function activeMajles() {
+    public function acceptMajles() {
         $id = Input::get("id");
         $majles = Majales::find($id);
         if ($majles) {
-            $majles->status = MajlesStatus::ACTIVE;
+            $majles->status = MajlesStatus::ACCEPT;
             $success = $majles->save();
 
             if ($success)
-                return ["success" => "true"];
+                return ["success" => true];
             else
-                return ["success" => "false"];
+                return ["success" => false];
         }
 
-        return ["majles" => "NotFound"];
+        return ["majles" => "notFound"];
     }
 
     public function rejectMajles() {
@@ -44,12 +44,12 @@ class ControlPanelController extends Controller
             $majles->status = MajlesStatus::REJECT;
             $success = $majles->save();
             if ($success)
-                return ["success" => "true"];
+                return ["success" => true];
             else
-                return ["success" => "false"];
+                return ["success" => false];
         }
 
-        return ["majles" => "NotFound"];
+        return ["majles" => "notFound"];
     }
 
     public function deleteMajles() {
@@ -59,11 +59,11 @@ class ControlPanelController extends Controller
         if ($majles) {
             $success = $majles->delete();
             if ($success)
-                return ["success" => "true"];
+                return ["success" => true];
             else
-                return ["success" => "false"];
+                return ["success" => false];
         }
 
-        return ["majles" => "NotFound"];
+        return ["majles" => "notFound"];
     }
 }

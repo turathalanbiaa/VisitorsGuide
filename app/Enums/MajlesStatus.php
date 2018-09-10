@@ -12,6 +12,6 @@ namespace App\Enums;
 class MajlesStatus
 {
     const NO_ACTIVE = 0;
-    const ACTIVE = 1;
+    const ACCEPT = 1;
     const REJECT = 2;
 }

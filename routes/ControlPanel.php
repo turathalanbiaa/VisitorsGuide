@@ -7,6 +7,6 @@
  */
 
 Route::get('/control-panel/majales', "ControlPanelController@managementMajales");
-Route::post('/control-panel/majales/active', "ControlPanelController@activeMajles");
-Route::post('/control-panel/majales/reject', "ControlPanelController@rejectMajles");
-Route::post('/control-panel/majales/delete', "ControlPanelController@deleteMajles");
+Route::post('/control-panel/majles/accept', "ControlPanelController@acceptMajles");
+Route::post('/control-panel/majles/reject', "ControlPanelController@rejectMajles");
+Route::post('/control-panel/majles/delete', "ControlPanelController@deleteMajles");
