@@ -5,92 +5,49 @@
 @endsection
 
 @section("navbar-brand")
-    <span id="title">المجالس - المجالس التي لم تبدء</span>
+    <span id="title">المجالس - الاستديو</span>
 @endsection
 
 @section('content')
     <div class="container pt-2 pb-2">
-        @if(session('success'))
-            <div class="alert alert-success" role="alert">
-                {{session('success')}}
-            </div>
-        @endif
-        @if($events->count() == 0)
-            <div class="mt-lg-5 text-center">
-                <h1>لاتوحد بيانات لعرضها</h1>
-            </div>
-        @endif
-        @foreach($events as $event)
-            <div class="row justify-content-center pb-2 pt-4">
-                <div class="col-md-8 shadow" style="background-color: white; color: white">
-                    <div class="row">
-                        <div class="col-md-12 p-0" style="background-color: #424242; text-align: center; height: fit-content">
-                            <span style="font-size: 60px; color:#ff9e0f">
-                                {{Carbon\Carbon::parse($event->majles_start)->format('d')}}
-                            </span>
-                            <p class="m-0" style="background-color: #ff9e0f;">
-                                {{\App\Enums\WeekDays::nameOfDays(Carbon\Carbon::parse($event->majles_start)->localeDayOfWeek)}}
-                            </p>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="mt-3" style="color: black">{{$event->description}}</p>
-                            <p class="mb-0" style="color: #ff9e0f">
-                                <span>وقت المناسبة :</span>
-                                <span> {{Carbon\Carbon::parse($event->majles_start)->format('h:i')}} </span>
-                                <span>{{\App\Enums\TimeArabic::getTimeInArabic(Carbon\Carbon::parse($event->majles_start)->format('A'))}}</span>
-                            </p>
-                            <p class="mb-1" style="color: #ff9e0f;">
-                                <span>{{$event->city}}</span> - <span>{{$event->district}}</span> - <span>{{$event->closes_point}}</span>
-
-                            </p>
-                            <i class="fas fa-map" style="color: #658aff"></i>
-                            <a  href="#" class="location" longitude="{{$event->longitude}}" latitude="{{$event->latitude}}"
-                                data-toggle="modal" data-target=".bd-example-modal-lg">
-                                اضغط هنا لتحديد العنوان على الخريطة
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-12 p-0" style="overflow: hidden">
-                            <div style="display: inline; font-size: 12px">
-                                <div class="p-1" style="background-color: #4dd0e1; width: fit-content; display: inline">
-                                    <span>تبدء المنسابة</span>
-                                </div>
-                                <div class="p-1" style="width: fit-content; background-color: #ff9e0f; display: inline">
-                                    <span>{{Carbon\Carbon::parse($event->majles_start)->format('y-m-d')}}</span>
-                                </div>
-                            </div>
-                            <div style="display: inline; font-size: 12px">
-                                <div class="p-1" style="background-color: #999999; width: fit-content; display: inline">
-                                    <span>تنتهي المناسبة</span>
-                                </div>
-                                <div class="p-1" style="background-color: #ff9e10; width: fit-content; display: inline">
-                                    <span>{{$event->majles_end}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-        <div>
-            {{$events->links()}}
-        </div>
+       <div class="row justify-content-center">
+           @foreach($posts as $post)
+               @if($post->video_link == null)
+                   <div class="col-md-10 p-0 mb-3" style="background-color: white">
+                       <div class="gallery-images w-100">
+                           <img class="image-modal b-lazy w-100 rounded ajax-request" src="{{asset('lame.gif')}}"
+                                data-echo="{{$post->image}}"
+                                data-toggle="modal" data-target="#modal-dialog-centered" data-id="{{$post->id}}">
+                       </div>
+                       <div class="p-2">
+                           <p class="p-1 m-0">{{$post->title}}</p>
+                           <span style="color: #c8cbcf"><i class="fas fa-tv"></i> {{$post->views}}</span>
+                       </div>
+                   </div>
+                @else
+                   <div class="col-md-10 p-0 mb-3" style="background-color: white">
+                       <div class="embed-responsive embed-responsive-16by9">
+                           <iframe class="embed-responsive-item ajax-request" data-id="{{$post->id}}"
+                                   src="{{$post->video_link}}" allowfullscreen></iframe>
+                       </div>
+                       <div class="p-2">
+                           <p class="p-1 m-0">{{$post->title}}</p>
+                           <span style="color: #c8cbcf"><i class="fas fa-tv"></i> {{$post->views}}</span>
+                       </div>
+                   </div>
+               @endif
+           @endforeach
+       </div>
+       <div>
+           {{$posts->links()}}
+       </div>
     </div>
 
-    <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div id="map-canvas" style="height: 600px"></div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
-                </div>
-            </div>
-        </div>
+    <div class="modal fade" id="modal-dialog-centered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-image" role="document">
+        <img src="" class="w-100 h-100 image" id="image" style="position: relative">
     </div>
-
-
+    </div>
 @endsection
 
 @section("menu-modal-content")
@@ -104,10 +61,6 @@
                 <a href="/majales/events-gallery" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-camera-retro"></i>
                     <span>الاستديو</span>
-                </a>
-                <a href="/majales/add-majles" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-plus"></i>
-                    <span>اضافة مجلس</span>
                 </a>
                 <a href="/majales" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-calendar-alt"></i>
@@ -193,36 +146,55 @@
         </div>
     </div>
 @endsection
-
 @section('script')
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false">
-
+    <script>
+        function resize ()
+        {
+            var getHeight = $('.gallery-images').width();
+            console.log(getHeight);
+            getHeight = getHeight * 80 / 100 + 'px';
+            $('.gallery-images').css('height',getHeight);
+        }
+        resize();
+        $(window).resize(function () {
+            resize()
+        })
     </script>
     <script>
-        function initialize(x ,y) {
-            var center = new google.maps.LatLng(x, y);
-            var mapOptions = {
-                zoom: 15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: center
-            };
-
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-            var marker = new google.maps.Marker({
-                map: map,
-                position: center
+        $(document).ready(function () {
+            $('.image-modal').click(function () {
+                let src = $(this).attr('src');
+                $('#image').attr('src', src);
             });
-        }
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.ajax-request').click(function () {
+                let id = $(this).attr('data-id');
+                $.ajax({
+                    type: 'get',
+                    url: '/majales/post-views/'+id,
+                    success: function () {
+                        console.log('Viewed successfully')
+                    }
 
-        $('.location').on('click', function () {
-            $('#modal').modal({
-                backdrop: 'static',
-                keyboard: false
-            });
-            initialize($(this).attr('latitude'),$(this).attr('longitude'));
+                })
+            })
+        })
+    </script>
+    <script src="{{asset('js/echo.min.js')}}"></script>
+    <script>
+        echo.init({
+            offset: 100,
+            throttle: 250,
+            unload: false,
+            callback: function (element, op) {
+                console.log(element, 'has been', op + 'ed')
+            }
         });
 
+        echo.render();
     </script>
 @endsection
 

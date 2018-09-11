@@ -1,18 +1,18 @@
 @extends('layout.secondary_layout')
 @section('top-title')
-    <h1>دليل الزيارات والادعية</h1>
+
 @endsection
 @section("navbar-color")
     {{"bg-aqua-gradient"}}
 @endsection
 
 @section("navbar-brand")
-    <span id="title">الادعية والزيارات - جميع الزيارات</span>
+    <span id="title">الادعية والزيارات - الادعية</span>
 @endsection
 
 @section('content')
-    <div class="container prayerAndVisits">
-        <div clsass="row pt-3">
+    <div class="container prayerAndVisits pt-3 pb-2">
+        <div>
             <form action="/adeua-and-zuarat/search-by-adeua" method="get">
                 <div class="form-group aa-input-container">
                     <input class="form-control form-control-lg" type="text"
@@ -26,7 +26,7 @@
             </form>
         </div>
         <div class="row justify-content-center pt-2 pb-5">
-            <div class="col-md-8 prayer-today">
+            <div class="col-md-8 prayer-today shadow-special majales-zuarat">
                 <div class="row">
                     <div class="col-md-12 w-100 p-0">
                         <img class="w-100" src="{{asset('thumb.jpeg')}}">
@@ -62,11 +62,11 @@
                 </div>
 
                 <div>
-                    <a class="" style="float: left" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <a style="float: left" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" style="background-color: #0c5460" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="" style="float: right" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <a style="float: right" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" style="background-color: #0c5460" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -76,8 +76,8 @@
 
         <div class="row">
             @foreach($publicAdeua as $publicDeua)
-                <div class="col-md-4 pb-4">
-                    <div class="rounded p-0 shadow-special" style=" overflow: hidden">
+                <div class="col-md-6 pb-4">
+                    <div class="rounded p-0 shadow-special majales-zuarat" style=" overflow: hidden">
                         <div class="w-100">
                             <img class="w-100" src="{{asset('child.jpg')}}">
                         </div>
@@ -101,7 +101,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="pt-2 pb-5">
+        <div>
             {{$publicAdeua->links()}}
         </div>
     </div>
@@ -125,12 +125,36 @@
         </div>
     </div>
 @endsection
+@section("menu-modal-content")
+    <div class="modal-content border-0 rounded-0 shadow-special">
+        <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
+            <span>{{trans("words.menu_visitor_feqh")}}</span>
+        </h4>
+
+        <div class="modal-body">
+            <div class="list-group">
+                <a href="/adeua-and-zuarat/" class="list-group-item list-group-item-action">
+                    <span>الزيازات</span>
+                </a>
+                <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
+                    <span>الادعية</span>
+                </a>
+                <a href="/adeua-and-zuarat/images" href="events" class="list-group-item list-group-item-action">
+                    <span>معرض الصور</span>
+                </a>
+                <a href="/adeua-and-zuarat/videos" href="events" class="list-group-item list-group-item-action">
+                    <span>معرض الفيديو</span>
+                </a>
+            </div>
+        </div>
+    </div>
+@endsection
 @section('script')
     <script>
         $('.read-more').click(function () {
-            var id = $(this).attr('value');
-            var content = $('#cont-'+id).text();
-            var title = $('#tit-'+id).text();
+            let id = $(this).attr('value');
+            let content = $('#cont-'+id).text();
+            let title = $('#tit-'+id).text();
             $('#modal-title').text(title);
             $('#modal-content').text(content)
         })
