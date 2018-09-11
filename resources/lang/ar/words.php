@@ -101,5 +101,21 @@ return [
 
 
 //Lost Guide
+    "lost_index_page" => "دليل التائهين والمفقودات",
+    "lost_index_category" => "الصنف:",
+    "lost_index_description" => "الوصف:",
+    "lost_index_date" => "التاريخ:",
+    "lost_index_place" => "المكان:",
+    "lost_index_t_number" => "رقم العمود:",
+
+    "lost_index_select_category" => "أختر الصنف",
+    "lost_index_persons" => "أشخاص",
+    "lost_index_money" => "مبلغ من المال",
+    "lost_index_gold" => "قطعة ذهبية",
+    "lost_index_bags" => "حقائب",
+    "lost_index_cancel" => "ألغاء",
+
     "find_center_thanks" => "شكرا ايها الزائر الكريم لأمانتك",
+    "find_center_info" => "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم.",
+    "find_center_link" => "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين.",
 ];
