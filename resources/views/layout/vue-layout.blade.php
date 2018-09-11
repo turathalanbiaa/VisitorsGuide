@@ -10,7 +10,6 @@
 
     <!-- StyleSheet -->
     <link href="{{asset("css/app.css")}}" rel="stylesheet" type="text/css">
-    <link href="{{asset("css/time-line.css")}}" rel="stylesheet" type="text/css">
     <link href="{{asset("css/style.css")}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
@@ -23,12 +22,12 @@
 </head>
 <body >
 {{--Content--}}
-<div style="margin: 54px 0 56px 0;">
+<div id="app" style="margin: 54px 0 56px 0;">
 @yield("content")
 </div>
 {{--Navbar Fixed Bottom--}}
 <div class="container-fluid">
-    <div class="navbar fixed-bottom navbar-dark bg-secondary nav nav-tabs nav-fill rounded-0 p-0">
+    <div class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 p-0">
         <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
         <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
         <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
@@ -40,5 +39,17 @@
 
 {{--Script--}}
 <script src="{{asset("js/app.js")}}"></script>
+<script>
+    window.trans = <?php
+    // copy all translations from /resources/lang/CURRENT_LOCALE/* to global JS variable
+    $lang_files = File::files(resource_path() . '/lang/' . App::getLocale());
+    $trans = [];
+    foreach ($lang_files as $f) {
+        $filename = pathinfo($f)['filename'];
+        $trans[$filename] = trans($filename);
+    }
+    echo json_encode($trans);
+    ?>;
+</script>
 </body>
 </html>

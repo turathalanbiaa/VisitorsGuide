@@ -9,10 +9,7 @@
 @endsection
 
 @section("content")
-    <div id="app">
-        <router-view name="lostIndex"></router-view>
         <router-view></router-view>
-    </div>
 @endsection
 
 @section("nav-items-bottom")

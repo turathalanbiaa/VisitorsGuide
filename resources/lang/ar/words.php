@@ -44,7 +44,7 @@ return [
     "road_guide_menu_show_referendum_centers_points" => "عرض مراكز الاستفتاءات",
     "road_guide_menu_street_view"                    => "حساب المسافة بين نقطتين",
 
-    "road_guide_title_all_points"                => "دليل الطريق - جميع المناطق",
+    "road_guide_title_all_posint"                => "دليل الطريق - جميع المناطق",
     "road_guide_title_mawakep_points"            => "دليل الطريق - المواكب",
     "road_guide_title_hemamat_points"            => "دليل الطريق - الحمامات",
     "road_guide_title_public_points"             => "دليل الطريق - المناطق العامة والمشهورة",
@@ -75,7 +75,7 @@ return [
     "road_guide_calculate_distance_direction_backwards"        => "الى الخلف",
     "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
-    "road_guide_calculate_distance_error_connection_message" => "يرجى التحقق من اتصال الإنترنت",
+    "road_guide_calculate_distance_error_connection_message"   => "يرجى التحقق من اتصال الإنترنت",
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "عرض جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
@@ -85,7 +85,7 @@ return [
     "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
     "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
 
-    "visitor_feqh_ads_app_masael_text"  => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
+    "visitor_feqh_ads_app_masael_text"   => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
     "visitor_feqh_ads_app_masael_detail" => "لرؤية المزيد من تفاصيل",
     "visitor_feqh_ads_app_masael_btn"    => "اضغط هنا",
 
@@ -95,7 +95,27 @@ return [
     "visitor_feqh_questions_pagination_next" => "التالي",
 
     "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
-    "visitor_feqh_app_masael_description"        => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
-    "visitor_feqh_masael_website"          => "الموقع الرسمي للأجوبة الميسرة",
-    "visitor_feqh_masael_available_app_on" => "يتوفر التطبيق الآن على",
+    "visitor_feqh_app_masael_description"    => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
+    "visitor_feqh_masael_website"            => "الموقع الرسمي للأجوبة الميسرة",
+    "visitor_feqh_masael_available_app_on"   => "يتوفر التطبيق الآن على",
+
+
+//Lost Guide
+    "lost_index_page" => "دليل التائهين والمفقودات",
+    "lost_index_category" => "الصنف:",
+    "lost_index_description" => "الوصف:",
+    "lost_index_date" => "التاريخ:",
+    "lost_index_place" => "المكان:",
+    "lost_index_t_number" => "رقم العمود:",
+
+    "lost_index_select_category" => "أختر الصنف",
+    "lost_index_persons" => "أشخاص",
+    "lost_index_money" => "مبلغ من المال",
+    "lost_index_gold" => "قطعة ذهبية",
+    "lost_index_bags" => "حقائب",
+    "lost_index_cancel" => "ألغاء",
+
+    "find_center_thanks" => "شكرا ايها الزائر الكريم لأمانتك",
+    "find_center_info" => "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم.",
+    "find_center_link" => "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين.",
 ];
