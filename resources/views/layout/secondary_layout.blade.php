@@ -41,12 +41,12 @@
     </nav>
 
     {{--Content--}}
-    <div style="margin: 54px 0 56px 0;">
+    <div style="margin: 54px 0 40px 0;">
         @yield("content")
     </div>
 
     {{--Navbar Fixed Bottom--}}
-    <nav class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 border-0 px-0">
+    <nav class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 border-0 p-0">
         <div class="container px-0">
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
