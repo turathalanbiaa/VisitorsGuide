@@ -8,7 +8,7 @@
 
 return [
     //App
-    "app_name" => "دليل الزائرين",
+    "app_name" => "حقيبة الزائر",
     //Select Language
     "select_language" => "اختر اللغة",
     "arabic"          => "العربية",
