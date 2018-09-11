@@ -55156,7 +55156,7 @@ var render = function() {
           _c(
             "a",
             { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-            [_c("span", [_vm._v(_vm._s(_vm.trans("words.app_name")))])]
+            [_c("span", [_vm._v(_vm._s(_vm.trans("words.lost_index_page")))])]
           ),
           _vm._v(" "),
           _vm._m(0)
@@ -55178,22 +55178,14 @@ var render = function() {
                   _vm._v(_vm._s(_vm.trans("words.find_center_thanks")))
                 ]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم."
-                  )
-                ]),
+                _c("p", [_vm._v(_vm._s(_vm.trans("words.find_center_info")))]),
                 _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
                 _c(
                   "a",
                   { staticClass: "mb-0", attrs: { href: "/road-guide" } },
-                  [
-                    _vm._v(
-                      "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين."
-                    )
-                  ]
+                  [_vm._v(_vm._s(_vm.trans("words.find_center_link")))]
                 )
               ]
             ),
@@ -55473,6 +55465,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -55563,7 +55558,11 @@ var render = function() {
           _c(
             "a",
             { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-            [_c("span", [_vm._v(_vm._s(_vm.trans("words.app_name")) + "  ")])]
+            [
+              _c("span", [
+                _vm._v(_vm._s(_vm.trans("words.lost_index_page")) + "  ")
+              ])
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -55615,7 +55614,11 @@ var render = function() {
                       _c("div", { staticClass: "modal-content" }, [
                         _c("div", { staticClass: "modal-header" }, [
                           _c("h5", { staticClass: "modal-title" }, [
-                            _vm._v("أختر الصنف")
+                            _vm._v(
+                              _vm._s(
+                                _vm.trans("words.lost_index_select_category")
+                              )
+                            )
                           ])
                         ]),
                         _vm._v(" "),
@@ -55632,7 +55635,15 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("أشخاص")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.trans("words.lost_index_persons")
+                                    )
+                                  )
+                                ])
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
@@ -55646,7 +55657,13 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("مبلغ من المال")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(_vm.trans("words.lost_index_money"))
+                                  )
+                                ])
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
@@ -55660,7 +55677,13 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("قطعه ذهبيه")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(_vm.trans("words.lost_index_money"))
+                                  )
+                                ])
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
@@ -55674,7 +55697,33 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("حقائب")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(_vm.trans("words.lost_index_bags"))
+                                  )
+                                ])
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "modal-footer" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-secondary btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.showModal = false
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.trans("words.lost_index_cancel"))
+                                )
+                              ]
                             )
                           ])
                         ])
@@ -55765,7 +55814,13 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("الوصف: ")]),
+                          _c("span", [
+                            _vm._v(
+                              _vm._s(
+                                _vm.trans("words.lost_index_description")
+                              ) + " "
+                            )
+                          ]),
                           _vm._v(
                             "\n                                    " +
                               _vm._s(item.description) +
@@ -55774,7 +55829,11 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("التاريخ: ")]),
+                          _c("span", [
+                            _vm._v(
+                              _vm._s(_vm.trans("words.lost_index_date")) + " "
+                            )
+                          ]),
                           _vm._v(
                             "\n                                    " +
                               _vm._s(
@@ -55788,7 +55847,11 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("المكان: ")]),
+                          _c("span", [
+                            _vm._v(
+                              _vm._s(_vm.trans("words.lost_index_place")) + " "
+                            )
+                          ]),
                           _vm._v(
                             "\n                                    " +
                               _vm._s(item.center.name) +
@@ -55797,7 +55860,12 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("رقم العمود: ")]),
+                          _c("span", [
+                            _vm._v(
+                              _vm._s(_vm.trans("words.lost_index_t_number")) +
+                                " "
+                            )
+                          ]),
                           _vm._v(
                             "\n                                    " +
                               _vm._s(item.center.t_number) +
@@ -55806,7 +55874,11 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("التليفون: ")]),
+                          _c("span", [
+                            _vm._v(
+                              _vm._s(_vm.trans("words.lost_index_phone")) + " "
+                            )
+                          ]),
                           _vm._v(
                             "\n                                    " +
                               _vm._s(item.center.phone) +

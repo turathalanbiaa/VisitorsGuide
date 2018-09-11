@@ -3,7 +3,7 @@
             <nav class="navbar navbar-dark fixed-top bg-teal-gradient">
                 <div class="container p-0">
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
-                    <span>{{trans("words.app_name")}}  </span>
+                    <span>{{trans("words.lost_index_page")}}  </span>
                 </a>
                 <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
                     <a v-on:click="showModal = true" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
@@ -23,27 +23,30 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">أختر الصنف</h5>
+                                    <h5 class="modal-title">{{trans("words.lost_index_select_category")}}</h5>
 
                                 </div>
                                 <div class="modal-body">
                                     <div class="list-group">
                                         <a v-on:click="changeFilter(1)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>أشخاص</span>
+                                            <span>{{trans("words.lost_index_persons")}}</span>
                                         </a>
                                         <a v-on:click="changeFilter(2)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>مبلغ من المال</span>
+                                            <span>{{trans("words.lost_index_money")}}</span>
                                         </a>
                                         <a v-on:click="changeFilter(3)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>قطعه ذهبيه</span>
+                                            <span>{{trans("words.lost_index_money")}}</span>
                                         </a>
                                         <a v-on:click="changeFilter(4)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>حقائب</span>
+                                            <span>{{trans("words.lost_index_bags")}}</span>
                                         </a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary btn-sm" v-on:click="showModal = false">{{trans("words.lost_index_cancel")}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,23 +82,23 @@
                                         {{getCategory(item.category)}}
                                     </li>
                                     <li class="list-group-item">
-                                        <span>الوصف: </span>
+                                        <span>{{trans("words.lost_index_description")}} </span>
                                         {{item.description}}
                                     </li>
                                     <li class="list-group-item">
-                                        <span>التاريخ: </span>
+                                        <span>{{trans("words.lost_index_date")}} </span>
                                         {{item.datetime | moment("DD-MM-YYYY h:mm a")}}
                                     </li>
                                     <li class="list-group-item">
-                                        <span>المكان: </span>
+                                        <span>{{trans("words.lost_index_place")}} </span>
                                         {{item.center.name}}
                                     </li>
                                     <li class="list-group-item">
-                                        <span>رقم العمود: </span>
+                                        <span>{{trans("words.lost_index_t_number")}} </span>
                                         {{item.center.t_number}}
                                     </li>
                                     <li class="list-group-item">
-                                        <span>التليفون: </span>
+                                        <span>{{trans("words.lost_index_phone")}} </span>
                                         {{item.center.phone}}
                                     </li>
                                 </ul>
