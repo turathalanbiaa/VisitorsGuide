@@ -100,6 +100,6 @@ return [
     "visitor_feqh_masael_available_app_on"   => "يتوفر التطبيق الآن على",
 
 
-
+//Lost Guide
     "find_center_thanks" => "شكرا ايها الزائر الكريم لأمانتك",
 ];

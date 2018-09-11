@@ -9,7 +9,6 @@
 @endsection
 
 @section("content")
-        <router-view name="lostIndex"></router-view>
         <router-view></router-view>
 @endsection
 
