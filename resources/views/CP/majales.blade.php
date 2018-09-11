@@ -51,14 +51,14 @@
         $("button[data-action='accept']").click(function () {
             $(this).attr("disabled", "disabled");
             var majles = $(this).parent().find("input[name='majles']").val();
-            var divCol = $(this).parent().parent().find(".col-12");
+            var divCol = $(this).parent().parent();
             var progress = $(this).parent().find(".progress");
             progress.removeClass("d-none");
             var progressBar = progress.find(".progress-bar");
             progressBar.attr("aria-valuenow","75");
             progressBar.css("width", "75%");
             progressBar.html("75%");
-            console.log(divCol);
+            divCol.attr("data-content", "hidden");
             $.ajax({
                 type:'post',
                 url: '/control-panel/majles/accept',
@@ -88,7 +88,7 @@
                     setTimeout(function () {
                         progress.addClass("d-none");
                     }, 250);
-                    divCol.addClass("d-none");
+                    $("div[data-content='hidden']").addClass("d-none");
                 }
             });
         });
