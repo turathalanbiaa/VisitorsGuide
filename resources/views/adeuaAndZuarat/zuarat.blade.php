@@ -26,7 +26,7 @@
         </div>
         @if($zuarat->count() == 0)
             <div class="row justify-content-center">
-                <div>git
+                <div>
                     <h2>لاتوجد بيانات لعرضها</h2>
                 </div>
             </div>
