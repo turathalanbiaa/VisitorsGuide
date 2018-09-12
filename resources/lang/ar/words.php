@@ -14,6 +14,20 @@ return [
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
     "english"         => "الانكليزية",
+    //Main Page
+    "main_road_guide_title"         => "دليل الطريق",
+    "main_road_guide_detail"        => "يمكنك الآن معرفة المواكب والحمامات والنقاط العامة والمشهورة على طول الطريق، كما يمكنك معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على طول الطريق بين النقطتين المطلوبتين.",
+    "main_visitor_feqh_title"       => "فقه الزائر",
+    "main_visitor_feqh_detail"      => "هو جزء من تطبيق الأجوبة الميسرة يعرض لك بعض الأسلة والأجوبة المتعلقه بما يخص الزائر على طول الطريق، وكما يُمَكنُك من ارسال سؤال وتحميل التطبيق على (Android, IOS) او زيارة الموقع الرسمي للتطبيق.",
+    "main_adeua_and_zuarat_title"   => "الأدعية والزيارات",
+    "main_adeua_and_zuarat_detail"  => "اصبح بامكانك القراءة او الاستماع الى الادعية العامة واليومية وزيارات الأئمة المعصومين (عليهم السلام)، وكما يحتوي على استوديو.",
+    "main_visitor_reception_title"  => "استضافة الزائرين",
+    "main_visitor_reception_detail" => "",
+    "main_majales_guide_title"      => "دليل المجالس الحسينية",
+    "main_majales_guide_detail"     => "يمكنك الآن اضافة مجلس وتحديد موقعه عبر GBS، وكذلك يمكنك معرفة اماكن المجالس الاخرى حسب المحافظة والتاريخ، كما يحتوي على استوديو.",
+    "main_centers_title"            => "مراكز التائهين والمفقودات",
+    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان حاجة، كما يمكنك البحث وبسهولة وبسرعة عاليه جدا، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
+    "main_btn_enter"                => "دخول",
     //Menu
     "menu_road_guid"         => "دليل الطريق",
     "menu_visitor_feqh"      => "فقه الزائر",
@@ -21,20 +35,8 @@ return [
     "menu_visitor_reception" => "استضافة الزائرين",
     "menu_majales_guide"     => "دليل المجالس الحسينية",
     "menu_centers"           => "مراكز التائهين والمفقودات",
-    //Main Page
-    "main_road_guide_title"         => "دليل الطريق",
-    "main_road_guide_detail"        => "يمكنك الآن معرفة المواكب والحمامات والنقاط العامة والمشهورة على طول الطريق، كما يمكنك معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على طول الطريق بين النقطتين المطلوبتين.",
-    "main_visitor_feqh_title"       => "فقه الزائر",
-    "main_visitor_feqh_detail"      => "هو جزء من تطبيق الأجوبة الميسرة يعرض لك بعض الأسلة والأجوبة المتعلقه بما يخص الزائر على طول الطريق، وكما يُمَكنُك من ارسال سؤال وتحميل التطبيق على (Android, IOS) او زيارة الموقع الرسمي للتطبيق.",
-    "main_adeua_and_zuarat_title"   => "الأدعية والزيارات",
-    "main_adeua_and_zuarat_detail"  => "",
-    "main_visitor_reception_title"  => "استضافة الزائرين",
-    "main_visitor_reception_detail" => "",
-    "main_majales_guide_title"      => "دليل المجالس الحسينية",
-    "main_majales_guide_detail"     => "",
-    "main_centers_title"            => "مراكز التائهين والمفقودات",
-    "main_centers_detail"           => "",
-    "main_btn_enter"                => "دخول",
+
+
     //Road Guide
     "road_guide_menu_show_all_points"                => "عرض جميع المناطق",
     "road_guide_menu_show_mawakep_points"            => "عرض المواكب فقط",
@@ -44,7 +46,7 @@ return [
     "road_guide_menu_show_referendum_centers_points" => "عرض مراكز الاستفتاءات",
     "road_guide_menu_street_view"                    => "حساب المسافة بين نقطتين",
 
-    "road_guide_title_all_posint"                => "دليل الطريق - جميع المناطق",
+    "road_guide_title_all_points"                => "دليل الطريق - جميع المناطق",
     "road_guide_title_mawakep_points"            => "دليل الطريق - المواكب",
     "road_guide_title_hemamat_points"            => "دليل الطريق - الحمامات",
     "road_guide_title_public_points"             => "دليل الطريق - المناطق العامة والمشهورة",
