@@ -1,6 +1,10 @@
 .modal-special {
     width: auto;
 }
+.fa-special {
+    width: 14px;
+    margin-top: 2px;
+}
 @media (min-width: 576px) {
     .modal-special {
         width: 500px!important;

@@ -25,17 +25,18 @@
 <div id="app" style="margin: 54px 0 56px 0;">
 @yield("content")
 </div>
+
 {{--Navbar Fixed Bottom--}}
-<div class="container-fluid">
-    <div class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 p-0">
-        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
-        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
-        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
-        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
-        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
-        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-home text-white"></i></a>
+<nav class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 border-0 p-0">
+    <div class="container px-0">
+        <a class="nav-item nav-link rounded-0" href="/road-guide"><i class="fa fa-road text-white"></i></a>
+        <a class="nav-item nav-link rounded-0" href="/visitor-feqh"><i class="fa fa-list-alt text-white"></i></a>
+        <a class="nav-item nav-link rounded-0" href="/adeua-and-zuarat"><i class="fab fa-audible text-white"></i></a>
+        <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-school text-white"></i></a>
+        <a class="nav-item nav-link rounded-0" href="/losts"><i class="fa fa-route text-white"></i></a>
+        <a class="nav-item nav-link rounded-0" href="/majales"><i class="fa fa-microphone-alt text-white"></i></a>
     </div>
-</div>
+</nav>
 
 {{--Script--}}
 <script src="{{asset("js/app.js")}}"></script>
