@@ -76,24 +76,6 @@
         </form>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $('#location').click(function () {
-                if (navigator.geolocation) {
-                    $('#location').text('الرجاء الانتظار جاري تحديد الموقع');
-                    $('#add-majles').attr('disabled',true);
-                    navigator.geolocation.getCurrentPosition(showPosition)
-                }
-            })
-        });
-        function showPosition(position) {
-            $('#latitude').val(position.coords.latitude);
-            $('#longitude').val(position.coords.longitude);
-            $('#location').text('شكراً لك تم تحديد الموقع');
-            $('#location').attr('disabled',true);
-            $('#add-majles').attr('disabled',false);
-        }
-    </script>
 @endsection
 @section("menu-modal-content")
     <div class="modal-content border-0 rounded-0 shadow-special">
@@ -194,4 +176,74 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('#location').click(function () {
+                if (navigator.geolocation) {
+                    $('#location').text('الرجاء الانتظار جاري تحديد الموقع');
+                    $('#add-majles').attr('disabled',true);
+                    navigator.geolocation.getCurrentPosition(showPosition)
+                }
+            })
+        });
+        function showPosition(position) {
+            $('#latitude').val(position.coords.latitude);
+            $('#longitude').val(position.coords.longitude);
+            $('#location').text('شكراً لك تم تحديد الموقع');
+            $('#location').attr('disabled',true);
+            $('#add-majles').attr('disabled',false);
+        }
+    </script>
+    <script>
+        var apiGeolocationSuccess = function(position) {
+            alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
+        };
+
+        var tryAPIGeolocation = function() {
+            jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
+                apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+            })
+                .fail(function(err) {
+                    alert("API Geolocation error! \n\n"+err);
+                });
+        };
+
+        var browserGeolocationSuccess = function(position) {
+            alert("Browser geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
+        };
+
+        var browserGeolocationFail = function(error) {
+            switch (error.code) {
+                case error.TIMEOUT:
+                    alert("Browser geolocation error !\n\nTimeout.");
+                    break;
+                case error.PERMISSION_DENIED:
+                    if(error.message.indexOf("Only secure origins are allowed") == 0) {
+                        tryAPIGeolocation();
+                    }
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    // dirty hack for safari
+                    if(error.message.indexOf("Origin does not have permission to use Geolocation service") == 0) {
+                        tryAPIGeolocation();
+                    } else {
+                        alert("Browser geolocation error !\n\nPosition unavailable.");
+                    }
+                    break;
+            }
+        };
+
+        var tryGeolocation = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    browserGeolocationSuccess,
+                    browserGeolocationFail,
+                    {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
+            }
+        };
+
+        tryGeolocation();
+    </script>
 @endsection
