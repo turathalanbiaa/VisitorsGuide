@@ -29,7 +29,7 @@
             <div class="col-md-8 prayer-today shadow-special majales-zuarat">
                 <div class="row">
                     <div class="col-md-12 w-100 p-0">
-                        <img class="w-100" src="{{asset('thumb.jpeg')}}">
+                        <img class="w-100" src="{{asset('thumb.jpg')}}">
                     </div>
                     <div class="col-md-12">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">

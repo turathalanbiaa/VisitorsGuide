@@ -54,7 +54,7 @@ class MajalesController extends Controller
         $majales->latitude     = $request->latitude;
         $majales->save();
 
-       return redirect('/majales/main')->with('success', 'تمت اضافة المجلس بنجاح سوف ينشر بعد موافقة الادارة');
+       return redirect('/majales')->with('success', 'تمت اضافة المجلس بنجاح سوف ينشر بعد موافقة الادارة');
     }
 
     public function main ()
