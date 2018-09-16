@@ -48,7 +48,7 @@
                         <div class="collapse p-3" id="collapse-{{$zuara->id}}">
                             <audio controls class="w-100">
                                 <source src="" type="audio/ogg">
-                                <source src="storage/app/public/zuarat/{{$zuara->id}}.mp3" type="audio/mpeg">
+                                <source src="VisitorsGuide/storage/app/public/zuarat/{{$zuara->id}}.mp3" type="audio/mpeg">
                             </audio>
                         </div>
                     </div>
