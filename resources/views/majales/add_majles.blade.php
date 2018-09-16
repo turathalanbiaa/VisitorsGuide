@@ -196,27 +196,4 @@
             $('#add-majles').attr('disabled',false);
         }
     </script>
-    <script>
-        var position = {
-            coords: {
-                latitude: '',
-                longitude: ''
-            }
-        };
-        $.getJSON("http://ip-api.com/json", function (data, status) {
-            if (status === "success") {
-                if (data.zip) {
-                }
-            }
-            $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + res.zip, function (data, status) {
-                if (status === "success") {
-                    position.coords.latitude = data.results[0].geometry.location.lat;
-                    position.coords.longitude = data.results[0].geometry.location.lng;
-                    locationOnSuccess(position);
-                } else {
-                    locationOnError();
-                }
-            });
-        })
-    </script>
 @endsection
