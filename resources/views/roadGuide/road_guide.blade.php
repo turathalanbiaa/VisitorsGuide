@@ -156,7 +156,7 @@
         });
 
         $("#show-lost-centers-points").click(function () {
-            $("#title").html("{{trans('words.road_guide_title_centers_points')}}");
+            $("#title").html("{{trans('words.road_guide_title_lost_centers_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
@@ -170,7 +170,7 @@
         });
 
         $("#show-referendum-centers-points").click(function () {
-            $("#title").html("{{trans('words.road_guide_title_centers_points')}}");
+            $("#title").html("{{trans('words.road_guide_title_referendum_centers_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
             $("#hemamat-points").removeClass("d-block").addClass("d-none");
