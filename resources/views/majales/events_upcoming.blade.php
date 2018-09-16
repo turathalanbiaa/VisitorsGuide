@@ -195,7 +195,7 @@
 @endsection
 
 @section('script')
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4">
 
     </script>
     <script>
