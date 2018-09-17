@@ -66,7 +66,7 @@
                         <h5 id="modal-title"></h5>
                     </div>
                     <div class="modal-body">
-                        <p id="modal-content"></p>
+                        <p id="modal-content" style="font-size: 17px"></p>
                     </div>
                     <div class="modal-footer align-self-start border-0">
                         <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">اغلاق</button>

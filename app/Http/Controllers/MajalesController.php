@@ -29,6 +29,8 @@ class MajalesController extends Controller
            'description'=> 'required',
            'cities'=> 'required',
            'district'=> 'required',
+           'userName'=> 'required',
+           'userNumber'=> 'required',
            'closesPoint'=> 'required',
         ],
         [
@@ -38,12 +40,13 @@ class MajalesController extends Controller
             'majlesEnd.required' => 'الرجاء عدم ترك حقل تاريخ انتهاءالمناسبة فارغ',
             'description.required' => 'الرجاء كتابة وصف للمناسبة',
             'cities.required' => 'الرجاء اختيار المدينة',
+            'userName.required' => 'الرجاء كتابة الاسم الكامل',
+            'userNumber.required' => 'الرجاء كتابة رقم الهاتف',
             'district.required' => 'الرجاء كتابة اسم المنطقة',
             'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
         ]);
 
         $majales = new Majales();
-        $majales->user_id      = 22;
         $majales->description  = $request->description;
         $majales->majles_start = $request->majlesStart;
         $majales->majles_end   = $request->majlesEnd;
@@ -52,6 +55,8 @@ class MajalesController extends Controller
         $majales->district     = $request->district;
         $majales->longitude    = $request->longitude;
         $majales->latitude     = $request->latitude;
+        $majales->user_name    = $request->userName;
+        $majales->user_number  = $request->userNumber;
         $majales->save();
 
        return redirect('/majales')->with('success', 'تمت اضافة المجلس بنجاح سوف ينشر بعد موافقة الادارة');

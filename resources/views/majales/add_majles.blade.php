@@ -23,13 +23,21 @@
         <form class="pt-2" method="post" action="/majales/save-majles">
             @csrf
             <div class="form-group">
-                <label for="exampleInputEmail1">الوصف</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" placeholder="الرجاء ادخال الوصف" required></textarea>
+                <label for="userName">الاسم الثلاثي</label>
+                <input type="text" class="form-control" name="userName" id="userName" placeholder="الرجاء كتابة الاسم الثلاثي لصاحب المجلس" required>
+            </div>
+            <div class="form-group">
+                <label for="userNumber">رقم الهاتف</label>
+                <input type="number" class="form-control" name="userNumber" id="userNumber" placeholder="الرجاء كتابة رقم هاتف صحيح" required>
+            </div>
+            <div class="form-group">
+                <label for="description">الوصف</label>
+                <textarea class="form-control" id="description" name="description" rows="3" placeholder="الرجاء ادخال الوصف" required></textarea>
                 <small id="descHelp" class="form-text text-muted">الرجاء كتابة وصف مختصر للمناسبة</small>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">المحافظة</label>
-                <select class="form-control" id="exampleFormControlSelect1"  name="cities" required>
+                <label for="cities">المحافظة</label>
+                <select class="form-control" id="cities"  name="cities" required>
                     <option value="{{\App\Enums\Cities::NAJ}}">{{\App\Enums\Cities::NAJ}}</option>
                     <option value="{{\App\Enums\Cities::KAR}}">{{\App\Enums\Cities::KAR}}</option>
                     <option value="{{\App\Enums\Cities::BAGH}}">{{\App\Enums\Cities::BAGH}}</option>
@@ -51,12 +59,12 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">الحي او القضاء</label>
-                <input type="text" class="form-control" name="district" id="exampleInputPassword1" placeholder="الرجاء ادخال اسم الحي او القضاء" required>
+                <label for="district">الحي او القضاء</label>
+                <input type="text" class="form-control" name="district" id="district" placeholder="الرجاء ادخال اسم الحي او القضاء" required>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">اقرب نقطة دالة</label>
-                <input type="text" class="form-control" name="closesPoint" id="exampleInputPassword1" placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة" required>
+                <label for="closesPoint">اقرب نقطة دالة</label>
+                <input type="text" class="form-control" name="closesPoint" id="closesPoint" placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">تاريخ بدء المناسبة</label>
@@ -178,6 +186,13 @@
     </div>
 @endsection
 @section('script')
+    <script src="{{asset('js/js-webshim/minified/polyfiller.js')}}"></script>
+    <script>
+        webshim.polyfill('forms-ext');
+        webshim.setOptions({
+            extendNative: true
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('#location').click(function () {
