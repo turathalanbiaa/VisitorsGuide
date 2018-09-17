@@ -28,11 +28,17 @@
                 </h6>
 
                 <h6 class="m-0 text-justify font-height-normal pb-3">
-                    <strong>{{trans("words.visitor_feqh_questions_card_answer")}}</strong>
                     @php $lines = explode("\r\n", $question->answer) @endphp
-                    {{--{{dd($lines)}}--}}
                     @foreach($lines as $line)
-                        <p>{{$line}}</p>
+                        @if ($loop->first)
+                            <p class="mb-2">
+                                <strong>{{trans("words.visitor_feqh_questions_card_answer")}}</strong>
+                                <span>{{$line}}</span>
+                            </p>
+                            @continue
+                        @endif
+
+                        <p class="mb-2">{{$line}}</p>
                     @endforeach
                 </h6>
 
