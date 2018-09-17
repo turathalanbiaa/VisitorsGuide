@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="userNumber">رقم الهاتف</label>
-                <input type="number" class="form-control" name="userNumber" id="userNumber" placeholder="الرجاء كتابة رقم هاتف صحيح" required>
+                <input type="text" class="form-control" name="userNumber" id="userNumber" placeholder="الرجاء كتابة رقم هاتف صحيح" required>
             </div>
             <div class="form-group">
                 <label for="description">الوصف</label>
