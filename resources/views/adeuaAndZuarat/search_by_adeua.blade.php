@@ -1,12 +1,15 @@
 @extends('layout.secondary_layout')
+@section("navbar-color")
+    {{"bg-aqua-gradient"}}
+@endsection
 
-@section('top-title')
-    <h1>دليل الزيارات والادعية</h1>
+@section("navbar-brand")
+    <span id="title">الادعية والزيارات - الادعية</span>
 @endsection
 
 @section('content')
 
-    <div class="container prayerAndVisits pb-5 pt-2">
+    <div class="container prayerAndVisits pb-2 pt-2">
         <div clsass="row pt-3">
             <form action="/adeua-and-zuarat/search-by-adeua" method="get">
                 <div class="form-group aa-input-container">
@@ -29,8 +32,8 @@
         @endif
         <div class="row">
             @foreach($publicAdeua as $publicDeua)
-                <div class="col-md-4 pb-4">
-                    <div class="rounded p-0 shadow-special" style=" overflow: hidden">
+                <div class="col-md-6 pb-2">
+                    <div class="rounded p-0 shadow-special majales-zuarat" style=" overflow: hidden">
                         <div class="w-100">
                             <img class="w-100" src="{{asset('child.jpg')}}">
                         </div>
@@ -47,14 +50,14 @@
                         <div class="collapse p-3" id="collapse-{{$publicDeua->id}}">
                             <audio controls class="w-100">
                                 <source src="" type="audio/ogg">
-                                <source src="" type="audio/mpeg">
+                                <source src="{{asset('/storage/zuarat-adeua')}}/{{$publicDeua->id}}.mp3" type="audio/mpeg">
                             </audio>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        <div class="pt-2 pb-5">
+        <div class="pt-2">
             {{$publicAdeua->links()}}
         </div>
     </div>
@@ -68,7 +71,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <p id="modal-content"></p>
+                    <p id="modal-content" style="font-size: 17px"></p>
                 </div>
 
                 <div class="modal-footer align-self-start border-0">
@@ -77,9 +80,32 @@
             </div>
         </div>
     </div>
+@endsection
+@section("menu-modal-content")
+    <div class="modal-content border-0 rounded-0 shadow-special">
+        <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
+            <span>الادعية والزيارات</span>
+        </h4>
 
-
-
+        <div class="modal-body">
+            <div class="list-group">
+                <a href="/adeua-and-zuarat/" class="list-group-item list-group-item-action">
+                    <span>الزيازات</span>
+                </a>
+                <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
+                    <span>الادعية</span>
+                </a>
+                <a href="/adeua-and-zuarat/images" class="list-group-item list-group-item-action">
+                    <span>معرض الصور</span>
+                </a>
+                <a href="/adeua-and-zuarat/videos" class="list-group-item list-group-item-action">
+                    <span>معرض الفيديوهات</span>
+                </a>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('script')
     <script>
         $('.read-more').click(function () {
             var id = $(this).attr('value');
@@ -94,5 +120,4 @@
             $('.carousel-item:first').addClass('active');
         })
     </script>
-
 @endsection

@@ -28,7 +28,7 @@
             </a>
 
             <a class="btn btn-sm btn-primary shadow" data-toggle="modal" data-target="#select-language-modal">
-                <i class="fa fa-globe text-white align-middle" style="width: 14px;"></i>
+                <i class="fa fa-globe fa-special text-white align-middle"></i>
             </a>
         </div>
     </nav>

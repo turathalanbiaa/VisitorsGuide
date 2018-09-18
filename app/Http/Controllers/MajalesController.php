@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Enums\Cities;
+use App\Enums\MajlesStatus;
+use App\Enums\PostCategory;
 use App\Enums\WeekDays;
 use App\Models\Majales;
+use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -26,20 +29,24 @@ class MajalesController extends Controller
            'description'=> 'required',
            'cities'=> 'required',
            'district'=> 'required',
+           'userName'=> 'required',
+           'userNumber'=> 'required',
            'closesPoint'=> 'required',
         ],
         [
             'majlesEnd.after'  => 'الرجاء اختار تاريخ صحيح للمناسبة',
+            'majlesEnd.after_or_equal'   => 'الرجاء اختار تاريخ صحيح للمناسبة',
             'majlesStart.required' => 'الرجاء عدم ترك حقل تاريخ بدءالمناسبة فارغ',
             'majlesEnd.required' => 'الرجاء عدم ترك حقل تاريخ انتهاءالمناسبة فارغ',
             'description.required' => 'الرجاء كتابة وصف للمناسبة',
             'cities.required' => 'الرجاء اختيار المدينة',
+            'userName.required' => 'الرجاء كتابة الاسم الكامل',
+            'userNumber.required' => 'الرجاء كتابة رقم الهاتف',
             'district.required' => 'الرجاء كتابة اسم المنطقة',
             'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
         ]);
 
         $majales = new Majales();
-        $majales->user_id      = 22;
         $majales->description  = $request->description;
         $majales->majles_start = $request->majlesStart;
         $majales->majles_end   = $request->majlesEnd;
@@ -48,15 +55,17 @@ class MajalesController extends Controller
         $majales->district     = $request->district;
         $majales->longitude    = $request->longitude;
         $majales->latitude     = $request->latitude;
+        $majales->user_name    = $request->userName;
+        $majales->user_number  = $request->userNumber;
         $majales->save();
 
-       return "ahmed";
+       return redirect('/majales')->with('success', 'تمت اضافة المجلس بنجاح سوف ينشر بعد موافقة الادارة');
     }
 
     public function main ()
     {
 
-        $getMajales = Majales::whereDate('majles_end','>=',Carbon::now()->format('y-m-d'))
+        $getMajales = Majales::where('status', MajlesStatus::ACCEPT)->whereDate('majles_end','>=',Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')->paginate(4);
 
         return view('majales/main', ['events'=>$getMajales]);
@@ -64,7 +73,8 @@ class MajalesController extends Controller
 
     public function getEventsByCity ($city)
     {
-        $getEventsByCity = Majales::where('city',$city)->orderBy('majles_start')
+        $getEventsByCity = Majales::where('status', MajlesStatus::ACCEPT)
+            ->where('city',$city)->orderBy('majles_start')
             ->orderBy('majles_start')->paginate(10);
 
         return view('/majales/events_city', ['events'=>$getEventsByCity]);
@@ -73,26 +83,44 @@ class MajalesController extends Controller
     public function getEventsUpcoming ()
 
     {
-        $getEventsUpcoming = Majales::whereDate('majles_start', '>', Carbon::now()->format('y-m-d'))
+        $getEventsUpcoming = Majales::where('status', MajlesStatus::ACCEPT)
+            ->whereDate('majles_start', '>', Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')->paginate(10);
 
-        return view('/majales/events_city', ['events'=>$getEventsUpcoming]);
+        return view('/majales/events_upcoming', ['events'=>$getEventsUpcoming]);
     }
 
     public function getEventsStarted ()
     {
-        $getEventsStarted = Majales::whereDate('majles_start', '<=', Carbon::now()->format('y-m-d'))
-            ->whereDate('majles_end', '>=', Carbon::now()->format('y-m-d'))->orderBy('majles_start')
+        $getEventsStarted = Majales::where('status', MajlesStatus::ACCEPT)
+            ->whereDate('majles_start', '<=', Carbon::now()->format('y-m-d'))
+            ->whereDate('majles_end', '>=', Carbon::now()->format('y-m-d'))
+            ->orderBy('majles_start')
             ->paginate(10);
 
-        return view('/majales/events_city', ['events'=>$getEventsStarted]);
+        return view('/majales/events_started', ['events'=>$getEventsStarted]);
     }
 
     public function getEventsEnded ()
     {
-        $getEventsEnded = Majales::whereDate('majles_end', '<', Carbon::now()->format('y-m-d'))->orderBy('majles_start')
+        $getEventsEnded = Majales::where('status', MajlesStatus::ACCEPT)
+            ->whereDate('majles_end', '<', Carbon::now()->format('y-m-d'))
+            ->orderBy('majles_start')
             ->paginate(10);
 
-        return view('/majales/events_city', ['events'=>$getEventsEnded]);
+        return view('/majales/events_ended', ['events'=>$getEventsEnded]);
+    }
+
+    public function getEventsGallery ()
+    {
+        $posts = Post::where('status', MajlesStatus::ACCEPT)
+            ->where('category', PostCategory::MAJALES)->paginate(8);
+        return view('/majales/events_gallery', ['posts'=>$posts]);
+    }
+
+    public function postViews ($id)
+    {
+        Post::find($id)->increment('views',1);
+        return "";
     }
 }

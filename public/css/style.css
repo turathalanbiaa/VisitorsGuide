@@ -1,6 +1,10 @@
 .modal-special {
     width: auto;
 }
+.fa-special {
+    width: 14px;
+    margin-top: 2px;
+}
 @media (min-width: 576px) {
     .modal-special {
         width: 500px!important;
@@ -87,10 +91,9 @@
 
 /* Adeua and Zuarat */
 
-.prayerAndVisits .prayer-today , .videos-gallery
+.majales-zuarat
 {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    background-color: white;
 }
 .gallery-images
 {
@@ -126,6 +129,10 @@
         max-width: 90% !important;
         margin: 1.75rem auto;
     }
+}
+.pagination
+{
+    padding-right: 0;
 }
 /* End Adeua and Zuarat */
 
