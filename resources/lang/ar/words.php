@@ -107,6 +107,7 @@ return [
     "lost_index_date" => "التاريخ:",
     "lost_index_place" => "المكان:",
     "lost_index_t_number" => "رقم العمود:",
+    "lost_index_phone" => "الموبايل:",
 
     "lost_index_select_category" => "أختر الصنف",
     "lost_index_persons" => "أشخاص",

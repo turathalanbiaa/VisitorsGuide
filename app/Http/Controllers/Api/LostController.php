@@ -11,16 +11,16 @@ class LostController extends Controller
 {
     public function search(Request $request)
     {
-        if ($request->search == '' && $request->category == '') {
+        if ($request->search == '' && $request->tag == '') {
             $Losts = Lost::paginate(10);
             return LostResource::collection($Losts);
         }
         elseif ($request->category == '') {
-            $Losts = Lost::search($request->search)->paginate(10);
+            $Losts = VisitorReception::search($request->search)->paginate(10);
             return LostResource::collection($Losts);
         }
         else {
-            $Losts = Lost::with('center')->where('category', $request->category)->paginate(10);
+            $Losts = VisitorReception::with('center')->where('category', $request->tag)->paginate(10);
             return LostResource::collection($Losts);
         }
         return response($Losts, 200);

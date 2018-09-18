@@ -24,7 +24,7 @@
                     <hr>
                     <a href="/road-guide" class="mb-0">{{trans("words.find_center_link")}}</a>
             </div>
-                <router-link to="/" class="float"><i class="fa fa-arrow-right my-float"></i></router-link>
+                <router-link to="/" class="float bg-teal-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
             </div>
         </div>
     </div>
@@ -43,7 +43,6 @@
         width: 50px;
         height: 50px;
         bottom: 50px;
-        background-color: #42d5dd;
         color: #FFF;
         border-radius: 50px;
         text-align: center;
