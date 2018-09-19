@@ -1,9 +1,9 @@
 <template>
     <div>
-            <nav class="navbar navbar-dark fixed-top bg-teal-gradient">
+            <nav class="navbar navbar-dark fixed-top bg-blue-gradient">
                 <div class="container p-0">
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
-                    <span>{{trans("words.lost_index_page")}}  </span>
+                    <span > دليل استضافة الزائرين</span>
                 </a>
                 <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
                     <a v-on:click="showModal = true" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
@@ -23,26 +23,22 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">{{trans("words.lost_index_select_category")}}</h5>
+                                    <h5 class="modal-title"> اختر النوع</h5>
 
                                 </div>
                                 <div class="modal-body">
                                     <div class="list-group">
                                         <a v-on:click="changeFilter(1)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>{{trans("words.lost_index_persons")}}</span>
+                                            <span>رجال</span>
                                         </a>
                                         <a v-on:click="changeFilter(2)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>{{trans("words.lost_index_money")}}</span>
+                                            <span>نساء</span>
                                         </a>
                                         <a v-on:click="changeFilter(3)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>{{trans("words.lost_index_money")}}</span>
-                                        </a>
-                                        <a v-on:click="changeFilter(4)"
-                                           class="list-group-item  list-group-item-action">
-                                            <span>{{trans("words.lost_index_bags")}}</span>
+                                            <span>عوائل</span>
                                         </a>
                                     </div>
                                     <div class="modal-footer">
@@ -56,7 +52,6 @@
                 </div>
             </transition>
         </div>
-
         <div class="container pt-2">
             <div class="row">
                 <div class="col-md-12">
@@ -69,40 +64,37 @@
                     </div>
                 </div>
                 <div v-for="item in list" v-bind:key="item.id" class="col-12 col-sm-6">
-                    <div class="card shadow mb-5">
-                        <img width="400"
-                             :src="item.file_name ? imgPreUrl + item.file_name : imgPreUrl + 'empty-photo.jpg'"
-                             height="350" class="card-img-top fill"
-                             alt="Card image cap"/>
+                    <div class="card shadow p-0 mb-5">
+
                         <div class="card-body">
+                            <div class="card-header bg-white text-center">
+                                <h6 class="card-title">
+                                    <span>صاحب المنزل:</span>
+                                    {{item.home_owner}}
+                                </h6>
+                            </div>
                             <div class="card-text">
                                 <ul class="list-group list-group-flush p-0">
                                     <li class="list-group-item">
-                                        <span>الصنف: </span>
-                                        {{getCategory(item.category)}}
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>{{trans("words.lost_index_description")}} </span>
-                                        {{item.description}}
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>{{trans("words.lost_index_date")}} </span>
-                                        {{item.datetime | moment("DD-MM-YYYY h:mm a")}}
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>{{trans("words.lost_index_place")}} </span>
-                                        {{item.center.name}}
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>{{trans("words.lost_index_t_number")}} </span>
-                                        {{item.center.t_number}}
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>{{trans("words.lost_index_phone")}} </span>
-                                        {{item.center.phone}}
-                                    </li>
+                                        <span>عدد الافراد :</span>
+                                        {{item.persons_number}}
+                                       </li>
+                                    <li class="list-group-item">  <span>الاشخاض :</span>
+                                        {{getType(item.persons_type)}}
+                                        </li>
+                                    <li class="list-group-item">  <span>المدينه : </span>
+                                        {{item.city}}
+                                        </li>
+                                    <li class="list-group-item">  <span>الحي : </span>
+                                        {{item.block}}
+                                        </li>
+                                    <li class="list-group-item">  <span>اقرب نقطه داله : </span>
+                                        {{item.point_guide}}
+                                        </li>
                                 </ul>
                             </div>
+                            <div class="card-footer bg-white text-center ">  <a class="card-link" href="tel:+1-303-499-7111">اتصال بصاحب المنزل</a></div>
+
                         </div>
                     </div>
                 </div>
@@ -114,9 +106,10 @@
                 </infinite-loading>
 
                 <div class="col-md-12">
-                    <router-link :to="{name:'find_center'}" class="float bg-teal-gradient">
-                        <i class="fa fa-bullhorn my-float"></i>
+                    <router-link :to="{name:'add_reception'}" class="float bg-blue-gradient">
+                        <i class="fa fa-plus my-float"></i>
                     </router-link>
+
                 </div>
             </div>
 
@@ -131,10 +124,9 @@
         data() {
             return {
                 search: null,
-                category: null,
+                type: null,
                 list: [],
                 page: 1,
-                imgPreUrl: 'storage/img/lost/',
                 showModal: false,
             };
         },
@@ -144,7 +136,7 @@
         watch: {
             search() {
                 this.page = 1;
-                this.category = null;
+                this.type = null;
                 this.list = [];
                 this.reloading();
             }
@@ -152,7 +144,7 @@
 
         methods: {
             infiniteHandler($state) {
-                axios.get('api/lost', {params: {category: this.category, search: this.search, page: this.page,}})
+                axios.get('api/reception', {params: {type: this.type, search: this.search, page: this.page,}})
                     .then(({data}) => {
                         this.list = this.list.concat(data.data);
                         $state.loaded();
@@ -164,28 +156,25 @@
                     .catch(error => {
                     });
             },
+            getType(arg) {
+                switch (arg) {
+                    case 1:
+                        return "رجال";
+                        break;
+                    case 2:
+                        return "نساء";
+                        break;
+                    case 3:
+                        return "عوائل";
+                        break;
+                }
+            },
             changeFilter(arg) {
                 this.page = 1;
                 this.list = [];
-                this.category = arg;
+                this.type = arg;
                 this.reloading();
                 this.showModal = false;
-            },
-            getCategory(arg) {
-                switch (arg) {
-                    case 1:
-                        return "أشخاص";
-                        break;
-                    case 2:
-                        return "مبلغ من المال";
-                        break;
-                    case 3:
-                        return "قطعه ذهبيه";
-                        break;
-                    case 4:
-                        return "حقائب";
-                        break;
-                }
             },
             reloading() {
                 this.$nextTick(() => {

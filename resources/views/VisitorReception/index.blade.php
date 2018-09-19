@@ -1,8 +1,8 @@
 @extends("layout.vue-layout")
 
 @section("content")
-        <router-view name="LostIndex"></router-view>
-        <router-view></router-view>
+<router-view name="VisitorsReceptionIndex"></router-view>
+<router-view></router-view>
 @endsection
 
 @section("nav-items-bottom")
