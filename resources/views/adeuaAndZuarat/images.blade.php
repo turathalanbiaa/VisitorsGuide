@@ -12,7 +12,7 @@
         <div class="row pb-4">
             @foreach($images as $image)
             <div class="gallery-images col-md-6 p-0">
-                <img src="{{$image->image}}{{$image->id}}" class="image w-100 h-100" data-toggle="modal" data-target="#modal-dialog-centered">
+                <img src="{{$image->image}}" class="image w-100 h-100" data-toggle="modal" data-target="#modal-dialog-centered">
             </div>
             @endforeach
         </div>

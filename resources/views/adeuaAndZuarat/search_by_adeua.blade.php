@@ -50,7 +50,7 @@
                         <div class="collapse p-3" id="collapse-{{$publicDeua->id}}">
                             <audio controls class="w-100">
                                 <source src="" type="audio/ogg">
-                                <source src="{{asset('/storage/zuarat-adeua')}}/{{$publicDeua->id}}.mp3" type="audio/mpeg">
+                                <source src="{{$publicDeua->sound}}/{{$publicDeua->id}}.mp3" type="audio/mpeg">
                             </audio>
                         </div>
                     </div>
