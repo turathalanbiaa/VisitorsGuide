@@ -113,8 +113,7 @@ class MajalesController extends Controller
 
     public function getEventsGallery ()
     {
-        $posts = Post::where('status', MajlesStatus::ACCEPT)
-            ->where('category', PostCategory::MAJALES)->paginate(8);
+        $posts = Post::where('category', PostCategory::MAJALES)->paginate(8);
         return view('/majales/events_gallery', ['posts'=>$posts]);
     }
 

@@ -16,7 +16,7 @@
                    <div class="col-md-10 p-0 mb-3" style="background-color: white">
                        <div class="gallery-images w-100">
                            <img class="image-modal b-lazy w-100 rounded ajax-request" src="{{asset('lame.gif')}}"
-                                data-echo="{{$post->image}}"
+                                data-echo="{{asset('storage/img/studio')}}{{$post->image}}"
                                 data-toggle="modal" data-target="#modal-dialog-centered" data-id="{{$post->id}}">
                        </div>
                        <div class="p-2">
