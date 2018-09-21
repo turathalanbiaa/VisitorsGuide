@@ -51,7 +51,7 @@
                                         <div class="collapse p-3" id="collapse-{{$daydeua->id}}">
                                             <audio controls class="w-100">
                                                 <source src="" type="audio/ogg">
-                                                <source src="" type="audio/mpeg">
+                                                <source src="{{$daydeua->sound}}" type="audio/mpeg">
                                             </audio>
                                         </div>
                                     </div>
