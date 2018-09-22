@@ -39,10 +39,10 @@
                             <h3 id="tit-2334">{{$zuara->title}}</h3>
                             <p id="cont-2334" class="text-truncate">{{$zuara->content}}</p>
                             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                                    data-target="#collapse-{{$zuara->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
+                                    data-target="#collapse-{{$zuara->id}}" aria-expanded="false" aria-controls="collapseExample">استمع للزيارة
                             </button>
                             <button class="btn btn-secondary btn-sm rounded read-more" value="2334" data-toggle="modal"
-                                    data-target=".exampleModalLong">قراءة للزيارة
+                                    data-target=".exampleModalLong">قراءة الزيارة
                             </button>
                         </div>
                         <div class="collapse p-3" id="collapse-{{$zuara->id}}">
@@ -112,5 +112,15 @@
             $('#modal-title').text(title);
             $('#modal-content').text(content)
         })
+    </script>
+    <script>
+        document.addEventListener('play', function(e){
+            let audios = document.getElementsByTagName('audio');
+            for(let i = 0, len = audios.length; i < len;i++){
+                if(audios[i] !== e.target){
+                    audios[i].pause();
+                }
+            }
+        }, true);
     </script>
 @endsection
