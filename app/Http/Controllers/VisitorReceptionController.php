@@ -8,6 +8,9 @@ class VisitorReceptionController extends Controller
 {
     public function index() {
 
-        return view('VisitorReception.show_adds');
+        
     }
+
+
+
 }
