@@ -46,7 +46,7 @@
                                         </div>
                                         <button class="btn btn-primary rounded mb-3" type="button" data-toggle="collapse"
                                                 data-target="#collapse-{{$daydeua->id}}"
-                                                aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
+                                                aria-expanded="false" aria-controls="collapseExample">استماع للدعاء
                                         </button>
                                         <div class="collapse p-3" id="collapse-{{$daydeua->id}}">
                                             <audio controls class="w-100">
@@ -85,10 +85,10 @@
                             <h3 id="tit-{{$publicDeua->id}}">{{$publicDeua->title}}</h3>
                             <p id="cont-{{$publicDeua->id}}" class="text-truncate">{{$publicDeua->content}}</p>
                             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                                data-target="#collapse-{{$publicDeua->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
+                                data-target="#collapse-{{$publicDeua->id}}" aria-expanded="false" aria-controls="collapseExample">استمع للدعاء
                             </button>
                             <button class="btn btn-secondary btn-sm rounded read-more" value="{{$publicDeua->id}}" data-toggle="modal"
-                                    data-target=".exampleModalLong">قراءة للزيارة
+                                    data-target=".exampleModalLong">قراءة الدعاء
                             </button>
                         </div>
                         <div class="collapse p-3" id="collapse-{{$publicDeua->id}}">
