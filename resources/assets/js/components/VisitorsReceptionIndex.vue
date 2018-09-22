@@ -106,7 +106,7 @@
                 </infinite-loading>
 
                 <div class="col-md-12">
-                    <router-link :to="{name:'add_reception'}" class="float bg-blue-gradient">
+                    <router-link :to="{name:'dashboard'}" class="float bg-blue-gradient">
                         <i class="fa fa-plus my-float"></i>
                     </router-link>
 

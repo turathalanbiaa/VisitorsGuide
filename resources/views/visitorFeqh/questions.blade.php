@@ -23,8 +23,18 @@
 
             <div class="jumbotron bg-light border shadow-sm my-3">
                 <h6 class="m-0 text-justify font-height-normal pb-3">
-                    <strong>{{trans("words.visitor_feqh_questions_card_question")}}</strong>
-                    <span>{{$question->title}}</span>
+                    @php $lines = explode("\r\n", $question->title) @endphp
+                    @foreach($lines as $line)
+                        @if ($loop->first)
+                            <p class="mb-2">
+                                <strong>{{trans("words.visitor_feqh_questions_card_question")}}</strong>
+                                <span>{{$line}}</span>
+                            </p>
+                            @continue
+                        @endif
+
+                        <p class="mb-2">{{$line}}</p>
+                    @endforeach
                 </h6>
 
                 <h6 class="m-0 text-justify font-height-normal pb-3">
