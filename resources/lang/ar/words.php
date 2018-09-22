@@ -26,7 +26,7 @@ return [
     "main_majales_guide_title"      => "دليل المجالس الحسينية",
     "main_majales_guide_detail"     => "يمكنك الآن اضافة مجلس وتحديد موقعه عبر GBS، وكذلك يمكنك معرفة اماكن المجالس الاخرى حسب المحافظة والتاريخ، كما يحتوي على استوديو.",
     "main_centers_title"            => "مراكز التائهين والمفقودات",
-    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان حاجة، كما يمكنك البحث وبسهولة وبسرعة عاليه جدا، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
+    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان حاجة، كما يمكنك البحث بسهولة وبسرعة عاليه جدا، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
     "main_btn_enter"                => "دخول",
     //Menu
     "menu_road_guid"         => "دليل طريق ياحسين",
@@ -77,6 +77,7 @@ return [
     "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
     "road_guide_calculate_distance_error_connection_message"   => "يرجى التحقق من اتصال الإنترنت",
+
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
@@ -92,8 +93,8 @@ return [
 
     "visitor_feqh_questions_card_question"   => "السؤال : ",
     "visitor_feqh_questions_card_answer"     => "الجواب : ",
-    "visitor_feqh_questions_pagination_prev" => "السابق",
-    "visitor_feqh_questions_pagination_next" => "التالي",
+    "visitor_feqh_questions_pagination_prev" => "<< السابق",
+    "visitor_feqh_questions_pagination_next" => "التالي >>",
 
     "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "visitor_feqh_app_masael_description"    => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",

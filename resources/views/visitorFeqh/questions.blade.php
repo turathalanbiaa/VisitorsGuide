@@ -68,12 +68,10 @@
         <div class="col-12 d-flex justify-content-between pb-2">
             @if(is_null($questions->previousPageUrl()))
                 <div>
-                    <small>&lt;&lt;</small>
                     <span>{{trans("words.visitor_feqh_questions_pagination_prev")}}</span>
                 </div>
             @else
                 <a href="{{$questions->previousPageUrl()}}@if(isset($_GET["category"])){{"&category=".$_GET["category"]}}@endif">
-                    <small>&lt;&lt;</small>
                     <span>{{trans("words.visitor_feqh_questions_pagination_prev")}}</span>
                 </a>
             @endif
@@ -81,12 +79,10 @@
             @if(is_null($questions->nextPageUrl()))
                 <div>
                     <span>{{trans("words.visitor_feqh_questions_pagination_next")}}</span>
-                    <small>&gt;&gt;</small>
                 </div>
             @else
                 <a href="{{$questions->nextPageUrl()}}@if(isset($_GET["category"])){{"&category=".$_GET["category"]}}@endif">
                     <span>{{trans("words.visitor_feqh_questions_pagination_next")}}</span>
-                    <small>&gt;&gt;</small>
                 </a>
             @endif
         </div>
