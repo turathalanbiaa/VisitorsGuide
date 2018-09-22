@@ -3,234 +3,57 @@
 @section("top-title")
     دليل استضافة الزائرين
 @endsection
+@section("navbar-color")
+    {{"bg-blue-gradient"}}
+@endsection
 
+@section("navbar-brand")
+    <span > دليل استضافة الزائرين</span>
+@endsection
 @section("content")
-
-
-    <div class="container mt-3 mb-3">
-
-
-        <div class="accordion " id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="card bg-secondary border-0 mb-3 shadow p-3 bg-white rounded">
-                <div class="card-header border-0 mb-1 shadow-special" id="heading-0" role="tab">
-                    <div class="collapsed " href="#collapse-0" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">
-                        <p class="text-black-50 mb-0">
-                            <span>البحث</span>
-                            <i class="fa fa-angle-down rotate-icon mt-2 float-left"></i>
-                        </p>
-                    </div>
-                </div>
-                <div class="collapse" id="collapse-0" role="tabpanel" aria-labelledby="heading-0" data-parent="#accordion">
-                    <div class="card-body mb-1 bg-light-special text-white">
-
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        سعة البيت
-                                        <input type="number" class="form-control" id="number" placeholder="اكبر من .... اشخاص ">
-                                    </div>
-
-                                </div>
-
-
-                                <div class="form-row">
-
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">النوع</label>
-                                        <select id="inputState" class="form-control">
-                                            <option>رجال</option>
-                                            <option>نساء</option>
-                                            <option>عوائل</option>
-
-
-
-                                        </select>
-                                    </div>
-
-
-                                </div>
-                                <div class="form-row">
-
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">المدينة</label>
-                                        <select id="inputState" class="form-control">
-                                            <option selected>الكل...</option>
-                                            <option>النجف</option>
-                                            <option>كربلاء</option>
-                                            <option>بغداد</option>
-                                            <option>سامراء</option>
-                                            <option>الحلة</option>
-                                            <option>البصرة</option>
-                                            <option>الديوانية</option>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputCity">الحي</label>
-                                        <input type="text" class="form-control" id="inputCity">
-                                    </div>
-
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">بحث</button>
-                            </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
+    <div class="container  pt-2 mt-3 mb-3">
         <div class="row">
-
-
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> محمد غني محمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت استضافة رقم4</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 25</p>
-                        <p class="card-text">الاشخاض : رجال</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">عرض البيت على الخارطة<i class="fa fa-home text-white"></i></a>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> الحاج علي حسين</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 4</h5>
-                        <p class="card-text">العوان : خان النص - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 12</p>
-                        <p class="card-text">الاشخاض : نساء</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">عرض البيت على الخارطة</a>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> وسام جواد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت لاستضافة الزائرين</h5>
-                        <p class="card-text"> العوان : نجف -  الحولي</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">عرض البيت على الخارطة</a>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="card text-center shadow p-3 mb-5 bg-white rounded">
-                    <div class="card-header bg-white ">
-
-                        <h6><span class="badge badge-secondary fa fa-user-alt  text-white p-2  "> عبد الله عبد الصمد</span></h6>
-                        <h6><span class="badge ">2018-3-22 10:40:29</span></h6>
-
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">بيت سكن 1</h5>
-                        <p class="card-text">العوان : نجف - حي الصحة</p>
-                        <p class="card-text">عدد الافراد : 20</p>
-                        <p class="card-text">الاشخاض : عوائل</p>
-                        <a class="btn  fa fa-phone-square " href="tel:+1-303-499-7111">اتصال بصاحب البيت</a>
-                        </a>
-
-                    </div>
-
+            <div class="col-md-12">
+                <div class="form-group aa-input-container">
+                    <input v-model.lazy="search" class="form-control form-control-lg" type="text"
+                           autocomplete="off">
+                    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+                        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z"/>
+                    </svg>
                 </div>
             </div>
 
+
+            <div class="col-12 col-sm-6">
+                <div class="card shadow p-0 mb-5">
+
+                    <div class="card-body">
+                        <div class="card-header bg-white text-center">
+                            <h5 class="card-title">
+                                <span>صاحب المنزل:</span>
+                                 محمد غني محمد
+                            </h5>
+                        </div>
+                        <div class="card-text">
+                            <ul class="list-group list-group-flush p-0">
+                                <li class="list-group-item">
+                                    <span>عدد الافراد :</span>
+                                    25</li>
+                                <li class="list-group-item">  <span>الاشخاض :</span>
+                                    رجال</li>
+                                <li class="list-group-item">  <span>المدينه : </span>
+                                    نجف</li>
+                                <li class="list-group-item">  <span>الحي : </span>
+                                    نجف</li>
+                                <li class="list-group-item">  <span>اقرب نقطه داله : </span>
+                                    نجف</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white text-center ">  <a class="card-link" href="tel:+1-303-499-7111">اتصال بصاحب المنزل</a></div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

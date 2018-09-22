@@ -5,13 +5,13 @@
 @endsection
 
 @section('navbar-brand')
-    <span>دليل الزيارات والادعية</span>
+    <span>دليل الزيارات والادعية - الزيارات</span>
 @endsection
 
 @section('content')
 
     <div class="container prayerAndVisits pt-3 pb-2">
-        <div clsass="row">
+        <div>
             <form action="/adeua-and-zuarat/search-by-zuarat" method="get">
                 <div class="form-group aa-input-container">
                     <input class="form-control form-control-lg" type="text"
@@ -26,7 +26,7 @@
         </div>
         @if($zuarat->count() == 0)
             <div class="row justify-content-center">
-                <div>git
+                <div>
                     <h2>لاتوجد بيانات لعرضها</h2>
                 </div>
             </div>
@@ -34,43 +34,46 @@
         <div class="row justify-content-center">
             @foreach($zuarat as $zuara)
             <div class="col-md-6 pb-4">
-                <div class="rounded p-0 shadow-special" style=" overflow: hidden">
+                <div class="rounded p-0 shadow-special majales-zuarat" style=" overflow: hidden">
                     <div class="w-100">
                         <img class="w-100" src="{{asset('naj.jpg')}}">
                     </div>
                     <div class="mt-3 p-3 zuarat">
-                        <h3 id="tit-2334">{{$zuara->title}}</h3>
-                        <p id="cont-2334" class="text-truncate">{{$zuara->content}}</p>
+                        <h3 id="tit-{{$zuara->id}}">{{$zuara->title}}</h3>
+                        <p id="cont-{{$zuara->id}}" class="text-truncate">{{$zuara->content}}</p>
                         <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
                                 data-target="#collapse-{{$zuara->id}}" aria-expanded="false" aria-controls="collapseExample">استماع للزيارة
                         </button>
-                        <button class="btn btn-secondary btn-sm rounded read-more" value="2334" data-toggle="modal"
+                        <button class="btn btn-secondary btn-sm rounded read-more" value="{{$zuara->id}}" data-toggle="modal"
                                 data-target=".exampleModalLong">قراءة للزيارة
                         </button>
                     </div>
                     <div class="collapse p-3" id="collapse-{{$zuara->id}}">
                         <audio controls class="w-100">
-                            <source src="horse.ogg" type="audio/ogg">
-                            <source src="horse.mp3" type="audio/mpeg">
+                            <source src="" type="audio/ogg">
+                            <source src="{{$zuara->sound}}" type="audio/mpeg">
                         </audio>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-        <div class="pb-5 pt-2">
+        <div class="pt-2">
             {{$zuarat->links()}}
         </div>
 
-        <div class="modal fade exampleModalLong" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade exampleModalLong" id="exampleModalLong"
+             tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 id="modal-title"></h5>
+                        <h4 id="modal-title" style="color: red"></h4>
                     </div>
+
                     <div class="modal-body">
-                        <p id="modal-content"></p>
+                        <p id="modal-content" style="font-size:17px;line-height: 2.5"></p>
                     </div>
+
                     <div class="modal-footer align-self-start border-0">
                         <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">اغلاق</button>
                     </div>
@@ -78,6 +81,32 @@
             </div>
         </div>
     </div>
+@endsection
+@section("menu-modal-content")
+    <div class="modal-content border-0 rounded-0 shadow-special">
+        <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
+            <span>الادعية والزيارات</span>
+        </h4>
+
+        <div class="modal-body">
+            <div class="list-group">
+                <a href="/adeua-and-zuarat/" class="list-group-item list-group-item-action">
+                    <span>الزيازات</span>
+                </a>
+                <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
+                    <span>الادعية</span>
+                </a>
+                <a href="/adeua-and-zuarat/images" href="events" class="list-group-item list-group-item-action">
+                    <span>معرض الصور</span>
+                </a>
+                <a href="/adeua-and-zuarat/videos" href="events" class="list-group-item list-group-item-action">
+                    <span>معرض الفيديو</span>
+                </a>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('script')
     <script>
         $('.read-more').click(function () {
             var id = $(this).attr('value');

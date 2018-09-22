@@ -14,7 +14,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/road-guide" class="btn bg-aqua-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                @include("layout.double_angle_icon")
+                                <i class="fa fa-road text-white"></i>
                             </a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="d-flex flex-row-reverse">
                             <a href="/visitor-feqh" class="btn bg-orange-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                @include("layout.double_angle_icon")
+                                <i class="fa fa-list-alt text-white"></i>
                             </a>
                         </div>
                     </div>
@@ -48,9 +48,9 @@
                     <div class="card-body rounded mx-0">
                         <p class="text-justify">{{trans("words.main_adeua_and_zuarat_detail")}}</p>
                         <div class="d-flex flex-row-reverse">
-                            <a href="/adeuaAndZuarat/" class="btn bg-purple-gradient btn-shadow">
+                            <a href="/adeua-and-zuarat/" class="btn bg-purple-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                @include("layout.double_angle_icon")
+                                <i class="fab fa-audible text-white"></i>
                             </a>
                         </div>
                     </div>
@@ -66,9 +66,9 @@
                     <div class="card-body rounded mx-0">
                         <p class="text-justify">{{trans("words.main_visitor_reception_detail")}}</p>
                         <div class="d-flex flex-row-reverse">
-                            <a href="/show_adds" class="btn bg-blue-gradient btn-shadow">
+                            <a href="/reception" class="btn bg-blue-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                @include("layout.double_angle_icon")
+                                <i class="fa fa-school text-white"></i>
                             </a>
                         </div>
                     </div>
@@ -84,9 +84,9 @@
                     <div class="card-body rounded mx-0">
                         <p class="text-justify">{{trans("words.main_centers_detail")}}</p>
                         <div class="d-flex flex-row-reverse">
-                            <a href="{{url("/losts")}}" class="btn bg-teal-gradient btn-shadow">
+                            <a href="{{url("/lost")}}" class="btn bg-teal-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                @include("layout.double_angle_icon")
+                                <i class="fa fa-route text-white"></i>
                             </a>
                         </div>
                     </div>
@@ -102,9 +102,9 @@
                     <div class="card-body rounded mx-0">
                         <p class="text-justify">{{trans("words.main_majales_guide_detail")}}</p>
                         <div class="d-flex flex-row-reverse">
-                            <a href="/" class="btn bg-olive-gradient btn-shadow">
+                            <a href="/majales" class="btn bg-olive-gradient btn-shadow">
                                 <span>{{trans("words.main_btn_enter")}}</span>
-                                @include("layout.double_angle_icon")
+                                <i class="fa fa-microphone-alt text-white"></i>
                             </a>
                         </div>
                     </div>

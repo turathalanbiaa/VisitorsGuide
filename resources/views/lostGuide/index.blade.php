@@ -1,15 +1,7 @@
 @extends("layout.vue-layout")
 
-@section("navbar-color")
-    {{"bg-teal-gradient"}}
-@endsection
-
-@section("navbar-brand")
-    <span >دليل التائهين والمفقودات</span>
-@endsection
-
 @section("content")
-        <router-view name="lostIndex"></router-view>
+        <router-view name="LostIndex"></router-view>
         <router-view></router-view>
 @endsection
 

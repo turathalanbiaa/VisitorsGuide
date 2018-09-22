@@ -5,11 +5,11 @@
 @endsection
 
 @section("navbar-brand")
-    <span id="title">{{trans("words.visitor_feqh_title_questions")}}</span>
+    <span id="title">المجالس - عرض المجالس حسب المدينة</span>
 @endsection
 
 @section('content')
-    <div class="container pt-5 pb-5">
+    <div class="container pt-2 pb-5">
         @if($events->count() == 0)
             <div class="mt-lg-5 text-center">
                 <h1>لاتوحد بيانات لعرضها</h1>
@@ -31,7 +31,7 @@
                             <p class="mt-3" style="color: black">{{$event->description}}</p>
                             <p class="mb-0" style="color: #ff9e0f">
                                 <span>وقت المناسبة :</span>
-                                <span> {{Carbon\Carbon::parse($event->time_start)->format('h:i')}} </span>
+                                <span> {{Carbon\Carbon::parse($event->majles_start)->format('h:i')}} </span>
                                 <span>{{\App\Enums\TimeArabic::getTimeInArabic(Carbon\Carbon::parse($event->majles_start)->format('A'))}}</span>
                             </p>
                             <p class="mb-1" style="color: #ff9e0f;">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-12 p-0">
+                        <div class="col-md-12 p-0" style="overflow: hidden">
                             <div style="display: inline; font-size: 12px">
                                 <div class="p-1" style="background-color: #4dd0e1; width: fit-content; display: inline">
                                     <span>تبدء المنسابة</span>
@@ -91,11 +91,19 @@
 @section("menu-modal-content")
     <div class="modal-content border-0 rounded-0 shadow-special">
         <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
-            <span>{{trans("words.menu_visitor_feqh")}}</span>
+            <span>المجالس</span>
         </h4>
 
         <div class="modal-body">
             <div class="list-group">
+                <a href="/majales/events-gallery" class="list-group-item list-group-item-action" id="show-questions">
+                    <i class="fas fa-camera-retro"></i>
+                    <span>الاستديو</span>
+                </a>
+                <a href="/majales" class="list-group-item list-group-item-action" id="show-questions">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>عرض جميع المناسبات</span>
+                </a>
                 <a href="/majales/events-upcoming" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-hourglass-start"></i>
                     <span>عرض المناسبات التي لم تبدء الى الان</span>
@@ -178,7 +186,7 @@
 @endsection
 
 @section('script')
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4">
 
     </script>
     <script>

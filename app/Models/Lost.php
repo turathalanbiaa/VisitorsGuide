@@ -29,9 +29,5 @@ class Lost extends Model
             't_number' => $this->center['t_number'],
         ];
     }
-    public function searchableAs()
-    {
-        return 'losts_index';
-    }
 
 }

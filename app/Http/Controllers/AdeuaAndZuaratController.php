@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\AdeuaZuaratCategory;
+use App\Enums\PostCategory;
 use App\Models\AdeuaAndZuarat;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -11,10 +12,7 @@ use Illuminate\Support\Facades\Input;
 
 class AdeuaAndZuaratController extends Controller
 {
-    public function home ()
-    {
-        return view('adeuaAndZuarat/home');
-    }
+
     public function adeua ()
     {
         $daysDescending = DB::table('adeua_zuarat')
@@ -49,7 +47,9 @@ class AdeuaAndZuaratController extends Controller
 
     public function videos ()
     {
-        return view('adeuaAndZuarat/videos');
+        $posts = Post::where('category', PostCategory::ADEUA_ZUARAT)
+            ->whereNotNull('video_link')->paginate(8);
+        return view('adeuaAndZuarat/videos', ['posts'=>$posts]);
     }
 
     public function searchByZuarat ()

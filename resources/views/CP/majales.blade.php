@@ -50,15 +50,14 @@
     <script>
         $("button[data-action='accept']").click(function () {
             $(this).attr("disabled", "disabled");
-            var majles = $(this).parent().find("input[name='majles']").val();
-            var divCol = $(this).parent().parent();
+            var divCol = $(this).parent().parent().attr("data-content", "hidden");
             var progress = $(this).parent().find(".progress");
             progress.removeClass("d-none");
             var progressBar = progress.find(".progress-bar");
             progressBar.attr("aria-valuenow","75");
             progressBar.css("width", "75%");
             progressBar.html("75%");
-            divCol.attr("data-content", "hidden");
+            var majles = $(this).parent().find("input[name='majles']").val();
             $.ajax({
                 type:'post',
                 url: '/control-panel/majles/accept',
@@ -85,10 +84,96 @@
                     snackbar(message , 1000 , "warning");
                 },
                 complete: function () {
-                    setTimeout(function () {
-                        progress.addClass("d-none");
-                    }, 250);
-                    $("div[data-content='hidden']").addClass("d-none");
+                    setTimeout(function () {progress.addClass("d-none");}, 500);
+                    setTimeout(function () {divCol.addClass("fadeOut");}, 500);
+                    setTimeout(function () {divCol.addClass("d-none");}, 1000);
+                    setTimeout(function () {divCol.removeAttr("data-content");divCol.removeClass("fadeOut")},1000);
+                }
+            });
+        });
+        $("button[data-action='reject']").click(function () {
+            $(this).attr("disabled", "disabled");
+            var divCol = $(this).parent().parent().attr("data-content", "hidden");
+            var progress = $(this).parent().find(".progress");
+            progress.removeClass("d-none");
+            var progressBar = progress.find(".progress-bar");
+            progressBar.attr("aria-valuenow","75");
+            progressBar.css("width", "75%");
+            progressBar.html("75%");
+            var majles = $(this).parent().find("input[name='majles']").val();
+            $.ajax({
+                type:'post',
+                url: '/control-panel/majles/reject',
+                dataType: 'json',
+                data: {id:majles},
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                success: function (result) {
+                    progressBar.attr("aria-valuenow","100");
+                    progressBar.css("width", "100%");
+                    progressBar.html("100%");
+                    if (result["majles"]==="notFound") {
+                        var message = "{{trans('cp_words.majles_not_found')}}";
+                        snackbar(message , 1000 , "info");
+                    } else if (result["success"]===true) {
+                        var message = "{{trans('cp_words.reject_majles_success_true')}}";
+                        snackbar(message , 1000 , "success");
+                    } else if (result["success"]===false) {
+                        var message = "{{trans('cp_words.reject_majles_success_false')}}";
+                        snackbar(message , 1000 , "error");
+                    }
+                },
+                error: function () {
+                    var message = "{{trans('cp_words.majles_error_connection')}}";
+                    snackbar(message , 1000 , "warning");
+                },
+                complete: function () {
+                    setTimeout(function () {progress.addClass("d-none");}, 500);
+                    setTimeout(function () {divCol.addClass("fadeOut");}, 500);
+                    setTimeout(function () {divCol.addClass("d-none");}, 1000);
+                    setTimeout(function () {divCol.removeAttr("data-content");divCol.removeClass("fadeOut")},1000);
+                }
+            });
+        });
+        $("button[data-action='delete']").click(function () {
+            $(this).attr("disabled", "disabled");
+            var divCol = $(this).parent().parent().attr("data-content", "hidden");
+            var progress = $(this).parent().find(".progress");
+            progress.removeClass("d-none");
+            var progressBar = progress.find(".progress-bar");
+            progressBar.attr("aria-valuenow","75");
+            progressBar.css("width", "75%");
+            progressBar.html("75%");
+            var majles = $(this).parent().find("input[name='majles']").val();
+            $.ajax({
+                type:'post',
+                url: '/control-panel/majles/delete',
+                dataType: 'json',
+                data: {id:majles},
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                success: function (result) {
+                    progressBar.attr("aria-valuenow","100");
+                    progressBar.css("width", "100%");
+                    progressBar.html("100%");
+                    if (result["majles"]==="notFound") {
+                        var message = "{{trans('cp_words.majles_not_found')}}";
+                        snackbar(message , 1000 , "info");
+                    } else if (result["success"]===true) {
+                        var message = "{{trans('cp_words.delete_majles_success_true')}}";
+                        snackbar(message , 1000 , "success");
+                    } else if (result["success"]===false) {
+                        var message = "{{trans('cp_words.delete_majles_success_false')}}";
+                        snackbar(message , 1000 , "error");
+                    }
+                },
+                error: function () {
+                    var message = "{{trans('cp_words.majles_error_connection')}}";
+                    snackbar(message , 1000 , "warning");
+                },
+                complete: function () {
+                    setTimeout(function () {progress.addClass("d-none");}, 500);
+                    setTimeout(function () {divCol.addClass("fadeOut");}, 500);
+                    setTimeout(function () {divCol.addClass("d-none");}, 1000);
+                    setTimeout(function () {divCol.removeAttr("data-content");divCol.removeClass("fadeOut")},1000);
                 }
             });
         });
