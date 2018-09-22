@@ -102,7 +102,7 @@ return [
 
 
 //Lost Guide
-    "lost_index_page" => "دليل التائهين والمفقودات",
+    "lost_index_page" => "مراكز التائهين والمفقودات",
     "lost_index_category" => "الصنف:",
     "lost_index_description" => "الوصف:",
     "lost_index_date" => "التاريخ:",
