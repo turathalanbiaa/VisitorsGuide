@@ -12,8 +12,8 @@ return [
 
     //Select Language
     "select_language" => "Select Language",
-    "arabic"          => "Arabic",
-    "persian"         => "Persian",
+    "arabic"          => "العربية",
+    "persian"         => "الفارسية",
     "english"         => "English",
 
     //Main Page

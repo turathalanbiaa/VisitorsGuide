@@ -14,7 +14,7 @@ return [
     "select_language" => "اختر اللغة",
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
-    "english"         => "الانكليزية",
+    "english"         => "English",
 
     //Main Page
     "main_road_guide_title"         => "دليل طريق ياحسين",
