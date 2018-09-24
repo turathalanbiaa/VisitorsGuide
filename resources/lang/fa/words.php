@@ -37,4 +37,6 @@ return [
     "menu_visitor_reception" => "میزبان بازدیدکنندگان",
     "menu_majales_guide"     => "دایرکتوری شوراهای حسینیه",
     "menu_centers"           => "گمشده و پیدا شده مراکز",
+
+
 ];

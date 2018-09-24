@@ -32,33 +32,34 @@ return [
     "main_btn_enter"                => "Entry",
 
     //Menu
-    "menu_road_guid"         => "The Roadmap of \"Ya Hussien Way\" (Najaf-Karbala Road)",
-    "menu_visitor_feqh"      => "The Fiqh of Al-Zayer (Jurisprudence of Imam Hussien's Visitors)",
+    "menu_road_guid"         => "The Roadmap of \"Ya Hussien Way\"",
+    "menu_visitor_feqh"      => "The Fiqh of Al-Zayer",
     "menu_adeua_and_zuarat"  => "Prayers and Zeyarat",
     "menu_visitor_reception" => "Hosting of Imam Husain's Visitors",
-    "menu_majales_guide"     => "Majlis-e-Aza (consolation sessions)",
+    "menu_majales_guide"     => "Majlis-e-Aza",
     "menu_centers"           => "Lost and Found",
 
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "All Questions",
     "visitor_feqh_menu_send_question"      => "Submit a question to the Al-Ajweba Al-Muyasare website",
-    "visitor_feqh_menu_app_masael"         => "Download Al-Ajweba Al-Muyasare App",
-    "visitor_feqh_menu_filter"             => "عرض حسب الصنف",
+    "visitor_feqh_menu_app_masael"         => "Download Al-Ajweba Al-Muyasare app",
+    "visitor_feqh_menu_filter"             => "Category",
+    "visitor_feqh_message_not_found"       => "There are no data to display",
 
-    "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
-    "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
+    "visitor_feqh_title_questions"     => "All Questions",
+    "visitor_feqh_title_app_masael"    => "Al-Ajweba Al-Muyasare",
 
-    "visitor_feqh_ads_app_masael_text"   => "حمل الأن تطبيق الأجوبة الميسرة او زر الموقع الرسمي",
-    "visitor_feqh_ads_app_masael_detail" => "لرؤية المزيد من التفاصيل",
-    "visitor_feqh_ads_app_masael_btn"    => "اضغط هنا",
+    "visitor_feqh_ads_app_masael_text"   => "Download now Al-Ajweba Al-Muyasare application Or visit official website",
+    "visitor_feqh_ads_app_masael_detail" => "See more",
+    "visitor_feqh_ads_app_masael_btn"    => "click_here",
 
-    "visitor_feqh_questions_card_question"   => "السؤال : ",
-    "visitor_feqh_questions_card_answer"     => "الجواب : ",
-    "visitor_feqh_questions_pagination_prev" => "<< السابق",
-    "visitor_feqh_questions_pagination_next" => "التالي >>",
+    "visitor_feqh_questions_card_question"   => "Question : ",
+    "visitor_feqh_questions_card_answer"     => "Answer : ",
+    "visitor_feqh_questions_pagination_prev" => "<< Prev",
+    "visitor_feqh_questions_pagination_next" => "Next >>",
 
-    "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
-    "visitor_feqh_app_masael_description"    => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
-    "visitor_feqh_masael_website"            => "الموقع الرسمي للأجوبة الميسرة",
-    "visitor_feqh_masael_available_app_on"   => "يتوفر التطبيق الآن على",
+    "visitor_feqh_app_masael_message_thanks" => "Thank You Dear Visitor For Using Our Services",
+    "visitor_feqh_app_masael_description"    => "Good news for believers, now become the answer to your question feqhi (Jurisprudential) or  akaedi (Ideological) at your fingertips only by using officail website or app for Al-Ajweba Al-Muyasare, this project is producted by Institute Turath Al-Anbiaa (Peace be upon them) and their aim is to help people to answer their legitimate question concerning feqh (Jurisprudential) or  akaed (Ideological) under the supervision of a group of students and lecturers of the scientific estate in Najaf.",
+    "visitor_feqh_masael_website"            => "Official Website For Al-Ajweba Al-Muyasare",
+    "visitor_feqh_masael_available_app_on"   => "Available App On",
 ];

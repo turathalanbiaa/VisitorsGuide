@@ -84,7 +84,8 @@ return [
     "visitor_feqh_menu_show_all_questions" => "جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
     "visitor_feqh_menu_app_masael"         => "تحميل تطبيق الاجوبة الميسرة",
-    "visitor_feqh_menu_filter"             => "عرض حسب الصنف",
+    "visitor_feqh_menu_filter"             => "الأصناف",
+    "visitor_feqh_message_not_found"       => "لاتوجد بيانات لعرضها",
 
     "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
     "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
