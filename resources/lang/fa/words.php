@@ -9,11 +9,13 @@
 return [
     //App
     "app_name" => "بازدید کننده کیسه",
+
     //Select Language
     "select_language" => "انتخاب زبان",
-    "arabic"          => "عربی",
-    "persian"         => "فارسی",
-    "english"         => "انگلیسی",
+    "arabic"          => "العربية",
+    "persian"         => "الفارسية",
+    "english"         => "English",
+
     //Main Page
     "main_road_guide_title"         => "راهنمای جاده",
     "main_road_guide_detail"        => "شما اکنون می توانید مراحل، حمام، نقاط عمومی و معروف را در طول مسیر ببینید و می توانید فاصله، زمان، تعداد ستون ها، جهت ها و نقاط عمومی را پیدا کنید و در طول مسیر بین دو مورد مورد نیاز است.",
@@ -35,4 +37,6 @@ return [
     "menu_visitor_reception" => "میزبان بازدیدکنندگان",
     "menu_majales_guide"     => "دایرکتوری شوراهای حسینیه",
     "menu_centers"           => "گمشده و پیدا شده مراکز",
+
+
 ];

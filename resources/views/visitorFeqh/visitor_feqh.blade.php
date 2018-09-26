@@ -17,9 +17,9 @@
 
 @section("menu-modal-content")
     <div class="modal-content border-0 rounded-0 shadow-special">
-        <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
+        <h5 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
             <span>{{trans("words.menu_visitor_feqh")}}</span>
-        </h4>
+        </h5>
 
         <div class="modal-body">
             <div class="list-group">

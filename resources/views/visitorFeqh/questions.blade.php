@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    @foreach($questions as $question)
+    @forelse($questions as $question)
         <div class="col-12">
             @if(!isset($_GET["category"]))
                 <div class="w-100 d-flex justify-content-center" style="margin-bottom: -34px">
@@ -62,18 +62,24 @@
                 @endif
             </div>
         </div>
-    @endforeach
+    @empty
+        <div class="col-12 mb-sm-5 mb-4">
+            <div class="jumbotron m-0 bg-transparent">
+                <h4 class="text-center my-5">
+                    {{trans("words.visitor_feqh_message_not_found")}}
+                </h4>
+            </div>
+        </div>
+    @endforelse
 
     @if($questions->hasPages())
         <div class="col-12 d-flex justify-content-between pb-2">
             @if(is_null($questions->previousPageUrl()))
                 <div>
-                    <small>&lt;&lt;</small>
                     <span>{{trans("words.visitor_feqh_questions_pagination_prev")}}</span>
                 </div>
             @else
                 <a href="{{$questions->previousPageUrl()}}@if(isset($_GET["category"])){{"&category=".$_GET["category"]}}@endif">
-                    <small>&lt;&lt;</small>
                     <span>{{trans("words.visitor_feqh_questions_pagination_prev")}}</span>
                 </a>
             @endif
@@ -81,12 +87,10 @@
             @if(is_null($questions->nextPageUrl()))
                 <div>
                     <span>{{trans("words.visitor_feqh_questions_pagination_next")}}</span>
-                    <small>&gt;&gt;</small>
                 </div>
             @else
                 <a href="{{$questions->nextPageUrl()}}@if(isset($_GET["category"])){{"&category=".$_GET["category"]}}@endif">
                     <span>{{trans("words.visitor_feqh_questions_pagination_next")}}</span>
-                    <small>&gt;&gt;</small>
                 </a>
             @endif
         </div>

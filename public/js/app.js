@@ -55449,7 +55449,7 @@ var render = function() {
                               [
                                 _c("span", [
                                   _vm._v(
-                                    _vm._s(_vm.trans("words.lost_index_money"))
+                                    _vm._s(_vm.trans("words.lost_index_gold"))
                                   )
                                 ])
                               ]

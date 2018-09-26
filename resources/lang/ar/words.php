@@ -9,11 +9,13 @@
 return [
     //App
     "app_name" => "حقيبة الزائر",
+
     //Select Language
     "select_language" => "اختر اللغة",
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
-    "english"         => "الانكليزية",
+    "english"         => "English",
+
     //Main Page
     "main_road_guide_title"         => "دليل طريق ياحسين",
     "main_road_guide_detail"        => "يمكنك الآن معرفة المواكب الحسينية ومراكز التائهين والمفقودات ونقاط الاستفتاءات الشرعية والحّمامات الصحية والنقاط العامة والمشهورة على طول الطريق، كما يمكنك معرفة المسافة والزمن وعدد الأعمدة والاتجاه على طول طريق ياحسين.",
@@ -26,8 +28,9 @@ return [
     "main_majales_guide_title"      => "دليل المجالس الحسينية",
     "main_majales_guide_detail"     => "يمكنك الآن اضافة مجلس وتحديد موقعه عبر GPS، وكذلك يمكنك معرفة اماكن المجالس الاخرى حسب المحافظة والتاريخ، كما يحتوي على استوديو.",
     "main_centers_title"            => "مراكز التائهين والمفقودات",
-    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان، كما يمكنك البحث وبسهولة وبسرعة عاليه، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
+    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان حاجة، كما يمكنك البحث بسهولة وبسرعة عاليه جدا، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
     "main_btn_enter"                => "دخول",
+
     //Menu
     "menu_road_guid"         => "دليل طريق ياحسين",
     "menu_visitor_feqh"      => "فقه الزائر",
@@ -35,7 +38,6 @@ return [
     "menu_visitor_reception" => "استضافة الزائرين",
     "menu_majales_guide"     => "دليل المجالس الحسينية",
     "menu_centers"           => "مراكز التائهين والمفقودات",
-
 
     //Road Guide
     "road_guide_menu_show_all_points"                => "جميع المناطق",
@@ -77,11 +79,13 @@ return [
     "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
     "road_guide_calculate_distance_error_connection_message"   => "يرجى التحقق من اتصال الإنترنت",
+
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
     "visitor_feqh_menu_app_masael"         => "تحميل تطبيق الاجوبة الميسرة",
-    "visitor_feqh_menu_filter"             => "عرض حسب الصنف",
+    "visitor_feqh_menu_filter"             => "الأصناف",
+    "visitor_feqh_message_not_found"       => "لاتوجد بيانات لعرضها",
 
     "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
     "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
@@ -92,8 +96,8 @@ return [
 
     "visitor_feqh_questions_card_question"   => "السؤال : ",
     "visitor_feqh_questions_card_answer"     => "الجواب : ",
-    "visitor_feqh_questions_pagination_prev" => "السابق",
-    "visitor_feqh_questions_pagination_next" => "التالي",
+    "visitor_feqh_questions_pagination_prev" => "<< السابق",
+    "visitor_feqh_questions_pagination_next" => "التالي >>",
 
     "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "visitor_feqh_app_masael_description"    => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",
@@ -102,7 +106,7 @@ return [
 
 
 //Lost Guide
-    "lost_index_page" => "دليل التائهين والمفقودات",
+    "lost_index_page" => "مراكز التائهين والمفقودات",
     "lost_index_category" => "الصنف:",
     "lost_index_description" => "الوصف:",
     "lost_index_date" => "التاريخ:",

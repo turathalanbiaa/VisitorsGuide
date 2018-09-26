@@ -38,7 +38,7 @@
                                         </a>
                                         <a v-on:click="changeFilter(3)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>{{trans("words.lost_index_money")}}</span>
+                                            <span>{{trans("words.lost_index_gold")}}</span>
                                         </a>
                                         <a v-on:click="changeFilter(4)"
                                            class="list-group-item  list-group-item-action">

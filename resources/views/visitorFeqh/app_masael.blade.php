@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="jumbotron bg-white text-center shadow mb-3">
             <h4 class="mb-4">{{trans("words.visitor_feqh_app_masael_message_thanks")}}</h4>
-            <p>{{trans("words.visitor_feqh_app_masael_description")}}</p>
+            <p class="text-justify">{{trans("words.visitor_feqh_app_masael_description")}}</p>
 
             <p class="font-weight-bold mb-0 mt-5">
                 {{trans("words.visitor_feqh_masael_website")}}
