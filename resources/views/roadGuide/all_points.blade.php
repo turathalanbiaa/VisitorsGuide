@@ -1,8 +1,33 @@
 <div class="row" id="all-points">
+
+
+
+    <div class="card border-success mr-2 ml-2 mb-4">
+        <div class="card-header">توصيات</div>
+        <div class="card-body p-1 text-primary">
+
+            <div class="alert alert-secondary" role="alert">
+                حافظ على الصلاة في أول وقتها كما فعل اﻹمام الحسين عليه السلام في يوم عاشوراء
+            </div>
+            <div class="alert alert-success" role="alert">
+                أختي المؤمنة: فليكن حجابك في هذه اﻷماكن الطاهرة أفضل وأستر من حجابك في مدينتك وبلدك..
+            </div>
+
+            <div class="alert alert-warning" role="alert">
+                إحرص على قداسة ونظافة اﻷماكن المقدسة.
+
+            </div>
+
+        </div>
+    </div>
+
+
     <div class="col-12">
+
         <ul class="timeline">
             @php $i=1; @endphp
             @foreach($allPoints as $point)
+
                 <li @if($i%2==1) class="timeline-inverted" @endif>
                     <div class="timeline-badge shadow {{\App\Enums\PointCategory::getCategoryColor($point->category)}}"
                          data-action="show-calculate-distance-modal" data-t_number="{{$point->t_number}}">
@@ -50,4 +75,31 @@
             @endforeach
         </ul>
     </div>
+
+
+
+
+    <div class="card border-success mr-2 ml-2 mt-5">
+        <div class="card-header">ملاحظات</div>
+        <div class="card-body p-1 text-primary">
+
+
+            <div class="alert alert-success" role="alert">
+                <li>   كل الخدمات كالطعام والشراب والسكن وحتى التدليك تقدم في طول المسير مجانا، ولذالك لاداعي لحمل أموال كثيرة</li>
+
+                <li>  تأكد من أنك تحمل إسم وعنوان سكنك في كربلاء مكتوبا في ورقة، (ﻷنك قد لاتتمكن من اﻹتصال حين تصل لكربلاء بسبب إنقطاع الشبكة أو إزدحامها وهذا يحصل كثيرا)</li>
+
+
+                <li>   إذا أردت اﻹتصال فليكن ذلك قبل طلوع الشمس ﻷنه يحتمل أن لاتتمكن من اﻹتصال طول النهار بسبب إزدحام الشبكة.</li>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
 </div>
