@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form class="col bg-white text-center border shadow-sm p-5" action="/control-panel/center/login" method="post">
+                <form class="col bg-white text-center border shadow-sm p-5" action="/control-panel/center/add-lost" method="post">
                     <p class="h4 mb-4">اضافة تائه</p>
 
                     @if(count($errors))
@@ -22,10 +22,60 @@
                     @endif
 
                     {{ csrf_field() }}
-                    <input type="text" id="username" name="username" class="form-control mb-4" placeholder="اسم المركز">
-                    <input type="password" id="password" name="password" class="form-control mb-4" placeholder="كلمة المرور">
+                    <div class="input-group mb-4">
+                        <div class="w-25 input-group-append">
+                            <span class="w-100 input-group-text">اسم المركز</span>
+                        </div>
+                        <input class="w-75 py-3 px-2" type="text" name="center" value="{{session()->get("CENTER_NAME")}}" readonly>
+                    </div>
 
-                    <button class="btn btn-info btn-block my-4" type="submit">تسجيل الدخول</button>
+                    <div class="input-group mb-4">
+                        <div class="w-25 input-group-append">
+                            <span class="w-100 input-group-text">الصنف</span>
+                        </div>
+
+                        <select class="w-75 rounded-0 py-3 px-2" name="category">
+                            <option class="py-1 px-2" value="{{\App\Enums\LostCategory::PERSON}}">{{\App\Enums\LostCategory::getCategory(\App\Enums\LostCategory::PERSON)}}</option>
+                            <option class="py-1 px-2" value="{{\App\Enums\LostCategory::Money}}">{{\App\Enums\LostCategory::getCategory(\App\Enums\LostCategory::Money)}}</option>
+                            <option class="py-1 px-2" value="{{\App\Enums\LostCategory::GOLD_PIECES}}">{{\App\Enums\LostCategory::getCategory(\App\Enums\LostCategory::GOLD_PIECES)}}</option>
+                            <option class="py-1 px-2" value="{{\App\Enums\LostCategory::BAGS}}">{{\App\Enums\LostCategory::getCategory(\App\Enums\LostCategory::BAGS)}}</option>
+                            <option class="py-1 px-2" value="{{\App\Enums\LostCategory::MOBILE}}">{{\App\Enums\LostCategory::getCategory(\App\Enums\LostCategory::MOBILE)}}</option>
+                            <option class="py-1 px-2" value="{{\App\Enums\LostCategory::OTHER}}">{{\App\Enums\LostCategory::getCategory(\App\Enums\LostCategory::OTHER)}}</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-4">
+                        <div class="w-25 input-group-append">
+                            <span class="w-100 input-group-text">الوصف في اللغة العربية</span>
+                        </div>
+                        <textarea class="w-75 rounded-0" rows="5" name="des_ar"></textarea>
+                    </div>
+
+                    <div class="input-group mb-4">
+                        <div class="w-25 input-group-append">
+                            <span class="w-100 input-group-text">الوصف في اللغة الفارسية</span>
+                        </div>
+                        <textarea class="w-75 rounded-0" rows="5" name="des_fa"></textarea>
+                    </div>
+
+                    <div class="input-group mb-4">
+                        <div class="w-25 input-group-append">
+                            <span class="w-100 input-group-text">الوصف في اللغة الانكليزية</span>
+                        </div>
+                        <textarea class="w-75 rounded-0" rows="5" name="des_en"></textarea>
+                    </div>
+
+                    <div class="input-group mb-4">
+                        {{--<div class="w-25 input-group-append">--}}
+                            {{--<span class="w-100 input-group-text">صورة المادة</span>--}}
+                        {{--</div>--}}
+                        <div class="w-75 custom-file rounded-0">
+                            <input type="file" class="custom-file-input">
+                            <label class="custom-file-label">أختر صورة المادة</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-info btn-block btn-lg my-4" type="submit">اضافة التائه</button>
                 </form>
             </div>
         </div>
