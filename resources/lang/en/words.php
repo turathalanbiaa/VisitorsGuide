@@ -39,6 +39,19 @@ return [
     "menu_majales_guide"     => "Majlis-e-Aza",
     "menu_centers"           => "Lost and Found",
 
+    // RoadeGuide
+    "road_guide_note1"   => "Dear visitor",
+    "road_guide_note2"   => "    حافظ على الصلاة في أول وقتها كما فعل اﻹمام الحسين عليه السلام في يوم عاشوراء",
+    "road_guide_note3"   => "     أختي المؤمنة: فليكن حجابك في هذه اﻷماكن الطاهرة أفضل وأستر من حجابك في مدينتك وبلدك..",
+    "road_guide_note4"   => "   إحرص على قداسة ونظافة اﻷماكن المقدسة.",
+    "road_guide_note5"   => "   كل الخدمات كالطعام والشراب والسكن وحتى التدليك تقدم في طول المسير مجانا، ولذالك لاداعي لحمل أموال كثيرة",
+    "road_guide_note6"   => "  تأكد من أنك تحمل إسم وعنوان سكنك في كربلاء مكتوبا في ورقة، (ﻷنك قد لاتتمكن من اﻹتصال حين تصل لكربلاء بسبب إنقطاع الشبكة أو إزدحامها وهذا يحصل كثيرا)",
+    "road_guide_note7"   => "   إذا أردت اﻹتصال فليكن ذلك قبل طلوع الشمس ﻷنه يحتمل أن لاتتمكن من اﻹتصال طول النهار بسبب إزدحام الشبكة.",
+
+
+
+
+
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "All Questions",
     "visitor_feqh_menu_send_question"      => "Submit a question to the Al-Ajweba Al-Muyasare website",

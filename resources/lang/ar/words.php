@@ -80,6 +80,15 @@ return [
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
     "road_guide_calculate_distance_error_connection_message"   => "يرجى التحقق من اتصال الإنترنت",
 
+    "road_guide_note1"   => "عزيزي الزائر عزيزتي الزائرة",
+    "road_guide_note2"   => "    حافظ على الصلاة في أول وقتها كما فعل اﻹمام الحسين عليه السلام في يوم عاشوراء",
+    "road_guide_note3"   => "     أختي المؤمنة: فليكن حجابك في هذه اﻷماكن الطاهرة أفضل وأستر من حجابك في مدينتك وبلدك..",
+    "road_guide_note4"   => "   إحرص على قداسة ونظافة اﻷماكن المقدسة.",
+    "road_guide_note5"   => "   كل الخدمات كالطعام والشراب والسكن وحتى التدليك تقدم في طول المسير مجانا، ولذالك لاداعي لحمل أموال كثيرة",
+    "road_guide_note6"   => "  تأكد من أنك تحمل إسم وعنوان سكنك في كربلاء مكتوبا في ورقة، (ﻷنك قد لاتتمكن من اﻹتصال حين تصل لكربلاء بسبب إنقطاع الشبكة أو إزدحامها وهذا يحصل كثيرا)",
+    "road_guide_note7"   => "   إذا أردت اﻹتصال فليكن ذلك قبل طلوع الشمس ﻷنه يحتمل أن لاتتمكن من اﻹتصال طول النهار بسبب إزدحام الشبكة.",
+
+
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
@@ -96,8 +105,8 @@ return [
 
     "visitor_feqh_questions_card_question"   => "السؤال : ",
     "visitor_feqh_questions_card_answer"     => "الجواب : ",
-    "visitor_feqh_questions_pagination_prev" => "<< السابق",
-    "visitor_feqh_questions_pagination_next" => "التالي >>",
+    "visitor_feqh_questions_pagination_prev" => "< السابق",
+    "visitor_feqh_questions_pagination_next" => "التالي >",
 
     "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "visitor_feqh_app_masael_description"    => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",

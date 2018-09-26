@@ -3,19 +3,22 @@
 
 
     <div class="card border-success mr-2 ml-2 mb-4">
-        <div class="card-header">توصيات</div>
+        <div class="card-header">
+
+            {{trans("words.road_guide_note1")}}
+        </div>
         <div class="card-body p-1 text-primary">
 
             <div class="alert alert-secondary" role="alert">
-                حافظ على الصلاة في أول وقتها كما فعل اﻹمام الحسين عليه السلام في يوم عاشوراء
+                {{trans("words.road_guide_note2")}}
             </div>
             <div class="alert alert-success" role="alert">
-                أختي المؤمنة: فليكن حجابك في هذه اﻷماكن الطاهرة أفضل وأستر من حجابك في مدينتك وبلدك..
+                {{trans("words.road_guide_note3")}}
             </div>
 
             <div class="alert alert-warning" role="alert">
-                إحرص على قداسة ونظافة اﻷماكن المقدسة.
 
+                {{trans("words.road_guide_note4")}}
             </div>
 
         </div>
@@ -85,15 +88,9 @@
 
 
             <div class="alert alert-success" role="alert">
-                <li>   كل الخدمات كالطعام والشراب والسكن وحتى التدليك تقدم في طول المسير مجانا، ولذالك لاداعي لحمل أموال كثيرة</li>
-
-                <li>  تأكد من أنك تحمل إسم وعنوان سكنك في كربلاء مكتوبا في ورقة، (ﻷنك قد لاتتمكن من اﻹتصال حين تصل لكربلاء بسبب إنقطاع الشبكة أو إزدحامها وهذا يحصل كثيرا)</li>
-
-
-                <li>   إذا أردت اﻹتصال فليكن ذلك قبل طلوع الشمس ﻷنه يحتمل أن لاتتمكن من اﻹتصال طول النهار بسبب إزدحام الشبكة.</li>
-
-
-
+                <li>{{trans("words.road_guide_note5")}}</li>
+                <li>{{trans("words.road_guide_note6")}}</li>
+                <li>{{trans("words.road_guide_note7")}}</li>
             </div>
 
 
