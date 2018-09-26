@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <form class="col bg-white text-center border shadow-sm p-5" action="/control-panel/center/add-lost" method="post">
-                    <p class="h4 mb-4">اضافة تائه</p>
+                    <p class="h4 mb-4">اضافة تائه او مفقود</p>
 
                     @if(count($errors))
                         <div class="alert alert-danger text-right">
@@ -46,21 +46,21 @@
 
                     <div class="input-group mb-4">
                         <div class="w-25 input-group-append">
-                            <span class="w-100 input-group-text">الوصف في اللغة العربية</span>
+                            <span class="w-100 input-group-text">الوصف  باللغة العربية</span>
                         </div>
                         <textarea class="w-75 rounded-0" rows="5" name="des_ar"></textarea>
                     </div>
 
                     <div class="input-group mb-4">
                         <div class="w-25 input-group-append">
-                            <span class="w-100 input-group-text">الوصف في اللغة الفارسية</span>
+                            <span class="w-100 input-group-text">الوصف باللغة الفارسية</span>
                         </div>
                         <textarea class="w-75 rounded-0" rows="5" name="des_fa"></textarea>
                     </div>
 
                     <div class="input-group mb-4">
                         <div class="w-25 input-group-append">
-                            <span class="w-100 input-group-text">الوصف في اللغة الانكليزية</span>
+                            <span class="w-100 input-group-text">الوصف باللغة الانكليزية</span>
                         </div>
                         <textarea class="w-75 rounded-0" rows="5" name="des_en"></textarea>
                     </div>
@@ -71,11 +71,11 @@
                         {{--</div>--}}
                         <div class="w-75 custom-file rounded-0">
                             <input type="file" class="custom-file-input">
-                            <label class="custom-file-label">أختر صورة المادة</label>
+                            <label class="custom-file-label">تحميل  صورة </label>
                         </div>
                     </div>
 
-                    <button class="btn btn-info btn-block btn-lg my-4" type="submit">اضافة التائه</button>
+                    <button class="btn btn-info btn-block btn-lg my-4" type="submit">حفظ </button>
                 </form>
             </div>
         </div>
