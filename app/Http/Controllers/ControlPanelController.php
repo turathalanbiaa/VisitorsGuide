@@ -9,6 +9,8 @@ use App\Models\Majales;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class ControlPanelController extends Controller
 {
@@ -160,7 +162,7 @@ class ControlPanelController extends Controller
         $rules = [
             "category" => "required|numeric|between:1,6",
             "des_ar" => "required",
-            "file" => "file|image|min:50|max:200",
+            "file" => "file|image|min:50|max:2048",
         ];
 
         $rulesMessage = [
@@ -169,14 +171,32 @@ class ControlPanelController extends Controller
             "category.between" => "لم تقم بأختيار الصنف بشكل صحيح.",
             "des_ar.required" => "يجب ذكر الوصف في اللغة العربية.",
             "file.file" => "انت تحاول رفع ملف ليس بصورة.",
-            "file.image" => "انت تحاول رفع ملف ليس بصورة.",
+            "file.image" => "انت تحاول رفع ليس بصورة.",
             "file.min" => "انت تقوم برفع صورة صغيرة جداً.",
-            "file.max" => "حجم الصورة يجب ان لايتعدى 200KB."
+            "file.max" => "حجم الصورة يجب ان لايتعدى 2048KB."
         ];
 
         $this->validate($request, $rules, $rulesMessage);
 
-        dd(Input::all());
+        $lost = new Lost();
+
+        $lost->center_id = Session()->get("CENTER_ID");
+        $lost->category = Input::get("category");
+        $lost->description = Input::get("des_ar");
+        $lost->datetime = date("Y-m-d H:i:s");
+
+        if (!is_null(request()->file("file"))) {
+            $Path = Storage::putFile('public/img/lost', request()->file("file"));
+            $imagePath = explode('/',$Path);
+            $lost->file_name = $imagePath[3];
+        }
+
+        $success = $lost->save();
+
+        if (!$success)
+            return redirect("/control-panel/center/add-lost")->with('AddLostMessage', "لم تتم عملية اضافة التائه او المفقود بنجاح!!! حاول مرة اخرى.");
+
+        return redirect("/control-panel/center/add-lost")->with('AddLostMessage', "تمت عملية اضافة التائه او المفقود بنجاح.");
     }
 
 
