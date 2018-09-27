@@ -157,22 +157,21 @@ class ControlPanelController extends Controller
     }
 
     public function addLostValidation(Request $request) {
-        dd(Input::all());
-
         $rules = [
-            "category" => "required|between:1,6",
-//            "des_ar" => "required",
+            "category" => "required|numeric|between:1,6",
+            "des_ar" => "required",
             "file" => "file|image|min:50|max:200",
         ];
 
         $rulesMessage = [
-//            "category.required" => "يجب اختيار الصنف",
-//            "category.required" => "لم تقم بأختيار صنف السؤال.",
-//            "tags.required" => "لم تقم بأختيار الموضوع التابع له السؤال.",
-//            "image.file" => "انت تحاول رفع ملف ليس بصورة.",
-//            "image.image" => "انت تحاول رفع ملف ليس بصورة.",
-//            "image.min" => "انت تقوم برفع صورة صغيرة جداً.",
-//            "image.max" => "حجم الصورة يجب ان لايتعدى 200KB."
+            "category.required" => "يجب اختيار الصنف.",
+            "category.numeric" => "انت تقوم بأرسال بيانات بصورة غير صحيحة.",
+            "category.between" => "لم تقم بأختيار الصنف بشكل صحيح.",
+            "des_ar.required" => "يجب ذكر الوصف في اللغة العربية.",
+            "file.file" => "انت تحاول رفع ملف ليس بصورة.",
+            "file.image" => "انت تحاول رفع ملف ليس بصورة.",
+            "file.min" => "انت تقوم برفع صورة صغيرة جداً.",
+            "file.max" => "حجم الصورة يجب ان لايتعدى 200KB."
         ];
 
         $this->validate($request, $rules, $rulesMessage);
