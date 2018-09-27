@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <form class="col bg-white text-center border shadow-sm p-sm-5 p-3" action="/control-panel/center/add-lost" method="post">
-                    <p class="h4 mb-4">اضافة تائه</p>
+                    <p class="h4 mb-4">اضافة تائه او مفقود</p>
 
                     @if(count($errors))
                         <div class="alert alert-danger text-right">
@@ -40,7 +40,7 @@
                     <div class="input-group mb-5">
                         <div class="w-75 custom-file rounded-0">
                             <input type="file" class="custom-file-input">
-                            <label class="custom-file-label">أختر صورة المادة</label>
+                            <label class="custom-file-label">تحميل  صورة </label>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                     <textarea class="w-100 border rounded border-secondary p-2 mb-4" rows="7" name="des_fa" placeholder="الوصف في اللغة الفارسية"></textarea>
                     <textarea class="w-100 border rounded border-secondary p-2 mb-4" rows="7" name="des_en" placeholder="الوصف في اللغة الانكليزية"></textarea>
 
-                    <button class="btn btn-info btn-lg" type="submit">اضافة التائه</button>
+                    <button class="btn btn-info btn-lg" type="submit">حفظ</button>
                 </form>
             </div>
         </div>
