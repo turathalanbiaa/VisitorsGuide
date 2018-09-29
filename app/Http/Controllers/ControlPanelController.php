@@ -96,8 +96,8 @@ class ControlPanelController extends Controller
     public function centerLoginValidation(Request $request)
     {
         $rules = [
-            "username" => "required",
-            "password" => "required"
+        "username" => "required",
+        "password" => "required"
         ];
 
         $rulesMessage = [

@@ -19,3 +19,8 @@
 
 Route::get("/", "MainController@index")->middleware("setLocaleLanguage");
 Route::get("/select-language", "MainController@selectLanguage");
+Route::get("/register", "UserController@register");
+Route::post("/register", "UserController@registerValidation");
+Route::get("/login", "UserController@login");
+Route::post("/login", "UserController@loginValidation");
+Route::get("/logout", "UserController@logout");

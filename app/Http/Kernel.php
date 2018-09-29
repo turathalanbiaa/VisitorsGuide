@@ -60,6 +60,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'setLocaleLanguage' => \App\Http\Middleware\SetLocaleLanguage::class,
-        'centerLogin' => \App\Http\Middleware\CenterLogin::class
+        'centerLogin' => \App\Http\Middleware\CenterLogin::class,
+        'userLogin' => \App\Http\Middleware\UserLogin::class
     ];
 }

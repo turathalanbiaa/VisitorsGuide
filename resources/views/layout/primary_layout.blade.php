@@ -27,9 +27,21 @@
                 {{trans("words.app_name")}}
             </a>
 
-            <a class="btn btn-sm btn-primary shadow" data-toggle="modal" data-target="#select-language-modal">
-                <i class="fa fa-globe fa-special text-white align-middle"></i>
-            </a>
+            <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
+                <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" data-toggle="modal" data-target="#select-language-modal">
+                    <i class="fa fa-globe fa-special text-white align-middle"></i>
+                </a>
+
+                @if(isset($_COOKIE["USER_SESSION"]))
+                    <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/logout">
+                        <i class="fa fa-sign-out-alt fa-special text-white align-middle"></i>
+                    </a>
+                @else
+                    <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/login">
+                        <i class="fa fa-sign-in-alt fa-special text-white align-middle"></i>
+                    </a>
+                @endif
+            </div>
         </div>
     </nav>
 
