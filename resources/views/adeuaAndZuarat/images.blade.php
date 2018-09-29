@@ -35,7 +35,7 @@
         <div class="modal-body">
             <div class="list-group">
                 <a href="/adeua-and-zuarat/" class="list-group-item list-group-item-action">
-                    <span>الزيازات</span>
+                    <span>الزيارات</span>
                 </a>
                 <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
                     <span>الادعية</span>

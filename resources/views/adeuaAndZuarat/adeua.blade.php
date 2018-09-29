@@ -26,29 +26,37 @@
             </form>
         </div>
         <div class="row justify-content-center pt-2 pb-5">
-            <div class="col-md-8 prayer-today shadow-special majales-zuarat">
-                <div class="row">
-                    <div class="col-md-12 w-100 p-0">
+            <div class="col-md-8 prayer-today">
+                <div class="majales-zuarat shadow-special card-majales-zuarat">
+                    <div class="w-100 p-0">
                         <img class="w-100" src="{{asset('thumb.jpg')}}">
                     </div>
-                    <div class="col-md-12">
+                    <div>
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="p-2" style="text-align: center">
+                                <i class="fas fa-plus-square fa-2x ml-2" style="color:#dae0e5" id="zoomIn"></i>
+                                <i class="fas fa-minus-square fa-2x" style="color: #dae0e5" id="zoomOut"></i>
+                            </div>
+                            <div class="p-2 w-100" style="position: absolute; z-index: 999">
+                                <a style="float: left" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <i class="fas fa-arrow-alt-circle-left fa-3x"></i>
+                                </a>
+                                <a style="float: right" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+                                </a>
+                            </div>
                             <div class="carousel-inner">
                                 @foreach($daysAdeua as $daydeua)
                                     <div class="carousel-item">
                                         <div class="prayer-today-content">
                                             <div class="header mt-3">
-                                                <h2 class="text-center">{{$daydeua->title}}</h2>
+                                                <h3 class="text-center">{{$daydeua->title}}</h3>
                                             </div>
-                                            <div class="content">
-                                                <p>{{$daydeua->content}}</p>
+                                            <div class="content p-2">
+                                                <p class="font-size">{{$daydeua->content}}</p>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary rounded mb-3" type="button" data-toggle="collapse"
-                                                data-target="#collapse-{{$daydeua->id}}"
-                                                aria-expanded="false" aria-controls="collapseExample">استماع للدعاء
-                                        </button>
-                                        <div class="collapse p-3" id="collapse-{{$daydeua->id}}">
+                                        <div class="p-2">
                                             <audio controls class="w-100">
                                                 <source src="" type="audio/ogg">
                                                 <source src="{{$daydeua->sound}}" type="audio/mpeg">
@@ -60,38 +68,23 @@
                         </div>
                     </div>
                 </div>
-
-                <div>
-                    <a style="float: left" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" style="background-color: #0c5460" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a style="float: right" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" style="background-color: #0c5460" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
             </div>
         </div>
-
         <div class="row">
             @foreach($publicAdeua as $publicDeua)
                 <div class="col-md-6 pb-4">
-                    <div class="rounded p-0 shadow-special majales-zuarat" style=" overflow: hidden">
-                        <div class="w-100">
-                            <img class="w-100" src="{{asset('child.jpg')}}">
-                        </div>
+                    <div class=" p-0 shadow-special majales-zuarat card-majales-zuarat">
                         <div class="mt-3 p-3 zuarat">
                             <h3 id="tit-{{$publicDeua->id}}">{{$publicDeua->title}}</h3>
-                            <p id="cont-{{$publicDeua->id}}" class="text-truncate">{{$publicDeua->content}}</p>
+                            <p id="cont-{{$publicDeua->id}}" class="module-text fade-text">{{$publicDeua->content}}</p>
                             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                                data-target="#collapse-{{$publicDeua->id}}" aria-expanded="false" aria-controls="collapseExample">استمع للدعاء
+                                data-target="#collapse-{{$publicDeua->id}}" aria-expanded="true" aria-controls="collapseExample">استمع للدعاء
                             </button>
                             <button class="btn btn-secondary btn-sm rounded read-more" value="{{$publicDeua->id}}" data-toggle="modal"
                                     data-target=".exampleModalLong">قراءة الدعاء
                             </button>
                         </div>
-                        <div class="collapse p-3" id="collapse-{{$publicDeua->id}}">
+                        <div class="collapse show p-3" id="collapse-{{$publicDeua->id}}">
                             <audio controls class="w-100">
                                 <source src="" type="audio/ogg">
                                 <source src="{{$publicDeua->sound}}" type="audio/mpeg">
@@ -111,7 +104,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="modal-title" style="color: red"></h4>
+                    <h4 id="modal-title"></h4>
                 </div>
 
                 <div class="modal-body">
@@ -134,7 +127,7 @@
         <div class="modal-body">
             <div class="list-group">
                 <a href="/adeua-and-zuarat/" class="list-group-item list-group-item-action">
-                    <span>الزيازات</span>
+                    <span>الزيارات</span>
                 </a>
                 <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
                     <span>الادعية</span>
@@ -173,5 +166,22 @@
                 }
             }
         }, true);
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#zoomIn').click(function () {
+                let fontSizePluse = parseFloat($('.font-size').css('font-size'));
+                fontSizePluse = fontSizePluse + 1;
+                $('.font-size').css('font-size',fontSizePluse+'px');
+            });
+            $('#zoomOut').click(function () {
+                let fontSizeMinus = parseFloat($('.font-size').css('font-size'));
+                fontSizeMinus = fontSizeMinus - 1;
+               if (fontSizeMinus >13)
+               {
+                   $('.font-size').css('font-size',fontSizeMinus+'px');
+               }
+            })
+        })
     </script>
 @endsection

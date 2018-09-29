@@ -124,6 +124,38 @@
 {
     display: block;
 }
+.module-text {
+    margin: 0 0 1em 0;
+    overflow: hidden;
+    padding-bottom: 17px;
+
+}
+.fade-text {
+    position: relative;
+    height: 10em;
+}
+.fade-text:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 1)
+    100%);
+}
+.card-majales-zuarat
+{
+    border-radius: 15px 30px;
+    overflow: hidden;
+}
+.card-majales-zuarat h3, .modal-header h4
+{
+    color: #0099cc;
+}
 @media (min-width: 576px) {
     .modal-image {
         max-width: 90% !important;

@@ -32,25 +32,22 @@
         @endif
         <div class="row">
             @foreach($publicAdeua as $publicDeua)
-                <div class="col-md-6 pb-2">
-                    <div class="rounded p-0 shadow-special majales-zuarat" style=" overflow: hidden">
-                        <div class="w-100">
-                            <img class="w-100" src="{{asset('child.jpg')}}">
-                        </div>
+                <div class="col-md-6 pb-4">
+                    <div class=" p-0 shadow-special majales-zuarat card-majales-zuarat">
                         <div class="mt-3 p-3 zuarat">
                             <h3 id="tit-{{$publicDeua->id}}">{{$publicDeua->title}}</h3>
-                            <p id="cont-{{$publicDeua->id}}" class="text-truncate">{{$publicDeua->content}}</p>
+                            <p id="cont-{{$publicDeua->id}}" class="module-text fade-text">{{$publicDeua->content}}</p>
                             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                                    data-target="#collapse-{{$publicDeua->id}}" aria-expanded="false" aria-controls="collapseExample">استمع للدعاء
+                                    data-target="#collapse-{{$publicDeua->id}}" aria-expanded="true" aria-controls="collapseExample">استمع للدعاء
                             </button>
                             <button class="btn btn-secondary btn-sm rounded read-more" value="{{$publicDeua->id}}" data-toggle="modal"
                                     data-target=".exampleModalLong">قراءة الدعاء
                             </button>
                         </div>
-                        <div class="collapse p-3" id="collapse-{{$publicDeua->id}}">
+                        <div class="collapse show p-3" id="collapse-{{$publicDeua->id}}">
                             <audio controls class="w-100">
                                 <source src="" type="audio/ogg">
-                                <source src="{{$publicDeua->sound}}/{{$publicDeua->id}}.mp3" type="audio/mpeg">
+                                <source src="{{$publicDeua->sound}}" type="audio/mpeg">
                             </audio>
                         </div>
                     </div>
@@ -67,7 +64,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="modal-title" style="color: red"></h4>
+                    <h4 id="modal-title"></h4>
                 </div>
 
                 <div class="modal-body">
@@ -90,7 +87,7 @@
         <div class="modal-body">
             <div class="list-group">
                 <a href="/adeua-and-zuarat/" class="list-group-item list-group-item-action">
-                    <span>الزيازات</span>
+                    <span>الزيارات</span>
                 </a>
                 <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
                     <span>الادعية</span>
