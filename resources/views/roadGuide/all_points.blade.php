@@ -1,8 +1,36 @@
 <div class="row" id="all-points">
+
+
+
+    <div class="card border-success mr-2 ml-2 mb-4">
+        <div class="card-header">
+
+            {{trans("words.road_guide_note1")}}
+        </div>
+        <div class="card-body p-1 text-primary">
+
+            <div class="alert alert-secondary" role="alert">
+                {{trans("words.road_guide_note2")}}
+            </div>
+            <div class="alert alert-success" role="alert">
+                {{trans("words.road_guide_note3")}}
+            </div>
+
+            <div class="alert alert-warning" role="alert">
+
+                {{trans("words.road_guide_note4")}}
+            </div>
+
+        </div>
+    </div>
+
+
     <div class="col-12">
+
         <ul class="timeline">
             @php $i=1; @endphp
             @foreach($allPoints as $point)
+
                 <li @if($i%2==1) class="timeline-inverted" @endif>
                     <div class="timeline-badge shadow {{\App\Enums\PointCategory::getCategoryColor($point->category)}}"
                          data-action="show-calculate-distance-modal" data-t_number="{{$point->t_number}}">
@@ -50,4 +78,25 @@
             @endforeach
         </ul>
     </div>
+
+
+
+
+    <div class="card border-success mr-2 ml-2 mt-5">
+        <div class="card-header">ملاحظات</div>
+        <div class="card-body p-1 text-primary">
+
+
+            <div class="alert alert-success" role="alert">
+                <li>{{trans("words.road_guide_note5")}}</li>
+                <li>{{trans("words.road_guide_note6")}}</li>
+                <li>{{trans("words.road_guide_note7")}}</li>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
 </div>
