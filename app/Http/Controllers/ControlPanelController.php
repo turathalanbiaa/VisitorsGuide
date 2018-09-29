@@ -199,13 +199,6 @@ class ControlPanelController extends Controller
         return redirect("/control-panel/center/add-lost")->with('AddLostMessage', "تمت عملية اضافة التائه او المفقود بنجاح.");
     }
 
-
-
-
-
-
-
-
     public function createAutoCenters() {
 
         for ($i=1; $i<=40;$i++)
