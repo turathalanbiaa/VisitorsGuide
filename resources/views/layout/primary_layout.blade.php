@@ -32,14 +32,22 @@
                     <i class="fa fa-globe fa-special text-white align-middle"></i>
                 </a>
 
-                @if(isset($_COOKIE["USER_SESSION"]))
-                    <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/logout">
-                        <i class="fa fa-sign-out-alt fa-special text-white align-middle"></i>
+                @php $currentPath = \Illuminate\Support\Facades\Request::path(); @endphp
+
+                @if($currentPath == "login" || $currentPath == "register")
+                    <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/">
+                        <i class="fa fa-home fa-special text-white align-middle"></i>
                     </a>
                 @else
-                    <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/login">
-                        <i class="fa fa-sign-in-alt fa-special text-white align-middle"></i>
-                    </a>
+                    @if(isset($_COOKIE["USER_SESSION"]))
+                        <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/logout">
+                            <i class="fa fa-sign-out-alt fa-special text-white align-middle"></i>
+                        </a>
+                    @else
+                        <a class="btn btn-sm btn-primary shadow-sm mx-1 mx-sm-2" href="/login">
+                            <i class="fa fa-sign-in-alt fa-special text-white align-middle"></i>
+                        </a>
+                    @endif
                 @endif
             </div>
         </div>
