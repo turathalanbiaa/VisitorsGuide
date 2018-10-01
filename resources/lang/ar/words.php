@@ -57,6 +57,7 @@ return [
     "road_guide_title_street_view"               => "دليل الطريق - حساب المسافة",
 
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
+    "road_guide_card_show_location_on_google_map" => "عرض الموقع على الخارطة",
 
     "road_guide_street_view_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "road_guide_street_view_description"    => "يمكنك الآن معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على الطريق بين النقطتين المطلوبتين.",

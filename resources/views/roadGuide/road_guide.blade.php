@@ -86,6 +86,19 @@
             </div>
         </div>
     </div>
+
+    {{--Show Location On Google Map Modal--}}
+    <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div id="map-canvas" style="height: 600px"></div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section("script")
@@ -362,4 +375,34 @@
             return time;
         }
     </script>
+
+    {{--Show Location On Google Map--}}
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4"></script>
+     <script>
+         function initialize(x ,y) {
+             var center = new google.maps.LatLng(x, y);
+             var mapOptions = {
+                 zoom: 15,
+                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                 center: center
+             };
+
+             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+             var marker = new google.maps.Marker({
+                 map: map,
+                 position: center
+             });
+         }
+
+         $('.location').on('click', function () {
+             $('#modal').modal({
+                 backdrop: 'static',
+                 keyboard: false
+             });
+             initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
+             console.log($(this).attr('data-latitude'),$(this).attr('data-longitude'));
+         });
+
+     </script>
 @endsection
