@@ -16,6 +16,7 @@
         @include("roadGuide.public_points")
         @include("roadGuide.lost_centers_points")
         @include("roadGuide.referendum_centers_points")
+        @include("roadGuide.medical_points")
         @include("roadGuide.street_view")
     </div>
 @endsection
@@ -51,6 +52,10 @@
                 <a class="list-group-item list-group-item-action" id="show-referendum-centers-points">
                     <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::REFERENDUM_CENTER)}}"></i>
                     <span>{{trans("words.road_guide_menu_show_referendum_centers_points")}}</span>
+                </a>
+                <a class="list-group-item list-group-item-action" id="show-medical-centers-points">
+                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::MEDICAL_CENTER)}}"></i>
+                    <span>{{trans("words.road_guide_menu_show_medical_centers_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-street-view">
                     <i class="fa fa-street-view"></i>
@@ -110,6 +115,7 @@
         $("#public-points").addClass("d-none");
         $("#lost-centers-points").addClass("d-none");
         $("#referendum-centers-points").addClass("d-none");
+        $("#medical-centers-points").addClass("d-none");
         $("#street-view").addClass("d-none");
 
         $("#show-all-points").click(function () {
@@ -120,6 +126,7 @@
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -134,6 +141,7 @@
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -148,6 +156,7 @@
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -162,6 +171,7 @@
             $("#public-points").removeClass("d-none").addClass("d-block");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -176,6 +186,7 @@
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-none").addClass("d-block");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -190,6 +201,22 @@
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-none").addClass("d-block");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
+            $("#street-view").removeClass("d-block").addClass("d-none");
+            setTimeout(function () {
+                $("#menu-modal").modal("hide");
+            }, 500);
+        });
+
+        $("#show-medical-centers-points").click(function () {
+            $("#title").html("{{trans('words.road_guide_title_referendum_centers_points')}}");
+            $("#all-points").removeClass("d-block").addClass("d-none");
+            $("#mawakep-points").removeClass("d-block").addClass("d-none");
+            $("#hemamat-points").removeClass("d-block").addClass("d-none");
+            $("#public-points").removeClass("d-block").addClass("d-none");
+            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
+            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-none").addClass("d-block");
             $("#street-view").removeClass("d-block").addClass("d-none");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");
@@ -204,6 +231,7 @@
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
+            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
             $("#street-view").removeClass("d-none").addClass("d-block");
             setTimeout(function () {
                 $("#menu-modal").modal("hide");

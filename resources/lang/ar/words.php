@@ -46,6 +46,7 @@ return [
     "road_guide_menu_show_public_points"             => "المناطق العامة والمشهورة",
     "road_guide_menu_show_lost_centers_points"       => "مراكز التائهين والمفقودات",
     "road_guide_menu_show_referendum_centers_points" => "مراكز الاستفتاءات",
+    "road_guide_menu_show_medical_centers_points"    => "مراكز الصحية",
     "road_guide_menu_street_view"                    => "حساب المسافة بين نقطتين",
 
     "road_guide_title_all_points"                => "دليل الطريق - جميع المناطق",
@@ -54,6 +55,7 @@ return [
     "road_guide_title_public_points"             => "دليل الطريق - المناطق العامة والمشهورة",
     "road_guide_title_lost_centers_points"       => "دليل الطريق - مراكز التائهين والمفقودات",
     "road_guide_title_referendum_centers_points" => "دليل الطريق - مراكز الاستفتاءات",
+    "road_guide_title_medical_centers_points"    => "دليل الطريق - مراكز الصحية",
     "road_guide_title_street_view"               => "دليل الطريق - حساب المسافة",
 
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
