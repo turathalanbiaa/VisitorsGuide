@@ -1,4 +1,5 @@
 <div class="row" id="street-view">
+
     <div class="col-12">
         <div class="jumbotron bg-white text-center shadow m-0">
             <h4 class="mb-4">{{trans("words.road_guide_street_view_message_thanks")}}</h4>

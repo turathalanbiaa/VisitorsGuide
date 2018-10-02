@@ -59,6 +59,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'setLocaleLanguage' => \App\Http\Middleware\SetLocaleLanguage::class
+        'setLocaleLanguage' => \App\Http\Middleware\SetLocaleLanguage::class,
+        'centerLogin' => \App\Http\Middleware\CenterLogin::class,
+        'userLogin' => \App\Http\Middleware\UserLogin::class
     ];
 }

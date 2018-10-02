@@ -27,6 +27,9 @@ class PointController extends Controller
         $referendumCenterPoints = Point::where("category", PointCategory::REFERENDUM_CENTER)
             ->orderBy("t_number")
             ->get();
+        $medicalCenterPoints = Point::where("category", PointCategory::MEDICAL_CENTER)
+            ->orderBy("t_number")
+            ->get();
 
         return view('roadGuide.road_guide')->with([
             "allPoints" => $allPoints,
@@ -34,7 +37,8 @@ class PointController extends Controller
             "hemamatPoints" => $hemamatPoints,
             "publicPoints" => $publicPoints,
             "lostCenterPoints" => $lostCenterPoints,
-            "referendumCenterPoints" => $referendumCenterPoints
+            "referendumCenterPoints" => $referendumCenterPoints,
+            "medicalCenterPoints" => $medicalCenterPoints,
         ]);
     }
 

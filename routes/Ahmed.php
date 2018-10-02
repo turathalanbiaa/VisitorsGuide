@@ -16,4 +16,6 @@ Route::get('/majales/events-started' , 'MajalesController@getEventsStarted');
 Route::get('/majales/events-ended' , 'MajalesController@getEventsEnded');
 Route::get('/majales/events-gallery' , 'MajalesController@getEventsGallery');
 Route::get('/majales/post-views/{id}' , 'MajalesController@postViews');
-Route::get('/users/register', 'UserController@register');
+Route::get('/majales/register' , function (){
+    return view('majales/events_register');
+});

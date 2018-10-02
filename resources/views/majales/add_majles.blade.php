@@ -75,6 +75,7 @@
                 <input type="date" class="form-control" name="majlesEnd" id="exampleInputPassword1" placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة" required>
                 <input type="hidden" class="form-control" name="latitude" id="latitude">
                 <input type="hidden" class="form-control" name="longitude" id="longitude">
+                <input type="hidden" class="form-control" name="fingerPrint" id="fingerPrint">
             </div>
             <div class="form-group">
                 <i class="fas fa-map-marker-alt" style="color: #007bff"></i>
@@ -211,4 +212,12 @@
             $('#add-majles').attr('disabled',false);
         }
     </script>
+    <script src="{{asset('js/fingerprint.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            let fingerPrint = new Fingerprint().get();
+            $('#fingerPrint').val(fingerPrint);
+        })
+    </script>
+
 @endsection

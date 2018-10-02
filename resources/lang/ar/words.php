@@ -9,11 +9,13 @@
 return [
     //App
     "app_name" => "حقيبة الزائر",
+
     //Select Language
     "select_language" => "اختر اللغة",
     "arabic"          => "العربية",
     "persian"         => "الفارسية",
-    "english"         => "الانكليزية",
+    "english"         => "English",
+
     //Main Page
     "main_road_guide_title"         => "دليل طريق ياحسين",
     "main_road_guide_detail"        => "يمكنك الآن معرفة المواكب الحسينية ومراكز التائهين والمفقودات ونقاط الاستفتاءات الشرعية والحّمامات الصحية والنقاط العامة والمشهورة على طول الطريق، كما يمكنك معرفة المسافة والزمن وعدد الأعمدة والاتجاه على طول طريق ياحسين.",
@@ -26,8 +28,9 @@ return [
     "main_majales_guide_title"      => "دليل المجالس الحسينية",
     "main_majales_guide_detail"     => "يمكنك الآن اضافة مجلس وتحديد موقعه عبر GPS، وكذلك يمكنك معرفة اماكن المجالس الاخرى حسب المحافظة والتاريخ، كما يحتوي على استوديو.",
     "main_centers_title"            => "مراكز التائهين والمفقودات",
-    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان، كما يمكنك البحث وبسهولة وبسرعة عاليه، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
+    "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان حاجة، كما يمكنك البحث بسهولة وبسرعة عاليه جدا، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
     "main_btn_enter"                => "دخول",
+
     //Menu
     "menu_road_guid"         => "دليل طريق ياحسين",
     "menu_visitor_feqh"      => "فقه الزائر",
@@ -36,7 +39,6 @@ return [
     "menu_majales_guide"     => "دليل المجالس الحسينية",
     "menu_centers"           => "مراكز التائهين والمفقودات",
 
-
     //Road Guide
     "road_guide_menu_show_all_points"                => "جميع المناطق",
     "road_guide_menu_show_mawakep_points"            => "المواكب الحسينية",
@@ -44,6 +46,7 @@ return [
     "road_guide_menu_show_public_points"             => "المناطق العامة والمشهورة",
     "road_guide_menu_show_lost_centers_points"       => "مراكز التائهين والمفقودات",
     "road_guide_menu_show_referendum_centers_points" => "مراكز الاستفتاءات",
+    "road_guide_menu_show_medical_centers_points"    => "مراكز الصحية",
     "road_guide_menu_street_view"                    => "حساب المسافة بين نقطتين",
 
     "road_guide_title_all_points"                => "دليل الطريق - جميع المناطق",
@@ -52,9 +55,11 @@ return [
     "road_guide_title_public_points"             => "دليل الطريق - المناطق العامة والمشهورة",
     "road_guide_title_lost_centers_points"       => "دليل الطريق - مراكز التائهين والمفقودات",
     "road_guide_title_referendum_centers_points" => "دليل الطريق - مراكز الاستفتاءات",
+    "road_guide_title_medical_centers_points"    => "دليل الطريق - مراكز الصحية",
     "road_guide_title_street_view"               => "دليل الطريق - حساب المسافة",
 
     "road_guide_card_corresponding_column_number" => "رقم العمود المقابل",
+    "road_guide_card_show_location_on_google_map" => "عرض الموقع على الخارطة",
 
     "road_guide_street_view_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "road_guide_street_view_description"    => "يمكنك الآن معرفة المسافة والزمن وعدد الأعمدة والاتجاه والمناطق العامة والمشهورة على الطريق بين النقطتين المطلوبتين.",
@@ -77,11 +82,22 @@ return [
     "road_guide_calculate_distance_public_points"              => "المناطق العامة والمشهورة",
     "road_guide_calculate_distance_public_points_empty"        => "لاتوجد مناطق",
     "road_guide_calculate_distance_error_connection_message"   => "يرجى التحقق من اتصال الإنترنت",
+
+    "road_guide_note1"   => "عزيزي الزائر عزيزتي الزائرة",
+    "road_guide_note2"   => "    حافظ على الصلاة في أول وقتها كما فعل اﻹمام الحسين عليه السلام في يوم عاشوراء",
+    "road_guide_note3"   => "     أختي المؤمنة: فليكن حجابك في هذه اﻷماكن الطاهرة أفضل وأستر من حجابك في مدينتك وبلدك..",
+    "road_guide_note4"   => "   إحرص على قداسة ونظافة اﻷماكن المقدسة.",
+    "road_guide_note5"   => "   كل الخدمات كالطعام والشراب والسكن وحتى التدليك تقدم في طول المسير مجانا، ولذالك لاداعي لحمل أموال كثيرة",
+    "road_guide_note6"   => "  تأكد من أنك تحمل إسم وعنوان سكنك في كربلاء مكتوبا في ورقة، (ﻷنك قد لاتتمكن من اﻹتصال حين تصل لكربلاء بسبب إنقطاع الشبكة أو إزدحامها وهذا يحصل كثيرا)",
+    "road_guide_note7"   => "   إذا أردت اﻹتصال فليكن ذلك قبل طلوع الشمس ﻷنه يحتمل أن لاتتمكن من اﻹتصال طول النهار بسبب إزدحام الشبكة.",
+
+
     //Visitor Feqh
     "visitor_feqh_menu_show_all_questions" => "جميع الاسئلة",
     "visitor_feqh_menu_send_question"      => "ارسال سؤال الى موقع الاجوبة الميسرة",
     "visitor_feqh_menu_app_masael"         => "تحميل تطبيق الاجوبة الميسرة",
-    "visitor_feqh_menu_filter"             => "عرض حسب الصنف",
+    "visitor_feqh_menu_filter"             => "الأصناف",
+    "visitor_feqh_message_not_found"       => "لاتوجد بيانات لعرضها",
 
     "visitor_feqh_title_questions"     => "فقه الزائر - جميع الاسئلة",
     "visitor_feqh_title_app_masael"    => "فقه الزائر - الاجوبة الميسرة",
@@ -92,8 +108,8 @@ return [
 
     "visitor_feqh_questions_card_question"   => "السؤال : ",
     "visitor_feqh_questions_card_answer"     => "الجواب : ",
-    "visitor_feqh_questions_pagination_prev" => "السابق",
-    "visitor_feqh_questions_pagination_next" => "التالي",
+    "visitor_feqh_questions_pagination_prev" => "< السابق",
+    "visitor_feqh_questions_pagination_next" => "التالي >",
 
     "visitor_feqh_app_masael_message_thanks" => "شكراً ايها الزائر الكريم لاستخدامك خدماتنا",
     "visitor_feqh_app_masael_description"    => "بشرى سارة للمؤمنين، اصبح الآن الجواب على سؤالك الفقهي او العقائدي في متناول يدك فقط عن طريق استخدام موقع وتطبيق الأجوبة الميسرة وهذا المشروع من انتاج معهد تراث الأنبياء(عليهم السلام) وغايتهما هو مساعدة الناس في الاجابة على مسائلهم الشرعية التي تخص الفقه والعقائد بإشراف مجموعة من طلبة وأساتذة الحوزة العلمية في النجف الأشرف.",

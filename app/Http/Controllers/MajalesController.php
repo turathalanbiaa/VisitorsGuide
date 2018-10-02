@@ -55,8 +55,8 @@ class MajalesController extends Controller
         $majales->district     = $request->district;
         $majales->longitude    = $request->longitude;
         $majales->latitude     = $request->latitude;
-        $majales->user_name    = $request->userName;
-        $majales->user_number  = $request->userNumber;
+        //$majales->user_name    = $request->userName;
+        //$majales->user_number  = $request->userNumber;
         $majales->save();
 
        return redirect('/majales')->with('success', 'تمت اضافة المجلس بنجاح سوف ينشر بعد موافقة الادارة');

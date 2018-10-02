@@ -31,22 +31,19 @@
         <div class="row justify-content-center">
             @foreach($zuarat as $zuara)
                 <div class="col-md-6 pb-4">
-                    <div class="rounded p-0 shadow-special majales-zuarat" style=" overflow: hidden">
-                        <div class="w-100">
-                            <img class="w-100" src="{{asset('naj.jpg')}}">
-                        </div>
+                    <div class="p-0 shadow-special majales-zuarat card-majales-zuarat">
                         <div class="mt-3 p-3 zuarat">
-                            <h3 id="tit-2334">{{$zuara->title}}</h3>
-                            <p id="cont-2334" class="text-truncate">{{$zuara->content}}</p>
+                            <h3 id="tit-{{$zuara->id}}">{{$zuara->title}}</h3>
+                            <p id="cont-{{$zuara->id}}" class="module-text fade-text">{{$zuara->content}}</p>
                             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
                                     data-target="#collapse-{{$zuara->id}}" aria-expanded="false" aria-controls="collapseExample">استمع للزيارة
                             </button>
-                            <button class="btn btn-secondary btn-sm rounded read-more" value="2334" data-toggle="modal"
+                            <button class="btn btn-secondary btn-sm rounded read-more" value="{{$zuara->id}}" data-toggle="modal"
                                     data-target=".exampleModalLong">قراءة الزيارة
                             </button>
                         </div>
-                        <div class="collapse p-3" id="collapse-{{$zuara->id}}">
-                            <audio controls class="w-100">
+                        <div class="collapse show p-3" id="collapse-{{$zuara->id}}">
+                            <audio controls class="audio w-100">
                                 <source src="" type="audio/ogg">
                                 <source src="{{$zuara->sound}}" type="audio/mpeg">
                             </audio>
@@ -64,7 +61,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 id="modal-title" style="color: red"></h4>
+                        <h4 id="modal-title"></h4>
                     </div>
 
                     <div class="modal-body">
@@ -88,7 +85,7 @@
         <div class="modal-body">
             <div class="list-group">
                 <a href="/adeua-and-zuarat" class="list-group-item list-group-item-action">
-                    <span>الزيازات</span>
+                    <span>الزيارات</span>
                 </a>
                 <a href="/adeua-and-zuarat/adeua" class="list-group-item list-group-item-action">
                     <span>الادعية</span>
