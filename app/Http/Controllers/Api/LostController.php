@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class LostController extends Controller
 {
-    public function search(Request $request)
+    public function index(Request $request)
     {
         if ($request->search == '' && $request->tag == '') {
             $Losts = Lost::paginate(10);
@@ -24,6 +24,11 @@ class LostController extends Controller
             return LostResource::collection($Losts);
         }
         return response($Losts, 200);
-
     }
+    function store(Request $request)
+    {
+        $lost = Lost::create($request->all());
+        return new LostResource($lost);
+    }
+
 }
