@@ -71,7 +71,7 @@
 
         .content {
             width: 100%;
-            margin-top: 100px;
+            margin-top: 110px;
 
         }
         .content-right {

@@ -23,11 +23,11 @@
 
                     {{ csrf_field() }}
                     <input type="text" name="name" class="form-control mb-4" placeholder="الاسم الحقيقي">
-                    <input type="text" name="phone" class="form-control mb-4" placeholder="رقم الهاتف">
+                    <input type="text" name="username" class="form-control mb-4" placeholder="اسم المستخدم">
                     <input type="password" name="password" class="form-control mb-4" placeholder="كلمة المرور">
                     <input type="password" name="password_confirmation" class="form-control mb-4" placeholder="اعد كتابة كلمة المرور">
 
-                    <P class="mb-4 d-flex justify-content-start"><a href="/login">او قم بانشاء حساب</a></P>
+                    <P class="mb-4 d-flex justify-content-start"><a href="/login">او قم بتسجيل الدخول</a></P>
 
                     <button class="btn btn-info btn-block my-4" type="submit">انشاء حساب</button>
                 </form>

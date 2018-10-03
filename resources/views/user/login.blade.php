@@ -22,10 +22,12 @@
                     @endif
 
                     {{ csrf_field() }}
-                    <input type="text" name="phone" class="form-control mb-4" placeholder="رقم الهاتف">
+                    <input type="text"     name="username" class="form-control mb-4" placeholder="اسم المستخدم">
                     <input type="password" name="password" class="form-control mb-4" placeholder="كلمة المرور">
 
-                    <P class="mb-4 d-flex justify-content-start"><a href="/register">او قم بانشاء حساب</a></P>
+                    <P class="mb-4 d-flex justify-content-start">
+                        <a href="/register">او قم بانشاء حساب</a>
+                    </P>
 
                     <button class="btn btn-info btn-block my-4" type="submit">تسجيل دخول</button>
                 </form>

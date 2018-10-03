@@ -24,7 +24,7 @@ class UserLogin
 
             session()->put("USER_ID", $user->id);
             session()->put("USER_NAME", $user->name);
-            session()->put("USER_PHONE", $user->phone);
+            session()->put("USER_USERNAME", $user->username);
             session()->put("USER_PASSWORD", $user->password);
             session()->put("USER_SESSION", $user->session);
             session()->save();
