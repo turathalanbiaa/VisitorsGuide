@@ -75,7 +75,7 @@
                         <div class="col">
                         </div>
                         <div class="col">
-                            <button class="btn btn-outline-info w-100" onclick="getLocation()">جلب الموقع</button>
+                            <a class="btn btn-outline-info w-100" onclick="getLocation()">جلب الموقع</a>
                             <p id="demo"></p>
                         </div>
                         <div class="col">
