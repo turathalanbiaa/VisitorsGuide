@@ -1,17 +1,17 @@
 import LostIndex from './components/LostsIndex';
-import FindCenter from './components/FindCenter';
-import VisitorsReceptionIndex from './components/VisitorsReceptionIndex';
-import Dashboard from './components/Dashboard';
+import LostsDashboard from './components/LostsDashboard';
+import ReceptionIndex from './components/ReceptionIndex';
+import ReceptionDashboard from './components/ReceptionDashboard';
 export const routes = [
     { path: '/', components: {
             LostIndex:LostIndex,
-            VisitorsReceptionIndex: VisitorsReceptionIndex
+            ReceptionIndex: ReceptionIndex
     }
         },
-    { path: '/find_center',
-        name:'find_center',
-        component:FindCenter},
-    { path: '/dashboard',
-        name:'dashboard',
-        component:Dashboard},
+    { path: '/losts-dashboard',
+        name:'losts-dashboard',
+        component:LostsDashboard},
+    { path: '/reception-dashboard',
+        name:'reception-dashboard',
+        component:ReceptionDashboard},
     ];

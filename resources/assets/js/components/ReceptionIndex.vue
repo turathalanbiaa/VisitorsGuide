@@ -63,9 +63,8 @@
                         </svg>
                     </div>
                 </div>
-                <div v-for="item in list" v-bind:key="item.id" class="col-12 col-sm-6">
+                <div  v-for="item in list" v-bind:key="item.id" class="col-12 col-sm-6" v-if="item.is_active===1">
                     <div class="card shadow p-0 mb-5">
-
                         <div class="card-body">
                             <div class="card-header bg-white text-center">
                                 <h6 class="card-title">
@@ -82,18 +81,12 @@
                                     <li class="list-group-item">  <span>الاشخاض :</span>
                                         {{getType(item.persons_type)}}
                                         </li>
-                                    <li class="list-group-item">  <span>المدينه : </span>
-                                        {{item.city}}
-                                        </li>
-                                    <li class="list-group-item">  <span>الحي : </span>
-                                        {{item.block}}
-                                        </li>
-                                    <li class="list-group-item">  <span>اقرب نقطه داله : </span>
-                                        {{item.point_guide}}
+                                    <li class="list-group-item">  <span>العنوان : </span>
+                                        {{item.address}}
                                         </li>
                                 </ul>
                             </div>
-                            <div class="card-footer bg-white text-center ">  <a class="card-link" href="tel:+1-303-499-7111">اتصال بصاحب المنزل</a></div>
+                            <div class="card-footer bg-white text-center ">  <a class="card-link" :href="'tel:'+item.phone">اتصال بصاحب المنزل</a></div>
 
                         </div>
                     </div>
@@ -106,8 +99,8 @@
                 </infinite-loading>
 
                 <div class="col-md-12">
-                    <router-link :to="{name:'dashboard'}" class="float bg-blue-gradient">
-                        <i class="fa fa-plus my-float"></i>
+                    <router-link :to="{name:'reception-dashboard'}" class="float bg-blue-gradient">
+                        <i class="fa fa-cog my-float"></i>
                     </router-link>
 
                 </div>

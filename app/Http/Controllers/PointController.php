@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Enums\PointCategory;
 use App\Models\Point;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 
 class PointController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $allPoints = Point::OrderBy("t_number")
             ->get();
         $mawakepPoints = Point::where("category", PointCategory::MAWAKEP)
@@ -42,7 +42,8 @@ class PointController extends Controller
         ]);
     }
 
-    public function getPublicPoints() {
+    public function getPublicPoints()
+    {
         $source = Input::get("source");
         $destination = Input::get("destination");
 
