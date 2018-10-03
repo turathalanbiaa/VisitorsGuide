@@ -1,32 +1,23 @@
 <div class="row" id="all-points">
-
-
-
     <div class="card border-success mr-2 ml-2 mb-4">
         <div class="card-header">
-
             {{trans("words.road_guide_note1")}}
         </div>
         <div class="card-body p-1 text-primary">
-
             <div class="alert alert-secondary" role="alert">
                 {{trans("words.road_guide_note2")}}
             </div>
             <div class="alert alert-success" role="alert">
                 {{trans("words.road_guide_note3")}}
             </div>
-
             <div class="alert alert-warning" role="alert">
 
                 {{trans("words.road_guide_note4")}}
             </div>
-
         </div>
     </div>
 
-
     <div class="col-12">
-
         <ul class="timeline">
             @php $i=1; @endphp
             @foreach($allPoints as $point)
@@ -39,13 +30,16 @@
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h5 class="timeline-title">{{$point->name}}</h5>
-                            <p>
+                            <p class="m-0">
                                 <small>
                                     <span>{{trans("words.road_guide_card_corresponding_column_number")}}</span>
                                     <i class="fa fa-caret-left align-middle "></i>
                                     <span>{{$point->t_number}}</span>
                                 </small>
                             </p>
+                            <a href="javascript:void(0);" class="location" data-latitude="{{$point->latitude}}" data-longitude="{{$point->longitude}}">
+                                <small>{{trans("words.road_guide_card_show_location_on_google_map")}}</small>
+                            </a>
                         </div>
                         <div class="timeline-body">
                             <div class="alert alert-primary shadow d-none" data-calculate="false">
@@ -78,10 +72,6 @@
             @endforeach
         </ul>
     </div>
-
-
-
-
     <div class="card border-success mr-2 ml-2 mt-5">
         <div class="card-header">ملاحظات</div>
         <div class="card-body p-1 text-primary">
@@ -97,6 +87,4 @@
 
         </div>
     </div>
-
-
 </div>

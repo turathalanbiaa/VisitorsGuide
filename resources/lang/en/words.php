@@ -72,7 +72,7 @@ return [
     "visitor_feqh_questions_pagination_next" => "Next >>",
 
     "visitor_feqh_app_masael_message_thanks" => "Thank You Dear Visitor For Using Our Services",
-    "visitor_feqh_app_masael_description"    => "Good news for believers, now become the answer to your question feqhi (Jurisprudential) or  akaedi (Ideological) at your fingertips only by using officail website or app for Al-Ajweba Al-Muyasare, this project is producted by Institute Turath Al-Anbiaa (Peace be upon them) and their aim is to help people to answer their legitimate question concerning feqh (Jurisprudential) or  akaed (Ideological) under the supervision of a group of students and lecturers of the scientific estate in Najaf.",
+    "visitor_feqh_app_masael_description"    => "Good news, Now you can get an answer to your question in jurisprudence (fiqh) or doctrines (Aqa'ed) by using the \"Al-Ajweba Al-Muyassara (Simplified Answers)\" portal. This portal (website and app) has been produced by \"Turath Al-Anbia'a (The Prophets' Legacy) Institute for Religious Studies\". The portal is run and supervised by a group of experts (lecturers and students in the Hawza of Holy Najaf) to help people getting the right answers for their religious questions.",
     "visitor_feqh_masael_website"            => "Official Website For Al-Ajweba Al-Muyasare",
     "visitor_feqh_masael_available_app_on"   => "Available App On",
 ];

@@ -11,13 +11,16 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h5 class="timeline-title">{{$point->name}}</h5>
-                        <p>
+                        <p class="m-0">
                             <small>
                                 <span>{{trans("words.road_guide_card_corresponding_column_number")}}</span>
                                 <i class="fa fa-caret-left align-middle "></i>
                                 <span>{{$point->t_number}}</span>
                             </small>
                         </p>
+                        <a href="javascript:void(0);" class="location" data-latitude="{{$point->latitude}}" data-longitude="{{$point->longitude}}">
+                            <small>{{trans("words.road_guide_card_show_location_on_google_map")}}</small>
+                        </a>
                     </div>
                     <div class="timeline-body">
                         <div class="alert alert-primary d-none" data-calculate="false">

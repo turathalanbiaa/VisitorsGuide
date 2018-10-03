@@ -6,6 +6,7 @@ use App\Enums\MajlesStatus;
 use App\Models\Center;
 use App\Models\Lost;
 use App\Models\Majales;
+use App\Models\Point;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Input;
@@ -220,5 +221,32 @@ class ControlPanelController extends Controller
 
             $center->save();
         }
+    }
+
+
+    //Management Points
+    public function new_point()
+    {
+        return view("CP.point.new_point");
+    }
+
+    public function insert_point(Request $request)
+    {
+
+        $point = new Point();
+        $point->name = Input::get("name" );
+        $point->description = Input::get("description");
+        $point->city = Input::get("city" );
+        $point->category =  Input::get("category" );
+        $point->latitude = Input::get("latitude" );
+        $point->longitude =  Input::get("longitude" );
+
+        $point->save();
+
+
+      return redirect("/control-panel/point/new_point")->with('message' , "تمت الاضافة");
+
+
+
     }
 }

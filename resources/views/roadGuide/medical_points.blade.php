@@ -1,8 +1,8 @@
-<div class="row" id="hemamat-points">
+<div class="row" id="medical-centers-points">
     <div class="col-12">
         <ul class="timeline">
             @php $i=1; @endphp
-            @foreach($hemamatPoints as $point)
+            @foreach($medicalCenterPoints as $point)
                 <li @if($i%2==1) class="timeline-inverted" @endif>
                     <div class="timeline-badge shadow {{\App\Enums\PointCategory::getCategoryColor($point->category)}}"
                          data-action="show-calculate-distance-modal" data-t_number="{{$point->t_number}}">

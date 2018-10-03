@@ -16,5 +16,27 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('lost','LostController@search');
-Route::get('reception','VisitorsReceptionController@search');
+
+// lost
+Route::get('lost','LostController@index');
+
+// List single lost
+//Route::get('lost/{id}', 'ArticleController@show');
+
+// Create new lost
+Route::post('lost','LostController@store');
+
+// Update lost
+//Route::put('lost', 'LostController@update');
+
+// Delete lost
+//Route::delete('lost/{id}', 'LostController@destroy');
+
+
+//visitors reception
+Route::get('reception','VisitorsReceptionController@index');
+Route::post('reception','VisitorsReceptionController@store');
+Route::put('reception', 'VisitorsReceptionController@update');
+Route::delete('reception/{id}', 'VisitorsReceptionController@destroy');
+Route::get('dashboard','VisitorsReceptionController@dashboard_index');
+

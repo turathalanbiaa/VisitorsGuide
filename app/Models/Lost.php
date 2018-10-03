@@ -12,7 +12,7 @@ class Lost extends Model
     protected $table = "lost";
     protected $primaryKey = "id";
     public $timestamps = false;
-
+    protected $fillable = ['center_id', 'category', 'description', 'datetime'];
     public function center()
     {
         return $this->belongsTo('App\Models\Center', 'center_id', 'id');
