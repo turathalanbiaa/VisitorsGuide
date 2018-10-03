@@ -16,15 +16,15 @@ class UserController extends Controller
     public function registerValidation(Request $request) {
         $rules = [
             "name" => "required|min:8",
-            "phone" => "required|unique:user,phone",
+            "username" => "required|unique:user,username",
             'password' => "required|min:8|confirmed",
         ];
 
         $rulesMessage = [
-            "name.required" => "يرجى ادخال اسم المستخدم.",
+            "name.required" => "يرجى ادخال الاسم الحقيقي.",
             "name.min" => "يجب ان يكون اسم المستخدم لايقل عن 8 حرف.",
-            "phone.required" => "يرجى ادخال رقم الهاتف.",
-            "phone.unique" => "يوجد مستخدم أخر بنفس رقم الهاتف، يرجى استخدام رقم هاتف مختلف.",
+            "username.required" => "يرجى ادخال اسم المستخدم.",
+            "username.unique" => "يوجد مستخدم أخر بنفس الاسم، يرجى استخدام اسم مستخدم مختلف.",
             "password.required" => "يرجى ادخال كلمة المرور.",
             "password.min" => "يجب ان تكون كلمة المرور لاتقل عن 8 حروف.",
             'password.confirmed' => 'كلمتا المرور غير متطابقتين.'
@@ -34,7 +34,7 @@ class UserController extends Controller
 
         $user = new User();
         $user->name = Input::get("name");
-        $user->phone = Input::get("phone");
+        $user->username = Input::get("username");
         $user->password = Input::get("password");
         $user->date = date("Y-m-d");
         $user->session = md5(uniqid());
@@ -45,7 +45,7 @@ class UserController extends Controller
 
         session()->put("USER_ID", $user->id);
         session()->put("USER_NAME", $user->name);
-        session()->put("USER_PHONE", $user->phone);
+        session()->put("USER_USERNAME", $user->username);
         session()->put("USER_PASSWORD", $user->password);
         session()->put("USER_SESSION", $user->session);
         session()->save();
@@ -59,22 +59,22 @@ class UserController extends Controller
 
     public function loginValidation(Request $request) {
         $rules = [
-            "phone" => "required",
+            "username" => "required",
             "password" => "required"
         ];
 
         $rulesMessage = [
-            "phone.required" => "يرجى ادخال رقم الهاتف.",
+            "username.required" => "يرجى ادخال اسم المستخدم.",
             "password.required" => "يرجى ادخال كلمة المرور."
         ];
 
         $this->validate($request, $rules, $rulesMessage);
 
 
-        $phone = Input::get("phone");
+        $username = Input::get("username");
         $password = Input::get("password");
 
-        $user = User::where("phone","=",$phone)->where("password","=",$password)->first();
+        $user = User::where("username","=",$username)->where("password","=",$password)->first();
 
         if (!$user)
             return redirect("/login")->with('ErrorLoginMessage', "فشل تسجيل الدخول !!! أعد المحاولة مرة أخرى.");
@@ -84,7 +84,7 @@ class UserController extends Controller
 
         session()->put("USER_ID", $user->id);
         session()->put("USER_NAME", $user->name);
-        session()->put("USER_PHONE", $user->phone);
+        session()->put("USER_USERNAME", $user->username);
         session()->put("USER_PASSWORD", $user->password);
         session()->put("USER_SESSION", $user->session);
         session()->save();
@@ -103,7 +103,7 @@ class UserController extends Controller
 
         session()->remove("USER_ID");
         session()->remove("USER_NAME");
-        session()->remove("USER_PHONE");
+        session()->remove("USER_USERNAME");
         session()->remove("USER_PASSWORD");
         session()->remove("USER_SESSION");
         session()->save();

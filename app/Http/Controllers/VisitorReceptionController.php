@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\Session;
 class VisitorReceptionController extends Controller
 {
     public function index() {
-        //session(['user_id' => 1]);
-        return view('VisitorReception.index');
 
+        //session(['user_id' => 1]);
+
+        return view('VisitorReception.index');
     }
     function my_session(){
-        return response()->json(session()->get('user_id'));
+        return response()->json(session()->get('USER_ID'));
     }
 
 }

@@ -25,4 +25,6 @@ Route::get("/login", "UserController@login");
 Route::post("/login", "UserController@loginValidation");
 Route::get("/logout", "UserController@logout");
 
-
+Route::get("/test", function (){
+    return view("main-test");
+});
