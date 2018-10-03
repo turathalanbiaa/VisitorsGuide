@@ -18,6 +18,9 @@ class PointCategory
     const REFERENDUM_CENTER = 5;
     const MEDICAL_CENTER = 6;
 
+
+
+
     public static function getCategoryColor($category) {
         switch ($category) {
             case "1": return "green"; break;

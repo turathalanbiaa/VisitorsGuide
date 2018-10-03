@@ -24,3 +24,5 @@ Route::post("/register", "UserController@registerValidation");
 Route::get("/login", "UserController@login");
 Route::post("/login", "UserController@loginValidation");
 Route::get("/logout", "UserController@logout");
+
+
