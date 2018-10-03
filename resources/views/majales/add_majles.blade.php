@@ -23,14 +23,6 @@
         <form class="pt-2" method="post" action="/majales/save-majles">
             @csrf
             <div class="form-group">
-                <label for="userName">الاسم الثلاثي</label>
-                <input type="text" class="form-control" name="userName" id="userName" placeholder="الرجاء كتابة الاسم الثلاثي لصاحب المجلس" required>
-            </div>
-            <div class="form-group">
-                <label for="userNumber">رقم الهاتف</label>
-                <input type="text" class="form-control" name="userNumber" id="userNumber" placeholder="الرجاء كتابة رقم هاتف صحيح" required>
-            </div>
-            <div class="form-group">
                 <label for="description">الوصف</label>
                 <textarea class="form-control" id="description" name="description" rows="3" placeholder="الرجاء ادخال الوصف" required></textarea>
                 <small id="descHelp" class="form-text text-muted">الرجاء كتابة وصف مختصر للمناسبة</small>
@@ -101,6 +93,10 @@
                 <a href="/majales/add-majles" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-plus"></i>
                     <span>اضافة مجلس</span>
+                </a>
+                <a href="/majales/majalesy" class="list-group-item list-group-item-action" id="show-questions">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>مجالسي</span>
                 </a>
                 <a href="/majales" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-calendar-alt"></i>

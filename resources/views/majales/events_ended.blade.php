@@ -106,8 +106,12 @@
                     <span>الاستديو</span>
                 </a>
                 <a href="/majales/add-majles" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-calendar-alt"></i>
                     <span>اضافة مجلس</span>
+                </a>
+                <a href="/majales/majalesy" class="list-group-item list-group-item-action" id="show-questions">
+                    <i class="fas fa-plus"></i>
+                    <span>مجالسي</span>
                 </a>
                 <a href="/majales" class="list-group-item list-group-item-action" id="show-questions">
                     <i class="fas fa-calendar-alt"></i>

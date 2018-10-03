@@ -15,9 +15,7 @@ class MajalesController extends Controller
 {
     public function addMajles ()
     {
-
         return view('majales/add_majles');
-
     }
 
     public function saveMajles (Request $request)
@@ -29,8 +27,6 @@ class MajalesController extends Controller
            'description'=> 'required',
            'cities'=> 'required',
            'district'=> 'required',
-           'userName'=> 'required',
-           'userNumber'=> 'required',
            'closesPoint'=> 'required',
         ],
         [
@@ -40,13 +36,12 @@ class MajalesController extends Controller
             'majlesEnd.required' => 'الرجاء عدم ترك حقل تاريخ انتهاءالمناسبة فارغ',
             'description.required' => 'الرجاء كتابة وصف للمناسبة',
             'cities.required' => 'الرجاء اختيار المدينة',
-            'userName.required' => 'الرجاء كتابة الاسم الكامل',
-            'userNumber.required' => 'الرجاء كتابة رقم الهاتف',
             'district.required' => 'الرجاء كتابة اسم المنطقة',
             'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
         ]);
 
         $majales = new Majales();
+        $majales->user_id      = session('USER_ID');
         $majales->description  = $request->description;
         $majales->majles_start = $request->majlesStart;
         $majales->majles_end   = $request->majlesEnd;
@@ -55,8 +50,6 @@ class MajalesController extends Controller
         $majales->district     = $request->district;
         $majales->longitude    = $request->longitude;
         $majales->latitude     = $request->latitude;
-        //$majales->user_name    = $request->userName;
-        //$majales->user_number  = $request->userNumber;
         $majales->save();
 
        return redirect('/majales')->with('success', 'تمت اضافة المجلس بنجاح سوف ينشر بعد موافقة الادارة');
@@ -114,12 +107,70 @@ class MajalesController extends Controller
     public function getEventsGallery ()
     {
         $posts = Post::where('category', PostCategory::MAJALES)->paginate(8);
+
         return view('/majales/events_gallery', ['posts'=>$posts]);
     }
 
-    public function postViews ($id)
+    public function majalesy ()
     {
-        Post::find($id)->increment('views',1);
-        return "";
+        $majalesy = Majales::where('user_id', session('USER_ID'))->get();
+
+        return view('/majales/majalesy', ['majalesy'=>$majalesy]);
+    }
+
+    public function updateMajlesForm ($id)
+    {
+        $majles = Majales::findOrFail($id);
+        return view('majales/update_majles',['majles'=>$majles]);
+    }
+
+    public function updateMajles (Request $request)
+    {
+        $request->validate([
+            'majlesEnd'=> 'required|date|after_or_equal:today|date|after:majlesStart',
+            'majlesStart'=> 'required',
+            'description'=> 'required',
+            'cities'=> 'required',
+            'district'=> 'required',
+            'closesPoint'=> 'required',
+        ],
+            [
+                'majlesEnd.after'  => 'الرجاء اختار تاريخ صحيح للمناسبة',
+                'majlesEnd.after_or_equal'   => 'الرجاء اختار تاريخ صحيح للمناسبة',
+                'majlesStart.required' => 'الرجاء عدم ترك حقل تاريخ بدءالمناسبة فارغ',
+                'majlesEnd.required' => 'الرجاء عدم ترك حقل تاريخ انتهاءالمناسبة فارغ',
+                'description.required' => 'الرجاء كتابة وصف للمناسبة',
+                'cities.required' => 'الرجاء اختيار المدينة',
+                'district.required' => 'الرجاء كتابة اسم المنطقة',
+                'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
+            ]);
+        $majles =Majales::findOrFail($request->id);
+        if($majles->user_id == session('USER_ID'))
+        {
+            $majles->user_id      = session('USER_ID');
+            $majles->description  = $request->description;
+            $majles->majles_start = $request->majlesStart;
+            $majles->majles_end   = $request->majlesEnd;
+            $majles->city         = $request->cities;
+            $majles->closes_point = $request->closesPoint;
+            $majles->district     = $request->district;
+            $majles->save();
+            redirect('/majales/majalesy')->with('update','تم تعديل المجلس بنجاح');
+        }
+
+        return redirect('/majales/majalesy');
+
+    }
+
+    public function deleteMajles (Request $request)
+    {
+        $delete = Majales::findOrFail($request->id);
+        if($delete->user_id == session('USER_ID'))
+        {
+            $delete->delete();
+            redirect('/majales/majalesy')->with('delete','تم حـذف المجلس بنجاح');
+        }
+
+        return redirect('/majales/majalesy');
     }
 }
