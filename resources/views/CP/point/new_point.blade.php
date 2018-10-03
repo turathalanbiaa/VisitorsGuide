@@ -26,16 +26,9 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="input_city">اختيار الطريق</label>
-                        <select  id="input_city" name="city" class="form-control">
-                            <option selected value="0">نجف - كربلاء</option>
-                            <option value="1">حله - كربلاء</option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="4"></option>
-                            <option value="5"></option>
 
-                        </select>
+                        @include("items.cities")
+
                     </div>
 
 
@@ -46,7 +39,7 @@
 
                     <div class="form-group ">
                         <label for="input_t_number">رقم العمود</label>
-                        <input type="number" class="form-control" id="t_number"  name="description" placeholder="">
+                        <input type="number" class="form-control" id="input_t_number"  name="t_number" placeholder="">
                     </div>
 
 

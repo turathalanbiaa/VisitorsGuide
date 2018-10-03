@@ -10,24 +10,26 @@ class PointController extends Controller
 {
     public function index()
     {
-        $allPoints = Point::OrderBy("t_number")
+        $city = 0;
+
+        $allPoints = Point::OrderBy("t_number")->where("city",$city)->where("t_number",">","0")
             ->get();
-        $mawakepPoints = Point::where("category", PointCategory::MAWAKEP)
+        $mawakepPoints = Point::where("category", PointCategory::MAWAKEP)->where("city",$city)->where("t_number",">","0")
             ->orderBy("t_number")
             ->get();
-        $hemamatPoints = Point::where("category", PointCategory::HEMAMAT)
+        $hemamatPoints = Point::where("category", PointCategory::HEMAMAT)->where("city",$city)->where("t_number",">","0")
             ->orderBy("t_number")
             ->get();
-        $publicPoints = Point::where("category", PointCategory::PUBLIC)
+        $publicPoints = Point::where("category", PointCategory::PUBLIC)->where("city",$city)->where("t_number",">","0")
             ->orderBy("t_number")
             ->get();
-        $lostCenterPoints = Point::where("category", PointCategory::LOST_CENTER)
+        $lostCenterPoints = Point::where("category", PointCategory::LOST_CENTER)->where("city",$city)->where("t_number",">","0")
             ->orderBy("t_number")
             ->get();
-        $referendumCenterPoints = Point::where("category", PointCategory::REFERENDUM_CENTER)
+        $referendumCenterPoints = Point::where("category", PointCategory::REFERENDUM_CENTER)->where("city",$city)->where("t_number",">","0")
             ->orderBy("t_number")
             ->get();
-        $medicalCenterPoints = Point::where("category", PointCategory::MEDICAL_CENTER)
+        $medicalCenterPoints = Point::where("category", PointCategory::MEDICAL_CENTER)->where("city",$city)->where("t_number",">","0")
             ->orderBy("t_number")
             ->get();
 

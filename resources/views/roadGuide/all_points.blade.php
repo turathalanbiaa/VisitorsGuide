@@ -18,6 +18,10 @@
     </div>
 
     <div class="col-12">
+        <div class="mb-4">
+            @include("items.cities")
+        </div>
+
         <ul class="timeline">
             @php $i=1; @endphp
             @foreach($allPoints as $point)

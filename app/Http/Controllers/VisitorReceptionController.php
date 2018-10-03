@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 class VisitorReceptionController extends Controller
 {
     public function index() {
-        session(['user_id' => 1]);
+        //session(['user_id' => 1]);
         return view('VisitorReception.index');
 
     }

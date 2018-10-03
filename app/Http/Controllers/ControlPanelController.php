@@ -237,6 +237,7 @@ class ControlPanelController extends Controller
         $point->name = Input::get("name" );
         $point->description = Input::get("description");
         $point->city = Input::get("city" );
+        $point->t_number = Input::get("t_number" );
         $point->category =  Input::get("category" );
         $point->latitude = Input::get("latitude" );
         $point->longitude =  Input::get("longitude" );
