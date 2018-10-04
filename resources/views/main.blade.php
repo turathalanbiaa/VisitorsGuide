@@ -34,10 +34,14 @@
             background-color: #40e0d0;
             border-radius: 0 0 0 25px;
             transform: skew(0deg, -5deg);
-            box-shadow: 0 0 7px 1px #17a2b8c7;
             padding-top: 32px;
             margin-top: -32px;
-            box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+               -moz-box-sizing: content-box;
+                    box-sizing: content-box;
+            -webkit-box-shadow: 0 0 7px 1px #17a2b8c7;
+               -moz-box-shadow:0 0 7px 1px #17a2b8c7;
+                    box-shadow: 0 0 7px 1px #17a2b8c7;
         }
         .demo {
             position: absolute;
