@@ -19,7 +19,7 @@
             text-align: right;
             background-color: #d3d3d38f;
             margin: auto;
-            width: 768px;
+            max-width: 768px;
         }
         .cover {
             width: calc(100% - 20px);
