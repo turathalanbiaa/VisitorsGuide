@@ -18,9 +18,12 @@
         body {
             text-align: right;
             background-color: #d3d3d38f;
+            margin: auto;
+            width: 768px;
         }
         .cover {
             width: calc(100% - 20px);
+            max-width: calc(768px - 20px);
             height: 130px;
             background-color: #40e0d0;
             margin-left: 20px;
@@ -40,6 +43,7 @@
             position: absolute;
             top: 0;
             width: calc(100% - 20px);
+            max-width: calc(768px - 20px);
             height: 150px;
             background-color: transparent;
             padding-top: 16px;
@@ -69,6 +73,7 @@
             position: absolute;
             bottom: 12px;
             width: 100%;
+            max-width: 768px;
             height: calc(100% - 220px);
             margin-top: 110px;
         }
@@ -102,7 +107,8 @@
         .content-left {
             max-width: 250px;
             height: 100%;
-            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
         .content-left .col-special {
             width: 100%;
