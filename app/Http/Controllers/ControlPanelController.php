@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Storage;
 class ControlPanelController extends Controller
 {
     //Management Majales
-    public function managementMajales() {
+    public function managementMajales()
+    {
         $majales = Majales::where("status", MajlesStatus::NO_ACTIVE)
             ->orderBy("id", "AES")
             ->get();
@@ -26,7 +27,8 @@ class ControlPanelController extends Controller
         ]);
     }
 
-    public function acceptMajles() {
+    public function acceptMajles()
+    {
         $id = Input::get("id");
         $majles = Majales::find($id);
         if ($majles) {
@@ -42,7 +44,8 @@ class ControlPanelController extends Controller
         return ["majles" => "notFound"];
     }
 
-    public function rejectMajles() {
+    public function rejectMajles()
+    {
         $id = Input::get("id");
         $majles = Majales::find($id);
 
@@ -58,7 +61,8 @@ class ControlPanelController extends Controller
         return ["majles" => "notFound"];
     }
 
-    public function deleteMajles() {
+    public function deleteMajles()
+    {
         $id = Input::get("id");
         $majles = Majales::find($id);
 
@@ -74,18 +78,19 @@ class ControlPanelController extends Controller
     }
 
     //Management Centers
-    public function centerLogin() {
+    public function centerLogin()
+    {
         if (Cookie::has("CENTER_SESSION")) {
             $center = Center::where("session", "=", Cookie::get("CENTER_SESSION"))->first();
 
             if (!$center)
                 return view("CP.centers.login");
 
-            session()->put('CENTER_ID' , $center->id);
-            session()->put('CENTER_NAME' , $center->name);
-            session()->put('CENTER_T_NUMBER' , $center->t_number);
-            session()->put('CENTER_PHONE' , $center->phone);
-            session()->put('CENTER_SESSION' , $center->session);
+            session()->put('CENTER_ID', $center->id);
+            session()->put('CENTER_NAME', $center->name);
+            session()->put('CENTER_T_NUMBER', $center->t_number);
+            session()->put('CENTER_PHONE', $center->phone);
+            session()->put('CENTER_SESSION', $center->session);
             session()->save();
 
             return redirect("/control-panel/center");
@@ -97,8 +102,8 @@ class ControlPanelController extends Controller
     public function centerLoginValidation(Request $request)
     {
         $rules = [
-        "username" => "required",
-        "password" => "required"
+            "username" => "required",
+            "password" => "required"
         ];
 
         $rulesMessage = [
@@ -112,7 +117,7 @@ class ControlPanelController extends Controller
         $username = Input::get("username");
         $password = Input::get("password");
 
-        $center = Center::where("username","=",$username)->where("password","=",$password)->first();
+        $center = Center::where("username", "=", $username)->where("password", "=", $password)->first();
 
         if (!$center)
             return redirect("/control-panel/center/login")->with('ErrorRegisterMessage', "فشل تسجيل الدخول !!! أعد المحاولة مرة أخرى.");
@@ -120,17 +125,18 @@ class ControlPanelController extends Controller
         $center->session = md5(uniqid());
         $center->save();
 
-        session()->put('CENTER_ID' , $center->id);
-        session()->put('CENTER_NAME' , $center->name);
-        session()->put('CENTER_T_NUMBER' , $center->t_number);
-        session()->put('CENTER_PHONE' , $center->phone);
-        session()->put('CENTER_SESSION' , $center->session);
+        session()->put('CENTER_ID', $center->id);
+        session()->put('CENTER_NAME', $center->name);
+        session()->put('CENTER_T_NUMBER', $center->t_number);
+        session()->put('CENTER_PHONE', $center->phone);
+        session()->put('CENTER_SESSION', $center->session);
         session()->save();
 
-        return redirect("/control-panel/center")->withCookie(cookie('CENTER_SESSION' , $center->session , 1000000000));
+        return redirect("/control-panel/center")->withCookie(cookie('CENTER_SESSION', $center->session, 1000000000));
     }
 
-    public function centerLogout(Request $request) {
+    public function centerLogout(Request $request)
+    {
         $center = Center::where("session", "=", Cookie::get("CENTER_SESSION"))->first();
 
         if (!$center)
@@ -151,15 +157,18 @@ class ControlPanelController extends Controller
         return redirect("/control-panel/center/login")->withCookie($cookie);
     }
 
-    public function managementCenter() {
+    public function managementCenter()
+    {
         return view("CP.centers.main");
     }
 
-    public function addLost() {
+    public function addLost()
+    {
         return view("CP.centers.add-lost");
     }
 
-    public function addLostValidation(Request $request) {
+    public function addLostValidation(Request $request)
+    {
         $rules = [
             "category" => "required|numeric|between:1,6",
             "des_ar" => "required",
@@ -188,7 +197,7 @@ class ControlPanelController extends Controller
 
         if (!is_null(request()->file("file"))) {
             $Path = Storage::putFile('public/img/lost', request()->file("file"));
-            $imagePath = explode('/',$Path);
+            $imagePath = explode('/', $Path);
             $lost->file_name = $imagePath[3];
         }
 
@@ -200,19 +209,19 @@ class ControlPanelController extends Controller
         return redirect("/control-panel/center/add-lost")->with('AddLostMessage', "تمت عملية اضافة التائه او المفقود بنجاح.");
     }
 
-    public function createAutoCenters() {
+    public function createAutoCenters()
+    {
 
-        for ($i=1; $i<=40;$i++)
-        {
+        for ($i = 1; $i <= 40; $i++) {
             //Generate Auto Password
-            $password = $i.time()."2018";
+            $password = $i . time() . "2018";
             $password = md5(uniqid($password));
-            $password = "center_".substr($password,10,10);
+            $password = "center_" . substr($password, 10, 10);
 
             $center = new Center();
 
             $center->name = "مركز ارشاد التائهين رقم-" . $i;
-            $center->username = "center-".$i;
+            $center->username = "center-" . $i;
             $center->password = $password;
             $center->t_number = 0;
             $center->session = null;
@@ -234,20 +243,28 @@ class ControlPanelController extends Controller
     {
 
         $point = new Point();
-        $point->name = Input::get("name" );
+        $point->name = Input::get("name");
         $point->description = Input::get("description");
-        $point->city = Input::get("city" );
-        $point->t_number = Input::get("t_number" );
-        $point->category =  Input::get("category" );
-        $point->latitude = Input::get("latitude" );
-        $point->longitude =  Input::get("longitude" );
+        $point->city = Input::get("city");
+        $point->t_number = Input::get("t_number");
+        $point->category = Input::get("category");
+        $point->latitude = Input::get("latitude");
+        $point->longitude = Input::get("longitude");
 
         $point->save();
 
 
-      return redirect("/control-panel/point/new_point")->with('message' , "تمت الاضافة");
-
+        return redirect("/control-panel/point/new_point")->with('message', "تمت الاضافة");
 
 
     }
+
+
+    public function all_point()
+    {
+        $points = Point::all();
+        return view("/CP/point/all_point", ["points" => $points]);
+    }
+
+
 }

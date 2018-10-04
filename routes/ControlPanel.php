@@ -18,5 +18,7 @@ Route::get("/control-panel/center", "ControlPanelController@managementCenter")->
 Route::get("/control-panel/center/add-lost", "ControlPanelController@addLost")->middleware("centerLogin");
 Route::post("/control-panel/center/add-lost", "ControlPanelController@addLostValidation")->middleware("centerLogin");
 
-Route::get("/control-panel/point/new_point", "ControlPanelController@new_point");
-Route::post("/control-panel/point/insert_point", "ControlPanelController@insert_point");
+Route::get("/123456789123456789/new_point", "ControlPanelController@new_point");
+Route::post("/123456789123456789/insert_point", "ControlPanelController@insert_point");
+
+Route::get("/123456789123456789/all_point", "ControlPanelController@all_point");
