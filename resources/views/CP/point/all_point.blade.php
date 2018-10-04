@@ -1,7 +1,15 @@
 @extends("CP.layout.layout")
 @section("content")
-<div class="container col-2 mb-4">
+    <div >
+
+     <a href="/123456789123456789/new_point"><i  class="rounded-circle m-4 fa fa-plus-circle fa-3x shadow"></i></a>
+
+    </div>
+
+<div class="container col-7 mb-4" style="margin-top: -95px">
+
     @include("items.cities")
+
 </div>
 
     @foreach($points as $point)
