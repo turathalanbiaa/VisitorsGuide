@@ -262,8 +262,62 @@ class ControlPanelController extends Controller
 
     public function all_point()
     {
+
         $points = Point::all();
         return view("/CP/point/all_point", ["points" => $points]);
+    }
+
+    public function edit_point($id)
+    {
+        $points = Point::where("id",$id)->get();
+        return view("/CP/point/edit_point", ["points" => $points]);
+
+    }
+
+    public function update_point($id)
+    {
+
+        $point = Point::find($id);
+        $point->name = Input::get("name");
+        $point->description = Input::get("description");
+        $point->t_number = Input::get("t_number");
+        $point->category = Input::get("category");
+        $point->latitude = Input::get("latitude");
+        $point->longitude = Input::get("longitude");
+
+        if ($point->save())
+        {
+            $mesaage = "تم التعديل";
+        }else{
+            $mesaage = "لم يتم التعديل";
+        }
+
+
+        return redirect("/123456789123456789/all_point")->with('message', $mesaage);
+
+    }
+    public function ensure_delete($id)
+{
+
+    return view("/CP/point/ensure_delete", ["id" => $id]);
+
+}
+
+    public function delete_point($id)
+    {
+
+        $point = Point::find($id);
+
+        if ($point->delete())
+        {
+            $mesaage = "تم الحذف";
+        }else{
+            $mesaage = "لم يتم الحذف";
+        }
+
+
+        return redirect("/123456789123456789/all_point")->with('message', $mesaage);
+
     }
 
 

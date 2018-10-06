@@ -98,7 +98,7 @@
                         </div>
                         <div class="col">
 
-                            <button type="submit" class="btn btn-primary w-100 mt-5">حفظ</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-5"><i class="fa fa-street-view fa-2x">   </i>    حفظ    </button>
 
 
                         </div>
