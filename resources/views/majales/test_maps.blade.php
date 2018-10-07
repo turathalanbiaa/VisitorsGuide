@@ -52,6 +52,10 @@
             let mapOptions = {
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                streetViewControl: false,
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.RIGHT_CENTER
+                },
                 center: new google.maps.LatLng(32.02594,44.34625),
             };
             let map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
