@@ -30,19 +30,19 @@
         const latAndLong ={!! json_encode($latAndLong) !!};
         const content = function (i) {
             return   '<div style="width: 200px; overflow: hidden">'+
-                      '<p style="font-size: 14px">'+latAndLong[i]['name']+'</p>'+
-                      '<p style="font-size: 9px">'+latAndLong[i]['description']+'</p>'+
+                      '<p style="font-size: 14px; margin-right: 15px;margin-top: 10px">'+latAndLong[i]['name']+'</p>'+
+                      '<p style="font-size: 9px;">'+latAndLong[i]['description']+'</p>'+
                      '</div>'
         };
         const category = function(category)
         {
             switch (category) {
-                case 1: return '1.svg';
-                case 2: return '2.svg';
-                case 3: return '3.svg';
-                case 4: return '4.svg';
-                case 5: return '5.svg';
-                case 6: return '6.svg';
+                case 1: return '1.png';
+                case 2: return '2.png';
+                case 3: return '3.png';
+                case 4: return '4.png';
+                case 5: return '5.png';
+                case 6: return '6.png';
             }
         };
 
