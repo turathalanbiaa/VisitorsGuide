@@ -33,6 +33,9 @@ return [
     "main_btn_login_text"                => "ورود",
     "main_text_language"                => "زبان",
     "main_text_read"                => "خواندن کامل",
+    "main_gallary_title"            => "استوديو",
+    "main_gallary_detail"           => "",
+    "main_about_app"                => "حول التطبيق",
 
     //Menu
     "menu_road_guid"         => "راهنمای جاده",

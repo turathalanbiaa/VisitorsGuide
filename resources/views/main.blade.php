@@ -231,8 +231,15 @@
                     <img src="{{asset("img/7.png")}}" alt="logo">
                 </a>
             </div>
-            <p class="text-center" >{{trans("words.main_majales_guide_title")}}</p>
+            <p class="text-center" >{{trans("words.main_gallary_title")}}</p>
         </div>
+    <div  class="col-special" style="text-align: center;margin-bottom: 50px">
+
+                <a  href="/about_app" class="btn btn btn btn-outline-info">  {{trans("words.main_about_app")}}  <i class="fa fa-info"></i></a>
+
+
+        </div>
+
     </div>
 </div>
 

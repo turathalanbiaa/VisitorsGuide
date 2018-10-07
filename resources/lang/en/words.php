@@ -29,10 +29,14 @@ return [
     "main_majales_guide_detail"     => "You can find the consolation sessions (Majlis) and know their times, GPS locations, and the name of the Khateeb (preacher). The holders of the Majlis can add any other details that may be useful to anyone who'd like to attend.",
     "main_centers_title"            => "Lost and Found",
     "main_centers_detail"           => "You can declare about any lost objects that you missed at your way to Karbala. Also you can declare a lost child or adult and the Lost and Found offices will receive your declaration and act according to it..",
-    "main_btn_enter"                => "enter",
+    "main_btn_enter"                => "Enter",
     "main_btn_login_text"                => "Login",
-    "main_text_language"                => "language",
+    "main_text_language"                => "Language",
     "main_text_read"                => "read more",
+    "main_gallary_title"            => "Gallary",
+    "main_gallary_detail"           => "",
+    "main_about_app"                => "About App",
+
 
     //Menu
     "menu_road_guid"         => "The Roadmap of (Ya Hussien Way)",
