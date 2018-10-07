@@ -127,7 +127,7 @@
         function showPosition(position) {
 
             $("#input_latitude").val(position.coords.latitude);
-            $("#input_longitude").val(position.coords.latitude);
+            $("#input_longitude").val(position.coords.longitude);
             $("#input_latitude").attr("readonly","readonly");
             $("#input_longitude").attr("readonly","readonly");
         }
