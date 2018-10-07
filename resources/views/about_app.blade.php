@@ -39,9 +39,12 @@
         </div>
 
         <div class="card-footer text-muted">
-            <h5 class="card-text">يقدمه (معهد تراث الانبيار للدراسات الحوزوية الالكترونية) التابع الى العتبة العباسية المقدسة</h5>
-            <a href="https://turathalanbiaa.com/" class="btn btn-primary">زيارة موقع معهد تراث الانبياء</a>
-<p class="mt-5">    تم التطوير بواسطة خدام الامام العباس (ع)</p>
+            <p class="card-text">يقدمه</p>
+           <h5 class="card-text">معهد تراث الانبيار للدراسات الحوزوية الالكترونية</h5>
+           <h5 class="card-text">قسم الشؤون الفكرية</h5>
+           <h4 class="card-text">العتبة العباسية المقدسة</h4>
+            <a href="https://turathalanbiaa.com/" class="mt-5 btn btn-primary">زيارة موقع معهد تراث الانبياء</a>
+<p class="mt-5">    تم التطوير بواسطة خدّام الامام العباس (ع)</p>
 
         </div>
     </div>
