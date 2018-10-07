@@ -74,7 +74,7 @@
                                 <div class="col">
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-primary w-100 mt-5"><i class="fa fa-save fa-2x  "> </i>   حفظ التعديلات   </button>
+                                    <button type="submit" class="btn btn-primary w-100 mt-5"><i class="fa fa-save fa-2x"> </i>   حفظ التعديلات   </button>
                                 </div>
                                 <div class="col">
                                 </div>
