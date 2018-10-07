@@ -13,7 +13,7 @@
                 </div>
             </nav>
         <div class="container pt-2">
-            <div class="row" v-if="form.user_id != null">
+            <div class="row" v-if="form.user_id >0">
             <div class="col-md-12">
                 <b-btn class="mb-2" size="sm" variant="outline-primary"  v-b-modal.modalAdd >أضافة</b-btn></div>
 
@@ -223,12 +223,13 @@
                 <hr>
                 <a href="/road-guide" class="mb-0">التسجيل</a>
             </div></div>
-        </div>
+
 
         <div class="col-md-12">
             <router-link to="/" class="float bg-blue-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
         </div>
         </div>
+    </div>
 
 
 </template>
@@ -240,6 +241,7 @@
                 .then(({data})=>{
                     console.log('mounted');
                     this.form.user_id=data;
+                    console.log('dat data'+this.form.user_id);
                     this.iniData();
                 })
                 .catch((resp)=> {

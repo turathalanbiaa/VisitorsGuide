@@ -1,9 +1,9 @@
 @extends("CP.layout.layout")
 
 
+
 @section("content")
     <div class="container">
-
 
 
         <div class="row">
@@ -22,20 +22,13 @@
 
 
             <div class="col-12 d-flex justify-content-center">
-                <form class="col-12 col-sm-6" method="post" action="/control-panel/point/insert_point">
+                <form class="col-12 col-sm-6" method="post" action="/123456789123456789/insert_point">
                     @csrf
 
                     <div class="form-group">
-                        <label for="input_city">اختيار الطريق</label>
-                        <select  id="input_city" name="city" class="form-control">
-                            <option selected value="0">نجف - كربلاء</option>
-                            <option value="1">حله - كربلاء</option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="4"></option>
-                            <option value="5"></option>
 
-                        </select>
+                        @include("items.cities")
+
                     </div>
 
 
@@ -46,7 +39,7 @@
 
                     <div class="form-group ">
                         <label for="input_t_number">رقم العمود</label>
-                        <input type="number" class="form-control" id="t_number"  name="description" placeholder="">
+                        <input type="number" class="form-control" id="input_t_number"  name="t_number" placeholder="">
                     </div>
 
 
@@ -105,7 +98,7 @@
                         </div>
                         <div class="col">
 
-                            <button type="submit" class="btn btn-primary w-100 mt-5">حفظ</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-5"><i class="fa fa-street-view fa-2x">   </i>    حفظ    </button>
 
 
                         </div>
@@ -134,7 +127,7 @@
         function showPosition(position) {
 
             $("#input_latitude").val(position.coords.latitude);
-            $("#input_longitude").val(position.coords.latitude);
+            $("#input_longitude").val(position.coords.longitude);
             $("#input_latitude").attr("readonly","readonly");
             $("#input_longitude").attr("readonly","readonly");
         }
