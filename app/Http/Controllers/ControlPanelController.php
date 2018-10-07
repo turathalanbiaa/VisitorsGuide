@@ -254,7 +254,7 @@ class ControlPanelController extends Controller
         $point->save();
 
 
-        return redirect("/control-panel/point/new_point")->with('message', "تمت الاضافة");
+        return redirect("/123456789123456789/new_point")->with('message', "تمت الاضافة");
 
 
     }

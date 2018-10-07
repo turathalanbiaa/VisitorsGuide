@@ -22,7 +22,7 @@
 
 
             <div class="col-12 d-flex justify-content-center">
-                <form class="col-12 col-sm-6" method="post" action="/control-panel/point/insert_point">
+                <form class="col-12 col-sm-6" method="post" action="/123456789123456789/insert_point">
                     @csrf
 
                     <div class="form-group">
