@@ -41,7 +41,7 @@
     </nav>
 
     {{--Content--}}
-    <div style="margin: 54px 0 40px 0;">
+    <div id="main-content" style="margin: 54px 0 40px 0;">
         @yield("content")
     </div>
 

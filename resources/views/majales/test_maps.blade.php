@@ -7,10 +7,18 @@
 @section("navbar-brand")
     <span id="title">المجالس - عرض الجميع</span>
 @endsection
+<style>
+    html , body , #main-ontent , .google-maps
+    {
+        height: 100%;
+        overflow: hidden;
 
+    }
+
+</style>
 @section('content')
-    <div class="container p-0" style="height: 100%; width: 100%">
-        <div style="width: 100%; height: 850px" id="map-canvas">
+    <div class="container-fluid p-0 google-maps">
+        <div style="width: 100%; height: 94%" id="map-canvas">
         </div>
     </div>
 @endsection
