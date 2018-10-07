@@ -10,6 +10,7 @@ use App\Models\Majales;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MajalesController extends Controller
 {
@@ -172,5 +173,12 @@ class MajalesController extends Controller
         }
 
         return redirect('/majales/majalesy');
+    }
+
+    public function testMaps ()
+    {
+        $latAndLong = DB::table('point')->select(['latitude','longitude','name','description','category'])
+            ->orderBy('id')->get()->toArray();
+        return view('/majales/test_maps',compact('latAndLong'));
     }
 }

@@ -213,10 +213,6 @@
 
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-            var marker = new google.maps.Marker({
-                map: map,
-                position: center
-            });
         }
 
         $('.location').on('click', function () {
