@@ -19,3 +19,4 @@ Route::get('/majales/events-upcoming' , 'MajalesController@getEventsUpcoming');
 Route::get('/majales/events-started' , 'MajalesController@getEventsStarted');
 Route::get('/majales/events-ended' , 'MajalesController@getEventsEnded');
 Route::get('/majales/events-gallery' , 'MajalesController@getEventsGallery');
+Route::get('/majales/test-maps' , 'MajalesController@testMaps');

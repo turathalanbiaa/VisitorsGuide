@@ -30,6 +30,13 @@ return [
     "main_centers_title"            => "گمشده و پیدا شده مراکز",
     "main_centers_detail"           => "شما هم اکنون می توانید در صورت لزوم آگهی های مربوط به گمشده یا گمشده را گزارش کنید، زیرا شما می توانید به راحتی و بسیار سریع نیز جستجو کنید، همچنین به شما اجازه می دهد تا به راحتی از طریق دسته ها بررسی کنید.",
     "main_btn_enter"                => "وارد",
+    "main_btn_login_text"                => "ورود",
+    "main_text_language"                => "زبان",
+    "main_text_read"                => "خواندن کامل",
+    "main_gallary_title"            => "استوديو",
+    "main_gallary_detail"           => "",
+    "main_about_app"                => "حول التطبيق",
+
     //Menu
     "menu_road_guid"         => "راهنمای جاده",
     "menu_visitor_feqh"      => "فقه بازدید کننده",

@@ -41,7 +41,7 @@
     </nav>
 
     {{--Content--}}
-    <div style="margin: 54px 0 40px 0;">
+    <div id="main-content" style="margin: 54px 0 40px 0;">
         @yield("content")
     </div>
 
@@ -51,8 +51,8 @@
             <a class="nav-item nav-link rounded-0" href="/road-guide"><i class="fa fa-road text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/visitor-feqh"><i class="fa fa-list-alt text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/adeua-and-zuarat"><i class="fab fa-audible text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/"><i class="fa fa-school text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/losts"><i class="fa fa-route text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/reception"><i class="fa fa-school text-white"></i></a>
+            <a class="nav-item nav-link rounded-0" href="/lost"><i class="fa fa-route text-white"></i></a>
             <a class="nav-item nav-link rounded-0" href="/majales"><i class="fa fa-microphone-alt text-white"></i></a>
         </div>
     </nav>

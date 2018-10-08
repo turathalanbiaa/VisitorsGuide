@@ -21,7 +21,7 @@ class UserController extends Controller
         ];
 
         $rulesMessage = [
-            "name.required" => "يرجى ادخال اسم المستخدم.",
+            "name.required" => "يرجى ادخال الاسم الحقيقي.",
             "name.min" => "يجب ان يكون اسم المستخدم لايقل عن 8 حرف.",
             "username.required" => "يرجى ادخال اسم المستخدم.",
             "username.unique" => "يوجد مستخدم أخر بنفس الاسم، يرجى استخدام اسم مستخدم مختلف.",

@@ -24,7 +24,7 @@
     {{--Navbar Fixed Top--}}
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="javascript:void(0);">
-           مركز التائهين والمفقودات
+          لوحة التحكم
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
