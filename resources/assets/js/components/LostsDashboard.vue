@@ -25,10 +25,10 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <router-link to="/" class="float bg-teal-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
             </div>
-        <div class="col-md-12">
-            <router-link to="/" class="float bg-teal-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
-        </div>
+            </div>
         </div>
 </template>
 

@@ -3,7 +3,7 @@
             <nav class="navbar navbar-dark fixed-top bg-blue-gradient">
                 <div class="container p-0">
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
-                    <span > دليل استضافة الزائرين</span>
+                    <span >{{trans("words.reception_title")}}</span>
                 </a>
                 <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
                     <a href="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
@@ -15,13 +15,13 @@
         <div class="container pt-2">
             <div class="row" v-if="form.user_id >0">
             <div class="col-md-12">
-                <b-btn class="mb-2" size="sm" variant="outline-primary"  v-b-modal.modalAdd >أضافة</b-btn></div>
+                <b-btn class="mb-2" size="sm" variant="outline-primary"  v-b-modal.modalAdd >{{trans("words.add")}}</b-btn></div>
 
                 <!-- Add Modal Component -->
-                <b-modal id="modalAdd" ref="modalAdd" title="أضافة" @shown="resetForm()"  hide-footer>
+                <b-modal id="modalAdd" ref="modalAdd" :label='trans("words.add")' @shown="resetForm()"  hide-footer>
 
                     <b-form @submit="saveForm">
-                        <b-form-group label=":أسم صاحب المنزل" label-for="home_owner">
+                        <b-form-group :label='trans("words.reception_home_owner_name")' label-for="home_owner">
                             <b-form-input id="home_owner"
                                           size="sm"
                                           type="text"
@@ -31,7 +31,7 @@
                             </b-form-input>
                         </b-form-group>
 
-                        <b-form-group label=":العدد" label-for="persons_number">
+                        <b-form-group :label='trans("words.reception_persons_number")' label-for="persons_number">
                             <b-form-input id="persons_number"
                                           size="sm"
                                           type="number"
@@ -41,7 +41,7 @@
                             </b-form-input>
                         </b-form-group>
 
-                        <b-form-group label="النوع:" label-for="persons_type">
+                        <b-form-group :label='trans("words.reception_persons_type")' label-for="persons_type">
                             <b-form-select id="persons_type"
                                            size="sm"
                                            :options="persons_type_option"
@@ -50,7 +50,7 @@
                             </b-form-select>
                         </b-form-group>
 
-                        <b-form-group label=":العنوان" label-for="address">
+                        <b-form-group :label='trans("words.reception_address")' label-for="address">
                             <b-form-input id="address"
                                           size="sm"
                                           type="text"
@@ -60,7 +60,7 @@
                             </b-form-input>
                         </b-form-group>
 
-                        <b-form-group label="التليفون :" label-for="phone">
+                        <b-form-group :label='trans("words.reception_phone")' label-for="phone">
                             <b-form-input id="phone"
                                           size="sm"
                                           type="text"
@@ -72,7 +72,7 @@
 
 
 
-                        <b-form-group label="الحالة:" label-for="is_active">
+                        <b-form-group :label='trans("words.reception_state")' label-for="is_active">
                             <b-form-select id="is_active"
                                            size="sm"
                                            :options="is_active_option"
@@ -81,7 +81,7 @@
                             </b-form-select>
                         </b-form-group>
 
-                        <b-form-group label="التاريخ:" label-for="date">
+                        <b-form-group :label='trans("words.reception_date")' label-for="date">
                             <b-form-input id="date"
                                            size="sm"
                                            type="date"
@@ -90,17 +90,17 @@
                             </b-form-input>
                         </b-form-group>
 
-                        <b-button size="sm" type="submit" variant="outline-primary">حفظ</b-button>
-                        <b-button size="sm" @click="resetForm()" variant="outline-danger">جديد</b-button>
+                        <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.add")}}</b-button>
+                        <b-button size="sm" @click="resetForm()" variant="outline-danger">{{trans("words.new")}}</b-button>
                     </b-form>
 
                 </b-modal>
 
             <!-- Update Modal Component -->
-            <b-modal id="modalUpdate" ref="modalUpdate" title="تعديل" hide-footer>
+            <b-modal id="modalUpdate" ref="modalUpdate" :label='trans("words.update")' hide-footer>
 
                 <b-form @submit="updateForm">
-                    <b-form-group label=":أسم صاحب المنزل" label-for="home_owner">
+                    <b-form-group :label='trans("words.reception_home_owner_name")' label-for="home_owner">
                         <b-form-input id="home_owner"
                                       size="sm"
                                       type="text"
@@ -110,7 +110,7 @@
                         </b-form-input>
                     </b-form-group>
 
-                    <b-form-group label=":العدد" label-for="persons_number">
+                    <b-form-group :label='trans("words.reception_persons_number")' label-for="persons_number">
                         <b-form-input id="persons_number"
                                       size="sm"
                                       type="number"
@@ -120,7 +120,7 @@
                         </b-form-input>
                     </b-form-group>
 
-                    <b-form-group label="النوع:" label-for="persons_type">
+                    <b-form-group :label='trans("words.reception_persons_type")' label-for="persons_type">
                         <b-form-select id="persons_type"
                                        size="sm"
                                        :options="persons_type_option"
@@ -129,7 +129,7 @@
                         </b-form-select>
                     </b-form-group>
 
-                    <b-form-group label=":العنوان" label-for="address">
+                    <b-form-group :label='trans("words.reception_address")' label-for="address">
                         <b-form-input id="address"
                                       size="sm"
                                       type="text"
@@ -139,7 +139,7 @@
                         </b-form-input>
                     </b-form-group>
 
-                    <b-form-group label="التليفون :" label-for="phone">
+                    <b-form-group :label='trans("words.reception_phone")' label-for="phone">
                         <b-form-input id="phone"
                                       size="sm"
                                       type="text"
@@ -151,7 +151,7 @@
 
 
 
-                    <b-form-group label="الحالة:" label-for="is_active">
+                    <b-form-group :label='trans("words.reception_state")' label-for="is_active">
                         <b-form-select id="is_active"
                                        size="sm"
                                        :options="is_active_option"
@@ -160,7 +160,7 @@
                         </b-form-select>
                     </b-form-group>
 
-                    <b-form-group label="التاريخ:" label-for="date">
+                    <b-form-group :label='trans("words.reception_address")' label-for="date">
                         <b-form-input id="date"
                                       size="sm"
                                       type="date"
@@ -169,18 +169,18 @@
                         </b-form-input>
                     </b-form-group>
 
-                    <b-button size="sm" type="submit" variant="outline-primary">حفظ</b-button>
+                    <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.save")}}</b-button>
                 </b-form>
 
             </b-modal>
 
                 <b-modal ref="modelDelete"  hide-header hide-footer>
-                    <p class="my-4">هل انت متأكد؟</p>
+                    <p class="my-4">{{trans("words.are_you_sure")}}</p>
                     <b-button @click="destroy()" size="sm"  variant="outline-success">
-                        نعم
+                        {{trans("words.yes")}}
                     </b-button>
                     <b-button @click="$refs.modelDelete.hide()" size="sm" variant="outline-danger">
-                        الغاء
+                        {{trans("words.cancel")}}
                     </b-button>
                 </b-modal>
 
@@ -190,47 +190,47 @@
                     <div class="card-body">
                         <div class="card-header bg-white text-center">
                             <h6 class="card-title">
-                                <span>صاحب المنزل:</span>
+                                <span>{{trans("words.reception_home_owner")}}</span>
                                 {{item.home_owner}}
                             </h6>
                         </div>
                         <div class="card-text">
                             <ul class="list-group list-group-flush p-0">
                                 <li class="list-group-item">
-                                    <span>عدد الافراد :</span>
+                                    <span>{{trans("words.reception_persons_number")}}</span>
                                     {{item.persons_number}}
                                 </li>
-                                <li class="list-group-item">  <span>الاشخاض :</span>
+                                <li class="list-group-item">
+                                    <span>{{trans("words.reception_persons_type")}}</span>
                                     {{getType(item.persons_type)}}
                                 </li>
-                                <li class="list-group-item">  <span>العنوان : </span>
+                                <li class="list-group-item">  <span>{{trans("words.reception_address")}}</span>
                                     {{item.address}}
                                 </li>
                             </ul>
                         </div>
                         <div class="card-footer bg-white">
-                            <b-btn @click="iniUpdate(index)"  size="sm" variant="outline-success"  v-b-modal.modalUpdate>تعديل</b-btn>
-                            <b-btn @click="iniDelete(item.id)"  size="sm" variant="outline-danger">حذف</b-btn>
+                            <b-btn @click="iniUpdate(index)"  size="sm" variant="outline-success"  v-b-modal.modalUpdate>{{trans("words.update")}}</b-btn>
+                            <b-btn @click="iniDelete(item.id)"  size="sm" variant="outline-danger">{{trans("words.delete")}}</b-btn>
                         </div>
 
                     </div>
                 </div>
             </div>
             </div>
-            <div v-else> <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">شكرا ايها الزائر الكريم لاستخدامك خدماتنا</h4>
-                <p>للوصل الى لائحة الاعدادات المتعلقة باستضافة الزائرين يرجى تسجيل الدخول او التسجيل ان لم يكن لديك حساب</p>
+             <div v-else class="alert alert-success" role="alert">
+                <h4 class="alert-heading">{{trans("words.reception_thanks")}}</h4>
+                <p> {{trans("words.reception_thanks_details")}}</p>
                 <hr>
-                <a href="/road-guide" class="mb-0">التسجيل</a>
-            </div></div>
-
+                <a href="/register" class="mb-0">{{trans("words.sign_up")}}</a>
+            </div>
 
         <div class="col-md-12">
             <router-link to="/" class="float bg-blue-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
         </div>
-        </div>
-    </div>
 
+    </div>
+    </div>
 
 </template>
 
@@ -268,15 +268,15 @@
                     date:null,
                 },
                  persons_type_option: [
-                    { text: 'اختيار رجاء', value: null },
-                    { text: 'رجال', value: 1 },
-                    { text: 'نساء', value: 2 },
-                    { text: 'عوائل', value: 3 },
+                    { text: this.trans("words.reception_select"), value: null },
+                    { text: this.trans("words.reception_persons_type_men"), value: 1 },
+                    { text: this.trans("words.reception_persons_type_women"), value: 2 },
+                    { text: this.trans("words.reception_persons_type_family"), value: 3 },
                 ],
                 is_active_option: [
-                    { text: 'اختيار رجاء', value: null },
-                    { text: 'فعال', value: 1 },
-                    { text: 'غير فعال', value: 0 },
+                    { text: this.trans("words.reception_select"), value: null },
+                    { text: this.trans("words.reception_is_active_active"), value: 1 },
+                    { text: this.trans("words.reception_is_active_inactive"), value: 0 },
                 ],
 
             }
@@ -297,13 +297,13 @@
             getType(arg) {
                 switch (arg) {
                     case 1:
-                        return "رجال";
+                        return  this.trans("words.reception_persons_type_option_men");
                         break;
                     case 2:
-                        return "نساء";
+                        return this.trans("words.reception_persons_type_option_women");
                         break;
                     case 3:
-                        return "عوائل";
+                        return this.trans("words.reception_persons_type_option_family");
                         break;
                 }
             },
@@ -312,7 +312,7 @@
                 this.$refs.modalAdd.hide();
                 axios.post('api/reception',this.form)
                     .then(({data})=> {
-                        this.text='تمت عملية الأضافه بنجاح';
+                        this.text=this.trans("words.reception_add_success");
                         this.snackBar('success');
                        this.iniData();
                     })
@@ -324,7 +324,7 @@
                 this.$refs.modalUpdate.hide();
                 axios.put('api/reception',this.form)
                     .then(({data})=> {
-                        this.text='تمت عملية التعديل بنجاح';
+                        this.text=this.trans("words.reception_update_success");
                         this.snackBar('success');
                         this.iniData();
                     })
@@ -342,7 +342,7 @@
                 this.$refs.modelDelete.hide();
                 axios.delete('api/reception/'+this.id)
                     .then(({data})=> {
-                        this.text='تمت عملية الحذف بنجاح';
+                        this.text=this.trans("words.reception_delete_success");
                         this.snackBar('success');
                         this.iniData();
                     })
