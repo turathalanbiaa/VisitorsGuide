@@ -56,4 +56,10 @@ class PointController extends Controller
 
         return ["publicPoints" => $publicPoints];
     }
+
+    public function shwoMaps ()
+    {
+        $latAndLong = Point::orderBy('id')->get()->toArray();
+        return view('roadGuide.maps',compact('latAndLong'));
+    }
 }

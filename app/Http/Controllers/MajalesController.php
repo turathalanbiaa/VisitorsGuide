@@ -174,11 +174,4 @@ class MajalesController extends Controller
 
         return redirect('/majales/majalesy');
     }
-
-    public function testMaps ()
-    {
-        $latAndLong = DB::table('point')->select(['latitude','longitude','name','description','category'])
-            ->orderBy('id')->get()->toArray();
-        return view('/majales/test_maps',compact('latAndLong'));
-    }
 }

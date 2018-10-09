@@ -12,7 +12,6 @@
     <div class="container py-4">
         @include("roadGuide.all_points")
         @include("roadGuide.mawakep_points")
-        @include("roadGuide.hemamat_points")
         @include("roadGuide.public_points")
         @include("roadGuide.lost_centers_points")
         @include("roadGuide.referendum_centers_points")
@@ -33,13 +32,13 @@
                     <i class="fa fa-shoe-prints fa-rotate-270"></i>
                     <span>{{trans("words.road_guide_menu_show_all_points")}}</span>
                 </a>
+                <a class="list-group-item list-group-item-action" href="/road-guide/maps">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <span>{{"عرض على الخارطه"}}</span>
+                </a>
                 <a class="list-group-item list-group-item-action" id="show-mawakep-points">
                     <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::MAWAKEP)}}"></i>
                     <span>{{trans("words.road_guide_menu_show_mawakep_points")}}</span>
-                </a>
-                <a class="list-group-item list-group-item-action" id="show-hemamat-points">
-                    <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::HEMAMAT)}}"></i>
-                    <span>{{trans("words.road_guide_menu_show_hemamat_points")}}</span>
                 </a>
                 <a class="list-group-item list-group-item-action" id="show-public-points">
                     <i class="fa {{\App\Enums\PointCategory::getCategoryIcon(\App\Enums\PointCategory::PUBLIC)}}"></i>
@@ -107,11 +106,10 @@
 @endsection
 
 @section("script")
-     {{--Change View Content--}}
+    {{--Change View Content--}}
     <script>
         $("#all-points").addClass("d-block");
         $("#mawakep-points").addClass("d-none");
-        $("#hemamat-points").addClass("d-none");
         $("#public-points").addClass("d-none");
         $("#lost-centers-points").addClass("d-none");
         $("#referendum-centers-points").addClass("d-none");
@@ -122,7 +120,6 @@
             $("#title").html("{{trans('words.road_guide_title_all_points')}}");
             $("#all-points").removeClass("d-none").addClass("d-block");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
@@ -137,22 +134,6 @@
             $("#title").html("{{trans('words.road_guide_title_mawakep_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-none").addClass("d-block");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
-            $("#public-points").removeClass("d-block").addClass("d-none");
-            $("#lost-centers-points").removeClass("d-block").addClass("d-none");
-            $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
-            $("#medical-centers-points").removeClass("d-block").addClass("d-none");
-            $("#street-view").removeClass("d-block").addClass("d-none");
-            setTimeout(function () {
-                $("#menu-modal").modal("hide");
-            }, 500);
-        });
-
-        $("#show-hemamat-points").click(function () {
-            $("#title").html("{{trans('words.road_guide_title_hemamat_points')}}");
-            $("#all-points").removeClass("d-block").addClass("d-none");
-            $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-none").addClass("d-block");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
@@ -167,7 +148,6 @@
             $("#title").html("{{trans('words.road_guide_title_public_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-none").addClass("d-block");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
@@ -182,7 +162,6 @@
             $("#title").html("{{trans('words.road_guide_title_lost_centers_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-none").addClass("d-block");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
@@ -197,7 +176,6 @@
             $("#title").html("{{trans('words.road_guide_title_referendum_centers_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-none").addClass("d-block");
@@ -212,7 +190,6 @@
             $("#title").html("{{trans('words.road_guide_title_referendum_centers_points')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
@@ -227,7 +204,6 @@
             $("#title").html("{{trans('words.road_guide_title_street_view')}}");
             $("#all-points").removeClass("d-block").addClass("d-none");
             $("#mawakep-points").removeClass("d-block").addClass("d-none");
-            $("#hemamat-points").removeClass("d-block").addClass("d-none");
             $("#public-points").removeClass("d-block").addClass("d-none");
             $("#lost-centers-points").removeClass("d-block").addClass("d-none");
             $("#referendum-centers-points").removeClass("d-block").addClass("d-none");
@@ -281,21 +257,21 @@
                             var cards = "";
                             $.map( result["publicPoints"], function(point, index) {
                                 var card =  '<div class="card bg-dark border-0">' +
-                                                '<div class="card-header border-0 mb-1 shadow-special" id="heading-' + index + '" role="tab">' +
-                                                    '<div class="collapsed" href="#collapse-' + index + '" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">' +
-                                                        '<p class="text-white mb-0">' +
-                                                            '<span>' + point["name"] + '</span>' +
-                                                            '<i class="fa fa-angle-down rotate-icon mt-2 float-left"></i>' +
-                                                        '</p>' +
-                                                    '</div>' +
-                                                '</div>' +
+                                    '<div class="card-header border-0 mb-1 shadow-special" id="heading-' + index + '" role="tab">' +
+                                    '<div class="collapsed" href="#collapse-' + index + '" data-toggle="collapse" data-parent="#accordion" aria-expanded="false">' +
+                                    '<p class="text-white mb-0">' +
+                                    '<span>' + point["name"] + '</span>' +
+                                    '<i class="fa fa-angle-down rotate-icon mt-2 float-left"></i>' +
+                                    '</p>' +
+                                    '</div>' +
+                                    '</div>' +
 
-                                                '<div class="collapse"  id="collapse-' + index + '" role="tabpanel" aria-labelledby="heading-' + index + '" data-parent="#accordion">' +
-                                                    '<div class="card-body mb-1 text-white">' +
-                                                        '<p class="text-justify">' + point["description"] + '</p>' +
-                                                    '</div>' +
-                                                '</div>' +
-                                            '</div>' ;
+                                    '<div class="collapse"  id="collapse-' + index + '" role="tabpanel" aria-labelledby="heading-' + index + '" data-parent="#accordion">' +
+                                    '<div class="card-body mb-1 text-white">' +
+                                    '<p class="text-justify">' + point["description"] + '</p>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' ;
 
                                 cards = cards + card;
                             });
@@ -307,8 +283,8 @@
                     },
                     error: function () {
                         var alertDiv = '<div class="alert alert-danger mt-2 mb-0">' +
-                                            '<strong>' + '{{trans("words.road_guide_calculate_distance_error_connection_message")}}' + '</strong>' +
-                                        '</div>';
+                            '<strong>' + '{{trans("words.road_guide_calculate_distance_error_connection_message")}}' + '</strong>' +
+                            '</div>';
                         $("#list-public-points").html(alertDiv);
                     },
                     complete: function () {}
@@ -320,8 +296,8 @@
     <script>
         $("div[data-action='show-calculate-distance-modal']").click(function () {
             $(this).addClass('shake').delay(500).queue(function(){
-                    $(this).removeClass("shake").dequeue();
-                });
+                $(this).removeClass("shake").dequeue();
+            });
             $("div").attr("data-calculate","false");
             $(this).parent().find("div.alert").attr("data-calculate","true");
             var t_number = $(this).data("t_number");
@@ -405,32 +381,32 @@
     </script>
 
     {{--Show Location On Google Map--}}
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4"></script>
-     <script>
-         function initialize(x ,y) {
-             var center = new google.maps.LatLng(x, y);
-             var mapOptions = {
-                 zoom: 15,
-                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                 center: center
-             };
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4"></script>
+    <script>
+        function initialize(x ,y) {
+            var center = new google.maps.LatLng(x, y);
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: center
+            };
 
-             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-             var marker = new google.maps.Marker({
-                 map: map,
-                 position: center
-             });
-         }
+            var marker = new google.maps.Marker({
+                map: map,
+                position: center
+            });
+        }
 
-         $('.location').on('click', function () {
-             $('#modal').modal({
-                 backdrop: 'static',
-                 keyboard: false
-             });
-             initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
-             console.log($(this).attr('data-latitude'),$(this).attr('data-longitude'));
-         });
+        $('.location').on('click', function () {
+            $('#modal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
+            console.log($(this).attr('data-latitude'),$(this).attr('data-longitude'));
+        });
 
-     </script>
+    </script>
 @endsection
