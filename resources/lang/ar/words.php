@@ -142,7 +142,7 @@ return [
     "find_center_thanks" => "شكرا ايها الزائر الكريم لأمانتك",
     "find_center_info" => "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم.",
     "find_center_link" => "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين.",
-<<<<<<< HEAD
+
 
 //Adeua and Zuarat
     "adeua-and-zuarat-zuarat-title"               => "الادعية والزيارات - الزيارات",
@@ -158,7 +158,7 @@ return [
     "adeua-and-zuarat-main-menu-images-gallery"   => "معرض الصور",
     "adeua-and-zuarat-main-menu-videos-gallery"   => "معرض الفيديوهات",
     "adeua-and-zuarat-no-data"                    => "لاتوجد بيانات لعرضها",
-=======
+
     //Reception
     "reception_title" => "دليل استضافة الزائرين",
     "reception_select" => "الرجاء الاختيار",
@@ -195,5 +195,4 @@ return [
     "are_you_sure" => "هل انت متاكد",
     "there_is_no_data" => " لايوجد بيانات ...",
 
->>>>>>> 58ec1c295494370a9f3d8ec1cf7b163fbf04125b
 ];
