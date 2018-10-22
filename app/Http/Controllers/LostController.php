@@ -19,4 +19,27 @@ class LostController extends Controller
 
         return view('lostGuide.find_lost');
     }
+
+    public function addLostForm ()
+    {
+        return view('lostGuide.add_lost');
+    }
+
+    public function addLost (Request $request)
+    {
+        $this->validate($request,[
+            'description'=> 'required',
+            'category'=> 'required',
+            'type'=> 'required'
+        ]);
+
+        $lost = new Lost();
+        $lost->center_id   = 1;
+        $lost->description = $request->description;
+        $lost->category    = $request->category;
+        $lost->type        = $request->type;
+        $lost->datetime    = date("Y-m-d H:i:s");
+        $lost->save();
+        return redirect(route('addLostForm'))->with('success', 'تمت اضافة الاعلان');
+    }
 }

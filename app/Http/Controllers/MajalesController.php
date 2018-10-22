@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\Cities;
 use App\Enums\MajlesStatus;
 use App\Enums\PostCategory;
-use App\Enums\WeekDays;
 use App\Models\Majales;
 use App\Models\Post;
 use Carbon\Carbon;

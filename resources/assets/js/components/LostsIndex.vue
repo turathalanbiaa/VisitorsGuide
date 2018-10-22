@@ -114,9 +114,9 @@
                 </infinite-loading>
 
                 <div class="col-md-12">
-                    <router-link :to="{name:'losts-dashboard'}" class="float bg-teal-gradient">
+                    <a href="/lost/add-lost-form" class="float bg-teal-gradient">
                         <i class="fa fa-bullhorn my-float"></i>
-                    </router-link>
+                    </a>
                 </div>
             </div>
 
