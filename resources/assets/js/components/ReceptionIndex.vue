@@ -3,7 +3,7 @@
             <nav class="navbar navbar-dark fixed-top bg-blue-gradient">
                 <div class="container p-0">
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
-                    <span > دليل استضافة الزائرين</span>
+                    <span >{{trans("words.reception_title")}} </span>
                 </a>
                 <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
                     <a v-on:click="showModal = true" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
@@ -23,26 +23,26 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title"> اختر النوع</h5>
+                                    <h5 class="modal-title"> {{trans("words.reception_select_type")}}</h5>
 
                                 </div>
                                 <div class="modal-body">
                                     <div class="list-group">
                                         <a v-on:click="changeFilter(1)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>رجال</span>
+                                            <span>{{trans("words.reception_persons_type_men")}}</span>
                                         </a>
                                         <a v-on:click="changeFilter(2)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>نساء</span>
+                                            <span>{{trans("words.reception_persons_type_women")}}</span>
                                         </a>
                                         <a v-on:click="changeFilter(3)"
                                            class="list-group-item  list-group-item-action">
-                                            <span>عوائل</span>
+                                            <span>{{trans("words.reception_persons_type_family")}}</span>
                                         </a>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary btn-sm" v-on:click="showModal = false">{{trans("words.lost_index_cancel")}}</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" v-on:click="showModal = false">{{trans("words.cancel")}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -68,25 +68,27 @@
                         <div class="card-body">
                             <div class="card-header bg-white text-center">
                                 <h6 class="card-title">
-                                    <span>صاحب المنزل:</span>
+                                    <span> {{trans("words.reception_home_owner")}}</span>
                                     {{item.home_owner}}
                                 </h6>
                             </div>
                             <div class="card-text">
                                 <ul class="list-group list-group-flush p-0">
                                     <li class="list-group-item">
-                                        <span>عدد الافراد :</span>
+                                        <span> {{trans("words.reception_persons_number")}}</span>
                                         {{item.persons_number}}
                                        </li>
-                                    <li class="list-group-item">  <span>الاشخاض :</span>
+                                    <li class="list-group-item">
+                                        <span> {{trans("words.reception_persons_type")}}</span>
                                         {{getType(item.persons_type)}}
                                         </li>
-                                    <li class="list-group-item">  <span>العنوان : </span>
+                                    <li class="list-group-item">
+                                        <span> {{trans("words.reception_address")}}</span>
                                         {{item.address}}
                                         </li>
                                 </ul>
                             </div>
-                            <div class="card-footer bg-white text-center ">  <a class="card-link" :href="'tel:'+item.phone">اتصال بصاحب المنزل</a></div>
+                            <div class="card-footer bg-white text-center ">  <a class="card-link" :href="'tel:'+item.phone">{{trans("words.reception_call_home_owner")}}</a></div>
 
                         </div>
                     </div>
@@ -94,18 +96,15 @@
                 <infinite-loading ref="infiniteLoading" spinner="waveDots" v-on:distance="1"
                                   v-on:infinite="infiniteHandler" class="col-md-12">
                      <span slot="no-more">
-                             لايوجد بيانات ...
+                            {{trans("words.there_is_no_data")}}
                      </span>
                 </infinite-loading>
-
-                <div class="col-md-12">
-                    <router-link :to="{name:'reception-dashboard'}" class="float bg-blue-gradient">
-                        <i class="fa fa-cog my-float"></i>
-                    </router-link>
-
-                </div>
             </div>
-
+            <div class="col-md-12">
+                <router-link :to="{name:'reception-dashboard'}" class="float bg-blue-gradient">
+                    <i class="fa fa-cog my-float"></i>
+                </router-link>
+            </div>
         </div>
     </div>
 
@@ -152,13 +151,13 @@
             getType(arg) {
                 switch (arg) {
                     case 1:
-                        return "رجال";
+                        return  this.trans("words.reception_persons_type_men");
                         break;
                     case 2:
-                        return "نساء";
+                        return this.trans("words.reception_persons_type_women");
                         break;
                     case 3:
-                        return "عوائل";
+                        return this.trans("words.reception_persons_type_family");
                         break;
                 }
             },

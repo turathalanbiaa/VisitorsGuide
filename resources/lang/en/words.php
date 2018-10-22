@@ -25,14 +25,18 @@ return [
     "main_adeua_and_zuarat_detail"  => "You can read or listen to the daily supplications (Du'a) and the most famous ones like: Du'a Kumayl, Supplication of Abu Hamza al-Thumali, … etc. Also you can find the all known Zeyarat.",
     "main_visitor_reception_title"  => "Hosting of Imam Husain's Visitors",
     "main_visitor_reception_detail" => "You can find and locate free hosts to spend the nights during your walk (zeyara) to Abu-Abdullah (p). Also, you can declare about your host if you are living in Najaf or Karabla and you want to host some visitors for free.",
-    "main_majales_guide_title"      => "Majlis-e-Aza (consolation sessions)",
+    "main_majales_guide_title"      => "consolation sessions",
     "main_majales_guide_detail"     => "You can find the consolation sessions (Majlis) and know their times, GPS locations, and the name of the Khateeb (preacher). The holders of the Majlis can add any other details that may be useful to anyone who'd like to attend.",
     "main_centers_title"            => "Lost and Found",
     "main_centers_detail"           => "You can declare about any lost objects that you missed at your way to Karbala. Also you can declare a lost child or adult and the Lost and Found offices will receive your declaration and act according to it..",
-    "main_btn_enter"                => "enter",
+    "main_btn_enter"                => "Enter",
     "main_btn_login_text"                => "Login",
-    "main_text_language"                => "language",
+    "main_text_language"                => "Language",
     "main_text_read"                => "read more",
+    "main_gallary_title"            => "Gallary",
+    "main_gallary_detail"           => "",
+    "main_about_app"                => "About App",
+
 
     //Menu
     "menu_road_guid"         => "The Roadmap of (Ya Hussien Way)",

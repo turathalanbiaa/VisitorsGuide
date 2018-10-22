@@ -46,7 +46,7 @@
                                         </a>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary btn-sm" v-on:click="showModal = false">{{trans("words.lost_index_cancel")}}</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" v-on:click="showModal = false">{{trans("words.cancel")}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="card-text">
                                 <ul class="list-group list-group-flush p-0">
                                     <li class="list-group-item">
-                                        <span>الصنف: </span>
+                                        <span> {{trans("words.lost_index_category")}} </span>
                                         {{getCategory(item.category)}}
                                     </li>
                                     <li class="list-group-item">
@@ -109,7 +109,7 @@
                 <infinite-loading ref="infiniteLoading" spinner="waveDots" v-on:distance="1"
                                   v-on:infinite="infiniteHandler" class="col-md-12">
                      <span slot="no-more">
-                             لايوجد بيانات ...
+                         {{trans("words. there_is_no_data")}}
                      </span>
                 </infinite-loading>
 
@@ -174,16 +174,16 @@
             getCategory(arg) {
                 switch (arg) {
                     case 1:
-                        return "أشخاص";
+                        return this.trans("words.lost_index_persons");
                         break;
                     case 2:
-                        return "مبلغ من المال";
+                        return this.trans("words.lost_index_money");
                         break;
                     case 3:
-                        return "قطعه ذهبيه";
+                        return this.trans("words.lost_index_gold");
                         break;
                     case 4:
-                        return "حقائب";
+                        return this.trans("words.lost_index_bags");
                         break;
                 }
             },

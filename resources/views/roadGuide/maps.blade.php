@@ -1,24 +1,20 @@
 @extends('layout.secondary_layout')
 
 @section("navbar-color")
-    {{"bg-orange-gradient"}}
+    {{"bg-aqua-gradient"}}
 @endsection
 
 @section("navbar-brand")
-    <span id="title">المجالس - عرض الجميع</span>
+    <span>عرض النقاط على الخارطة</span>
 @endsection
 <style>
-    html , body , #main-ontent , .google-maps
-    {
-        height: 100%;
-        overflow: hidden;
-
-    }
-
+    .jjj{}
 </style>
+
 @section('content')
-    <div class="container-fluid p-0 google-maps">
-        <div style="width: 100%; height: 94%" id="map-canvas">
+    <div class="container py-4">
+        <div style="width: 100%; height: calc(100% - 134px);">
+            <div class="w-100 h-100" id="map-canvas"></div>
         </div>
     </div>
 @endsection
@@ -31,7 +27,7 @@
         const content = function (i) {
             return   '<div style="width: 200px; overflow: hidden">'+
                       '<p style="font-size: 14px; margin-right: 15px;margin-top: 10px">'+latAndLong[i]['name']+'</p>'+
-                      '<p style="font-size: 9px;">'+latAndLong[i]['description']+'</p>'+
+                      '<p style="font-size: 9px;">'+latAndLong[i]['id']+'</p>'+
                      '</div>'
         };
         const category = function(category)
@@ -74,11 +70,11 @@
                     map     : map,
                    setContent: content(i)
                 });
-                google.maps.event.addListener(marker,'click', function() {
+               google.maps.event.addListener(marker,'click', function() {
                     infowindow.close();
                     infowindow.setContent(this.setContent);
                     infowindow.open(map, this);
-                })
+               })
             }
         }
         initialize();

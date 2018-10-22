@@ -71216,16 +71216,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getCategory: function getCategory(arg) {
             switch (arg) {
                 case 1:
-                    return "أشخاص";
+                    return this.trans("words.lost_index_persons");
                     break;
                 case 2:
-                    return "مبلغ من المال";
+                    return this.trans("words.lost_index_money");
                     break;
                 case 3:
-                    return "قطعه ذهبيه";
+                    return this.trans("words.lost_index_gold");
                     break;
                 case 4:
-                    return "حقائب";
+                    return this.trans("words.lost_index_bags");
                     break;
             }
         },
@@ -71417,11 +71417,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.trans("words.lost_index_cancel"))
-                                )
-                              ]
+                              [_vm._v(_vm._s(_vm.trans("words.cancel")))]
                             )
                           ])
                         ])
@@ -71503,7 +71499,13 @@ var render = function() {
                       { staticClass: "list-group list-group-flush p-0" },
                       [
                         _c("li", { staticClass: "list-group-item" }, [
-                          _c("span", [_vm._v("الصنف: ")]),
+                          _c("span", [
+                            _vm._v(
+                              " " +
+                                _vm._s(_vm.trans("words.lost_index_category")) +
+                                " "
+                            )
+                          ]),
                           _vm._v(
                             "\n                                    " +
                               _vm._s(_vm.getCategory(item.category)) +
@@ -71607,7 +71609,9 @@ var render = function() {
             [
               _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
                 _vm._v(
-                  "\n                         لايوجد بيانات ...\n                 "
+                  "\n                     " +
+                    _vm._s(_vm.trans("words. there_is_no_data")) +
+                    "\n                 "
                 )
               ])
             ]
@@ -71839,21 +71843,21 @@ var render = function() {
             ]
           )
         ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "col-md-12" },
-      [
-        _c(
-          "router-link",
-          { staticClass: "float bg-teal-gradient", attrs: { to: "/" } },
-          [_c("i", { staticClass: "fa fa-arrow-right my-float" })]
-        )
-      ],
-      1
-    )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-12" },
+        [
+          _c(
+            "router-link",
+            { staticClass: "float bg-teal-gradient", attrs: { to: "/" } },
+            [_c("i", { staticClass: "fa fa-arrow-right my-float" })]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -72099,7 +72103,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -72142,13 +72145,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getType: function getType(arg) {
             switch (arg) {
                 case 1:
-                    return "رجال";
+                    return this.trans("words.reception_persons_type_men");
                     break;
                 case 2:
-                    return "نساء";
+                    return this.trans("words.reception_persons_type_women");
                     break;
                 case 3:
-                    return "عوائل";
+                    return this.trans("words.reception_persons_type_family");
                     break;
             }
         },
@@ -72183,7 +72186,15 @@ var render = function() {
       { staticClass: "navbar navbar-dark fixed-top bg-blue-gradient" },
       [
         _c("div", { staticClass: "container p-0" }, [
-          _vm._m(0),
+          _c(
+            "a",
+            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
+            [
+              _c("span", [
+                _vm._v(_vm._s(_vm.trans("words.reception_title")) + " ")
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -72210,7 +72221,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(1)
+              _vm._m(0)
             ]
           )
         ])
@@ -72234,7 +72245,10 @@ var render = function() {
                       _c("div", { staticClass: "modal-content" }, [
                         _c("div", { staticClass: "modal-header" }, [
                           _c("h5", { staticClass: "modal-title" }, [
-                            _vm._v(" اختر النوع")
+                            _vm._v(
+                              " " +
+                                _vm._s(_vm.trans("words.reception_select_type"))
+                            )
                           ])
                         ]),
                         _vm._v(" "),
@@ -72251,7 +72265,17 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("رجال")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.trans(
+                                        "words.reception_persons_type_men"
+                                      )
+                                    )
+                                  )
+                                ])
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
@@ -72265,7 +72289,17 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("نساء")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.trans(
+                                        "words.reception_persons_type_women"
+                                      )
+                                    )
+                                  )
+                                ])
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
@@ -72279,7 +72313,17 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("span", [_vm._v("عوائل")])]
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.trans(
+                                        "words.reception_persons_type_family"
+                                      )
+                                    )
+                                  )
+                                ])
+                              ]
                             )
                           ]),
                           _vm._v(" "),
@@ -72295,11 +72339,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.trans("words.lost_index_cancel"))
-                                )
-                              ]
+                              [_vm._v(_vm._s(_vm.trans("words.cancel")))]
                             )
                           ])
                         ])
@@ -72369,7 +72409,14 @@ var render = function() {
                         { staticClass: "card-header bg-white text-center" },
                         [
                           _c("h6", { staticClass: "card-title" }, [
-                            _c("span", [_vm._v("صاحب المنزل:")]),
+                            _c("span", [
+                              _vm._v(
+                                " " +
+                                  _vm._s(
+                                    _vm.trans("words.reception_home_owner")
+                                  )
+                              )
+                            ]),
                             _vm._v(
                               "\n                                " +
                                 _vm._s(item.home_owner) +
@@ -72385,7 +72432,16 @@ var render = function() {
                           { staticClass: "list-group list-group-flush p-0" },
                           [
                             _c("li", { staticClass: "list-group-item" }, [
-                              _c("span", [_vm._v("عدد الافراد :")]),
+                              _c("span", [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm.trans(
+                                        "words.reception_persons_number"
+                                      )
+                                    )
+                                )
+                              ]),
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(item.persons_number) +
@@ -72394,7 +72450,14 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("li", { staticClass: "list-group-item" }, [
-                              _c("span", [_vm._v("الاشخاض :")]),
+                              _c("span", [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm.trans("words.reception_persons_type")
+                                    )
+                                )
+                              ]),
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(_vm.getType(item.persons_type)) +
@@ -72403,7 +72466,12 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("li", { staticClass: "list-group-item" }, [
-                              _c("span", [_vm._v("العنوان : ")]),
+                              _c("span", [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(_vm.trans("words.reception_address"))
+                                )
+                              ]),
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(item.address) +
@@ -72424,7 +72492,13 @@ var render = function() {
                               staticClass: "card-link",
                               attrs: { href: "tel:" + item.phone }
                             },
-                            [_vm._v("اتصال بصاحب المنزل")]
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  _vm.trans("words.reception_call_home_owner")
+                                )
+                              )
+                            ]
                           )
                         ]
                       )
@@ -72450,44 +72524,36 @@ var render = function() {
             [
               _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
                 _vm._v(
-                  "\n                         لايوجد بيانات ...\n                 "
+                  "\n                        " +
+                    _vm._s(_vm.trans("words.there_is_no_data")) +
+                    "\n                 "
                 )
               ])
             ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-md-12" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "float bg-blue-gradient",
-                  attrs: { to: { name: "reception-dashboard" } }
-                },
-                [_c("i", { staticClass: "fa fa-cog my-float" })]
-              )
-            ],
-            1
           )
         ],
         2
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-12" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "float bg-blue-gradient",
+              attrs: { to: { name: "reception-dashboard" } }
+            },
+            [_c("i", { staticClass: "fa fa-cog my-float" })]
+          )
+        ],
+        1
       )
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-      [_c("span", [_vm._v(" دليل استضافة الزائرين")])]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -72878,8 +72944,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 is_active: null,
                 date: null
             },
-            persons_type_option: [{ text: 'اختيار رجاء', value: null }, { text: 'رجال', value: 1 }, { text: 'نساء', value: 2 }, { text: 'عوائل', value: 3 }],
-            is_active_option: [{ text: 'اختيار رجاء', value: null }, { text: 'فعال', value: 1 }, { text: 'غير فعال', value: 0 }]
+            persons_type_option: [{ text: this.trans("words.reception_select"), value: null }, { text: this.trans("words.reception_persons_type_men"), value: 1 }, { text: this.trans("words.reception_persons_type_women"), value: 2 }, { text: this.trans("words.reception_persons_type_family"), value: 3 }],
+            is_active_option: [{ text: this.trans("words.reception_select"), value: null }, { text: this.trans("words.reception_is_active_active"), value: 1 }, { text: this.trans("words.reception_is_active_inactive"), value: 0 }]
 
         };
     },
@@ -72901,13 +72967,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getType: function getType(arg) {
             switch (arg) {
                 case 1:
-                    return "رجال";
+                    return this.trans("words.reception_persons_type_option_men");
                     break;
                 case 2:
-                    return "نساء";
+                    return this.trans("words.reception_persons_type_option_women");
                     break;
                 case 3:
-                    return "عوائل";
+                    return this.trans("words.reception_persons_type_option_family");
                     break;
             }
         },
@@ -72919,7 +72985,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('api/reception', this.form).then(function (_ref3) {
                 var data = _ref3.data;
 
-                _this3.text = 'تمت عملية الأضافه بنجاح';
+                _this3.text = _this3.trans("words.reception_add_success");
                 _this3.snackBar('success');
                 _this3.iniData();
             }).catch(function (resp) {
@@ -72933,7 +72999,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.put('api/reception', this.form).then(function (_ref4) {
                 var data = _ref4.data;
 
-                _this4.text = 'تمت عملية التعديل بنجاح';
+                _this4.text = _this4.trans("words.reception_update_success");
                 _this4.snackBar('success');
                 _this4.iniData();
             }).catch(function (resp) {
@@ -72951,7 +73017,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.delete('api/reception/' + this.id).then(function (_ref5) {
                 var data = _ref5.data;
 
-                _this5.text = 'تمت عملية الحذف بنجاح';
+                _this5.text = _this5.trans("words.reception_delete_success");
                 _this5.snackBar('success');
                 _this5.iniData();
             }).catch(function (resp) {
@@ -73006,7 +73072,21 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c(
+      "nav",
+      { staticClass: "navbar navbar-dark fixed-top bg-blue-gradient" },
+      [
+        _c("div", { staticClass: "container p-0" }, [
+          _c(
+            "a",
+            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
+            [_c("span", [_vm._v(_vm._s(_vm.trans("words.reception_title")))])]
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ]
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "container pt-2" }, [
       _vm.form.user_id > 0
@@ -73031,7 +73111,7 @@ var render = function() {
                       staticClass: "mb-2",
                       attrs: { size: "sm", variant: "outline-primary" }
                     },
-                    [_vm._v("أضافة")]
+                    [_vm._v(_vm._s(_vm.trans("words.add")))]
                   )
                 ],
                 1
@@ -73041,7 +73121,11 @@ var render = function() {
                 "b-modal",
                 {
                   ref: "modalAdd",
-                  attrs: { id: "modalAdd", title: "أضافة", "hide-footer": "" },
+                  attrs: {
+                    id: "modalAdd",
+                    label: _vm.trans("words.add"),
+                    "hide-footer": ""
+                  },
                   on: {
                     shown: function($event) {
                       _vm.resetForm()
@@ -73057,7 +73141,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: ":أسم صاحب المنزل",
+                            label: _vm.trans("words.reception_home_owner_name"),
                             "label-for": "home_owner"
                           }
                         },
@@ -73086,7 +73170,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: ":العدد",
+                            label: _vm.trans("words.reception_persons_number"),
                             "label-for": "persons_number"
                           }
                         },
@@ -73115,7 +73199,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: "النوع:",
+                            label: _vm.trans("words.reception_persons_type"),
                             "label-for": "persons_type"
                           }
                         },
@@ -73142,7 +73226,10 @@ var render = function() {
                       _c(
                         "b-form-group",
                         {
-                          attrs: { label: ":العنوان", "label-for": "address" }
+                          attrs: {
+                            label: _vm.trans("words.reception_address"),
+                            "label-for": "address"
+                          }
                         },
                         [
                           _c("b-form-input", {
@@ -73168,7 +73255,10 @@ var render = function() {
                       _c(
                         "b-form-group",
                         {
-                          attrs: { label: "التليفون :", "label-for": "phone" }
+                          attrs: {
+                            label: _vm.trans("words.reception_phone"),
+                            "label-for": "phone"
+                          }
                         },
                         [
                           _c("b-form-input", {
@@ -73194,7 +73284,10 @@ var render = function() {
                       _c(
                         "b-form-group",
                         {
-                          attrs: { label: "الحالة:", "label-for": "is_active" }
+                          attrs: {
+                            label: _vm.trans("words.reception_state"),
+                            "label-for": "is_active"
+                          }
                         },
                         [
                           _c("b-form-select", {
@@ -73218,7 +73311,12 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "b-form-group",
-                        { attrs: { label: "التاريخ:", "label-for": "date" } },
+                        {
+                          attrs: {
+                            label: _vm.trans("words.reception_date"),
+                            "label-for": "date"
+                          }
+                        },
                         [
                           _c("b-form-input", {
                             attrs: {
@@ -73248,7 +73346,7 @@ var render = function() {
                             variant: "outline-primary"
                           }
                         },
-                        [_vm._v("حفظ")]
+                        [_vm._v(_vm._s(_vm.trans("words.add")))]
                       ),
                       _vm._v(" "),
                       _c(
@@ -73261,7 +73359,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("جديد")]
+                        [_vm._v(_vm._s(_vm.trans("words.new")))]
                       )
                     ],
                     1
@@ -73276,7 +73374,7 @@ var render = function() {
                   ref: "modalUpdate",
                   attrs: {
                     id: "modalUpdate",
-                    title: "تعديل",
+                    label: _vm.trans("words.update"),
                     "hide-footer": ""
                   }
                 },
@@ -73289,7 +73387,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: ":أسم صاحب المنزل",
+                            label: _vm.trans("words.reception_home_owner_name"),
                             "label-for": "home_owner"
                           }
                         },
@@ -73318,7 +73416,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: ":العدد",
+                            label: _vm.trans("words.reception_persons_number"),
                             "label-for": "persons_number"
                           }
                         },
@@ -73347,7 +73445,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: "النوع:",
+                            label: _vm.trans("words.reception_persons_type"),
                             "label-for": "persons_type"
                           }
                         },
@@ -73374,7 +73472,10 @@ var render = function() {
                       _c(
                         "b-form-group",
                         {
-                          attrs: { label: ":العنوان", "label-for": "address" }
+                          attrs: {
+                            label: _vm.trans("words.reception_address"),
+                            "label-for": "address"
+                          }
                         },
                         [
                           _c("b-form-input", {
@@ -73400,7 +73501,10 @@ var render = function() {
                       _c(
                         "b-form-group",
                         {
-                          attrs: { label: "التليفون :", "label-for": "phone" }
+                          attrs: {
+                            label: _vm.trans("words.reception_phone"),
+                            "label-for": "phone"
+                          }
                         },
                         [
                           _c("b-form-input", {
@@ -73426,7 +73530,10 @@ var render = function() {
                       _c(
                         "b-form-group",
                         {
-                          attrs: { label: "الحالة:", "label-for": "is_active" }
+                          attrs: {
+                            label: _vm.trans("words.reception_state"),
+                            "label-for": "is_active"
+                          }
                         },
                         [
                           _c("b-form-select", {
@@ -73450,7 +73557,12 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "b-form-group",
-                        { attrs: { label: "التاريخ:", "label-for": "date" } },
+                        {
+                          attrs: {
+                            label: _vm.trans("words.reception_address"),
+                            "label-for": "date"
+                          }
+                        },
                         [
                           _c("b-form-input", {
                             attrs: {
@@ -73480,7 +73592,7 @@ var render = function() {
                             variant: "outline-primary"
                           }
                         },
-                        [_vm._v("حفظ")]
+                        [_vm._v(_vm._s(_vm.trans("words.save")))]
                       )
                     ],
                     1
@@ -73496,7 +73608,9 @@ var render = function() {
                   attrs: { "hide-header": "", "hide-footer": "" }
                 },
                 [
-                  _c("p", { staticClass: "my-4" }, [_vm._v("هل انت متأكد؟")]),
+                  _c("p", { staticClass: "my-4" }, [
+                    _vm._v(_vm._s(_vm.trans("words.are_you_sure")))
+                  ]),
                   _vm._v(" "),
                   _c(
                     "b-button",
@@ -73508,7 +73622,13 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("\n                    نعم\n                ")]
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.trans("words.yes")) +
+                          "\n                "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -73521,7 +73641,13 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("\n                    الغاء\n                ")]
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.trans("words.cancel")) +
+                          "\n                "
+                      )
+                    ]
                   )
                 ],
                 1
@@ -73539,7 +73665,13 @@ var render = function() {
                           { staticClass: "card-header bg-white text-center" },
                           [
                             _c("h6", { staticClass: "card-title" }, [
-                              _c("span", [_vm._v("صاحب المنزل:")]),
+                              _c("span", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.trans("words.reception_home_owner")
+                                  )
+                                )
+                              ]),
                               _vm._v(
                                 "\n                            " +
                                   _vm._s(item.home_owner) +
@@ -73555,7 +73687,15 @@ var render = function() {
                             { staticClass: "list-group list-group-flush p-0" },
                             [
                               _c("li", { staticClass: "list-group-item" }, [
-                                _c("span", [_vm._v("عدد الافراد :")]),
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.trans(
+                                        "words.reception_persons_number"
+                                      )
+                                    )
+                                  )
+                                ]),
                                 _vm._v(
                                   "\n                                " +
                                     _vm._s(item.persons_number) +
@@ -73564,7 +73704,13 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("li", { staticClass: "list-group-item" }, [
-                                _c("span", [_vm._v("الاشخاض :")]),
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.trans("words.reception_persons_type")
+                                    )
+                                  )
+                                ]),
                                 _vm._v(
                                   "\n                                " +
                                     _vm._s(_vm.getType(item.persons_type)) +
@@ -73573,7 +73719,11 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("li", { staticClass: "list-group-item" }, [
-                                _c("span", [_vm._v("العنوان : ")]),
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(_vm.trans("words.reception_address"))
+                                  )
+                                ]),
                                 _vm._v(
                                   "\n                                " +
                                     _vm._s(item.address) +
@@ -73608,7 +73758,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("تعديل")]
+                              [_vm._v(_vm._s(_vm.trans("words.update")))]
                             ),
                             _vm._v(" "),
                             _c(
@@ -73624,7 +73774,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("حذف")]
+                              [_vm._v(_vm._s(_vm.trans("words.delete")))]
                             )
                           ],
                           1
@@ -73637,7 +73787,27 @@ var render = function() {
             ],
             2
           )
-        : _c("div", [_vm._m(1)]),
+        : _c(
+            "div",
+            { staticClass: "alert alert-success", attrs: { role: "alert" } },
+            [
+              _c("h4", { staticClass: "alert-heading" }, [
+                _vm._v(_vm._s(_vm.trans("words.reception_thanks")))
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  " " + _vm._s(_vm.trans("words.reception_thanks_details"))
+                )
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("a", { staticClass: "mb-0", attrs: { href: "/register" } }, [
+                _vm._v(_vm._s(_vm.trans("words.sign_up")))
+              ])
+            ]
+          ),
       _vm._v(" "),
       _c(
         "div",
@@ -73660,60 +73830,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
-      { staticClass: "navbar navbar-dark fixed-top bg-blue-gradient" },
-      [
-        _c("div", { staticClass: "container p-0" }, [
-          _c(
-            "a",
-            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-            [_c("span", [_vm._v(" دليل استضافة الزائرين")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "d-flex flex-row justify-content-end w-25",
-              staticStyle: { margin: "0 -4px" }
-            },
-            [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
-                  attrs: { href: "/" }
-                },
-                [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
-              )
-            ]
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
       "div",
-      { staticClass: "alert alert-success", attrs: { role: "alert" } },
+      {
+        staticClass: "d-flex flex-row justify-content-end w-25",
+        staticStyle: { margin: "0 -4px" }
+      },
       [
-        _c("h4", { staticClass: "alert-heading" }, [
-          _vm._v("شكرا ايها الزائر الكريم لاستخدامك خدماتنا")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "للوصل الى لائحة الاعدادات المتعلقة باستضافة الزائرين يرجى تسجيل الدخول او التسجيل ان لم يكن لديك حساب"
-          )
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("a", { staticClass: "mb-0", attrs: { href: "/road-guide" } }, [
-          _vm._v("التسجيل")
-        ])
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
+            attrs: { href: "/" }
+          },
+          [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
+        )
       ]
     )
   }

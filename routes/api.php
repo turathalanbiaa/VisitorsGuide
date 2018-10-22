@@ -20,17 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // lost
 Route::get('lost','LostController@index');
 
-// List single lost
-//Route::get('lost/{id}', 'ArticleController@show');
-
-// Create new lost
-Route::post('lost','LostController@store');
-
-// Update lost
-//Route::put('lost', 'LostController@update');
-
-// Delete lost
-//Route::delete('lost/{id}', 'LostController@destroy');
 
 
 //visitors reception

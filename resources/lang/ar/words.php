@@ -29,10 +29,13 @@ return [
     "main_majales_guide_detail"     => "يمكنك الآن اضافة مجلس وتحديد موقعه عبر GPS، وكذلك يمكنك معرفة اماكن المجالس الاخرى حسب المحافظة والتاريخ، كما يحتوي على استوديو.",
     "main_centers_title"            => "مراكز التائهين والمفقودات",
     "main_centers_detail"           => "يمكنك الآن الابلاغ عن مفقود او الاعلان عند فقدان حاجة، كما يمكنك البحث بسهولة وبسرعة عاليه جدا، كذلك يتيح لك الاختيار بسهولة من خلال الاصناف.",
+    "main_gallary_title"            => "الاستوديو",
+    "main_gallary_detail"           => "",
     "main_btn_enter"                => "دخول",
     "main_btn_login_text"                => "تسجيل دخول",
     "main_text_language"                => "اللغة",
     "main_text_read"                => "اكمال القراءة",
+    "main_about_app"                => "حول التطبيق",
 
 
     //Menu
@@ -135,11 +138,11 @@ return [
     "lost_index_money" => "مبلغ من المال",
     "lost_index_gold" => "قطعة ذهبية",
     "lost_index_bags" => "حقائب",
-    "lost_index_cancel" => "ألغاء",
 
     "find_center_thanks" => "شكرا ايها الزائر الكريم لأمانتك",
     "find_center_info" => "يرجي التوجه الى اقرب مركز لارشاد التائهين لتسليم الغرض وسوف يتكفل المركز بأتخاذ الاجراء اللازم.",
     "find_center_link" => "للعثور على اقرب مركز اضغط هنا..واختر من القائمه المنسدله مراكز ارشاد التائهين.",
+<<<<<<< HEAD
 
 //Adeua and Zuarat
     "adeua-and-zuarat-zuarat-title"               => "الادعية والزيارات - الزيارات",
@@ -155,4 +158,42 @@ return [
     "adeua-and-zuarat-main-menu-images-gallery"   => "معرض الصور",
     "adeua-and-zuarat-main-menu-videos-gallery"   => "معرض الفيديوهات",
     "adeua-and-zuarat-no-data"                    => "لاتوجد بيانات لعرضها",
+=======
+    //Reception
+    "reception_title" => "دليل استضافة الزائرين",
+    "reception_select" => "الرجاء الاختيار",
+    "reception_select_type" => "اختر النوع",
+    "reception_home_owner" => "صاحب المنزل :",
+    "reception_persons_number" => "العدد :",
+    "reception_persons_type" => "الأشخاص :",
+    "reception_address" => "العنوان :",
+    "reception_phone" => "الموبايل :",
+    "reception_state" => "الحاله :",
+    "reception_date" => "التاريخ :",
+    "reception_call_home_owner" => "اتصال بصاحب المنزل",
+    "reception_add_success" => "تمتّ عملية الأضافه بنجاح",
+    "reception_update_success" => "تمتّ علمية التعديل بنجاح",
+    "reception_delete_success" => "تمتّ عملية الحذف بنجاح",
+    "reception_home_owner_name" => "أسم صاحب المنزل :",
+    "reception_persons_type_men" => "رجال",
+    "reception_persons_type_women" => "نساء",
+    "reception_persons_type_family" => "عوائل",
+    "reception_is_active_active" => "فعال",
+    "reception_is_active_inactive" => "غير فعال",
+    "reception_thanks" => "شكرا ايها الزائر الكريم لاستخدامك خدماتنا",
+    "reception_thanks_details" => "للوصول الى لائحة الاعدادات المتعلقة باستضافة الزائرين يرجى تسجيل الدخول او التسجيل ان لم يكن لديك حساب",
+
+   //general
+    "add" => "اضافه",
+    "save" => "حفظ",
+    "update" => "تعديل",
+    "new" => "جديد",
+    "delete" => "حذف",
+    "yes" => "نعم",
+    "cancel" => "ألغاء",
+    "sign_up" => "تسجيل",
+    "are_you_sure" => "هل انت متاكد",
+    "there_is_no_data" => " لايوجد بيانات ...",
+
+>>>>>>> 58ec1c295494370a9f3d8ec1cf7b163fbf04125b
 ];
