@@ -15,7 +15,7 @@
                 {{session('success')}}
             </div>
         @endif
-        <h2 class="text-center pt-2">اضافة مجلس</h2>
+        <h2 class="text-center pt-2">اضافة اعلان</h2>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
