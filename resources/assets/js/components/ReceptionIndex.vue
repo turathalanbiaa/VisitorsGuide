@@ -86,9 +86,13 @@
                                         <span> {{trans("words.reception_address")}}</span>
                                         {{item.address}}
                                         </li>
+                                     <li class="list-group-item">
+                                        <span>??? ??????</span>
+                                        {{item.phone}}
+                                        </li>
                                 </ul>
                             </div>
-                            <div class="card-footer bg-white text-center ">  <a class="card-link" :href="'tel:'+item.phone">{{trans("words.reception_call_home_owner")}}</a></div>
+
 
                         </div>
                     </div>
