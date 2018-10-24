@@ -15,7 +15,7 @@
                 {{session('success')}}
             </div>
         @endif
-        <h2 class="text-center pt-2">اضافة مجلس</h2>
+        <h2 class="text-center pt-2">اضافة اعلان </h2>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -30,12 +30,12 @@
             <div class="form-group">
                 <label for="description">الوصف</label>
                 <textarea class="form-control" id="description" name="description" rows="3"
-                          placeholder="الرجاء كتابة تفاصيل الاعلان " required></textarea>
+                          placeholder="الرجاء كتابة تفاصيل الاعلان - مع ذكر رقم الهاتف" required></textarea>
             </div>
             <div class="form-group">
                 <label for="cities">الصنف</label>
                 <select class="form-control" name="category" required>
-                    @for($i=1; $i<7; $i++)
+                    @for($i=2; $i<7; $i++)
                         <option value="{{$i}}">{{App\Enums\LostCategory::getCategory($i)}}</option>
                     @endfor
                 </select>
