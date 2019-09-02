@@ -32,10 +32,11 @@ return [
     "main_gallary_title"            => "الاستوديو",
     "main_gallary_detail"           => "",
     "main_btn_enter"                => "دخول",
-    "main_btn_login_text"                => "تسجيل دخول",
-    "main_text_language"                => "اللغة",
-    "main_text_read"                => "اكمال القراءة",
-    "main_about_app"                => "حول التطبيق",
+
+    "main_login"           => "تسجيل دخول",
+    "main_language"            => "اللغة",
+    "main_read"                => "اكمال القراءة",
+    "main_about"                => "حول التطبيق",
 
 
     //Menu
