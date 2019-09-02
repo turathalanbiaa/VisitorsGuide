@@ -19,11 +19,11 @@
                     <i class="fas fa-plus"></i>
                     <span>اضافة مجلس</span>
                 </a>
-                <a href="" class="list-group-item list-group-item-action">
+                <a href="{{route('majalesy')}}" class="list-group-item list-group-item-action">
                     <i class="fas fa-calendar-alt"></i>
                     <span>مجالسي</span>
                 </a>
-                <a href="{{route('majalesy')}}" class="list-group-item list-group-item-action">
+                <a href="{{route('majales')}}" class="list-group-item list-group-item-action">
                     <i class="fas fa-calendar-alt"></i>
                     <span>عرض جميع المناسبات</span>
                 </a>
