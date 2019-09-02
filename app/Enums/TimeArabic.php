@@ -11,17 +11,16 @@ namespace App\Enums;
 
 class TimeArabic
 {
-
-    const PM = "مساءً";
     const AM = "صباحاً";
+    const PM = "مساءً";
 
     public static function getTimeInArabic ($time)
     {
 
         switch ($time)
         {
-            case 'PM': return self::AM; break;
-            case 'AM': return self::PM; break;
+            case 'AM': return self::AM; break;
+            case 'PM': return self::PM; break;
         }
 
     }

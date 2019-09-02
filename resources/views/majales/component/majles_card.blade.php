@@ -25,10 +25,11 @@
                     </span>
                 </p>
                 <p class="mb-1" style="color: #ff9e0f;">
-                    <span>
-                        {{$event->city}}</span> - <span>{{$event->district}}</span> - <span>{{$event->closes_point}}
-                    </span>
-
+                    <span>{{$event->city}}</span>
+                    <span>{{' - ' . $event->district}}</span>
+                    @if(!is_null($event->closes_point))
+                        <span>{{' - ' . $event->closes_point}}</span>
+                    @endif
                 </p>
                 <i class="fas fa-map" style="color: #658aff"></i>
                 <a  href="#" class="location" data-longitude="{{$event->longitude}}"
