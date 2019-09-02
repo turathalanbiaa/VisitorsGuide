@@ -60,7 +60,7 @@
                 <label for="closesPoint">اقرب نقطة دالة</label>
                 <input type="text" class="form-control" name="closesPoint" id="closesPoint"
                        placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة"
-                       required />
+                       />
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">تاريخ بدء المناسبة</label>
