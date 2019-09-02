@@ -30,7 +30,7 @@
             <div class="form-group">
                 <label for="description">الوصف</label>
                 <textarea class="form-control" id="description" name="description" rows="3"
-                          placeholder="الرجاء كتابة تفاصيل الاعلان " required></textarea>
+                          placeholder="الرجاء كتابة تفاصيل الاعلان - مع كتابة رقم الهاتف " required></textarea>
             </div>
             <div class="form-group">
                 <label for="cities">الصنف</label>

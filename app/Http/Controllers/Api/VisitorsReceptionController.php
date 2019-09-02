@@ -11,22 +11,22 @@ class VisitorsReceptionController extends Controller
     public function index(Request $request)
     {
         if ($request->search == '' && $request->type == '') {
-            $receptions = VisitorReception::paginate(10);
+            $receptions = VisitorReception::orderBy('id', 'desc')->paginate(10);
             return VisitorsReceptionResource::collection($receptions);
         }
         elseif ($request->type == '') {
-            $receptions = VisitorReception::search($request->search)->paginate(10);
+            $receptions = VisitorReception::search($request->search)->orderBy('id', 'desc')->paginate(10);
             return VisitorsReceptionResource::collection($receptions);
         }
         else {
-            $receptions = VisitorReception::where('persons_type', $request->type)->paginate(10);
+            $receptions = VisitorReception::where('persons_type', $request->type)->orderBy('id', 'desc')->paginate(10);
             return VisitorsReceptionResource::collection($receptions);
         }
         return response($receptions, 200);
 
     }
     function dashboard_index(Request $request){
-        $receptions = VisitorReception::where('user_id',$request->user_id)->paginate(10);
+        $receptions = VisitorReception::where('user_id',$request->user_id)->orderBy('id', 'desc')->paginate(10);
         return VisitorsReceptionResource::collection($receptions);
     }
 

@@ -109,7 +109,7 @@
                 <infinite-loading ref="infiniteLoading" spinner="waveDots" v-on:distance="1"
                                   v-on:infinite="infiniteHandler" class="col-md-12">
                      <span slot="no-more">
-                         {{trans("words. there_is_no_data")}}
+                         {{trans("words.there_is_no_data")}}
                      </span>
                 </infinite-loading>
 
