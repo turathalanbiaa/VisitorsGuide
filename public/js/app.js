@@ -70970,7 +70970,7 @@ var content = __webpack_require__(215);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("04f451ac", content, false, {});
+var update = __webpack_require__(24)("b136fa6c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71617,21 +71617,7 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-md-12" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "float bg-teal-gradient",
-                  attrs: { to: { name: "losts-dashboard" } }
-                },
-                [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
-              )
-            ],
-            1
-          )
+          _vm._m(1)
         ],
         2
       )
@@ -71651,6 +71637,21 @@ var staticRenderFns = [
       },
       [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c(
+        "a",
+        {
+          staticClass: "float bg-teal-gradient",
+          attrs: { href: "/lost/add-lost-form" }
+        },
+        [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -71724,7 +71725,7 @@ var content = __webpack_require__(221);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("215251b8", content, false, {});
+var update = __webpack_require__(24)("26929a78", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71954,7 +71955,7 @@ var content = __webpack_require__(226);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("56ff50a2", content, false, {});
+var update = __webpack_require__(24)("5c3f9962", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -72638,7 +72639,7 @@ var content = __webpack_require__(231);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("67b78316", content, false, {});
+var update = __webpack_require__(24)("18ed4a15", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags

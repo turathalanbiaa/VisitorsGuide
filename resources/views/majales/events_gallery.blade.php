@@ -27,8 +27,9 @@
                 @else
                    <div class="col-md-10 p-0 mb-3" style="background-color: white">
                        <div class="embed-responsive embed-responsive-16by9">
-                           <iframe class="embed-responsive-item ajax-request" data-id="{{$post->id}}"
-                                   src="{{$post->video_link}}" allowfullscreen></iframe>
+                           <iframe class="embed-responsive-item" data-id="{{$post->id}}"
+                                src="{{$post->video_link}}" allowfullscreen>
+                           </iframe>
                        </div>
                        <div class="p-2">
                            <p class="p-1 m-0">{{$post->title}}</p>
@@ -43,11 +44,7 @@
        </div>
     </div>
 
-    <div class="modal fade" id="modal-dialog-centered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-image" role="document">
-        <img src="" class="w-100 h-100 image" id="image" style="position: relative">
-    </div>
-    </div>
+
 @endsection
 
 @section("menu-modal-content")

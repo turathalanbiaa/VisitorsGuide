@@ -27,7 +27,7 @@
                                           type="text"
                                           v-model="form.home_owner"
                                           required
-                                          placeholder="Enter name">
+                                          placeholder="???? ?????">
                             </b-form-input>
                         </b-form-group>
 
@@ -37,7 +37,7 @@
                                           type="number"
                                           v-model="form.persons_number"
                                           required
-                                          placeholder="Enter name">
+                                          placeholder="???? ????? ">
                             </b-form-input>
                         </b-form-group>
 
@@ -56,7 +56,7 @@
                                           type="text"
                                           v-model="form.address"
                                           required
-                                          placeholder="Enter address">
+                                          placeholder="???? ???????">
                             </b-form-input>
                         </b-form-group>
 
@@ -66,7 +66,7 @@
                                           type="text"
                                           v-model="form.phone"
                                           required
-                                          placeholder="Enter phone">
+                                          placeholder="???? ??? ??????">
                             </b-form-input>
                         </b-form-group>
 
@@ -106,7 +106,7 @@
                                       type="text"
                                       v-model="form.home_owner"
                                       required
-                                      placeholder="Enter name">
+                                      placeholder="???? ?????">
                         </b-form-input>
                     </b-form-group>
 
@@ -116,7 +116,7 @@
                                       type="number"
                                       v-model="form.persons_number"
                                       required
-                                      placeholder="Enter name">
+                                      placeholder="???? ?????">
                         </b-form-input>
                     </b-form-group>
 
@@ -135,7 +135,7 @@
                                       type="text"
                                       v-model="form.address"
                                       required
-                                      placeholder="Enter address">
+                                      placeholder="???? ???????">
                         </b-form-input>
                     </b-form-group>
 
@@ -145,7 +145,7 @@
                                       type="text"
                                       v-model="form.phone"
                                       required
-                                      placeholder="Enter phone">
+                                      placeholder="???? ??? ??????">
                         </b-form-input>
                     </b-form-group>
 
@@ -377,7 +377,7 @@
             snackBar (method) {
                 let config = {
                     text: this.text,
-                    button: 'حسنا',
+                    button: '????????',
 
                 };
                 this.$snack[method](config)
