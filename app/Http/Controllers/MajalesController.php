@@ -24,8 +24,7 @@ class MajalesController extends Controller
            'majlesStart'=> 'required',
            'description'=> 'required',
            'cities'=> 'required',
-           'district'=> 'required',
-           'closesPoint'=> 'required',
+           'district'=> 'required'
         ],
         [
             'majlesEnd.after'  => 'الرجاء اختار تاريخ صحيح للمناسبة',
@@ -34,8 +33,7 @@ class MajalesController extends Controller
             'majlesEnd.required' => 'الرجاء عدم ترك حقل تاريخ انتهاءالمناسبة فارغ',
             'description.required' => 'الرجاء كتابة وصف للمناسبة',
             'cities.required' => 'الرجاء اختيار المدينة',
-            'district.required' => 'الرجاء كتابة اسم المنطقة',
-            'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
+            'district.required' => 'الرجاء كتابة اسم المنطقة'
         ]);
 
         $majales = new Majales();
