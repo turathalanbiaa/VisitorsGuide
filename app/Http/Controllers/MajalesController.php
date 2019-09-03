@@ -55,7 +55,7 @@ class MajalesController extends Controller
     {
 
         $getMajales = Majales::where('status', MajlesStatus::ACCEPT)->whereDate('majles_end','>=',Carbon::now()->format('y-m-d'))
-            ->orderBy('majles_start')->paginate(4);
+            ->orderBy('majles_start')->paginate(15);
 
         return view('majales/main', ['events'=>$getMajales]);
     }
@@ -64,7 +64,7 @@ class MajalesController extends Controller
     {
         $getEventsByCity = Majales::where('status', MajlesStatus::ACCEPT)
             ->where('city',$city)->orderBy('majles_start')
-            ->orderBy('majles_start')->paginate(10);
+            ->orderBy('majles_start')->paginate(15);
 
         return view('/majales/events_city', ['events'=>$getEventsByCity]);
     }
@@ -74,7 +74,7 @@ class MajalesController extends Controller
     {
         $getEventsUpcoming = Majales::where('status', MajlesStatus::ACCEPT)
             ->whereDate('majles_start', '>', Carbon::now()->format('y-m-d'))
-            ->orderBy('majles_start')->paginate(10);
+            ->orderBy('majles_start')->paginate(15);
 
         return view('/majales/events_upcoming', ['events'=>$getEventsUpcoming]);
     }
@@ -85,7 +85,7 @@ class MajalesController extends Controller
             ->whereDate('majles_start', '<=', Carbon::now()->format('y-m-d'))
             ->whereDate('majles_end', '>=', Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')
-            ->paginate(10);
+            ->paginate(15);
 
         return view('/majales/events_started', ['events'=>$getEventsStarted]);
     }
@@ -95,14 +95,14 @@ class MajalesController extends Controller
         $getEventsEnded = Majales::where('status', MajlesStatus::ACCEPT)
             ->whereDate('majles_end', '<', Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')
-            ->paginate(10);
+            ->paginate(15);
 
         return view('/majales/events_ended', ['events'=>$getEventsEnded]);
     }
 
     public function getEventsGallery ()
     {
-        $posts = Post::where('category', PostCategory::MAJALES)->paginate(8);
+        $posts = Post::where('category', PostCategory::MAJALES)->paginate(15);
 
         return view('/majales/events_gallery', ['posts'=>$posts]);
     }
