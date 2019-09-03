@@ -46,7 +46,7 @@
                         <span>تبدء المنسابة</span>
                     </div>
                     <div class="p-1" style="width: fit-content; background-color: #ff9e0f; display: inline">
-                        <span>{{Carbon\Carbon::parse($event->majles_start)->format('y-m-d')}}</span>
+                        <span>{{Carbon\Carbon::parse($event->majles_start)->format('Y-m-d')}}</span>
                     </div>
                 </div>
                 <div style="display: inline; font-size: 12px">
