@@ -86,12 +86,22 @@
                                         <span> {{trans("words.reception_address")}}</span>
                                         {{item.address}}
                                         </li>
+<<<<<<< HEAD
                                     <li class="list-group-item">
                                         <span> {{trans("words.reception_call_home_owner")}}</span>
+=======
+                                     <li class="list-group-item">
+                                        <span>??? ??????</span>
+>>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016
                                         {{item.phone}}
                                         </li>
                                 </ul>
                             </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016
                         </div>
                     </div>
                 </div>

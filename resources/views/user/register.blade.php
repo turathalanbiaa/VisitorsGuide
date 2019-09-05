@@ -27,7 +27,6 @@
                     <input type="password" name="password" class="form-control mb-4" placeholder="كلمة المرور">
                     <input type="password" name="password_confirmation" class="form-control mb-4" placeholder="اعد كتابة كلمة المرور">
 
-                    <P class="mb-4 d-flex justify-content-start"><a href="/login">او قم بتسجيل الدخول</a></P>
 
                     <button class="btn btn-info btn-block my-4" type="submit">انشاء حساب</button>
                 </form>

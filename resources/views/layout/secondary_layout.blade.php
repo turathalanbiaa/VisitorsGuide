@@ -29,9 +29,16 @@
             </a>
 
             <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
-                <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
-                    <i class="fa fa-bars fa-special text-white align-middle"></i>
-                </a>
+                @php $currentPath = \Illuminate\Support\Facades\Request::path(); @endphp
+                @if($currentPath == "road-guide/maps")
+                    <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" href="/road-guide">
+                        <i class="fa fa-road fa-special text-white align-middle"></i>
+                    </a>
+                @else
+                    <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
+                        <i class="fa fa-bars fa-special text-white align-middle"></i>
+                    </a>
+                @endif
 
                 <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" href="/">
                     <i class="fa fa-home fa-special text-white align-middle"></i>
@@ -41,7 +48,7 @@
     </nav>
 
     {{--Content--}}
-    <div id="main-content" style="margin: 54px 0 40px 0;">
+    <div style="margin: 54px 0 40px 0;">
         @yield("content")
     </div>
 

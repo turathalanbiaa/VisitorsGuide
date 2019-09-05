@@ -20,7 +20,7 @@
                 </ul>
             </div>
         @endif
-        <form class="pt-2" method="post" action="/majales/update-majles">
+        <form class="pt-2" method="post" action="{{route('updateMajles')}}">
             @csrf
             <div class="form-group">
                 <label for="description">الوصف</label>
@@ -31,24 +31,9 @@
             <div class="form-group">
                 <label for="cities">المحافظة</label>
                 <select class="form-control" id="cities" name="cities" required>
-                    <option value="{{\App\Enums\Cities::NAJ}}">{{\App\Enums\Cities::NAJ}}</option>
-                    <option value="{{\App\Enums\Cities::KAR}}">{{\App\Enums\Cities::KAR}}</option>
-                    <option value="{{\App\Enums\Cities::BAGH}}">{{\App\Enums\Cities::BAGH}}</option>
-                    <option value="{{\App\Enums\Cities::BAB}}">{{\App\Enums\Cities::BAB}}</option>
-                    <option value="{{\App\Enums\Cities::QAD}}">{{\App\Enums\Cities::QAD}}</option>
-                    <option value="{{\App\Enums\Cities::MUTH}}">{{\App\Enums\Cities::MUTH}}</option>
-                    <option value="{{\App\Enums\Cities::WAS}}">{{\App\Enums\Cities::WAS}}</option>
-                    <option value="{{\App\Enums\Cities::MAY}}">{{\App\Enums\Cities::MAY}}</option>
-                    <option value="{{\App\Enums\Cities::THI}}">{{\App\Enums\Cities::THI}}</option>
-                    <option value="{{\App\Enums\Cities::BAS}}">{{\App\Enums\Cities::BAS}}</option>
-                    <option value="{{\App\Enums\Cities::ANB}}">{{\App\Enums\Cities::ANB}}</option>
-                    <option value="{{\App\Enums\Cities::DIY}}">{{\App\Enums\Cities::DIY}}</option>
-                    <option value="{{\App\Enums\Cities::SAL}}">{{\App\Enums\Cities::SAL}}</option>
-                    <option value="{{\App\Enums\Cities::NIN}}">{{\App\Enums\Cities::NIN}}</option>
-                    <option value="{{\App\Enums\Cities::KIR}}">{{\App\Enums\Cities::KIR}}</option>
-                    <option value="{{\App\Enums\Cities::ARB}}">{{\App\Enums\Cities::ARB}}</option>
-                    <option value="{{\App\Enums\Cities::DHU}}">{{\App\Enums\Cities::DHU}}</option>
-                    <option value="{{\App\Enums\Cities::SUL}}">{{\App\Enums\Cities::SUL}}</option>
+                    <option value="{{route('eventsCity', App\Enums\Cities::CITIES[app()->getLocale()][$i])}}">
+                        {{App\Enums\Cities::CITIES[app()->getLocale()][$i]}}
+                    </option>
                 </select>
             </div>
             <div class="form-group">
@@ -62,7 +47,7 @@
                        id="closesPoint" placeholder="الرجاء كتابة عنوان اقرب نقطة دالة" required>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">تاريخ بدء المناسبة</label>
+                <label for="majlesStart">تاريخ بدء المناسبة</label>
                 <input type="datetime-local" class="form-control" name="majlesStart" value ="{{$majles->majles_start}}"
                        id="majlesStart" required>
             </div>
@@ -77,109 +62,10 @@
     </div>
 
 @endsection
-@section("menu-modal-content")
-    <div class="modal-content border-0 rounded-0 shadow-special">
-        <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
-            <span>المجالس</span>
-        </h4>
-        <div class="modal-body">
-            <div class="list-group">
-                <a href="/majales/events-gallery" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-camera-retro"></i>
-                    <span>الاستديو</span>
-                </a>
-                <a href="/majales/add-majles" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-plus"></i>
-                    <span>اضافة مجلس</span>
-                </a>
-                <a href="/majales/majalesy" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>مجالسي</span>
-                </a>
-                <a href="/majales" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>عرض جميع المناسبات</span>
-                </a>
-                <a href="/majales/events-upcoming" class="list-group-item list-group-item-action" id="show-questions">
-                    <i class="fas fa-hourglass-start"></i>
-                    <span>عرض المناسبات التي لم تبدء الى الان</span>
-                </a>
-                <a href="/majales/events-ended" class="list-group-item list-group-item-action" id="show-send-question">
-                    <i class="fas fa-hourglass-end"></i>
-                    <span>عرض المناسبات الفائتة</span>
-                </a>
-                <a href="/majales/events-started" href="events" class="list-group-item list-group-item-action" id="show-ads-maseal">
-                    <i class="fas fa-hourglass-half"></i>
-                    <span>عرض المناسبات التي بدأت </span>
-                </a>
 
-                <div class="list-group-item" data-toggle="collapse" data-target="#category-list" aria-expanded="false" aria-controls="category-list">
-                    <i class="fas fa-building"></i>
-                    <span>عرض المناسبات حسب المحافظة</span>
+@component('majales.component.main_menu')
+@endcomponent
 
-                    <div class="collapse" id="category-list">
-                        <div class="list-group list-group-flush mx-3">
-                            <a href="/majales/events-city/{{\App\Enums\Cities::NAJ}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::NAJ}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::KAR}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::KAR}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::BAGH}}" class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::BAGH}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::BAB}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::BAB}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::QAD}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::QAD}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::WAS}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::WAS}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::MUTH}}" class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::MUTH}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::MAY}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::MAY}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::THI}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::THI}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::BAS}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::BAS}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::ANB}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::ANB}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::DIY}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::DIY}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::SAL}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::SAL}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::KIR}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::KIR}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::NIN}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::NIN}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::ARB}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::ARB}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::SUL}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::SUL}}
-                            </a>
-                            <a href="/majales/events-city/{{\App\Enums\Cities::DHU}}"  class="list-group-item list-group-item-action">
-                                {{\App\Enums\Cities::DHU}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
 @section('script')
     <script src="{{asset('js/js-webshim/minified/polyfiller.js')}}"></script>
     <script>

@@ -9,121 +9,19 @@
 
     <!-- StyleSheet -->
     <link href="{{asset("css/app.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{asset("css/main_style.css")}}" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <!-- Script -->
     <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
     <script src="{{asset("js/app.js")}}"></script>
     <style>
-        body {
-            text-align: right;
-            background-color: #d3d3d38f;
-            margin: auto;
-            max-width: 768px;
-        }
-        .cover {
-            width: calc(100% - 20px);
-            max-width: calc(768px - 20px);
-            height: 130px;
-            background-color: #40e0d0;
-            margin-left: 20px;
-        }
-        .cover-skew {
-            width: calc(100%);
-            height: 165px;
-            background-color: #40e0d0;
-            border-radius: 0 0 0 25px;
-            transform: skew(0deg, -5deg);
-            padding-top: 32px;
-            margin-top: -32px;
-            -webkit-box-sizing: content-box;
-               -moz-box-sizing: content-box;
-                    box-sizing: content-box;
-            -webkit-box-shadow: 0 0 7px 1px #17a2b8c7;
-               -moz-box-shadow:0 0 7px 1px #17a2b8c7;
-                    box-shadow: 0 0 7px 1px #17a2b8c7;
-        }
-        .demo {
-            position: absolute;
-            top: 0;
-            width: calc(100% - 20px);
-            max-width: calc(768px - 20px);
-            height: 150px;
-            background-color: transparent;
-            padding-top: 16px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .demo-img {
-            width: 90px;
-            height: 90px;
-            background-color: var(--white);
-            border-radius: 100% 100%;
-            padding: 5px;
-            box-shadow: 0 0 7px 1px #6c757db5;
-        }
-        .demo-img>img {
-            width: 100%;
-            height: 100%;
-        }
-        .demo-btn:active,
-        .demo-btn:hover,
-        .demo-btn:focus,
-        .demo-btn:visited {
-            text-decoration: none!important;
-        }
-        .content {
-            position: absolute;
-            bottom: 12px;
-            width: 100%;
-            max-width: 768px;
-            height: calc(100% - 220px);
-            margin-top: 110px;
-        }
-        .content-right {
-            width: 100%;
-            height: 100%;
-        }
-        .fade-text {
-            position: relative;
-            height: 5em;
-        }
-        .fade-text:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2em;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5),
-            rgba(255, 255, 255, 0.6),
-            rgba(255, 255, 255, 0.9),
-            rgba(255, 255, 255, 1)
-            100%);
-        }
-        .module-text {
-            margin: 0 0 1em 0;
-            overflow: hidden;
-            padding-bottom: 17px;
-        }
-
-        .content-left {
-            max-width: 250px;
-            height: 100%;
-            overflow-x: hidden;
-            overflow-y: scroll;
-        }
-        .content-left .col-special {
-            width: 100%;
-            padding: 8px 24px;
-        }
-        .col-special img {
-            width: 100%;
-            height: 100%;
-            padding: 10px;
-            border-radius: 100% 100%;
-        }
+        @switch(app()->getLocale())
+            @case("ar") body {text-align: right;} @break
+            @case("fa") body {text-align: right;} @break
+            @case("en") body {text-align: left;} @break
+            @default    body {text-align: right;}
+        @endswitch
     </style>
 </head>
 <body>
@@ -138,12 +36,12 @@
         </div>
 
         <div class="w-auto h-100 p-3 d-flex flex-column">
-            <a class="text-white font-weight-bold demo-btn" href="/login" style="margin-top: 20px!important;">
-                <span>{{trans("words.main_btn_login_text")}}</span>
+            <a class="text-white font-weight-bold demo-btn mt-3" href="/login">
+                <span>{{trans("words.main_login")}}</span>
                 <i class="fa fa-user-circle text-white align-middle" style="font-size: 40px;"></i>
             </a>
             <a class="text-secondary font-weight-bold demo-btn" data-toggle="modal" data-target="#select-language-modal" style="margin-top: 70px!important;">
-                <span>{{trans("words.main_text_language")}}</span>
+                <span>{{trans("words.main_language")}}</span>
                 <i class="fa fa-globe text-secondary align-middle"></i>
             </a>
         </div>

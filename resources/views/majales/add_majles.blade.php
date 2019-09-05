@@ -52,19 +52,27 @@
             </div>
             <div class="form-group">
                 <label for="district">الحي او القضاء</label>
-                <input type="text" class="form-control" name="district" id="district" placeholder="الرجاء ادخال اسم الحي او القضاء" required>
+                <input type="text" class="form-control" name="district" id="district"
+                       placeholder="الرجاء ادخال اسم الحي او القضاء"
+                       required />
             </div>
             <div class="form-group">
                 <label for="closesPoint">اقرب نقطة دالة</label>
-                <input type="text" class="form-control" name="closesPoint" id="closesPoint" placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة" required>
+                <input type="text" class="form-control" name="closesPoint" id="closesPoint"
+                       placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة"
+                       />
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">تاريخ بدء المناسبة</label>
-                <input type="datetime-local" class="form-control" name="majlesStart" id="exampleInputPassword1" placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة" required>
+                <input type="datetime-local" class="form-control" name="majlesStart"
+                       placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة"
+                       required />
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">تاريخ انتهاء المناسبة</label>
-                <input type="date" class="form-control" name="majlesEnd" id="exampleInputPassword1" placeholder="الرجاء كتابة عن،ان اقرب نقطة دالة" required>
+                <input type="date" class="form-control" name="majlesEnd"
+                       placeholder="الرجاء كتابة عنوان اقرب نقطة دالة"
+                       required />
                 <input type="hidden" class="form-control" name="latitude" id="latitude">
                 <input type="hidden" class="form-control" name="longitude" id="longitude">
                 <input type="hidden" class="form-control" name="fingerPrint" id="fingerPrint">
@@ -102,20 +110,21 @@
                     <i class="fas fa-calendar-alt"></i>
                     <span>عرض جميع المناسبات</span>
                 </a>
-                <a href="/majales/events-upcoming" class="list-group-item list-group-item-action" id="show-questions">
+                <a href="/majales/events-upcoming" class="list-group-item list-group-item-action">
                     <i class="fas fa-hourglass-start"></i>
                     <span>عرض المناسبات التي لم تبدء الى الان</span>
                 </a>
-                <a href="/majales/events-ended" class="list-group-item list-group-item-action" id="show-send-question">
+                <a href="/majales/events-ended" class="list-group-item list-group-item-action">
                     <i class="fas fa-hourglass-end"></i>
                     <span>عرض المناسبات الفائتة</span>
                 </a>
-                <a href="/majales/events-started" href="events" class="list-group-item list-group-item-action" id="show-ads-maseal">
+                <a href="{{route('eventsUpcoming')}}" class="list-group-item list-group-item-action">
                     <i class="fas fa-hourglass-half"></i>
                     <span>عرض المناسبات التي بدأت </span>
                 </a>
 
-                <div class="list-group-item" data-toggle="collapse" data-target="#category-list" aria-expanded="false" aria-controls="category-list">
+                <div class="list-group-item" data-toggle="collapse"
+                     data-target="#category-list">
                     <i class="fas fa-building"></i>
                     <span>عرض المناسبات حسب المحافظة</span>
 

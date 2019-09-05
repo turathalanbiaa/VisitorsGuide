@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\Cities;
 use App\Enums\MajlesStatus;
 use App\Enums\PostCategory;
-use App\Enums\WeekDays;
 use App\Models\Majales;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class MajalesController extends Controller
 {
@@ -27,8 +24,7 @@ class MajalesController extends Controller
            'majlesStart'=> 'required',
            'description'=> 'required',
            'cities'=> 'required',
-           'district'=> 'required',
-           'closesPoint'=> 'required',
+           'district'=> 'required'
         ],
         [
             'majlesEnd.after'  => 'الرجاء اختار تاريخ صحيح للمناسبة',
@@ -37,8 +33,7 @@ class MajalesController extends Controller
             'majlesEnd.required' => 'الرجاء عدم ترك حقل تاريخ انتهاءالمناسبة فارغ',
             'description.required' => 'الرجاء كتابة وصف للمناسبة',
             'cities.required' => 'الرجاء اختيار المدينة',
-            'district.required' => 'الرجاء كتابة اسم المنطقة',
-            'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
+            'district.required' => 'الرجاء كتابة اسم المنطقة'
         ]);
 
         $majales = new Majales();
@@ -60,7 +55,7 @@ class MajalesController extends Controller
     {
 
         $getMajales = Majales::where('status', MajlesStatus::ACCEPT)->whereDate('majles_end','>=',Carbon::now()->format('y-m-d'))
-            ->orderBy('majles_start')->paginate(4);
+            ->orderBy('majles_start')->paginate(15);
 
         return view('majales/main', ['events'=>$getMajales]);
     }
@@ -69,7 +64,7 @@ class MajalesController extends Controller
     {
         $getEventsByCity = Majales::where('status', MajlesStatus::ACCEPT)
             ->where('city',$city)->orderBy('majles_start')
-            ->orderBy('majles_start')->paginate(10);
+            ->orderBy('majles_start')->paginate(15);
 
         return view('/majales/events_city', ['events'=>$getEventsByCity]);
     }
@@ -79,7 +74,7 @@ class MajalesController extends Controller
     {
         $getEventsUpcoming = Majales::where('status', MajlesStatus::ACCEPT)
             ->whereDate('majles_start', '>', Carbon::now()->format('y-m-d'))
-            ->orderBy('majles_start')->paginate(10);
+            ->orderBy('majles_start')->paginate(15);
 
         return view('/majales/events_upcoming', ['events'=>$getEventsUpcoming]);
     }
@@ -90,7 +85,7 @@ class MajalesController extends Controller
             ->whereDate('majles_start', '<=', Carbon::now()->format('y-m-d'))
             ->whereDate('majles_end', '>=', Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')
-            ->paginate(10);
+            ->paginate(15);
 
         return view('/majales/events_started', ['events'=>$getEventsStarted]);
     }
@@ -100,14 +95,14 @@ class MajalesController extends Controller
         $getEventsEnded = Majales::where('status', MajlesStatus::ACCEPT)
             ->whereDate('majles_end', '<', Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')
-            ->paginate(10);
+            ->paginate(15);
 
         return view('/majales/events_ended', ['events'=>$getEventsEnded]);
     }
 
     public function getEventsGallery ()
     {
-        $posts = Post::where('category', PostCategory::MAJALES)->paginate(8);
+        $posts = Post::where('category', PostCategory::MAJALES)->paginate(15);
 
         return view('/majales/events_gallery', ['posts'=>$posts]);
     }
@@ -173,12 +168,5 @@ class MajalesController extends Controller
         }
 
         return redirect('/majales/majalesy');
-    }
-
-    public function testMaps ()
-    {
-        $latAndLong = DB::table('point')->select(['latitude','longitude','name','description','category'])
-            ->orderBy('id')->get()->toArray();
-        return view('/majales/test_maps',compact('latAndLong'));
     }
 }
