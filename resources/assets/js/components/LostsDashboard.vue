@@ -24,16 +24,30 @@
                         <a href="/road-guide" class="mb-0">{{trans("words.find_center_link")}}</a>
                     </div>
                 </div>
-            </div>
+
             <div class="col-md-12">
                 <router-link to="/" class="float bg-teal-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
             </div>
             </div>
-        </div>
+        </div>  </div>
 </template>
 
 <script>
     export default {
+        data () {
+            return {
+                info: null
+            }
+        },
+        mounted () {
+            axios.get('')
+                .then(res => {
+                    console.log(res.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
 
     }
 </script>

@@ -153,7 +153,7 @@ return [
     "reception_phone" => "الموبايل :",
     "reception_state" => "الحاله :",
     "reception_date" => "التاريخ :",
-    "reception_call_home_owner" => "اتصال بصاحب المنزل",
+    "reception_call_home_owner" => "الموبايل :",
     "reception_add_success" => "تمتّ عملية الأضافه بنجاح",
     "reception_update_success" => "تمتّ علمية التعديل بنجاح",
     "reception_delete_success" => "تمتّ عملية الحذف بنجاح",
