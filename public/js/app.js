@@ -70970,7 +70970,7 @@ var content = __webpack_require__(215);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("b136fa6c", content, false, {});
+var update = __webpack_require__(24)("04f451ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71038,6 +71038,16 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -71506,9 +71516,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(_vm.getCategory(item.category)) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ]),
                         _vm._v(" "),
@@ -71521,9 +71531,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(item.description) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ]),
                         _vm._v(" "),
@@ -71534,14 +71544,14 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(
                                 _vm._f("moment")(
                                   item.datetime,
                                   "DD-MM-YYYY h:mm a"
                                 )
                               ) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ]),
                         _vm._v(" "),
@@ -71552,9 +71562,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(item.center.name) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ]),
                         _vm._v(" "),
@@ -71566,9 +71576,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(item.center.t_number) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ]),
                         _vm._v(" "),
@@ -71579,9 +71589,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(item.center.phone) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ])
                       ]
@@ -71608,15 +71618,37 @@ var render = function() {
             [
               _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
                 _vm._v(
-                  "\n                      " +
+                  "\n<<<<<<< HEAD\n                          " +
                     _vm._s(_vm.trans("words.there_is_no_data")) +
-                    "\n                 "
+                    "\n=======\n                         " +
+                    _vm._s(_vm.trans("words.there_is_no_data")) +
+                    "\n>>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016\n                     "
                 )
               ])
             ]
           ),
           _vm._v(" "),
-          _vm._m(1)
+          _c(
+            "div",
+            { staticClass: "col-md-12" },
+            [
+              _vm._v("\n<<<<<<< HEAD\n                    "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "float bg-teal-gradient",
+                  attrs: { to: { name: "losts-dashboard" } }
+                },
+                [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
+              ),
+              _vm._v("\n=======\n                    "),
+              _vm._m(1),
+              _vm._v(
+                "\n>>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016\n                "
+              )
+            ],
+            1
+          )
         ],
         2
       )
@@ -71641,16 +71673,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c(
-        "a",
-        {
-          staticClass: "float bg-teal-gradient",
-          attrs: { href: "/lost/add-lost-form" }
-        },
-        [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
-      )
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "float bg-teal-gradient",
+        attrs: { href: "/lost/add-lost-form" }
+      },
+      [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
+    )
   }
 ]
 render._withStripped = true
@@ -71724,7 +71754,7 @@ var content = __webpack_require__(221);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("26929a78", content, false, {});
+var update = __webpack_require__(24)("215251b8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71967,7 +71997,7 @@ var content = __webpack_require__(226);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("5c3f9962", content, false, {});
+var update = __webpack_require__(24)("56ff50a2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -72002,15 +72032,6 @@ exports.push([module.i, "\n.modal-mask[data-v-77d86fba] {\n    position: fixed;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -72195,52 +72216,61 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "nav",
-      { staticClass: "navbar navbar-dark fixed-top bg-blue-gradient" },
-      [
-        _c("div", { staticClass: "container p-0" }, [
-          _c(
-            "a",
-            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-            [
-              _c("span", [
-                _vm._v(_vm._s(_vm.trans("words.reception_title")) + " ")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "d-flex flex-row justify-content-end w-25",
-              staticStyle: { margin: "0 -4px" }
-            },
-            [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
-                  on: {
-                    click: function($event) {
-                      _vm.showModal = true
-                    }
+    _c("nav", { staticClass: "navbar fixed-top navbar-dark bg-vg-dark" }, [
+      _c("div", { staticClass: "container p-0" }, [
+        _c(
+          "a",
+          { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
+          [
+            _c("span", [
+              _vm._v(_vm._s(_vm.trans("words.reception_title")) + " ")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "d-flex flex-row justify-content-end w-25",
+            staticStyle: { margin: "0 -4px" }
+          },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
+                attrs: { to: { name: "reception-dashboard" } }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fa-cog text-white align-middle",
+                  staticStyle: { width: "14px" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
+                on: {
+                  click: function($event) {
+                    _vm.showModal = true
                   }
-                },
-                [
-                  _c("i", {
-                    staticClass: "fa fa-bars text-white align-middle",
-                    staticStyle: { width: "14px" }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(0)
-            ]
-          )
-        ])
-      ]
-    ),
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fa-bars text-white align-middle",
+                  staticStyle: { width: "14px" }
+                })
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
     _vm._v(" "),
     _vm.showModal
       ? _c(
@@ -72257,14 +72287,22 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "modal-content" }, [
-                        _c("div", { staticClass: "modal-header" }, [
-                          _c("h5", { staticClass: "modal-title" }, [
-                            _vm._v(
-                              " " +
-                                _vm._s(_vm.trans("words.reception_select_type"))
-                            )
-                          ])
-                        ]),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "modal-header text-white bg-vg-light"
+                          },
+                          [
+                            _c("h5", { staticClass: "modal-title" }, [
+                              _vm._v(
+                                " " +
+                                  _vm._s(
+                                    _vm.trans("words.reception_select_type")
+                                  )
+                              )
+                            ])
+                          ]
+                        ),
                         _vm._v(" "),
                         _c("div", { staticClass: "modal-body" }, [
                           _c("div", { staticClass: "list-group" }, [
@@ -72459,7 +72497,7 @@ var render = function() {
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(item.persons_number) +
-                                  "\n                                   "
+                                  "\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -72475,7 +72513,7 @@ var render = function() {
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(_vm.getType(item.persons_type)) +
-                                  "\n                                    "
+                                  "\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -72489,7 +72527,7 @@ var render = function() {
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(item.address) +
-                                  "\n                                    "
+                                  "\n                                "
                               )
                             ]),
                             _vm._v(" "),
@@ -72507,7 +72545,7 @@ var render = function() {
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(item.phone) +
-                                  "\n                                    "
+                                  "\n                                "
                               )
                             ])
                           ]
@@ -72544,41 +72582,11 @@ var render = function() {
           )
         ],
         2
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "float bg-blue-gradient",
-              attrs: { to: { name: "reception-dashboard" } }
-            },
-            [_c("i", { staticClass: "fa fa-cog my-float" })]
-          )
-        ],
-        1
       )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
-        attrs: { href: "/" }
-      },
-      [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -72650,7 +72658,7 @@ var content = __webpack_require__(231);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(24)("18ed4a15", content, false, {});
+var update = __webpack_require__(24)("67b78316", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -72685,14 +72693,6 @@ exports.push([module.i, "\n.float[data-v-7b734f08] {\n    position: fixed;\n    
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -72978,13 +72978,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getType: function getType(arg) {
             switch (arg) {
                 case 1:
-                    return this.trans("words.reception_persons_type_option_men");
+                    return this.trans("words.reception_persons_type_men");
                     break;
                 case 2:
-                    return this.trans("words.reception_persons_type_option_women");
+                    return this.trans("words.reception_persons_type_women");
                     break;
                 case 3:
-                    return this.trans("words.reception_persons_type_option_family");
+                    return this.trans("words.reception_persons_type_family");
                     break;
             }
         },
@@ -73066,7 +73066,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         snackBar: function snackBar(method) {
             var config = {
                 text: this.text,
-                button: 'حسنا'
+                button: '????????'
 
             };
             this.$snack[method](config);
@@ -73083,21 +73083,39 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "nav",
-      { staticClass: "navbar navbar-dark fixed-top bg-blue-gradient" },
-      [
-        _c("div", { staticClass: "container p-0" }, [
-          _c(
-            "a",
-            { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
-            [_c("span", [_vm._v(_vm._s(_vm.trans("words.reception_title")))])]
-          ),
-          _vm._v(" "),
-          _vm._m(0)
-        ])
-      ]
-    ),
+    _c("nav", { staticClass: "navbar fixed-top navbar-dark bg-vg-dark" }, [
+      _c("div", { staticClass: "container p-0" }, [
+        _c(
+          "a",
+          { staticClass: "navbar-brand m-0 w-75 text-truncate text-white" },
+          [_c("span", [_vm._v(_vm._s(_vm.trans("words.reception_title")))])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "d-flex flex-row justify-content-end w-25",
+            staticStyle: { margin: "0 -4px" }
+          },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
+                attrs: { to: "/" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fa fa-arrow-left text-white align-middle",
+                  staticStyle: { width: "14px" }
+                })
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "container pt-2" }, [
       _vm.form.user_id > 0
@@ -73162,8 +73180,7 @@ var render = function() {
                               id: "home_owner",
                               size: "sm",
                               type: "text",
-                              required: "",
-                              placeholder: "Enter name"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.home_owner,
@@ -73191,8 +73208,7 @@ var render = function() {
                               id: "persons_number",
                               size: "sm",
                               type: "number",
-                              required: "",
-                              placeholder: "Enter name"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.persons_number,
@@ -73248,8 +73264,7 @@ var render = function() {
                               id: "address",
                               size: "sm",
                               type: "text",
-                              required: "",
-                              placeholder: "Enter address"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.address,
@@ -73277,8 +73292,7 @@ var render = function() {
                               id: "phone",
                               size: "sm",
                               type: "text",
-                              required: "",
-                              placeholder: "Enter phone"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.phone,
@@ -73408,8 +73422,7 @@ var render = function() {
                               id: "home_owner",
                               size: "sm",
                               type: "text",
-                              required: "",
-                              placeholder: "Enter name"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.home_owner,
@@ -73437,8 +73450,7 @@ var render = function() {
                               id: "persons_number",
                               size: "sm",
                               type: "number",
-                              required: "",
-                              placeholder: "Enter name"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.persons_number,
@@ -73494,8 +73506,7 @@ var render = function() {
                               id: "address",
                               size: "sm",
                               type: "text",
-                              required: "",
-                              placeholder: "Enter address"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.address,
@@ -73523,8 +73534,7 @@ var render = function() {
                               id: "phone",
                               size: "sm",
                               type: "text",
-                              required: "",
-                              placeholder: "Enter phone"
+                              required: ""
                             },
                             model: {
                               value: _vm.form.phone,
@@ -73570,7 +73580,7 @@ var render = function() {
                         "b-form-group",
                         {
                           attrs: {
-                            label: _vm.trans("words.reception_address"),
+                            label: _vm.trans("words.reception_date"),
                             "label-for": "date"
                           }
                         },
@@ -73684,9 +73694,9 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(
-                                "\n                            " +
+                                "\n                                " +
                                   _vm._s(item.home_owner) +
-                                  "\n                        "
+                                  "\n                            "
                               )
                             ])
                           ]
@@ -73708,9 +73718,9 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(
-                                  "\n                                " +
+                                  "\n                                    " +
                                     _vm._s(item.persons_number) +
-                                    "\n                            "
+                                    "\n                                "
                                 )
                               ]),
                               _vm._v(" "),
@@ -73723,9 +73733,9 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(
-                                  "\n                                " +
+                                  "\n                                    " +
                                     _vm._s(_vm.getType(item.persons_type)) +
-                                    "\n                            "
+                                    "\n                                "
                                 )
                               ]),
                               _vm._v(" "),
@@ -73736,9 +73746,9 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(
-                                  "\n                                " +
+                                  "\n                                    " +
                                     _vm._s(item.address) +
-                                    "\n                            "
+                                    "\n                                "
                                 )
                               ])
                             ]
@@ -73818,47 +73828,11 @@ var render = function() {
                 _vm._v(_vm._s(_vm.trans("words.sign_up")))
               ])
             ]
-          ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        [
-          _c(
-            "router-link",
-            { staticClass: "float bg-blue-gradient", attrs: { to: "/" } },
-            [_c("i", { staticClass: "fa fa-arrow-right my-float" })]
           )
-        ],
-        1
-      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "d-flex flex-row justify-content-end w-25",
-        staticStyle: { margin: "0 -4px" }
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2",
-            attrs: { href: "/" }
-          },
-          [_c("i", { staticClass: "fa fa-home text-white align-middle" })]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -73872,7 +73846,7 @@ if (false) {
 /* 234 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (72)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.9.3\n    at module.exports (D:\\Workspace\\VisitorsGuide\\node_modules\\node-sass\\lib\\binding.js:13:13)\n    at Object.<anonymous> (D:\\Workspace\\VisitorsGuide\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:936:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:947:10)\n    at Module.load (internal/modules/cjs/loader.js:790:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:703:12)\n    at Module.require (internal/modules/cjs/loader.js:830:19)\n    at require (internal/modules/cjs/helpers.js:68:18)\n    at Object.<anonymous> (D:\\Workspace\\VisitorsGuide\\node_modules\\sass-loader\\lib\\loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:936:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:947:10)\n    at Module.load (internal/modules/cjs/loader.js:790:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:703:12)\n    at Module.require (internal/modules/cjs/loader.js:830:19)\n    at require (internal/modules/cjs/helpers.js:68:18)\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:13:17)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModule.js:195:19\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:170:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:27:11)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at NormalModule.doBuild (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModule.js:182:3)\n    at NormalModule.build (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModule.js:275:15)\n    at Compilation.buildModule (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\Compilation.js:157:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\Compilation.js:460:10\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:243:5\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:94:13\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\tapable\\lib\\Tapable.js:268:11\n    at NormalModuleFactory.<anonymous> (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (D:\\Workspace\\VisitorsGuide\\node_modules\\tapable\\lib\\Tapable.js:272:13)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:69:10\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:196:7\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
 
 /***/ })
 /******/ ]);

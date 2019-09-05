@@ -194,6 +194,5 @@ return [
     "cancel" => "ألغاء",
     "sign_up" => "تسجيل",
     "are_you_sure" => "هل انت متاكد",
-    "there_is_no_data" => " لايوجد بيانات ...",
-
+    "there_is_no_data" => " لايوجد بيانات ..."
 ];

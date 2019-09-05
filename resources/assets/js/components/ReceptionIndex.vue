@@ -1,30 +1,29 @@
 <template>
     <div>
-            <nav class="navbar navbar-dark fixed-top bg-blue-gradient">
-                <div class="container p-0">
+        <nav class="navbar fixed-top navbar-dark bg-vg-dark">
+            <div class="container p-0">
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
                     <span >{{trans("words.reception_title")}} </span>
                 </a>
                 <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
+                    <router-link :to="{name:'reception-dashboard'}" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
+                        <i class="fa fa-cog text-white align-middle" style="width: 14px;"></i>
+                    </router-link>
+
                     <a v-on:click="showModal = true" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
                         <i class="fa fa-bars text-white align-middle" style="width: 14px;"></i>
                     </a>
-                    <a href="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
-                        <i class="fa fa-home text-white align-middle"></i>
-                    </a>
                 </div>
-                </div>
-            </nav>
+            </div>
+        </nav>
         <div v-if="showModal">
             <transition name="modal">
                 <div class="modal-mask">
                     <div class="modal-wrapper">
-
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header text-white bg-vg-light">
                                     <h5 class="modal-title"> {{trans("words.reception_select_type")}}</h5>
-
                                 </div>
                                 <div class="modal-body">
                                     <div class="list-group">
@@ -77,50 +76,32 @@
                                     <li class="list-group-item">
                                         <span> {{trans("words.reception_persons_number")}}</span>
                                         {{item.persons_number}}
-                                       </li>
+                                    </li>
                                     <li class="list-group-item">
                                         <span> {{trans("words.reception_persons_type")}}</span>
                                         {{getType(item.persons_type)}}
-                                        </li>
+                                    </li>
                                     <li class="list-group-item">
                                         <span> {{trans("words.reception_address")}}</span>
                                         {{item.address}}
-                                        </li>
-<<<<<<< HEAD
+                                    </li>
                                     <li class="list-group-item">
                                         <span> {{trans("words.reception_call_home_owner")}}</span>
-=======
-                                     <li class="list-group-item">
-                                        <span>??? ??????</span>
->>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016
                                         {{item.phone}}
-                                        </li>
+                                    </li>
                                 </ul>
                             </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016
                         </div>
                     </div>
                 </div>
-                <infinite-loading ref="infiniteLoading" spinner="waveDots" v-on:distance="1"
-                                  v-on:infinite="infiniteHandler" class="col-md-12">
+                <infinite-loading ref="infiniteLoading" spinner="waveDots" v-on:distance="1" v-on:infinite="infiniteHandler" class="col-md-12">
                      <span slot="no-more">
                             {{trans("words.there_is_no_data")}}
                      </span>
                 </infinite-loading>
             </div>
-            <div class="col-md-12">
-                <router-link :to="{name:'reception-dashboard'}" class="float bg-blue-gradient">
-                    <i class="fa fa-cog my-float"></i>
-                </router-link>
-            </div>
         </div>
     </div>
-
-
 </template>
 
 <script>

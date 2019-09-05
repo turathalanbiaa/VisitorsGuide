@@ -1,20 +1,20 @@
 <template>
     <div>
-            <nav class="navbar navbar-dark fixed-top bg-blue-gradient">
-                <div class="container p-0">
+        <nav class="navbar fixed-top navbar-dark bg-vg-dark">
+            <div class="container p-0">
                 <a class="navbar-brand m-0 w-75 text-truncate text-white">
                     <span >{{trans("words.reception_title")}}</span>
                 </a>
                 <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
-                    <a href="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
-                        <i class="fa fa-home text-white align-middle"></i>
-                    </a>
+                    <router-link to="/" class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2">
+                        <i class="fa fa-arrow-left text-white align-middle" style="width: 14px;"></i>
+                    </router-link>
                 </div>
-                </div>
-            </nav>
+            </div>
+        </nav>
         <div class="container pt-2">
             <div class="row" v-if="form.user_id >0">
-            <div class="col-md-12">
+                <div class="col-md-12">
                 <b-btn class="mb-2" size="sm" variant="outline-primary"  v-b-modal.modalAdd >{{trans("words.add")}}</b-btn></div>
 
                 <!-- Add Modal Component -->
@@ -26,8 +26,7 @@
                                           size="sm"
                                           type="text"
                                           v-model="form.home_owner"
-                                          required
-                                          placeholder="???? ?????">
+                                          required>
                             </b-form-input>
                         </b-form-group>
 
@@ -36,8 +35,7 @@
                                           size="sm"
                                           type="number"
                                           v-model="form.persons_number"
-                                          required
-                                          placeholder="???? ????? ">
+                                          required>
                             </b-form-input>
                         </b-form-group>
 
@@ -55,8 +53,7 @@
                                           size="sm"
                                           type="text"
                                           v-model="form.address"
-                                          required
-                                          placeholder="???? ???????">
+                                          required>
                             </b-form-input>
                         </b-form-group>
 
@@ -66,7 +63,7 @@
                                           type="text"
                                           v-model="form.phone"
                                           required
-                                          placeholder="???? ??? ??????">
+                                        >
                             </b-form-input>
                         </b-form-group>
 
@@ -96,83 +93,83 @@
 
                 </b-modal>
 
-            <!-- Update Modal Component -->
-            <b-modal id="modalUpdate" ref="modalUpdate" :label='trans("words.update")' hide-footer>
+                <!-- Update Modal Component -->
+                <b-modal id="modalUpdate" ref="modalUpdate" :label='trans("words.update")' hide-footer>
 
-                <b-form @submit="updateForm">
-                    <b-form-group :label='trans("words.reception_home_owner_name")' label-for="home_owner">
-                        <b-form-input id="home_owner"
-                                      size="sm"
-                                      type="text"
-                                      v-model="form.home_owner"
-                                      required
-                                      placeholder="???? ?????">
-                        </b-form-input>
-                    </b-form-group>
+                    <b-form @submit="updateForm">
+                        <b-form-group :label='trans("words.reception_home_owner_name")' label-for="home_owner">
+                            <b-form-input id="home_owner"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.home_owner"
+                                          required
+                                        >
+                            </b-form-input>
+                        </b-form-group>
 
-                    <b-form-group :label='trans("words.reception_persons_number")' label-for="persons_number">
-                        <b-form-input id="persons_number"
-                                      size="sm"
-                                      type="number"
-                                      v-model="form.persons_number"
-                                      required
-                                      placeholder="???? ?????">
-                        </b-form-input>
-                    </b-form-group>
+                        <b-form-group :label='trans("words.reception_persons_number")' label-for="persons_number">
+                            <b-form-input id="persons_number"
+                                          size="sm"
+                                          type="number"
+                                          v-model="form.persons_number"
+                                          required
+                                         >
+                            </b-form-input>
+                        </b-form-group>
 
-                    <b-form-group :label='trans("words.reception_persons_type")' label-for="persons_type">
-                        <b-form-select id="persons_type"
-                                       size="sm"
-                                       :options="persons_type_option"
-                                       required
-                                       v-model="form.persons_type">
-                        </b-form-select>
-                    </b-form-group>
+                        <b-form-group :label='trans("words.reception_persons_type")' label-for="persons_type">
+                            <b-form-select id="persons_type"
+                                           size="sm"
+                                           :options="persons_type_option"
+                                           required
+                                           v-model="form.persons_type">
+                            </b-form-select>
+                        </b-form-group>
 
-                    <b-form-group :label='trans("words.reception_address")' label-for="address">
-                        <b-form-input id="address"
-                                      size="sm"
-                                      type="text"
-                                      v-model="form.address"
-                                      required
-                                      placeholder="???? ???????">
-                        </b-form-input>
-                    </b-form-group>
+                        <b-form-group :label='trans("words.reception_address")' label-for="address">
+                            <b-form-input id="address"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.address"
+                                          required
+                                         >
+                            </b-form-input>
+                        </b-form-group>
 
-                    <b-form-group :label='trans("words.reception_phone")' label-for="phone">
-                        <b-form-input id="phone"
-                                      size="sm"
-                                      type="text"
-                                      v-model="form.phone"
-                                      required
-                                      placeholder="???? ??? ??????">
-                        </b-form-input>
-                    </b-form-group>
+                        <b-form-group :label='trans("words.reception_phone")' label-for="phone">
+                            <b-form-input id="phone"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.phone"
+                                          required
+                                         >
+                            </b-form-input>
+                        </b-form-group>
 
 
 
-                    <b-form-group :label='trans("words.reception_state")' label-for="is_active">
-                        <b-form-select id="is_active"
-                                       size="sm"
-                                       :options="is_active_option"
-                                       required
-                                       v-model="form.is_active">
-                        </b-form-select>
-                    </b-form-group>
+                        <b-form-group :label='trans("words.reception_state")' label-for="is_active">
+                            <b-form-select id="is_active"
+                                           size="sm"
+                                           :options="is_active_option"
+                                           required
+                                           v-model="form.is_active">
+                            </b-form-select>
+                        </b-form-group>
 
-                    <b-form-group :label='trans("words.reception_address")' label-for="date">
-                        <b-form-input id="date"
-                                      size="sm"
-                                      type="date"
-                                      v-model="form.date"
-                                      required>
-                        </b-form-input>
-                    </b-form-group>
+                        <b-form-group :label='trans("words.reception_date")' label-for="date">
+                            <b-form-input id="date"
+                                          size="sm"
+                                          type="date"
+                                          v-model="form.date"
+                                          required>
+                            </b-form-input>
+                        </b-form-group>
 
-                    <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.save")}}</b-button>
-                </b-form>
+                        <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.save")}}</b-button>
+                    </b-form>
 
-            </b-modal>
+                </b-modal>
 
                 <b-modal ref="modelDelete"  hide-header hide-footer>
                     <p class="my-4">{{trans("words.are_you_sure")}}</p>
@@ -184,54 +181,49 @@
                     </b-button>
                 </b-modal>
 
-            <div v-for="(item,index) in list" v-bind:key="item.id" class="col-12 col-sm-6">
-                <div class="card shadow p-0 mb-5">
+                <div v-for="(item,index) in list" v-bind:key="item.id" class="col-12 col-sm-6">
+                    <div class="card shadow p-0 mb-5">
 
-                    <div class="card-body">
-                        <div class="card-header bg-white text-center">
-                            <h6 class="card-title">
-                                <span>{{trans("words.reception_home_owner")}}</span>
-                                {{item.home_owner}}
-                            </h6>
-                        </div>
-                        <div class="card-text">
-                            <ul class="list-group list-group-flush p-0">
-                                <li class="list-group-item">
-                                    <span>{{trans("words.reception_persons_number")}}</span>
-                                    {{item.persons_number}}
-                                </li>
-                                <li class="list-group-item">
-                                    <span>{{trans("words.reception_persons_type")}}</span>
-                                    {{getType(item.persons_type)}}
-                                </li>
-                                <li class="list-group-item">  <span>{{trans("words.reception_address")}}</span>
-                                    {{item.address}}
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer bg-white">
-                            <b-btn @click="iniUpdate(index)"  size="sm" variant="outline-success"  v-b-modal.modalUpdate>{{trans("words.update")}}</b-btn>
-                            <b-btn @click="iniDelete(item.id)"  size="sm" variant="outline-danger">{{trans("words.delete")}}</b-btn>
-                        </div>
+                        <div class="card-body">
+                            <div class="card-header bg-white text-center">
+                                <h6 class="card-title">
+                                    <span>{{trans("words.reception_home_owner")}}</span>
+                                    {{item.home_owner}}
+                                </h6>
+                            </div>
+                            <div class="card-text">
+                                <ul class="list-group list-group-flush p-0">
+                                    <li class="list-group-item">
+                                        <span>{{trans("words.reception_persons_number")}}</span>
+                                        {{item.persons_number}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>{{trans("words.reception_persons_type")}}</span>
+                                        {{getType(item.persons_type)}}
+                                    </li>
+                                    <li class="list-group-item">  <span>{{trans("words.reception_address")}}</span>
+                                        {{item.address}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <b-btn @click="iniUpdate(index)"  size="sm" variant="outline-success"  v-b-modal.modalUpdate>{{trans("words.update")}}</b-btn>
+                                <b-btn @click="iniDelete(item.id)"  size="sm" variant="outline-danger">{{trans("words.delete")}}</b-btn>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+
              <div v-else class="alert alert-success" role="alert">
                 <h4 class="alert-heading">{{trans("words.reception_thanks")}}</h4>
                 <p> {{trans("words.reception_thanks_details")}}</p>
                 <hr>
                 <a href="/register" class="mb-0">{{trans("words.sign_up")}}</a>
             </div>
-
-        <div class="col-md-12">
-            <router-link to="/" class="float bg-blue-gradient"><i class="fa fa-arrow-right my-float"></i></router-link>
         </div>
-
     </div>
-    </div>
-
 </template>
 
 <script>
@@ -297,13 +289,13 @@
             getType(arg) {
                 switch (arg) {
                     case 1:
-                        return  this.trans("words.reception_persons_type_option_men");
+                        return  this.trans("words.reception_persons_type_men");
                         break;
                     case 2:
-                        return this.trans("words.reception_persons_type_option_women");
+                        return this.trans("words.reception_persons_type_women");
                         break;
                     case 3:
-                        return this.trans("words.reception_persons_type_option_family");
+                        return this.trans("words.reception_persons_type_family");
                         break;
                 }
             },
