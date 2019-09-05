@@ -71165,7 +71165,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -71609,8 +71608,8 @@ var render = function() {
             [
               _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
                 _vm._v(
-                  "\n                     " +
-                    _vm._s(_vm.trans("words. there_is_no_data")) +
+                  "\n                      " +
+                    _vm._s(_vm.trans("words.there_is_no_data")) +
                     "\n                 "
                 )
               ])
@@ -71795,7 +71794,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            info: null
+        };
+    },
+    mounted: function mounted() {
+        axios.get('').then(function (res) {
+            console.log(res.data);
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+});
 
 /***/ }),
 /* 223 */
@@ -71842,21 +71854,21 @@ var render = function() {
               ])
             ]
           )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        [
-          _c(
-            "router-link",
-            { staticClass: "float bg-teal-gradient", attrs: { to: "/" } },
-            [_c("i", { staticClass: "fa fa-arrow-right my-float" })]
-          )
-        ],
-        1
-      )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-12" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "float bg-teal-gradient", attrs: { to: "/" } },
+              [_c("i", { staticClass: "fa fa-arrow-right my-float" })]
+            )
+          ],
+          1
+        )
+      ])
     ])
   ])
 }
@@ -71990,6 +72002,8 @@ exports.push([module.i, "\n.modal-mask[data-v-77d86fba] {\n    position: fixed;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -72477,31 +72491,28 @@ var render = function() {
                                   _vm._s(item.address) +
                                   "\n                                    "
                               )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "list-group-item" }, [
+                              _c("span", [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm.trans(
+                                        "words.reception_call_home_owner"
+                                      )
+                                    )
+                                )
+                              ]),
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(item.phone) +
+                                  "\n                                    "
+                              )
                             ])
                           ]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "card-footer bg-white text-center " },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "card-link",
-                              attrs: { href: "tel:" + item.phone }
-                            },
-                            [
-                              _vm._v(
-                                _vm._s(
-                                  _vm.trans("words.reception_call_home_owner")
-                                )
-                              )
-                            ]
-                          )
-                        ]
-                      )
+                      ])
                     ])
                   ])
                 ])
