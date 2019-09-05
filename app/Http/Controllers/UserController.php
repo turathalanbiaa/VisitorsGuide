@@ -50,7 +50,7 @@ class UserController extends Controller
         session()->put("USER_SESSION", $user->session);
         session()->save();
 
-        return redirect("/")->withCookie(cookie('USER_SESSION' , $user->session , 1000000000));
+        return redirect("/majales")->withCookie(cookie('USER_SESSION' , $user->session , 1000000000));
     }
 
     public function login() {
@@ -89,7 +89,7 @@ class UserController extends Controller
         session()->put("USER_SESSION", $user->session);
         session()->save();
 
-        return redirect("/")->withCookie(cookie('USER_SESSION' , $user->session , 1000000000));
+        return redirect("/majales")->withCookie(cookie('USER_SESSION' , $user->session , 1000000000));
     }
 
     public function logout() {
@@ -110,6 +110,6 @@ class UserController extends Controller
 
         $cookie = Cookie::forget("USER_SESSION");
 
-        return redirect("/")->withCookie($cookie);
+        return redirect("/majales")->withCookie($cookie);
     }
 }

@@ -22,47 +22,22 @@
 </head>
 <body>
     {{--Navbar Fixed Top--}}
-    <nav class="navbar fixed-top navbar-dark @yield("navbar-color")">
+    <nav class="navbar fixed-top navbar-dark bg-vg-dark">
         <div class="container px-0">
             <a href="javascript:void(0);" class="navbar-brand m-0 w-75 text-truncate">
                 @yield("navbar-brand")
             </a>
 
-            <div class="d-flex flex-row justify-content-end w-25" style="margin: 0 -4px;">
-                @php $currentPath = \Illuminate\Support\Facades\Request::path(); @endphp
-                @if($currentPath == "road-guide/maps")
-                    <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" href="/road-guide">
-                        <i class="fa fa-road fa-special text-white align-middle"></i>
-                    </a>
-                @else
-                    <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" data-toggle="modal" data-target="#menu-modal">
-                        <i class="fa fa-bars fa-special text-white align-middle"></i>
-                    </a>
-                @endif
-
-                <a class="btn btn-sm btn-dark shadow-sm mx-1 mx-sm-2" href="/">
-                    <i class="fa fa-home fa-special text-white align-middle"></i>
-                </a>
-            </div>
+            <a class="btn btn-sm btn-dark shadow-sm" data-toggle="modal" data-target="#menu-modal">
+                <i class="fa fa-bars fa-special text-white align-middle"></i>
+            </a>
         </div>
     </nav>
 
     {{--Content--}}
-    <div style="margin: 54px 0 40px 0;">
+    <div style="margin-top: 55px;">
         @yield("content")
     </div>
-
-    {{--Navbar Fixed Bottom--}}
-    <nav class="navbar fixed-bottom navbar-dark bg-dark nav nav-tabs nav-fill rounded-0 border-0 p-0">
-        <div class="container px-0">
-            <a class="nav-item nav-link rounded-0" href="/road-guide"><i class="fa fa-road text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/visitor-feqh"><i class="fa fa-list-alt text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/adeua-and-zuarat"><i class="fab fa-audible text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/reception"><i class="fa fa-school text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/lost"><i class="fa fa-route text-white"></i></a>
-            <a class="nav-item nav-link rounded-0" href="/majales"><i class="fa fa-microphone-alt text-white"></i></a>
-        </div>
-    </nav>
 
     {{--Menu Modal--}}
     @include("layout.menu")

@@ -11,7 +11,6 @@ namespace App\Enums;
 
 class Cities
 {
-
     const NAJ = "نجف";
     const BAGH = "بغداد";
     const QAD = "قادسية";

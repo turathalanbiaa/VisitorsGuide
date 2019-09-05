@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Cities;
 use App\Enums\MajlesStatus;
 use App\Enums\PostCategory;
 use App\Models\Majales;
@@ -53,7 +54,6 @@ class MajalesController extends Controller
 
     public function main ()
     {
-
         $getMajales = Majales::where('status', MajlesStatus::ACCEPT)->whereDate('majles_end','>=',Carbon::now()->format('y-m-d'))
             ->orderBy('majles_start')->paginate(15);
 
@@ -103,13 +103,12 @@ class MajalesController extends Controller
     public function getEventsGallery ()
     {
         $posts = Post::where('category', PostCategory::MAJALES)->paginate(15);
-
         return view('/majales/events_gallery', ['posts'=>$posts]);
     }
 
     public function majalesy ()
     {
-        $majalesy = Majales::where('user_id', session('USER_ID'))->get();
+        $majalesy = Majales::where('user_id', session('USER_ID'))->paginate(15);
 
         return view('/majales/majalesy', ['majalesy'=>$majalesy]);
     }
@@ -141,9 +140,8 @@ class MajalesController extends Controller
                 'closesPoint.required' => 'الرجاء كتابة عنوان اقرب نقطة دالة',
             ]);
         $majles =Majales::findOrFail($request->id);
-        if($majles->user_id == session('USER_ID'))
+        if($majles->user_id == session()->get('USER_ID'))
         {
-            $majles->user_id      = session('USER_ID');
             $majles->description  = $request->description;
             $majles->majles_start = $request->majlesStart;
             $majles->majles_end   = $request->majlesEnd;

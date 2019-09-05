@@ -1,3 +1,18 @@
+.bg-vg-dark, .btn-vg-dark, .btn-vg-light:hover {
+    background-color: #1b656d;
+}
+.bg-vg-light, .btn-vg-light, .btn-vg-dark:hover {
+    background-color: #36b6c2;
+}
+.btn-vg-dark, .btn-vg-light {
+    color: #ffffff;
+}
+.text-vg-dark{
+    color: #1b656d;
+}
+.text-vg-light {
+    color: #36b6c2;
+}
 .modal-special {
     width: auto;
 }

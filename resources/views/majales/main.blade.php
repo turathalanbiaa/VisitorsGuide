@@ -1,11 +1,7 @@
 @extends('layout.secondary_layout')
 
-@section("navbar-color")
-    {{"bg-orange-gradient"}}
-@endsection
-
 @section("navbar-brand")
-    <span id="title">المجالس - عرض الجميع</span>
+    <span id="title">المجالس</span>
 @endsection
 
 @section('content')
@@ -21,41 +17,35 @@
             </div>
         @endif
         @foreach($events as $event)
-            @component('majales.component.majles_card', ['event'=>$event])
-            @endcomponent
+            @component('majales.component.majles_card', ['event'=>$event])@endcomponent
         @endforeach
-        <div>
+        <div class="d-flex justify-content-center py-2">
             {{$events->links()}}
         </div>
     </div>
 
-    @component('majales.component.main_menu')
-    @endcomponent
+    @component('majales.component.main_menu')@endcomponent
 
-    @component('majales.component.maps_modal')
-    @endcomponent
-
+    {{-- remove comment if you need to show location on map --}}
+    {{--
+    @component('majales.component.maps_modal')@endcomponent
+    --}}
 @endsection
 
-
-
+{{-- remove comment if you need to show location on map --}}
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4">
-
-    </script>
+    {{--
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4"></script>
     <script>
         function initialize(x,y) {
-            let center = new google.maps.LatLng(x,y);
-            let mapOptions = {
+            var center = new google.maps.LatLng(x,y);
+            var mapOptions = {
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center: center
             };
-
            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
         }
-
         $('.location').on('click', function () {
             $('#modal').modal({
                 backdrop: 'static',
@@ -63,8 +53,8 @@
             });
             initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
         });
-
     </script>
+    --}}
 @endsection
 
 

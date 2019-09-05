@@ -1,11 +1,7 @@
 @extends('layout.secondary_layout')
 
-@section("navbar-color")
-    {{"bg-orange-gradient"}}
-@endsection
-
 @section("navbar-brand")
-    <span id="title">المجالس - عرض الجميع</span>
+    <span id="title">مجالسي</span>
 @endsection
 
 @section('content')
@@ -26,13 +22,12 @@
             </div>
         @endif
         @foreach($majalesy as $majlesy)
-            @component('majales.component.majalesy_card', ['majlesy'=>$majlesy])
-            @endcomponent
+            @component('majales.component.majalesy_card', ['majlesy'=>$majlesy])@endcomponent
         @endforeach
+        <div class="d-flex justify-content-center py-2">
+            {{$majalesy->links()}}
+        </div>
     </div>
-
-    @component('majales.component.maps_modal')
-    @endcomponent
 
     @component('majales.component.main_menu')
     @endcomponent
@@ -40,47 +35,33 @@
     @component('majales.component.modal_delete_message')
     @endcomponent
 
+    {{-- remove comment if you need to show location on map --}}
+    {{--
+    @component('majales.component.maps_modal')@endcomponent
+    --}}
 @endsection
 
-
-
+{{-- remove comment if you need to show location on map --}}
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4">
-
-    </script>
+    {{--
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4"></script>
     <script>
-        function initialize(x ,y) {
-            let center = new google.maps.LatLng(x, y);
-            let mapOptions = {
+        function initialize(x,y) {
+            var center = new google.maps.LatLng(x,y);
+            var mapOptions = {
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center: center
             };
-
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-            marker = new google.maps.Marker({
-                map: map,
-                position: center
-            });
+           map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         }
-
         $('.location').on('click', function () {
             $('#modal').modal({
                 backdrop: 'static',
                 keyboard: false
             });
-            initialize($(this).attr('latitude'),$(this).attr('longitude'));
+            initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
         });
-
     </script>
-    <script>
-        $(document).ready(function () {
-            $('.delete').click(function () {
-                $('#delete').val($(this).attr('data-id'));
-            });
-        })
-    </script>
+    --}}
 @endsection
-
-

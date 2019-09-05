@@ -1,16 +1,12 @@
 @extends('layout.secondary_layout')
 
-@section("navbar-color")
-    {{"bg-orange-gradient"}}
-@endsection
-
 @section("navbar-brand")
-    <span id="title">المجالس - اضافة مجلس</span>
+    <span id="title">تعديل المجلس</span>
 @endsection
 
 @section('content')
     <div class="container shadow-sm p-2" style="background-color: white">
-        <h2 class="text-center pt-2">اضافة مجلس</h2>
+        <h2 class="text-center pt-2">تعديل المجلس</h2>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -31,9 +27,9 @@
             <div class="form-group">
                 <label for="cities">المحافظة</label>
                 <select class="form-control" id="cities" name="cities" required>
-                    <option value="{{route('eventsCity', App\Enums\Cities::CITIES[app()->getLocale()][$i])}}">
-                        {{App\Enums\Cities::CITIES[app()->getLocale()][$i]}}
-                    </option>
+                    @foreach(\App\Enums\Cities::CITIES[app()->getLocale()] as $city)
+                        <option value="{{$city}}" @if($majles->city == $city) selected @endif>{{$city}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
@@ -60,11 +56,9 @@
             <button type="submit" class="btn btn-primary mb-2">تعديل المجلس</button>
         </form>
     </div>
-
 @endsection
 
-@component('majales.component.main_menu')
-@endcomponent
+@component('majales.component.main_menu')@endcomponent
 
 @section('script')
     <script src="{{asset('js/js-webshim/minified/polyfiller.js')}}"></script>
@@ -73,17 +67,12 @@
         webshim.setOptions({
             extendNative: true
         });
-    </script>
-    <script>
-        const option = document.getElementsByTagName('option');
+        var option = document.getElementsByTagName('option');
         document.getElementById('majlesStart').value = '{{$majles->majles_start}}'.replace(' ', 'T');
-
-        for (let i =0; i<option.length; i++)
+        for (var i =0; i<option.length; i++)
         {
             if (option[i].value === '{{$majles->city}}')
-            {
                 option[i].setAttribute('selected',true)
-            }
         }
     </script>
 @endsection

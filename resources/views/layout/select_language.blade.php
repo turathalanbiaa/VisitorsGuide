@@ -1,7 +1,7 @@
 <div class="modal fade" id="select-language-modal" tabindex="-1" role="dialog" aria-labelledby="select-language-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-special" role="document">
         <div class="modal-content border-0 rounded-0 shadow-special">
-            <h4 class="modal-header bg-dark text-white rounded-0 m-0">
+            <h4 class="modal-header text-white rounded-0 m-0">
                 <span>{{trans("words.select_language")}}</span>
             </h4>
 

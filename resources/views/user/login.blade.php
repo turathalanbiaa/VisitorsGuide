@@ -29,7 +29,7 @@
                         <a href="/register">او قم بانشاء حساب</a>
                     </P>
 
-                    <button class="btn btn-info btn-block my-4" type="submit">تسجيل دخول</button>
+                    <button class="btn btn-vg-light btn-block my-4" type="submit">تسجيل دخول</button>
                 </form>
             </div>
         </div>
