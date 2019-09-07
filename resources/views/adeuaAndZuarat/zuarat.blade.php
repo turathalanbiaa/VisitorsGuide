@@ -1,9 +1,5 @@
 @extends('layout.secondary_layout')
 
-@section('navbar-color')
-    {{"bg-aqua-gradient"}}
-@endsection
-
 @section('navbar-brand')
     <span>{{trans('words.adeua-and-zuarat-zuarat-title')}}</span>
 @endsection
@@ -58,7 +54,7 @@
                 @endcomponent
             @endforeach
         </div>
-        <div class="pt-2">
+        <div class="d-flex justify-content-center py-2">
             {{$zuarat->links()}}
         </div>
 

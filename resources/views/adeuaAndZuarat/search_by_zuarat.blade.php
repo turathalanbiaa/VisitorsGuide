@@ -58,7 +58,7 @@
                 @endcomponent
             @endforeach
         </div>
-        <div class="pt-2">
+        <div class="d-flex justify-content-center py-2">
             {{$zuarat->links()}}
         </div>
 

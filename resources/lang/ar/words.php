@@ -146,6 +146,7 @@ return [
 
 
 //Adeua and Zuarat
+    "adeua-and-zuarat-title"                      => "الادعية والزيارات",
     "adeua-and-zuarat-zuarat-title"               => "الادعية والزيارات - الزيارات",
     "adeua-and-zuarat-adeua-title"                => "الادعية والزيارات - الادعية",
     "adeua-and-zuarat-images-gallery-title"       => "الادعية والزيارات - معرض الصور",

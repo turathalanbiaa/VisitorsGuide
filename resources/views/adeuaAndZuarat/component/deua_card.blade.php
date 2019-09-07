@@ -7,7 +7,7 @@
             <h3 id="tit-{{$titleID}}">{{$title}}</h3>
             <p id="cont-{{$contentID}}" class="module-text fade-text">{{$content}}</p>
             <button class="btn btn-primary btn-sm rounded" type="button" data-toggle="collapse"
-                    data-target="#collapse-{{$readingCollapseID}}" aria-expanded="true"
+                    data-target="#collapse-{{$readingCollapseID}}" aria-expanded="false"
                     aria-controls="collapseExample">{{$listenTrans}}
             </button>
             <button class="btn btn-secondary btn-sm rounded read-more"
@@ -15,7 +15,7 @@
                     data-target=".exampleModalLong">{{$readingTrans}}
             </button>
         </div>
-        <div class="collapse show p-3" id="collapse-{{$listenCollapseID}}">
+        <div class="collapse p-3" id="collapse-{{$listenCollapseID}}">
             <audio controls class="w-100">
                 <source src="{{$sound}}" type="audio/mpeg">
             </audio>

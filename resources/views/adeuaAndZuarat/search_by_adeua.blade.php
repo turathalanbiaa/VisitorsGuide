@@ -64,7 +64,7 @@
             @endforeach
         </div>
 
-        <div>
+        <div class="d-flex justify-content-center py-2">
             {{$publicAdeua->links()}}
         </div>
     </div>
