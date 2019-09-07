@@ -71167,14 +71167,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -71516,9 +71508,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(_vm.getCategory(item.category)) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]),
                         _vm._v(" "),
@@ -71531,9 +71523,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(item.description) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]),
                         _vm._v(" "),
@@ -71544,14 +71536,14 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(
                                 _vm._f("moment")(
                                   item.datetime,
                                   "DD-MM-YYYY h:mm a"
                                 )
                               ) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]),
                         _vm._v(" "),
@@ -71562,9 +71554,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(item.center.name) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]),
                         _vm._v(" "),
@@ -71576,9 +71568,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(item.center.t_number) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]),
                         _vm._v(" "),
@@ -71589,9 +71581,9 @@ var render = function() {
                             )
                           ]),
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(item.center.phone) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ])
                       ]
@@ -71618,37 +71610,15 @@ var render = function() {
             [
               _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
                 _vm._v(
-                  "\n<<<<<<< HEAD\n                          " +
+                  "\n                     " +
                     _vm._s(_vm.trans("words.there_is_no_data")) +
-                    "\n=======\n                         " +
-                    _vm._s(_vm.trans("words.there_is_no_data")) +
-                    "\n>>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016\n                     "
+                    "\n                 "
                 )
               ])
             ]
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-md-12" },
-            [
-              _vm._v("\n<<<<<<< HEAD\n                    "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "float bg-teal-gradient",
-                  attrs: { to: { name: "losts-dashboard" } }
-                },
-                [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
-              ),
-              _vm._v("\n=======\n                    "),
-              _vm._m(1),
-              _vm._v(
-                "\n>>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016\n                "
-              )
-            ],
-            1
-          )
+          _vm._m(1)
         ],
         2
       )
@@ -71673,14 +71643,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "float bg-teal-gradient",
-        attrs: { href: "/lost/add-lost-form" }
-      },
-      [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
-    )
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c(
+        "a",
+        {
+          staticClass: "float bg-teal-gradient",
+          attrs: { href: "/lost/add-lost-form" }
+        },
+        [_c("i", { staticClass: "fa fa-bullhorn my-float" })]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -73846,7 +73818,7 @@ if (false) {
 /* 234 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (72)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.9.3\n    at module.exports (D:\\Workspace\\VisitorsGuide\\node_modules\\node-sass\\lib\\binding.js:13:13)\n    at Object.<anonymous> (D:\\Workspace\\VisitorsGuide\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:936:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:947:10)\n    at Module.load (internal/modules/cjs/loader.js:790:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:703:12)\n    at Module.require (internal/modules/cjs/loader.js:830:19)\n    at require (internal/modules/cjs/helpers.js:68:18)\n    at Object.<anonymous> (D:\\Workspace\\VisitorsGuide\\node_modules\\sass-loader\\lib\\loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:936:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:947:10)\n    at Module.load (internal/modules/cjs/loader.js:790:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:703:12)\n    at Module.require (internal/modules/cjs/loader.js:830:19)\n    at require (internal/modules/cjs/helpers.js:68:18)\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:13:17)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModule.js:195:19\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:170:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:27:11)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (D:\\Workspace\\VisitorsGuide\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at NormalModule.doBuild (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModule.js:182:3)\n    at NormalModule.build (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModule.js:275:15)\n    at Compilation.buildModule (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\Compilation.js:157:10)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\Compilation.js:460:10\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:243:5\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:94:13\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\tapable\\lib\\Tapable.js:268:11\n    at NormalModuleFactory.<anonymous> (D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (D:\\Workspace\\VisitorsGuide\\node_modules\\tapable\\lib\\Tapable.js:272:13)\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:69:10\n    at D:\\Workspace\\VisitorsGuide\\node_modules\\webpack\\lib\\NormalModuleFactory.js:196:7\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

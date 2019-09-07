@@ -109,22 +109,14 @@
                 <infinite-loading ref="infiniteLoading" spinner="waveDots" v-on:distance="1"
                                   v-on:infinite="infiniteHandler" class="col-md-12">
                      <span slot="no-more">
-<<<<<<< HEAD
-                          {{trans("words.there_is_no_data")}}
-=======
                          {{trans("words.there_is_no_data")}}
->>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016
                      </span>
                 </infinite-loading>
 
                 <div class="col-md-12">
-<<<<<<< HEAD
-                    <router-link :to="{name:'losts-dashboard'}" class="float bg-teal-gradient"><i class="fa fa-bullhorn my-float"></i></router-link>
-=======
                     <a href="/lost/add-lost-form" class="float bg-teal-gradient">
                         <i class="fa fa-bullhorn my-float"></i>
                     </a>
->>>>>>> 253ca70f3d688c249b6ba0164dc50d082d9bf016
                 </div>
 
             </div>
