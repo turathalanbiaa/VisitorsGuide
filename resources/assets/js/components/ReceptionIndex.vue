@@ -86,8 +86,11 @@
                                         {{item.address}}
                                     </li>
                                     <li class="list-group-item">
-                                        <span> {{trans("words.reception_call_home_owner")}}</span>
-                                        {{item.phone}}
+                                    <span> {{trans("words.reception_call_home_owner")}}</span>
+                                    {{item.phone}}
+                                </li>
+                                    <li class="list-group-item">
+                                        <router-link :to="{ name: 'Location',params:{lat:item.lat,lng:item.lng}}">عرض على الخارطه </router-link>
                                     </li>
                                 </ul>
                             </div>

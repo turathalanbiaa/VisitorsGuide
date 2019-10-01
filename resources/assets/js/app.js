@@ -24,7 +24,14 @@ const router = new VueRouter({
 Vue.prototype.trans = (key) => {
     return _.get(window.trans, key, key);
 };
+import * as VueGoogleMaps from "vue2-google-maps";
 
+window.Vue.use(VueGoogleMaps, {
+    load: {
+        key: "AIzaSyBYPOqCep_Cx1apaQw8Yz6rsywzNGtwwjc",
+        libraries: "places" // necessary for places input
+    }
+});
 const app = new Vue({
     el:'#app',
     router:router,

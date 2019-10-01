@@ -24,8 +24,9 @@ Route::get('lost','LostController@index');
 
 //visitors reception
 Route::get('reception','VisitorsReceptionController@index');
+Route::get('dashboard','VisitorsReceptionController@dashboard_index');
 Route::post('reception','VisitorsReceptionController@store');
 Route::put('reception', 'VisitorsReceptionController@update');
 Route::delete('reception/{id}', 'VisitorsReceptionController@destroy');
-Route::get('dashboard','VisitorsReceptionController@dashboard_index');
+
 

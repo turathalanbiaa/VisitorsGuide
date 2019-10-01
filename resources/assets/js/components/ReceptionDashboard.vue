@@ -13,9 +13,9 @@
             </div>
         </nav>
         <div class="container pt-2">
-            <div class="row" v-if="form.user_id >0">
+            <div class="row" v-if="form.user_id>0">
                 <div class="col-md-12">
-                <b-btn class="mb-2" size="sm" variant="outline-primary"  v-b-modal.modalAdd >{{trans("words.add")}}</b-btn></div>
+                    <b-btn class="mb-2" size="sm" variant="outline-primary"  v-b-modal.modalAdd >{{trans("words.add")}}</b-btn></div>
 
                 <!-- Add Modal Component -->
                 <b-modal id="modalAdd" ref="modalAdd" :label='trans("words.add")' @shown="resetForm()"  hide-footer>
@@ -63,86 +63,7 @@
                                           type="text"
                                           v-model="form.phone"
                                           required
-                                        >
-                            </b-form-input>
-                        </b-form-group>
-
-
-
-                        <b-form-group :label='trans("words.reception_state")' label-for="is_active">
-                            <b-form-select id="is_active"
-                                           size="sm"
-                                           :options="is_active_option"
-                                           required
-                                           v-model="form.is_active">
-                            </b-form-select>
-                        </b-form-group>
-
-                        <b-form-group :label='trans("words.reception_date")' label-for="date">
-                            <b-form-input id="date"
-                                           size="sm"
-                                           type="date"
-                                           v-model="form.date"
-                                           required>
-                            </b-form-input>
-                        </b-form-group>
-
-                        <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.add")}}</b-button>
-                        <b-button size="sm" @click="resetForm()" variant="outline-danger">{{trans("words.new")}}</b-button>
-                    </b-form>
-
-                </b-modal>
-
-                <!-- Update Modal Component -->
-                <b-modal id="modalUpdate" ref="modalUpdate" :label='trans("words.update")' hide-footer>
-
-                    <b-form @submit="updateForm">
-                        <b-form-group :label='trans("words.reception_home_owner_name")' label-for="home_owner">
-                            <b-form-input id="home_owner"
-                                          size="sm"
-                                          type="text"
-                                          v-model="form.home_owner"
-                                          required
-                                        >
-                            </b-form-input>
-                        </b-form-group>
-
-                        <b-form-group :label='trans("words.reception_persons_number")' label-for="persons_number">
-                            <b-form-input id="persons_number"
-                                          size="sm"
-                                          type="number"
-                                          v-model="form.persons_number"
-                                          required
-                                         >
-                            </b-form-input>
-                        </b-form-group>
-
-                        <b-form-group :label='trans("words.reception_persons_type")' label-for="persons_type">
-                            <b-form-select id="persons_type"
-                                           size="sm"
-                                           :options="persons_type_option"
-                                           required
-                                           v-model="form.persons_type">
-                            </b-form-select>
-                        </b-form-group>
-
-                        <b-form-group :label='trans("words.reception_address")' label-for="address">
-                            <b-form-input id="address"
-                                          size="sm"
-                                          type="text"
-                                          v-model="form.address"
-                                          required
-                                         >
-                            </b-form-input>
-                        </b-form-group>
-
-                        <b-form-group :label='trans("words.reception_phone")' label-for="phone">
-                            <b-form-input id="phone"
-                                          size="sm"
-                                          type="text"
-                                          v-model="form.phone"
-                                          required
-                                         >
+                            >
                             </b-form-input>
                         </b-form-group>
 
@@ -165,7 +86,128 @@
                                           required>
                             </b-form-input>
                         </b-form-group>
+                        <b-form-group>
+                            <b-button size="sm" @click="geolocate()" variant="outline-info">تحديد الموقع</b-button>
+                        </b-form-group>
+                        <b-form-group label='خط العرض' label-for="lat">
+                            <b-form-input id="lat"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.lat"
+                                          readonly
+                                          required >
+                            </b-form-input>
+                        </b-form-group>
+                        <b-form-group label='خط الطول' label-for="lng">
+                            <b-form-input id="lng"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.lng"
+                                          readonly
+                                          required>
+                            </b-form-input>
 
+                        </b-form-group>
+
+                        <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.save")}}</b-button>
+                        <b-button size="sm" @click="resetForm()" variant="outline-danger">مسح الحقول</b-button>
+                    </b-form>
+
+                </b-modal>
+
+                <!-- Update Modal Component -->
+                <b-modal id="modalUpdate" ref="modalUpdate" :label='trans("words.update")' hide-footer>
+
+                    <b-form @submit="updateForm">
+                        <b-form-group :label='trans("words.reception_home_owner_name")' label-for="home_owner">
+                            <b-form-input id="home_owner"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.home_owner"
+                                          required
+                            >
+                            </b-form-input>
+                        </b-form-group>
+
+                        <b-form-group :label='trans("words.reception_persons_number")' label-for="persons_number">
+                            <b-form-input id="persons_number"
+                                          size="sm"
+                                          type="number"
+                                          v-model="form.persons_number"
+                                          required
+                            >
+                            </b-form-input>
+                        </b-form-group>
+
+                        <b-form-group :label='trans("words.reception_persons_type")' label-for="persons_type">
+                            <b-form-select id="persons_type"
+                                           size="sm"
+                                           :options="persons_type_option"
+                                           required
+                                           v-model="form.persons_type">
+                            </b-form-select>
+                        </b-form-group>
+
+                        <b-form-group :label='trans("words.reception_address")' label-for="address">
+                            <b-form-input id="address"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.address"
+                                          required
+                            >
+                            </b-form-input>
+                        </b-form-group>
+
+                        <b-form-group :label='trans("words.reception_phone")' label-for="phone">
+                            <b-form-input id="phone"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.phone"
+                                          required
+                            >
+                            </b-form-input>
+                        </b-form-group>
+
+
+
+                        <b-form-group :label='trans("words.reception_state")' label-for="is_active">
+                            <b-form-select id="is_active"
+                                           size="sm"
+                                           :options="is_active_option"
+                                           required
+                                           v-model="form.is_active">
+                            </b-form-select>
+                        </b-form-group>
+
+                        <b-form-group :label='trans("words.reception_date")' label-for="date">
+                            <b-form-input id="date"
+                                          size="sm"
+                                          type="date"
+                                          v-model="form.date"
+                                          required>
+                            </b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                            <b-button size="sm" @click="geolocate()" variant="outline-info">تحديد الموقع</b-button>
+                        </b-form-group>
+                        <b-form-group label='خط العرض' label-for="lat">
+                            <b-form-input id="lat"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.lat"
+                                          readonly
+                                          required >
+                            </b-form-input>
+                        </b-form-group>
+                        <b-form-group label='خط الطول' label-for="lng">
+                            <b-form-input id="lng"
+                                          size="sm"
+                                          type="text"
+                                          v-model="form.lng"
+                                          readonly
+                                          required>
+                            </b-form-input>
+                        </b-form-group>
                         <b-button size="sm" type="submit" variant="outline-primary">{{trans("words.save")}}</b-button>
                     </b-form>
 
@@ -233,12 +275,11 @@
                 .then(({data})=>{
                     console.log('mounted');
                     this.form.user_id=data;
-                    console.log('dat data'+this.form.user_id);
                     this.iniData();
                 })
                 .catch((resp)=> {
                     console.log(resp);
-                    alert("Could not create");
+                    alert("Not found");
                 });
 
         },
@@ -258,8 +299,11 @@
                     phone:null,
                     is_active:null,
                     date:null,
+                    lat:null,
+                    lng:null,
+
                 },
-                 persons_type_option: [
+                persons_type_option: [
                     { text: this.trans("words.reception_select"), value: null },
                     { text: this.trans("words.reception_persons_type_men"), value: 1 },
                     { text: this.trans("words.reception_persons_type_women"), value: 2 },
@@ -277,13 +321,11 @@
             iniData(){
                 axios.get('api/dashboard',{params:{user_id:this.form.user_id}})
                     .then(({data})=>{
-                        console.log('mounted');
                         this.list=data.data;
 
                     })
                     .catch((resp)=> {
-                        console.log(resp);
-                        alert("Could not create");
+                        alert("Not found");
                     });
             },
             getType(arg) {
@@ -304,9 +346,10 @@
                 this.$refs.modalAdd.hide();
                 axios.post('api/reception',this.form)
                     .then(({data})=> {
+                        console.log(data);
                         this.text=this.trans("words.reception_add_success");
                         this.snackBar('success');
-                       this.iniData();
+                        this.iniData();
                     })
                     .catch(function (resp) {
                         console.log(resp);
@@ -343,15 +386,17 @@
                     });
             },
             iniUpdate(index){
-                    this.form.id=this.list[index].id;
-                    this.form.user_id=this.list[index].user_id;
-                    this.form.home_owner=this.list[index].home_owner;
-                    this.form.persons_number=this.list[index].persons_number;
-                    this.form.persons_type=this.list[index].persons_type;
-                    this.form.address=this.list[index].address;
-                    this.form.phone=this.list[index].phone;
-                    this.form.is_active=this.list[index].is_active;
-                    this.form.date=this.list[index].date;
+                this.form.id=this.list[index].id;
+                this.form.user_id=this.list[index].user_id;
+                this.form.home_owner=this.list[index].home_owner;
+                this.form.persons_number=this.list[index].persons_number;
+                this.form.persons_type=this.list[index].persons_type;
+                this.form.address=this.list[index].address;
+                this.form.phone=this.list[index].phone;
+                this.form.is_active=this.list[index].is_active;
+                this.form.date=this.list[index].date;
+                this.form.lat = this.list[index].lat;
+                this.form.lng = this.list[index].lat;
             },
             resetForm () {
                 /* Reset our form values */
@@ -362,35 +407,29 @@
                 this.form.phone = null;
                 this.form.is_active = null;
                 this.form.date = null;
-                /* Trick to reset/clear native browser form validation state */
+                this.form.lat = null;
+                this.form.lng = null;
                 this.show = false;
                 this.$nextTick(() => { this.show = true });
             },
             snackBar (method) {
                 let config = {
                     text: this.text,
-                    button: '????????',
+                    button: 'اغلاق',
 
                 };
                 this.$snack[method](config)
             },
+            geolocate() {
+                navigator.geolocation.getCurrentPosition(position => {
+
+                        this.form.lat=position.coords.latitude;
+                        this.form.lng=position.coords.longitude;
+
+                    }
+                )}
         }
     }
 </script>
 
-<style scoped>
-    .float {
-        position: fixed;
-        width: 50px;
-        height: 50px;
-        bottom: 50px;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        box-shadow: 2px 2px 3px #999;
-    }
 
-    .my-float {
-        margin-top: 19px;
-    }
-</style>

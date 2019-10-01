@@ -2,6 +2,7 @@ import LostIndex from './components/LostsIndex';
 import LostsDashboard from './components/LostsDashboard';
 import ReceptionIndex from './components/ReceptionIndex';
 import ReceptionDashboard from './components/ReceptionDashboard';
+import Location from "./components/Location";
 export const routes = [
     { path: '/', components: {
             LostIndex:LostIndex,
@@ -14,4 +15,9 @@ export const routes = [
     { path: '/reception-dashboard',
         name:'reception-dashboard',
         component:ReceptionDashboard},
+    {
+        path: '/Location',
+        name: 'Location',
+        component: Location
+    },
     ];

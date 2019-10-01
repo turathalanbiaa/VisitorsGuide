@@ -20,7 +20,7 @@
 @endsection
 
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYPOqCep_Cx1apaQw8Yz6rsywzNGtwwjc">
     </script>
     <script>
         const latAndLong ={!! json_encode($latAndLong) !!};
