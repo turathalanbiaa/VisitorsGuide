@@ -19,7 +19,7 @@
                 @endcomponent
             @endforeach
         </div>
-        <div class="pb-2 pt-2">
+        <div class="d-flex justify-content-center py-2">
             {{$images->links()}}
         </div>
     </div>

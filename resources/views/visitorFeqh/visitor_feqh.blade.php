@@ -1,9 +1,5 @@
 @extends("layout.secondary_layout")
 
-@section("navbar-color")
-    {{"bg-orange-gradient"}}
-@endsection
-
 @section("navbar-brand")
     <span id="title">{{trans("words.visitor_feqh_title_questions")}}</span>
 @endsection
@@ -17,7 +13,7 @@
 
 @section("menu-modal-content")
     <div class="modal-content border-0 rounded-0 shadow-special">
-        <h5 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
+        <h5 class="modal-header bg-vg-light text-white rounded-0 m-0">
             <span>{{trans("words.menu_visitor_feqh")}}</span>
         </h5>
 

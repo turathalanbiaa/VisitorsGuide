@@ -27,7 +27,7 @@ class AdeuaAndZuaratController extends Controller
 
         $daysAdeua = array_merge($daysAscending, $daysDescending);
 
-        $publicAdeua = AdeuaAndZuarat::where('category', AdeuaZuaratCategory::PUBLIC_ADEUA)->paginate(6);
+        $publicAdeua = AdeuaAndZuarat::where('category', AdeuaZuaratCategory::PUBLIC_ADEUA)->paginate(8);
 
         return view('adeuaAndZuarat/adeua',['daysAdeua'=>$daysAdeua, 'publicAdeua'=>$publicAdeua]);
     }
@@ -48,7 +48,7 @@ class AdeuaAndZuaratController extends Controller
     public function videos ()
     {
         $posts = Post::where('category', PostCategory::ADEUA_ZUARAT)
-            ->whereNotNull('video_link')->paginate(8);
+            ->whereNotNull('video_link')->paginate(10);
         return view('adeuaAndZuarat/videos', ['posts'=>$posts]);
     }
 

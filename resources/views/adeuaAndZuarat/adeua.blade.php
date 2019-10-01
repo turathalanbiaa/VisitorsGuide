@@ -1,10 +1,4 @@
 @extends('layout.secondary_layout')
-@section('top-title')
-
-@endsection
-@section("navbar-color")
-    {{"bg-aqua-gradient"}}
-@endsection
 
 @section("navbar-brand")
     <span id="title">{{trans('words.adeua-and-zuarat-adeua-title')}}</span>
@@ -59,12 +53,10 @@
             @endforeach
         </div>
 
-        <div>
+        <div class="d-flex justify-content-center py-2">
             {{$publicAdeua->links()}}
         </div>
     </div>
-
-
 @endsection
 
 @extends('adeuaAndZuarat.component.content_modal')
@@ -73,11 +65,11 @@
 
 @section('script')
     <script>
-        let readMore = $('.read-more');
+        var readMore = $('.read-more');
         readMore.on('click' , function () {
-            let id = $(this).attr('value');
-            let content = $('#cont-'+id).text();
-            let title = $('#tit-'+id).text();
+            var id = $(this).attr('value');
+            var content = $('#cont-'+id).text();
+            var title = $('#tit-'+id).text();
             $('#modal-title').text(title);
             $('#modal-content').text(content)
         })
@@ -89,8 +81,8 @@
     </script>
     <script>
         document.addEventListener('play', function(e){
-            let audios = document.getElementsByTagName('audio');
-            for(let i = 0, len = audios.length; i < len;i++){
+            var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
                 if(audios[i] !== e.target){
                     audios[i].pause();
                 }
@@ -100,14 +92,14 @@
     <script>
         $(document).ready(function () {
             $('#zoomIn').on('click' ,function () {
-                let fontSize = $('.font-size');
-                let fontSizePluse = parseFloat(fontSize.css('font-size'));
+                var fontSize = $('.font-size');
+                var fontSizePluse = parseFloat(fontSize.css('font-size'));
                 fontSizePluse = fontSizePluse + 1;
                 fontSize.css('font-size',fontSizePluse+'px');
             });
             $('#zoomOut').on('click' , function () {
-                let fontSize = $('.font-size');
-                let fontSizeMinus = parseFloat(fontSize.css('font-size'));
+                var fontSize = $('.font-size');
+                var fontSizeMinus = parseFloat(fontSize.css('font-size'));
                 fontSizeMinus = fontSizeMinus - 1;
                if (fontSizeMinus >13)
                {

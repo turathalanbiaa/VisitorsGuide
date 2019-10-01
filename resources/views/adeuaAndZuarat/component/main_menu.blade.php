@@ -1,10 +1,7 @@
-
-
-
 @section("menu-modal-content")
 <div class="modal-content border-0 rounded-0 shadow-special">
-    <h4 class="modal-header bg-orange-gradient text-white rounded-0 m-0">
-        <span>{{trans("words.menu-adeua-and-zuarat-title")}}</span>
+    <h4 class="modal-header bg-vg-light text-white rounded-0 m-0">
+        <span>{{trans("words.adeua-and-zuarat-title")}}</span>
     </h4>
 
     <div class="modal-body">

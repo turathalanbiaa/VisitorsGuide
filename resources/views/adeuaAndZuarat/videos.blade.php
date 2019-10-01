@@ -19,6 +19,8 @@
                 @endslot
             @endcomponent
         @endforeach
-        <div>{{$posts->links()}}</div>
+        <div class="d-flex justify-content-center py-2">
+            {{$posts->links()}}
+        </div>
     </div>
 @endsection

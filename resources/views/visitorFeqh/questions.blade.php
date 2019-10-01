@@ -13,7 +13,7 @@
         <div class="col-12">
             @if(!isset($_GET["category"]))
                 <div class="w-100 d-flex justify-content-center" style="margin-bottom: -34px">
-                    <div class="w-50 rounded shadow-sm" style="background-color: #fd7865">
+                    <div class="w-50 rounded shadow-sm bg-vg-light">
                         <p class="h6 px-3 py-2 m-0 text-center text-white text-truncate">
                             {{\App\Enums\QuestionCategory::getCategoryName(app()->getLocale(), $question->category)}}
                         </p>
