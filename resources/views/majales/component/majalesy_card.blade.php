@@ -26,13 +26,10 @@
                     @endif
                 </p>
 
-                {{-- remove comment if you need to show location on map --}}
-                {{--
                 <i class="fas fa-map" style="color: #658aff"></i>
                 <a href="#" class="location" data-longitude="" data-latitude="" data-toggle="modal" data-target=".bd-example-modal-lg">
                     اضغط هنا لتحديد العنوان على الخريطة
                 </a>
-                --}}
 
                 <div class="d-flex flex-row-reverse" style="position: absolute; top: 0; width:calc(100% - 15px);">
                     <div class="btn-group-vertical mt-2">

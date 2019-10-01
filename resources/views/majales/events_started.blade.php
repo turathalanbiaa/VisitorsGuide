@@ -23,15 +23,10 @@
     @component('majales.component.main_menu')
     @endcomponent
 
-    {{-- remove comment if you need to show location on map --}}
-    {{--
     @component('majales.component.maps_modal')@endcomponent
-    --}}
 @endsection
 
-{{-- remove comment if you need to show location on map --}}
 @section('script')
-    {{--
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKYUdCrdRfLxHyfmp7DioNrGMOt7fI-E4"></script>
     <script>
         function initialize(x,y) {
@@ -51,5 +46,4 @@
             initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
         });
     </script>
-    --}}
 @endsection

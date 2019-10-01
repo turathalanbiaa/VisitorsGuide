@@ -407,6 +407,5 @@
             initialize($(this).attr('data-latitude'),$(this).attr('data-longitude'));
             console.log($(this).attr('data-latitude'),$(this).attr('data-longitude'));
         });
-
     </script>
 @endsection

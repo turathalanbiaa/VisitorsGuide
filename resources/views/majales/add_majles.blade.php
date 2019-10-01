@@ -58,13 +58,11 @@
                 <input type="hidden" class="form-control" name="longitude" id="longitude">
                 <input type="hidden" class="form-control" name="fingerPrint" id="fingerPrint">
             </div>
-            {{-- remove comment if you need to detect location on map --}}
-            {{--
+
             <div class="form-group">
                 <i class="fas fa-map-marker-alt" style="color: #007bff"></i>
                 <button type="button" class="btn btn-link pr-1" id="location">  الرجاء اضغط هنا لتحديد الموقع</button>
             </div>
-            --}}
 
             <button type="submit" class="btn btn-primary mb-2" id="add-majles">اضافة مجلس</button>
         </form>
@@ -73,9 +71,7 @@
 
 @component('majales.component.main_menu')@endcomponent
 
-{{-- remove comment if you need to detect location on map --}}
 @section('script')
-    {{--
     <script src="{{asset('js/js-webshim/minified/polyfiller.js')}}"></script>
     <script>
         webshim.polyfill('forms-ext');
@@ -108,5 +104,4 @@
             $('#fingerPrint').val(fingerPrint);
         })
     </script>
-    --}}
 @endsection
